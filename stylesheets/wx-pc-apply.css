@@ -1,0 +1,96 @@
+/* line 1, ../sass/wx-pc-apply.scss */
+body {
+  background: url("../images/wx-parentsChild/parents-child_bg2.jpg") no-repeat scroll right bottom;
+  background-size: 100%;
+  min-height: 19rem;
+  background-color: #f6e4cf;
+}
+
+/* line 7, ../sass/wx-pc-apply.scss */
+[v-cloak] {
+  display: none;
+}
+
+/* line 8, ../sass/wx-pc-apply.scss */
+input {
+  border: 0;
+  outline: 0;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: .5rem;
+}
+
+/* line 16, ../sass/wx-pc-apply.scss */
+.mainContent {
+  padding-top: 2rem;
+}
+
+/* line 19, ../sass/wx-pc-apply.scss */
+.common {
+  background: transparent url("../images/wx-parentsChild/parents-text.jpg") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  height: 1.4rem;
+  width: 8rem;
+  text-indent: .6rem;
+  color: #a0917e;
+  font-size: .5rem;
+}
+
+/* line 29, ../sass/wx-pc-apply.scss */
+.showImg {
+  width: 7.2rem;
+  height: 4.2rem;
+  padding: .4rem;
+  background: transparent url("../images/wx-parentsChild/parents-child_imgwrap.jpg") no-repeat scroll 0 0;
+  margin: 0 auto;
+  background-size: 100% 100%;
+}
+/* line 37, ../sass/wx-pc-apply.scss */
+.showImg .imgWrap {
+  height: 4.2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+}
+
+/* line 45, ../sass/wx-pc-apply.scss */
+.uploadImg {
+  width: 3.5rem;
+  height: 1.2rem;
+  background: transparent url("../images/wx-parentsChild/parents-child_upload.jpg") no-repeat scroll 0 0;
+  background-size: 100%;
+  margin-top: .4rem;
+  margin-bottom: .2rem;
+}
+
+/* line 54, ../sass/wx-pc-apply.scss */
+.note img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 60, ../sass/wx-pc-apply.scss */
+.confirm {
+  background: transparent url("../images/wx-parentsChild/parents-child_confirm.jpg") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  width: 5rem;
+  height: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* line 69, ../sass/wx-pc-apply.scss */
+.share {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+}
+/* line 75, ../sass/wx-pc-apply.scss */
+.share img {
+  position: relative;
+  top: 1rem;
+}
+
+/*# sourceMappingURL=wx-pc-apply.css.map */

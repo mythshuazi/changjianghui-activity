@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>邀船有礼</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="javascripts/plugin/zepto.js"></script>
+    <script type="text/javascript">
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+        $(window).resize(function(){
+            $('html').css({
+                fontSize: $(window).width()/10
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/act_inviteShip.css">
+</head>
+<body>
+<div class="mainContainer share">
+    <div class="mainContent share">
+        <section id="top">
+            <img src="images/act-inviteShip/shipShare_01.jpg" width="100%">
+            <p class="note"><span class="rmb">208元</span>长江汇补贴红包<br>已经存入您的<span class="phone">13888888888</span>账户中。<br>还没用？赶紧下载长江汇用了它！</p>
+            <img src="images/act-inviteShip/shipShare_03.jpg" width="100%">
+        </section>
+        <section id="middle">
+            <a id="download">下载长江会APP</a>
+            <button id="meToo">我也要邀请，再得108元</button>
+            <p class="rule"><span>活动规则</span></p>
+        </section>
+    </div>
+</div>
+<div id="popShare" class="pop" style="display: none;">
+    <div class="main">
+        <img src="images/act-inviteShip/pop.png" >
+    </div>
+</div>
+<div id="rulePop" class="pop" style="display:none;">
+    <div class="main">
+        <h2>活动规则</h2>
+        <ul>
+            <li>1、活动时间：上线时间 - 2016年12月31日</li>
+            <li>2、被邀请人注册成功即可获得208元奖励<span>（2张100元加油红包、1张8元非油品全场通用红包）</span>；</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;被邀请人在兆基石油加油后，长江汇奖励邀请人108元<span>（2张50元加油券、1张8元非油品全场通用红包）</span>。</li>
+            <li>3、加油券限本船使用，红包限本人使用。</li>
+            <li>4、油单和非油单需分开下单，加油券每次靠站（一次下单）只能使用一张，非油品全场通用红包每次靠站可使用多个。</li>
+            <li>5、为了维护活动的真实性，加油时请携带船籍证到长江汇体验店进行验证。</li>
+        </ul>
+        <p>本活动最终解释权归长江船服电子商务科技有限公司所有</p>
+        <i class="exit">×</i>
+    </div>
+</div>
+</body>
+<script src="javascripts/public.js"></script>
+<script>
+    $(function(){
+        var sharePop = new Popup({
+            ancestor:'#popShare',
+            main:'.main',
+            exit:'.exit',
+            top :0.01,
+            callback:function(){
+                var the = this;
+                $(document).on('tap','#meToo',function(){
+                    the.show();
+                });
+            }
+        });
+
+        var rulePop = new Popup({
+            ancestor:'#rulePop',
+            main:'.main',
+            exit:'.exit',
+            callback:function(){
+                $(document).on('tap','.rule span',function(){
+                    rulePop.show();
+                });
+            }
+        });
+
+
+    })
+</script>
+</html>

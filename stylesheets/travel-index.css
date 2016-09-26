@@ -1,0 +1,140 @@
+/*index  css*/
+/* line 3, ../sass/travel-index.scss */
+.carousel img {
+  width: 10rem;
+  height: 3.3rem;
+  display: block;
+}
+
+/* line 13, ../sass/travel-index.scss */
+.catgory {
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+/* line 18, ../sass/travel-index.scss */
+.catgory .wrap div {
+  float: left;
+}
+/* line 21, ../sass/travel-index.scss */
+.catgory img {
+  display: block;
+  width: 100%;
+}
+/* line 26, ../sass/travel-index.scss */
+.catgory .one-cat {
+  width: 6rem;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+/* line 31, ../sass/travel-index.scss */
+.catgory .one-cat .hot {
+  height: 3.72rem;
+}
+/* line 36, ../sass/travel-index.scss */
+.catgory .two-cat {
+  width: 4rem;
+  height: 3.72rem;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+/* line 42, ../sass/travel-index.scss */
+.catgory .two-cat .trip {
+  height: 1.86rem;
+  border-bottom: 1px solid #eee;
+}
+/* line 43, ../sass/travel-index.scss */
+.catgory .two-cat .history {
+  height: 1.86rem;
+}
+
+/* line 47, ../sass/travel-index.scss */
+.title {
+  color: #333;
+  font-size: 16px;
+  line-height: 40px;
+  text-indent: 16px;
+  border-left: 5px solid #99db6f;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+/* line 57, ../sass/travel-index.scss */
+.des-list {
+  overflow: hidden;
+}
+/* line 59, ../sass/travel-index.scss */
+.des-list li {
+  color: #333;
+  font-size: 12px;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+  float: left;
+  width: 25%;
+  line-height: 40px;
+  text-align: center;
+}
+
+/* line 71, ../sass/travel-index.scss */
+.ls-index {
+  background-color: #e6e6e6;
+}
+/* line 74, ../sass/travel-index.scss */
+.ls-index li {
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+/* line 78, ../sass/travel-index.scss */
+.ls-index .ls-tags {
+  height: 14px;
+  overflow: hidden;
+}
+/* line 83, ../sass/travel-index.scss */
+.ls-index .ls-price {
+  padding: 9px 0;
+}
+/* line 87, ../sass/travel-index.scss */
+.ls-index .ls-from {
+  height: 12px;
+}
+/* line 89, ../sass/travel-index.scss */
+.ls-index .ls-from span {
+  display: block;
+  color: #999;
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  transform-origin: 0 0;
+}
+/* line 101, ../sass/travel-index.scss */
+.ls-index .ls-origin {
+  color: #999;
+  border: 1px solid #999;
+  background-color: transparent;
+}
+
+/* line 109, ../sass/travel-index.scss */
+.ls-item .ls-tags {
+  margin-top: 9px;
+}
+
+/* line 115, ../sass/travel-index.scss */
+.ls-scenery .ls-pic {
+  width: 100%;
+  height: 4rem;
+}
+/* line 119, ../sass/travel-index.scss */
+.ls-scenery .ls-title {
+  box-sizing: content-box;
+  height: 18px;
+  margin: 10px 10px 10px;
+}
+/* line 124, ../sass/travel-index.scss */
+.ls-scenery .ls-tags {
+  box-sizing: content-box;
+  margin: 10px 10px 10px;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=travel-index.css.map */

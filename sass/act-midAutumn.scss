@@ -1,0 +1,133 @@
+
+body{
+  font:12px/1.2 .36rem;
+  color:#fff;
+}
+header{
+  img{display:block;}
+}
+.ti{
+  text-indent: .5rem;
+}
+.org{
+  color:#FFDB3C;
+}
+.content{
+  background: -webkit-gradient(linear, left top, left bottom, from(#2F2C7D), to(#01518e));
+  background-image: -webkit-linear-gradient(to bottom, #2F2C7D 0%, #01518e 100%);
+  background-image: linear-gradient(to bottom, #2F2C7D 0%, #01518e 100%);
+  margin-top:-1px;
+  padding: 0 .6rem;
+  padding-bottom:1.2rem;
+}
+.title{
+  background: url("../images/act-midAutumn/title1.png") no-repeat scroll 0 0;
+  background-size: auto 100%;
+  width: 4.5rem;
+  padding: .35rem 0;
+  margin: 0 auto;
+  text-align: center;
+  span{
+    color:#FFDD3D;
+    font-weight:bold;
+    display:inline-block;
+    padding:0 .4rem;
+    font-size:.55rem;
+    line-height:.6rem;
+    background:url("../images/act-midAutumn/title2.png") no-repeat scroll right top;
+    background-size:auto 60%;
+  }
+}
+
+.ss{
+  color:#fff;
+  font-size:.35rem;
+  margin-top:.4rem;
+  span:nth-of-type(1){
+    font-weight: bold;
+    display:inline-block;
+    font-size:.4rem;
+    text-indent:.5rem;
+    background:url("../images/act-midAutumn/star.png") no-repeat scroll left 50%;
+    background-size:auto 80%;
+    margin-bottom:.4rem;
+  }
+}
+
+.join {
+  img{
+    display:block;
+    margin:0 auto;
+    margin-top:.6rem;
+  }
+
+  .intro{
+    font-size:.36rem;
+    line-height:.6rem;
+    width:8rem;
+    text-indent:.72rem;
+    padding-left:.2rem;
+    margin:.8rem auto;
+    text-align:justify;
+  }
+}
+
+.setting{
+  padding-top:1.5rem;
+  position:relative;
+  div{
+    padding-left:.5rem;
+    margin-bottom:.4rem;
+  }
+  p{
+    font-size:.36rem;
+    line-height:.5rem;
+  }
+  img{
+    position: absolute;
+    top: .4rem;
+    right: .5rem;
+    width: 30%;
+  }
+}
+
+.mode{
+  margin-top:.8rem;
+  li{
+    padding-left:.5rem;
+    font-size:.36rem;
+    line-height:.5rem;
+    margin-bottom:.2rem;
+  }
+  p{
+    padding-left:.5rem;
+    font-size:.36rem;
+    line-height:.5rem;
+  }
+}
+
+.rule{
+  margin-top:1rem;
+  ul{
+    margin-top:.4rem;
+  }
+  li{
+    padding:0 .2rem;
+    font-size:.36rem;
+    line-height:.5rem;
+    margin-bottom:.5rem;
+    text-align:justify;
+  }
+}
+
+.foot{
+  background:url("../images/act-midAutumn/line.png") no-repeat scroll 0 50%;
+  background-size:18% auto;
+  margin-top:2rem;
+  p{
+    text-align:center;
+    font-size:.36rem;
+    background:url("../images/act-midAutumn/line2.png") no-repeat scroll right 50%;
+    background-size:18% auto;
+  }
+}

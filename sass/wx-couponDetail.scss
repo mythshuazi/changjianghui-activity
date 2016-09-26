@@ -1,0 +1,156 @@
+*{
+  box-sizing:border-box;
+}
+.container{
+  padding:.4rem;
+}
+
+.explain{
+  background-color:#1FC9C0;
+  color:#fff;
+  line-height:.7rem;
+  text-align:center;
+  margin-bottom:.3rem;
+  font-size:.3rem;
+  &:before{
+    content:'.';
+    color: transparent;
+    width:.7rem;
+    height:.7rem;
+    display:inline-block;
+    background:url("../images/wx-coupon/i.png") no-repeat scroll 50% 50%;
+    background-size:60%;
+  }
+}
+
+#nav{
+  background-color:#F9F9F9;
+  border:1px solid #FF4E00;
+  border-radius:5px;
+  border-right: 0;
+  overflow: hidden;
+  margin-bottom:.8rem;
+
+  li{
+    float:left;
+    width:33.3%;
+    text-align:center;
+    line-height:1rem;
+    font-size:.4rem;
+    border-right:1px solid #FF4E00;
+    color:#FF4E00;
+
+    &.active{
+      background-color:#FF4E00;
+      color:#fff;
+    }
+  }
+}
+
+.usable>li,.overdue>li,.used>li{
+  margin-top:.6rem;
+  background:transparent url('../images/wx-coupon/detail-bg.png') no-repeat scroll 0 0;
+  background-size:100% 100%;
+
+  .inner{
+    padding:.4rem;
+    height: 3rem;
+  }
+  .inner>div{
+    float:left;
+  }
+  .price{
+    width:25%;
+    color:#F45655;
+    font-size:.7rem;
+    font-size:.7rem;
+    line-height: 2.2rem;
+    text-align:center;
+    font-weight:bold;
+    position:relative;
+    i{
+      font-size:.5rem;
+      font-weight:normal;
+    }
+
+    p{
+      font-size: 10px;
+      position: absolute;
+      line-height: 12px;
+      bottom: .4rem;
+      width: 100%;
+      color:#666;
+      font-weight:normal;
+    }
+  }
+  .detail{
+    width:75%;
+    padding-left:.8rem;
+
+    h3{
+      color:#323232;
+      font-size:.4rem;
+      margin-bottom:.1rem;
+    }
+
+    ul{
+      list-style: disc;
+      list-style-position: inside;
+      color:#666666;
+
+      li{
+        font-size:.3rem;
+        line-height:.4rem;
+      }
+    }
+
+    p{
+      color:#F45655;
+      font-size:.3rem;
+      line-height:.6rem;
+    }
+  }
+}
+
+.overdue>li{
+  background-image: url('../images/wx-coupon/detail-bg-gray.png');
+  .inner{
+    background:transparent url('../images/wx-coupon/overdue.png') no-repeat scroll 7.2rem .4rem;
+    background-size: 20%;
+  }
+}
+.used>li{
+  background-image: url('../images/wx-coupon/detail-bg-gray.png');
+  .inner{
+    background:transparent url('../images/wx-coupon/used.png') no-repeat scroll 7.2rem .4rem;
+    background-size: 20%;
+  }
+}
+
+.overdue *, .used * {
+  color:#808080 !important;
+}
+
+.feiOil{
+  background:#f44e4e url('../images/wx-coupon/feioil.jpg') no-repeat scroll 0 -0.3rem;
+  background-size:100%;
+  .explain{
+    background-color:#f14b01 !important;
+  }
+  #nav{
+    -webkit-box-shadow: 1px 1px 1px 1px #cccccc;
+    -moz-box-shadow: 1px 1px 1px 1px #cccccc;
+    box-shadow: 1px 1px 1px 1px #cccccc;
+    margin-bottom: 4.2rem;
+  }
+  #nav li{
+    color:#fff;
+    background-color:#e01a19 !important;
+    &.active{
+      background-color:#f44e4e !important;
+    }
+  }
+  .empty p{
+    color:#fff !important;
+  }
+}

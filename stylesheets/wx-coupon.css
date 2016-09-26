@@ -1,0 +1,119 @@
+/* line 1, ../sass/wx-coupon.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 4, ../sass/wx-coupon.scss */
+body {
+  background-color: #F0EDE6;
+}
+
+/* line 8, ../sass/wx-coupon.scss */
+.container {
+  padding: 0 .2rem;
+}
+
+/* line 12, ../sass/wx-coupon.scss */
+h1 {
+  text-align: center;
+  color: #313131;
+  font-size: .5rem;
+  line-height: 2rem;
+}
+
+/* line 19, ../sass/wx-coupon.scss */
+.ticket {
+  margin-bottom: .5rem;
+}
+
+/* line 22, ../sass/wx-coupon.scss */
+.notOil, .oil {
+  position: relative;
+  background-size: 100% 100% !important;
+  padding: 0.4rem;
+  height: 4rem;
+}
+
+/* line 29, ../sass/wx-coupon.scss */
+.notOil .view, .oil .view {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 1.7rem;
+  font-size: .5rem;
+}
+
+/* line 39, ../sass/wx-coupon.scss */
+.notOil {
+  background: transparent url("../images/wx-coupon/notoil.png") no-repeat scroll 0 0;
+}
+/* line 43, ../sass/wx-coupon.scss */
+.notOil .view {
+  color: #FD6A0A;
+}
+
+/* line 49, ../sass/wx-coupon.scss */
+.oil {
+  background: transparent url("../images/wx-coupon/oil.png") no-repeat scroll 0 0;
+}
+/* line 53, ../sass/wx-coupon.scss */
+.oil .view {
+  color: #52C081;
+}
+
+/* line 59, ../sass/wx-coupon.scss */
+.inner {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  align-items: center;
+  height: 2rem;
+}
+/* line 70, ../sass/wx-coupon.scss */
+.inner > * {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  width: 33%;
+  /* For old syntax, otherwise collapses. */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+/* line 79, ../sass/wx-coupon.scss */
+.inner h2 {
+  line-height: 1.2rem;
+  font-size: .6rem;
+  text-align: center;
+  font-weight: normal;
+}
+/* line 85, ../sass/wx-coupon.scss */
+.inner div {
+  height: 1.2rem;
+  font-size: .45rem;
+}
+/* line 89, ../sass/wx-coupon.scss */
+.inner div > * {
+  line-height: .6rem;
+}
+/* line 93, ../sass/wx-coupon.scss */
+.inner div p {
+  color: #FBB53B;
+}
+/* line 97, ../sass/wx-coupon.scss */
+.inner div span {
+  color: #BCBCBC;
+}

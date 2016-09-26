@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>火锅活动</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/activity.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+</head>
+<body class="hg_body">
+    <div class="mainContainer">
+        <div class="mainContent">
+        	<section id="top">
+        		<div class="content">
+                    <img src="images/activity/hg_01.jpg" width="100%">
+                    <img src="images/activity/hg_02.jpg" width="100%">
+                    <img src="images/activity/hg_03.jpg" width="100%">
+                    <img src="images/activity/hg_04.jpg" width="100%">
+                    <img src="images/activity/hg_07.jpg" width="100%">
+                    <img src="images/activity/hg_08.jpg" width="100%">
+                    <img src="images/activity/hg_09.jpg" width="100%">
+        		</div>
+        	</section>
+
+        	<section id="list">
+        		<ul class="portrait huoguo">
+        			<li class="pt_item pt_sellout">
+        				<div class="pt_item_inner">
+        					<div class="pt_above">
+        						<img class="pt_pic scrollLoad" data-url="images/carousel/05.jpg" src="./images/public/default.jpg" width="100%">
+                                <div class="pt_nothing"><i>抢光了</i></div>
+        					</div>
+        					<div class="pt_middle">
+        						<p class="pt_intro">苹果运动手表 Apple Watch 尊贵版</p>
+        						<div class="price_wrap">
+        							<span class="price"><i class="rmb">￥</i>25278</span>
+        							<span class="rate"><i>好评率：</i>95%</span>
+        						</div>
+        					</div>
+        					<div class="pt_bottom">
+        						<span class="addCart">立即购买</span>
+        					</div>
+        					<div class="pt_prefix"></div>
+        				</div>
+        				<div class="bottom"></div>
+        			</li>
+        		</ul>
+        	</section>
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+	//图片滚动加载
+    $('.scrollLoad').scrollLoading();
+
+    /**
+     * [jsCallAppGo2GoodsDetail js 传参给 App，App获取商品id，跳转到对应的商品详情]
+     * @param  {[String]} goodsId [商品 id]
+     * @return {[type]}         [description]
+     */
+    function jsCallAppGo2GoodsDetail( goodsId ){
+        try{
+            window.wst.jsCallAppGo2GoodsDetail(goodsId);
+        }catch(error){
+            console.log(error.message);
+        }
+    }
+
+
+    //交互事件---------------------------------------------------
+    //点击商品，进入对应的商品详情页
+    $(document).on('tap', '.pt_item',function(){
+        var $this = $(this),
+            goodsId = $this.data('id');
+
+        if( $this.hasClass('pt_sellout') ) return;
+
+        jsCallAppGo2GoodsDetail( goodsId );
+    });
+</script>
+</html>

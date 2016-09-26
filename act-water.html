@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>矿泉水</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/act-water.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+</head>
+<body style="height:100%;">
+    <div class="mainContainer" style="height:100%; overflow: scroll;">
+        <div class="mainContent">
+            <section id="top">
+                <div></div>
+                <img src="images/act-water/water_01.jpg" width="100%">
+                <img src="images/act-water/water_02.jpg" width="100%">
+                <img src="images/act-water/water_03.jpg" width="100%">
+                <ul>
+                    <li>
+                        <p>3月22日是一年一度的“世界水日”。长期以来，船友面临“饮水，用水难”的问题，不得不用江水维系日常的生产生活</p>
+                        <p>现在船友饮水方式：</p>
+                    </li>
+                    <li>
+                        <p>一是：采购饮用水。船民每次靠岸采集一定量的饮用水，但采购有限，并不能维持长时间的用水需求；</p>
+                    </li>
+                    <li>
+                        <p>
+                            二是：明矾净水。明矾净水是民间常用的方法，但明矾只有吸附杂质的作用，没有过滤细菌、毒素的作用，并且明矾本身有一定的毒性，长期使用会对身体健康产生危害。
+                        </p>
+                    </li>
+                    <li>
+                        <p>三是：净水器净化。饮水净化器一是价格昂贵，二是对于江水的净化效果难以达到饮用级别。</p>
+                        <p>建议船友尽量通过采购饮用水的方式满足日常用水需求，多喝开水，不饮隔夜水。</p>
+                        <p>长江汇将长期和船友一起关注健康饮水问题，更多活动敬请期待……</p>
+                    </li>
+                </ul>
+        </section>
+            <section id="middle">
+            <div class="act">
+                <p>健康活动一</p>
+                <img src="images/act-water/water_04.png" width="100%">
+            </div>
+            <div class="act">
+                <p>健康活动二</p>
+                <img src="images/act-water/water_05.png" width="100%">
+            </div>
+            <div class="act">
+                <p>健康活动三</p>
+                <img src="images/act-water/water_07.png" width="100%">
+            </div>
+            <div class="rule">
+                <img src="images/act-water/water_6.png">
+                <ul>
+                    <li>1. 所有参与活动的用户，须下载注册成为“长江汇”会员；</li>
+                    <li>2. APP线上下单，每笔满29元订单送怡宝（350ml）一瓶；</li>
+                    <li>3. 怡宝（350ml）赠品以实际库存为主，赠完为止；</li>
+                    <li>4. 刮刮乐刮取桶装水遵循刮刮乐活动规则；</li>
+                    <li>5. 特价购桶装水每船限购5桶，超过5桶可原价20元线下购买；</li>
+                    <li>6. 活动的最终解释权南京长江船服电子商务有限公司所有。</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    </div>
+    <div id="download">
+        下载“长江汇”app，立即抢购哟~ <a>点击下载</a><i class="close"></i>
+    </div>
+</body>
+<script>
+    $(function(){
+        var $download = $('#download');
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            return (ua.match(/MicroMessenger/i) == 'micromessenger');
+        }
+
+        if(isWeiXin()){
+            $download.show();
+            $(document).on('tap','#download .close',function(){
+                $download.hide();
+            });
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,17 @@
+﻿/*商品数量上的增减样式 +口-*/
+@mixin amount($child: span) {
+	&>#{$child} {
+		display: inline-block;
+		font-size: 19.2px;
+		min-width:24px;
+		height:24px;
+		line-height:24px;
+		border:1px solid $boder-color;
+		text-align: center;
+
+		&:nth-of-type(n+2){
+			border-left: 0;
+		}
+	}
+	
+}

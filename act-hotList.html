@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>热门活动</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+<style>
+    body{background-color: #F0EDE6; position: relative;}
+    li{position:relative; overflow: hidden;}
+    img{display:block; margin-bottom:.3rem;box-shadow: #ccc 1px 2px 3px; height:4rem;}
+    .over .mask{
+        position:absolute;
+        top:0;
+        width:100%;
+        bottom:0;
+        background-color:rgba(0,0,0,0.5);
+        text-align:center;
+    }
+    .mark{
+        position: absolute;
+        top: 0.23rem;
+        right: -1.9rem;
+        width: 5rem;
+        font-size: .42rem;
+        line-height: .7rem;
+        background-color: #E8403F;
+        color: #fff;
+        text-align:center;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+   }
+    .over .mark{
+        background-color:#727272;
+    }
+</style>
+</head>
+<body>
+    <div v-cloak id="container">
+        <ul>
+            <li v-for="item in list" :class="{'over': !item.state}"  v-touch:tap="goToMapPage($index)">
+                <img :src="item.listLogo" width="100%">
+                <div v-if="!item.state" class="mark">已结束</div>
+                <div v-else class="mark">{{item.flag | judgeFlag}}</div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script>
+    var initialData = {
+        "code": "0000",
+        "msg": "操作成功。",
+        "data": {
+            "list": [
+                {
+                    "flag":1,
+                    "hotActId": 12,
+                    "state": "0", //0 结束，1在进行
+                    "tip": "谁是跑船帝",
+                    "href": "https://www.baidu1.com/", //活动页面地址
+                    "homeLogo": "http://oss.njcjh.cn/20160510/129b724903ce4533b06755ae2e578d56.png",
+                    "listLogo": "http://oss.njcjh.cn/20160510/edefc6ae645a44afad9166dd59374649.png"
+                },
+                {
+                    "flag":1,
+                    "hotActId": 11,
+                    "state": "1",
+                    "tip": "新手一元领",
+                    "href": "#",
+                    "homeLogo": "http://oss.njcjh.cn/20160510/9d90cda6ffd24dd0a6859c45e4fda875.png",
+                    "listLogo": "http://oss.njcjh.cn/20160510/eede67306c654d36b8a6e132a7f87738.png"
+                },
+                {
+                    "flag":2,
+                    "hotActId": 10,
+                    "state": "1",
+                    "tip": "邀船有礼",
+                    "href": "#",
+                    "homeLogo": "http://oss.njcjh.cn/20160510/17116afaf1844d4dafccfb4212d673e6.png",
+                    "listLogo": "http://oss.njcjh.cn/20160510/72e902a6e46f4065976d462e88b36ed8.png"
+                },
+                {
+                    "flag":1,
+                    "hotActId": 9,
+                    "state": "1",
+                    "tip": "#",
+                    "href": "https://www.baidu4.com/",
+                    "homeLogo": "http://oss.njcjh.cn/20160510/6f746f8441c74f649d3d2dcd0ef6b3cd.png",
+                    "listLogo": "http://oss.njcjh.cn/20160510/e6366c6f8a494efb91f5b53a582eb834.png"
+                }
+            ]
+        }
+    };
+
+    window.addEventListener('load',function(){
+        var vm = new Vue({
+            el: '#container',
+            data:initialData.data,
+            methods:{
+                goToMapPage:function(index){
+                    var the = this.list[index];
+                    if(the.state){
+                        console.log(the.href)
+                        jsCallApp2HotActivityDetailPageHtml(the.hotActId,the.href);
+                    }else{
+                        console.log(the.hotActId,'0')
+                        jsCallApp2HotActivityDetailPageHtml(the.hotActId,'0');
+                    }
+                }
+            },
+            created:function () {
+                for(var i=0; i<this.list.length; i++){
+                    this.list[i].state = Boolean(parseInt(this.list[i].state));
+                }
+            },
+            filters:{
+                judgeFlag: function (flag) {
+                    flag = parseInt(flag);
+
+                    if(flag == 1){
+                        return "HOT";
+                    }
+                    if(flag == 2){
+                        return "NEW";
+                    }
+                }
+            }
+        });
+
+    },false);
+
+    function jsCallApp2HotActivityDetailPageHtml(id, val) {
+        try{
+            window.jsCallApp2HotActivityDetailPage ? window.jsCallApp2HotActivityDetailPage(id, val) : window.wst.jsCallApp2HotActivityDetailPage(id, val);
+        }catch(error){
+            console.log(error);
+        }
+    }
+</script>
+</html>

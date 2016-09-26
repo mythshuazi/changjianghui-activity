@@ -1,0 +1,287 @@
+﻿@import "compass/reset";
+@import "compass/css3";
+@import "compass/typography/lists";
+@import "compass/typography/vertical_rhythm";
+@import "variables";
+@import "mixin";
+
+html {
+	font-size: $root-ele-fs;
+	font-family:$main-ff;
+	line-height: 18px;
+	text-size-adjust:none;
+}
+body {
+	font-size: 12px;
+	-webkit-text-size-adjust:none;
+}
+
+a {
+	text-decoration: none;
+}
+a:link,a:hover,a:active,a:visited{
+	color:#000;
+}
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input{
+	-webkit-appearance:none; 
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	border-radius: none;
+	border-radius: 0;
+}
+
+.mainContainer {
+	box-sizing: border-box;
+}
+
+section>*{
+	position: relative;
+}
+
+h1 {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 20px;
+}
+h2 {
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: bold;
+}
+h3 {
+	font-size: 16px;
+	line-height: 16px;
+	font-weight: bold;
+}
+h4 {
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: bold;
+}
+
+/*字体颜色*/
+.fc-orange{
+	color: $color-orange;
+}
+
+/*背景颜色*/
+.bg-gray, .disabled{
+	background-color: $color-deepgray !important;
+}
+.bg-blue{
+	background-color: $color-blue !important;
+}
+.bg-orange{
+	background-color: $color-orange !important;
+}
+
+
+/*清除浮动*/
+.clear:after{
+	content:" ";
+	display:block;
+	clear:both;
+}
+
+/*评分星级*/
+.star, .star1, .star2, .star3, .star4, .star5{
+	display: inline-block;
+	width: 72px;
+	height: 18px;
+	vertical-align: middle;
+	background-image: url("../images/detail/star.png");
+	background-repeat: no-repeat;
+	background-size: 195% 70%;
+}
+
+.star5{
+	background-position: 0 0;
+}
+.star4{	
+	background-position: (72px / 5 * -1) 0;
+}
+.star3{
+	background-position: (72px / 5 * -2) 0;
+}
+.star2{
+	background-position: (72px / 5 * -3) 0;
+}
+.star1{
+	background-position: (72px / 5 * -4) 0;
+}
+
+/*点击更多箭头*/
+.arrowMore {
+	display:block;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-image: url("../images/public/arrow.png");
+	width: 12px;
+  	height: 16px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+/*纵向排列的列表，左边是图片右边是介绍*/
+.horizontal-list-wrap {
+  .horizontal-list-item {
+    width: 100%;
+    border-bottom: 1px solid $boder-color;
+    @extend .clear;
+
+    .img-wrap{
+      float: left;
+      padding:.8*12px;
+
+      img{
+        display:block;
+        width: 96px;
+        height:96px;
+        border:1px solid $boder-color;
+      }
+    }
+
+    .intro-wrap{
+      padding-top:1.2*12px;
+
+      h3 {
+        height: 5.8*12px;
+      }
+
+      span{
+        color:$color-orange;
+        font-size:1.2*12px;
+        font-weight: bold;
+
+        i {
+          font-weight: normal;
+          font-size:12px;
+        }
+      }
+
+      del {
+        margin-left:12px;
+        color:$color-gray;
+      }
+    }
+  }
+}
+
+/****************活动页面公用样式****************/
+
+/*portrait 布局，一行两个*/
+.portrait {
+    width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+    @extend .clear;
+
+    * {
+    	box-sizing: border-box;
+    }
+
+    .pt_item {
+    	float: left;
+    	width: 50%;
+    	padding:0 5px;
+        margin-bottom: 10px;
+    }
+
+    .pt_item_inner {
+        background-color:#fff;
+        padding: 4px;
+        position: relative;
+    }
+    
+    .pt_nothing {
+        display:none;
+    }
+
+    .pt_sellout {
+        .pt_nothing {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            bottom:0;
+            background-color: rgba(#000,.5);
+            text-align: center;
+
+            i {
+                display: inline-block;
+                color:#fff;
+                font-size:.4rem;
+                line-height:2.2rem;
+                text-align: center;
+                background-color: rgba(#000,.8);
+                width:2.2rem;
+                height:2.2rem;
+                border-radius: 50px;
+            }
+        }
+    }
+
+    .pt_above {
+        position:relative;
+    }
+
+    .pt_middle {
+        margin:5px 0;
+    }
+    .pt_intro { //portrait组合中的文字介绍专用class
+        font-size:12px;
+        line-height:15px;
+        height:30px;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow: hidden;
+        color: #323232;
+    }
+    .pt_pic {   //portrait组合中的展示图片专用class
+        display: block;
+    }
+
+    .pt_prefix {
+        position: absolute;
+    }
+
+}
+
+/*landscape 布局，一行一个*/
+.landscape {
+    width: 100%;
+    box-sizing: border-box;
+    @extend .clear;
+
+    .ls_intro { //landscape 组合中的文字介绍专用class
+		font-size:14px;
+		line-height:16px;
+		height:32px;
+		word-wrap: break-word;
+		word-break: break-all;
+		overflow: hidden;
+		color: #323232;
+    }
+
+    .ls_left {
+    	float: left;
+    	margin-right: 10px;
+    }
+    .ls_right{
+
+    }
+
+    .ls_pic {
+      width: 2.7rem;
+      height: 2.1rem;
+      display: block;
+    }
+}
+
+[v-cloak] {
+  display: none;
+}

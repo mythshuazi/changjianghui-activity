@@ -1,0 +1,35 @@
+﻿%bg {
+	background:#D4D4D4 url("../images/public/default.jpg") no-repeat scroll 50% 50%;
+	background-size:contain;
+}
+
+.jyb {
+	background-color:#E9BC00;
+	
+	li {
+		@extend %bg;
+	}
+
+	img.scrollLoad{
+		display:block;
+		opacity:0;
+		transition:opacity 1s;
+		-webkit-transition:opacity 1s;
+		
+	}
+
+	.above {
+		li {
+			height:3.5rem;
+		}
+	}
+
+	.under {
+		padding: 0 .5rem;
+		padding-bottom:1rem;
+
+		img {
+			margin-top:1rem;
+		}
+	}
+}

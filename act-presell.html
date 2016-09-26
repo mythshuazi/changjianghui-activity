@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>预购惠</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/act-presell.css">
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/act-presell/presell_01.jpg" width="100%">
+        </header>
+        <section class="content">
+            <div class="qa">
+                <p class="question">Q: 啥叫预购？</p>
+                <p class="answer">
+                    A：就是当你需要购买任意商品时，<i>提前（24小时以上）打开APP下单购买</i>，等到船行驶到兴隆州站时，你再气定神闲地下船提货。
+                </p>
+                <p class="question">Q: 啥叫预购惠？</p>
+                <p class="answer">
+                    A: 这种技巧可以让你购买的商品比别人优惠很多哦！
+                </p>
+            </div>
+
+            <div class="item">
+                <h3 class="title">比一比怎样更便宜</h3>
+                <p>提前1天（24小时）以上购买，价格更低</p>
+                <img data-url="images/act-presell/presell_02.jpg" src="images/public/default.jpg" width="74%">
+            </div>
+
+            <div class="item">
+                <h3 class="title">一起来学习省钱技能</h3>
+                <p class="step">1、打开APP—下单购买</p>
+                <p class="intro">我们以超能天然皂粉为例，您在我们的商品分类中选择超能天然皂粉，然后点击“立即购买”</p>
+                <img data-url="images/act-presell/presell_03.jpg" src="images/public/default.jpg" width="74%">
+            </div>
+
+            <div class="item">
+                <p class="step">2、<i>重点</i> 勾选取货时间</p>
+                <p class="intro">进入确认订单页面后，您会看到<i>取货时间</i>（重要的事情说3遍：一定要选择、一定要选择、一定要选择），点击“请选择取货时间”</p>
+                <img data-url="images/act-presell/presell_04.jpg" src="images/public/default.jpg" width="74%">
+            </div>
+
+            <div class="item">
+                <p class="step">3、<i>难点</i> 往后顺延24小时</p>
+                <p class="intro">界面下方将出现时间选择界面：如果此时您下单的时间是2016年8月29日11:30，那么取货时间则需要点击2016年8月30日12:00（或以后）</p>
+                <img data-url="images/act-presell/presell_05.jpg" src="images/public/default.jpg" width="74%">
+            </div>
+
+            <div class="item">
+                <p class="step">4、优惠直降看得见</p>
+                <p class="intro">然后你就会发现之前实付款还是9.67元的皂粉，一下变成了8.6元啦（太神奇了），接下来只需按照常规步骤完成付款即可！</p>
+                <img data-url="images/act-presell/presell_06.jpg" src="images/public/default.jpg" width="74%">
+            </div>
+        </section>
+    </div>
+</body>
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script>
+    $('img').scrollLoading();
+</script>
+</html>

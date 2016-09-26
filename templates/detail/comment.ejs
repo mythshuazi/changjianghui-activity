@@ -1,0 +1,48 @@
+<% console.log('正在渲染 comment 模版')%>
+<div class="enterComment">
+
+    <% if(assessCount==0) { %>
+        <div class="comment-title">评价晒单&nbsp;&nbsp;&nbsp;<span class="noComment" style="color:#8F8F8F;">(暂无评价)</span></div>
+    <% }else{ %>
+        <div class="comment-title">评价晒单 <i class="arrowMore"></i></div>
+        <div class="comment-about">好评率：<i><%= goodPercent %>%</i> <span class="comment-count"><%= assessCount %></span>人已评价</div>
+    <% } %>
+    
+</div>
+
+<!--评价列表-->
+<%if(shineList){%>
+<ul class="comment-list">
+
+    <%for(var i=0; i<shineList.length; i++){ var item=shineList[i]%>
+    <li class="bd-btm-gray">
+        <div class="comment-info">
+            <span class="user"><%= item.phoneNo %></span><span class="date"><%= item.shineTime%></span><span class="star star<%=item.assessStars%>"></span>
+        </div>
+        <div class="comment-content">
+            <div class="user_reply">
+                <p class="ellipsis">
+                    <%= item.assessMemo%>
+                </p>   
+            </div>
+            <div>
+                <% if(item.pics){ %>
+                    <% for(var j=0; j<item.pics.length; j++){ %>
+                        <img src="<%=item.pics[j]%>" height="60" width="80" alt="" onerror="this.src='images/public/default.jpg'"/>
+                    <% } %>
+                <% } %>
+            </div>
+            <% if(item.replyState){ %>
+                <div class="reply">
+                    <p class="buy_attr">购买规格：<%=item.attrName%></p>
+                    <p class="buy_time">购买时间：<%=item.buyTime%></p>
+                    <p class="seller_reply">【客服回复】<%=item.replyMemo%> </p>
+                </div>
+            <% } %>
+        </div>
+    </li>
+    <% } %>
+
+</ul>
+<%}%>
+<!--评价列表-->

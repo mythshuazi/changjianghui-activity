@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>主要看气质</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<!-- <link rel="stylesheet" href="stylesheets/activity.css"> -->
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<style>
+	img{display:block;height:2.9rem;}
+</style>
+</head>
+<body class="half_body">
+    <div class="mainContainer">
+        <div class="mainContent">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_01.jpg" width="100%" onerror="this.src=''">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_02.jpg" width="100%" onerror="this.src=''">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_03.jpg" width="100%" onerror="this.src=''">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_04.jpg" width="100%" onerror="this.src=''">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_05.jpg" width="100%" onerror="this.src=''">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_06.jpg" width="100%" onerror="this.src=''">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_07.jpg" width="100%" onerror="this.src=''">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_08.jpg" width="100%" onerror="this.src=''">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_09.jpg" width="100%" onerror="this.src=''">
+			<img class="scrollLoad" data-url="images/kanqizhi/kanqizhi_10.jpg" width="100%" onerror="this.src=''">
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    //图片滚动加载
+    $('.scrollLoad').scrollLoading();
+
+</script>
+</html>

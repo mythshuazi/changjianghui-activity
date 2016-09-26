@@ -1,0 +1,105 @@
+/* line 1, ../sass/act-winlist.scss */
+body {
+  font: 12px/1.2, "Microsoft YaHei";
+  color: #808080;
+  background-color: #F5F5F5;
+}
+
+/* line 8, ../sass/act-winlist.scss */
+header img {
+  display: block;
+  width: 100%;
+}
+
+/* line 16, ../sass/act-winlist.scss */
+.title {
+  text-align: center;
+  width: 100%;
+  font-size: .5rem;
+  color: #323232;
+  margin-top: .5rem;
+  line-height: .7rem;
+}
+/* line 24, ../sass/act-winlist.scss */
+.title li {
+  display: table-cell;
+  text-align: center;
+}
+
+/* line 30, ../sass/act-winlist.scss */
+.note {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: .6rem;
+  margin-bottom: .2rem;
+}
+
+/* line 38, ../sass/act-winlist.scss */
+.wrap {
+  margin: 0 .2rem;
+}
+
+/* line 41, ../sass/act-winlist.scss */
+table {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+/* line 45, ../sass/act-winlist.scss */
+table tr {
+  width: 100%;
+}
+/* line 48, ../sass/act-winlist.scss */
+table thead {
+  background-color: #F61D4A;
+  color: #fff;
+  border: 1px solid #F61D4A;
+}
+/* line 52, ../sass/act-winlist.scss */
+table thead td {
+  font-size: .4rem;
+}
+/* line 56, ../sass/act-winlist.scss */
+table td {
+  text-align: center;
+  font-size: .35rem;
+  line-height: .8rem;
+  height: .8rem;
+}
+/* line 62, ../sass/act-winlist.scss */
+table td:nth-of-type(1) {
+  width: 28%;
+}
+/* line 65, ../sass/act-winlist.scss */
+table td:nth-of-type(2) {
+  width: 30%;
+}
+/* line 68, ../sass/act-winlist.scss */
+table tbody td {
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6;
+}
+
+/* line 75, ../sass/act-winlist.scss */
+.swiper-container {
+  padding-bottom: 1rem;
+  margin-bottom: .5rem !important;
+}
+
+/* line 81, ../sass/act-winlist.scss */
+.swiper-pagination {
+  -webkit-transition: 0ms;
+  -moz-transition: 0ms;
+  -ms-transition: 0ms;
+  -o-transition: 0ms;
+  transition: 0ms;
+}
+
+/* line 89, ../sass/act-winlist.scss */
+.swiper-pagination-current {
+  color: #fb1010;
+}
+
+/*# sourceMappingURL=act-winlist.css.map */

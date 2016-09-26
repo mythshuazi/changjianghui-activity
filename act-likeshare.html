@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>爱分享抢礼券</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+<style>
+    body{background-color:#7BC0A9;}
+    img{display:block;}
+    header{position:relative;}
+    header p{position:absolute;bottom:.5rem;width:100%;color:#FFF45C; font-size:.45rem; font-weight:bold; text-align:center; text-indent:1rem;}
+    section{padding-bottom:1rem;}
+    .actIntro{background-color:#F54842; margin:0 .93rem; padding:.2rem .4rem .8rem .4rem; border-bottom-right-radius: .4rem;border-bottom-left-radius: .4rem;}
+    .actIntro .item{background-color:#FED400; color:#5B0000; border-radius:.3rem;  margin-top:.6rem; padding:.4rem .4rem .4rem .7rem;}
+    .item p{font-size:.4rem; line-height:.5rem;margin-top:.1rem;position:relative;text-align:justify;}
+    h3{font-size:.5rem;line-height:.6rem;position:relative;font-weight:bold;}
+    h3:before,h3:after,.item p:before,.item p:after{content:''; display:block; position:absolute;height:4px;width:4px;border-radius:4px;background-color:#5B0000;top:-0.1rem;left:-0.35rem;}
+    h3:after{left:initial;top:-0.1rem;right:-0.1rem;}
+    .item p:before{top:initial; bottom:-0.1rem;}
+    .item p:after{top:initial; left:initial; bottom:-0.1rem; right:-0.1rem;}
+
+    .content{font-size:.35rem;color:#d6f2e4; width:9rem;margin:0 auto;margin-top:.8rem;padding-top: .2rem;background-color:#4D9A80; border-radius:.2rem;}
+    h4{color:#fed400; text-align:center; font-size:.5rem; line-height:1rem;}
+    .steps{padding:0 .2rem .4rem .2rem;color:#d6f2e4;  box-sizing: border-box;display:table;width:100%; }
+    .steps>div{display:table-cell; text-align:center; vertical-align: middle;}
+    .steps .first,.steps .middle{background:url('images/act-likeshare/arrow.jpg') no-repeat scroll right 50%; background-size: 22%;}
+    .rule ul{padding:.2rem .4rem}
+    li{margin-bottom:.3rem; text-align:justify;}
+    i{color:#fed400;}
+</style>
+</head>
+<script>
+    window.onerror = function(err) {
+        log('window.onerror: ' + err)
+    }
+
+    function connectWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge)
+        } else {
+            document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                callback(WebViewJavascriptBridge)
+            }, false)
+        }
+    }
+
+    connectWebViewJavascriptBridge(function(bridge) {
+        var uniqueId = 1
+        function log(message, data) {
+            var log = document.getElementById('log')
+            var el = document.createElement('div')
+            el.className = 'logLine'
+            el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+            if (log.children.length) {
+                log.insertBefore(el, log.children[0])
+            } else {
+                log.appendChild(el)
+            }
+        }
+        bridge.init(function(message, responseCallback) {// Objc Send 回调
+            log('JS got a message', message)
+            var data = {
+                'Javascript Responds' : 'Wee!'
+            }
+            log('JS responding with', data)
+            responseCallback(data)// 响应 Objc
+        })
+    })
+</script>
+<body>
+    <div class="main">
+        <header>
+            <img src="images/act-likeshare/top01.jpg" width="100%">
+            <img src="images/act-likeshare/top02.jpg" width="100%">
+            <p>2016.07.01 ~ 07.31</p>
+        </header>
+        <section>
+            <div class="actIntro">
+                <div class="one item">
+                    <h3>活动一</h3>
+                    <p>加油满1吨即送1份吨油券礼包（含10张随机面值的吨油券）；</p>
+                </div>
+                <div class="two item">
+                    <h3>活动二</h3>
+                    <p>购买非油品达指定金额，可获得1份非油券礼包（含10张随机面值的非油券）。</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <h4>操作流程</h4>
+                <div class="steps">
+                    <div style="width:30%;text-align: left;" class="first">
+                        <p>使用长江汇</p>
+                        <p style="text-indent:.2rem;;">APP购买</p>
+                        <p>油品/非油品</p>
+                    </div>
+                    <div style="width:35%;text-indent: -0.6rem;" class="middle">
+                        <p>到体验店完成</p>
+                        <p>加油/提货</p>
+                    </div>
+                    <div style="width:35%">
+                        <p>将礼券分享到</p>
+                        <p>朋友圈／好友群等</p>
+                        <p>（自己也可领取哦！）</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content rule">
+                <h4>注意事项</h4>
+                <ul>
+                    <li>1、爱分享抢吨油券礼包活动限现款加油客户参加。</li>
+                    <li>2、每次靠泊最多获得一次分享机会，吨油券礼包<i>同一船只限领取一张</i>，请填写真实船号，否则无法使用。</li>
+                    <li>
+                        3、所赠吨油券每次靠泊加油时按券的面值与所加油量（精确到0.1吨）进行优惠（如使用30元吨油券加5.5吨油，则共可优惠30元*5.5吨=165元），可与邀船有礼、秒杀活动获得的吨油券累加使用。
+                    </li>
+                    <li>4、本活动所获得的非油券均为满减券，购物需达到指定金额才可使用，不可累加使用，不可与其他优惠同时使用。</li>
+                    <li>5、以上活动最终解释权归长江汇所有。</li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+</body>
+<script>
+    //告诉app分享内容
+    function jsCallAppTellHuoDongContent(text) {
+        try {
+            if (/ipad|iphone|mac/i.test(navigator.userAgent)) { //iOS
+                connectWebViewJavascriptBridge(function(bridge) {
+                    function log(message, data) {
+                        var log = document.getElementById('log');
+                        var el = document.createElement('div');
+                        el.className = 'logLine';
+                        el.innerHTML = '[Objc Response] ' + message + ':<br/>' + JSON.stringify(data);
+                        if (log.children.length) {
+                            log.insertBefore(el, log.children[0]);
+                        } else {
+                            log.appendChild(el);
+                        }
+                    }
+                    bridge.callHandler('jsCallAppTellHuoDongContent', text, function(responseData) {
+                        log('JS got response', responseData);
+                    });
+                });
+            } else if (/android/i.test(navigator.userAgent)) { // Android
+                window.wst.jsCallAppTellHuoDongContent(text);
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    var share_title = "爱分享抢礼券，两种活动华丽登场！";
+    var share_memo = "买油和非油都可以获得10张礼券，券可以直接抵扣现金，速来参加！";
+    //告诉app活动分享信息
+    jsCallAppTellHuoDongContent('{"title":"'+share_title+'","content":"'+share_memo+'"}');
+</script>
+</html>

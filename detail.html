@@ -1,0 +1,630 @@
+﻿<!DOCTYPE html>
+<html style="height:100%; font-size:12px;">
+<head>
+<script>
+    //进入页面时记录当前时间，以便计算加载文档所花时长
+    var loadStartTime = new Date().getTime();
+</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>商品详情</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/detail.css">
+<link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/iscroll.js"></script>
+<script src="javascripts/plugin/swiper.3.1.2.jquery.min.js"></script>
+<script src="javascripts/plugin/ejs_production.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<style>
+    .mainContent>*, #detail>*{
+        transform:translate3d(0,0,0);
+        -webkit-transform:translate3d(0,0,0);
+    }
+    #topBar {
+        border-bottom: 0;
+
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        height: .8rem;
+        line-height: .8rem;
+        padding: .3rem 0;
+        font-size: .3rem !important;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        background-image: url("../image/womens/icon.png");
+        background-position: 2% 50%;
+        background-repeat: no-repeat;
+        background-size: .8rem;
+        text-indent: 1.2rem;
+        text-align: inherit;
+    }
+    #topBar a {
+        display: inline-block;
+        text-indent: 0 !important;
+        text-align: center;
+        background-color: #ff4e00;
+        width: 1.6rem;
+        border-radius: .1rem;
+        margin-left: .2rem;
+        padding: 0 1px;
+        color: #fff;
+    }
+    #topBar i.close {
+        width: .6rem;
+        height: .6rem;
+        position: absolute;
+        top: 0.3rem;
+        right: .2rem;
+        background: transparent url("../image/womens/close.png") no-repeat scroll 0 0;
+        background-size: 100%;
+    }
+</style>
+</head>
+<body style="height:100%; font-size:12px; line-height:1.2; overflow:hidden;">
+    <div id="topBar">下载“长江汇”app，立即抢购哟~ <a>点击下载</a><i class="close"></i></div>
+    <div class="mainContainer" style="height:100%; overflow: hidden;">
+        <div id="wrap" style="height:200%; overflow:hidden;">
+            <div id="up" style="height:50%; overflow:hidden;">
+                <div class="mainContent" style="padding-bottom:10px;">
+                    <!--carousel 幻灯片 start-->
+                    <section id="goodsInfo">
+                    </section>          
+
+                    <section id="goods-price" class="bd-btm-gray">
+                    </section>
+
+                    <section id="goods-choose" class="bd-btm-gray">
+
+                    </section>
+
+                    <section id="notice" class="bd-btm-gray">
+                    </section>
+
+                    <section id="comment">
+                    </section>
+
+                    <div id="pull-notice" class="bd-btm-gray"><i class="up"></i><span>上拉查看图文详情</span></div>
+                </div>        
+                <!--mainContent 放置页面主要内容 over-->
+            </div>
+            <div id="down" style="height:50%; overflow:hidden;">
+                <section id="detail">
+
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="sideBar">
+    </div>
+
+</body>
+<script src="javascripts/public/util.js"></script>
+<script src="javascripts/detail/countZero.js"></script>
+<script>
+
+//预先加载的假数据不能删除
+var fakeData = {
+    "code": "0000",
+    "msg": "succeed",
+    "data": {
+        "smtType": 2,
+        "goodsCode": "121212",
+        "goodsId":"-1",
+        "picList": [
+            {
+                "bigPic": "images/public/default.jpg",
+                "tip": "1"
+            },
+            {
+                "bigPic": "images/public/default.jpg",
+                "tip": "1"
+            },
+            {
+                "bigPic": "images/public/default.jpg",
+                "tip": "1"
+            }
+        ],
+        //商家承若
+        "promise": "",
+        "goodsType": 0,
+        "saleType": 0,
+        "state": 1,
+        "goodsName": " ",
+        "ads": " ",
+        //营销案类型  0=首单 1=折扣 2=满赠 3=满减 4=抢购
+        "caseType": 0,
+        "priceList": [
+            {
+                "levelMin":" ",
+                "levelMax":" ",
+                "groupPrice":" "
+            },
+            {
+                "levelMin": " ",
+                "levelMax": " ",
+                "groupPrice": " "
+            },
+            {
+                "levelMin": " ",
+                "levelMax": " ",
+                "groupPrice": " "
+            },
+            {
+                "levelMin": " ",
+                "levelMax": " ",
+                "groupPrice": " "
+            }
+        ],
+        "stocks": "1",
+        "isBack": " ",
+        "backMax": " ",
+        "score": "",
+        //优惠类型
+        "smtList": [
+        ],
+        "attrList": [
+        ],
+        "attrIds": null,
+        "goodsDetail": " ",
+        "assessCount": " ",
+        "goodPercent": " ",
+        "isFavor": 0,
+        "cartNums": "",
+        "innNum": "",
+        "highLimit":"",
+        "shineList": [
+        ]
+    }
+};
+var fakeData1={
+    "code": "0000",
+    "msg": "操作成功。",
+    "data": {
+        "goodsCode": "0068342517874688",
+        "goodsId": "2145",
+        "picList": [
+            {
+                "bigPic": "http://oss.njcjh.cn/20160429/0845e1003aeb435a861d91f562e1107b.jpg",
+                "tip": null
+            }
+        ],
+        "goodsType": 0,
+        "siteId": "2",
+        "saleType": 0,
+        "state": 1,
+        "goodsName": "20元油品抵用券（秒杀活动专用）",
+        "ads": "",
+        "priceList": [
+            {
+                "levelMin": "0",
+                "levelMax": "2",
+                "groupPrice": "1.00"
+            },
+            {
+                "levelMin": "2",
+                "levelMax": "999999999",
+                "groupPrice": "1.00"
+            }
+        ],
+        "stocks": "0.0",
+        "isBack": 0,
+        "backMax": 0,
+        "promise": "不可退",
+        "score": 0,
+        "smtCaseId": "7",
+        "smtType": 5,
+        "caseType": "3",
+        "caseTip": null,
+        "caseName": null,
+        "smtList": [
+            {
+                "smtTip": "5.4秒杀活动",
+                "smtName": "5.4秒杀活动"
+            }
+        ],
+        "attrList": [
+            {
+                "attrTip": "规格",
+                "cartAttrList": [
+                    {
+                        "cartAttrid": "69",
+                        "selfAttr": "默认",
+                        "isDefault": 1
+                    }
+                ]
+            }
+        ],
+        "goodsDetail": null,
+        "assessCount": "0",
+        "goodPercent": "100",
+        "isFavor": 0,
+        "cartNums": "",
+        "isStartTimeGo": "0",
+        "isInstoreAlarm": "0",
+        "referPrice": "20.00",
+        "limitUp": "1",
+        "currentTime": "1462330685",
+        "rushBeginTime": "1462327200",
+        "rushEndTime": "1462377599",
+        "highLimit": null,
+        "highTips": null,
+        "innNum": "",
+        "lowPrice": null,
+        "highPrice": null,
+        "isSetRushAlram": "0",
+        "shineList": null
+    }
+};
+
+var renderCount = 0,     //记录渲染次数（即appCallJsGetGoodsDetail运行次数），每render 1次或update 1次，加1
+    globalStocks= -1,    //用于记录当前商品的库存数，appCallJsGetGoodsDetail运行后会赋值在此
+    limitUp     = -1,
+    goodsId     = -1,    //用于记录当前商品的 id，   appCallJsGetGoodsDetail运行后会赋值在此
+    goodsCode   = -1,    //用于记录当前商品的 编号， appCallJsGetGoodsDetail运行后会赋值在此
+    quantity    = -1,    //用于记录当前购买的数量，点击+ -数量变化后，会赋值在此
+    changeIsCompleted = false,  //当 appCallJsGetGoodsDetail 调用完毕后，会将此值变更为true，代表 stocks、goodsId、页面更新完毕
+    xianchangmai= -1,
+    pullup      = $('#pull-notice'), //上拉加载元素
+    canLoad     = true,     //当加载过图文详情，置为false
+    guessList,          //猜你喜欢轮播图 swiper 实例
+    myScroll,           //页面滚动实例
+    lastCount,          //切换商品规格之前上次的购买数量
+    smtType;            //类型：5=秒杀
+
+
+
+//首先加载假数据
+appCallJsGetGoodsDetail(fakeData1,0);
+
+/**
+ * [App 传参给 Js ，传递给 Js 商品详情 Json]
+ * @param  {[json]} arg [渲染页面需要的json数据]
+ * @param  {[int]}  live [是否是现场买（主要应用于扫码，但每次都会传）]
+ * @return {[type]}     [description]
+ */
+function appCallJsGetGoodsDetail(arg, live){
+    //档第二次加载，app调用此方法，在记录开始加载时的时间
+    if(renderCount>=1){
+        loadStartTime = new Date().getTime();
+    }
+
+    //处理商品不存在
+    if(arg.code != '0000'){
+        $('#carousel img').attr('src','images/public/default.jpg').data('src', 'images/public/default.jpg');
+        $('#carousel').append('<i class="sellout">不存在</i>');
+        $('.aboutPurchase').html('<li class="disabled">商品不存在</li>');
+        $('.goods-title .prefix').text('商品不存在');
+        $('.sellout').text('不存在');
+        $('#choosed .option').remove();
+        $('.goodsOptions dd span.active').each(function(index, el) {
+            var text = $(this).text();
+            $('<span class="option">'+text+'</span>').insertBefore('i.goods-options');
+        });
+        $('.comment-title').html('<div class="comment-title">评价晒单&nbsp;&nbsp;&nbsp;<span class="noComment" style="color:#8F8F8F;">(暂无评价)</span></div>');
+        $('.comment-list').children().remove();
+        $('.comment-about').remove();
+        $('#sideBar .count').text('0');
+        $('#choosed .count').remove();
+        globalStocks = 0;
+
+        myScroll.refreshIscrollIns();
+
+        return;
+    }
+
+    changeIsCompleted = false;      /*此方法运行初时，将changeIsCompleted 置为 false，代表即将更新 stocks、goodsId、页面*/
+    renderCount = renderCount + 1;  //每调用一次此函数，渲染次数增加
+
+    var data  = arg.data;
+
+    globalStocks = parseInt(data.stocks);   //赋值当前商品库存
+    limitUp      = parseInt(data.limitUp);  //限购
+    smtType      = data.smtType;
+    goodsId      = data.goodsId;            //赋值当前商品 id
+    goodsCode    = data.goodsCode;          //赋值当前商品 goodsCode
+    xianchangmai = live;                    //现场买
+
+    //秒杀只能购买一件
+    if(data.smtType == 5) limitUp = 1;
+    if(data.smtType == 5){
+        if(parseInt(data.currentTime) < parseInt(data.rushBeginTime)){ //未开始
+            data.miaosha_class = '';
+            data.miaosha_title = '该商品即将参加长江汇秒杀';
+            data.miaosha_tip   = '距活动开始倒计时';
+        }
+
+        if(parseInt(data.currentTime)>parseInt(data.rushBeginTime) && parseInt(data.currentTime)<parseInt(data.rushEndTime)){ //活动进行
+            data.miaosha_class = 'ing';
+            data.miaosha_title = '该商品正在参加长江汇秒杀';
+            data.miaosha_tip   = '距活动结束倒计时';
+        }
+
+        if(parseInt(data.currentTime)>parseInt(data.rushEndTime)){
+            data.miaosha_class = 'ing';
+            data.miaosha_title = '该商品的长江汇秒杀活动已结束';
+            data.miaosha_tip   = '秒杀活动已结束';
+        }
+    }
+
+    //上次+-的购物数量存在
+    if( lastCount ){
+        data.count = (function(){
+            if( limitUp ){
+                return lastCount > limitUp ? limitUp : lastCount;
+            }else{
+                return lastCount > globalStocks ? globalStocks : lastCount;
+            }
+        })();
+    }else{
+        data.count = globalStocks>0 ? 1 : 0;
+    }
+
+    /*第一次render，第二次即以上update*/
+    if(renderCount > 1){
+        new EJS({url: './templates/detail/sideBar.ejs'}).update("sideBar",data);
+        new EJS({url: './templates/detail/promise.ejs'}).update("notice",data);
+        new EJS({url: './templates/detail/goodsInfo.ejs'}).update("goodsInfo",data);
+        new EJS({url: './templates/detail/goodsPrice.ejs'}).update("goods-price",data);
+        new EJS({url: './templates/detail/comment.ejs'}).update("comment",data);
+        new EJS({url: './templates/detail/choosed.ejs'}).update("goods-choose",data);
+
+        //倒计时
+        if(data.currentTime && data.rushBeginTime && data.rushEndTime && data.currentTime.length>0 && data.rushBeginTime.length>0 && data.rushEndTime.length>0){
+            startCount(data.currentTime, data.rushBeginTime, data.rushEndTime);
+        }
+
+        //清空 图文详情内容
+        $("#detail img").off('click');
+        $('#detail').empty();
+
+        //详情页，顶部轮播图片，重新实例化
+        instanceCarousel();
+        myScroll.refreshIscrollIns();
+        myScroll.upIscroll.scrollTo(0,0);
+
+    }else{
+        var promise     = new EJS({url:'./templates/detail/promise.ejs'}).render(data),
+            goodsInfo   = new EJS({url: './templates/detail/goodsInfo.ejs'}).render(data),
+            goodsPrice  = new EJS({url: './templates/detail/goodsPrice.ejs'}).render(data),
+            comment     = new EJS({url: './templates/detail/comment.ejs'}).render(data),
+            sideBarHtml = new EJS({url: './templates/detail/sideBar.ejs'}).render(data),
+            choosed     = new EJS({url: './templates/detail/choosed.ejs'}).render(data);
+
+        $(promise).appendTo('#notice');          //承诺
+        $(choosed).appendTo('#goods-choose');    //已选
+        $(sideBarHtml).appendTo('div#sideBar');  //选择列表
+        $(goodsInfo).appendTo('#goodsInfo');     //轮播图片与标题
+        $(goodsPrice).appendTo('#goods-price');  //阶梯价 与 手机价
+        $(comment).appendTo('#comment');         //评论
+
+        //倒计时
+        if(data.currentTime && data.rushBeginTime && data.rushEndTime && data.currentTime.length>0 && data.rushBeginTime.length>0 && data.rushEndTime.length>0){
+            startCount(data.currentTime, data.rushBeginTime, data.rushEndTime);
+        }
+    }
+
+    //更新显示已选择的数量
+    updateChoosedCount();
+
+    //评论列表限时和隐藏
+    ellipsis();
+
+    changeIsCompleted = true;       /*此方法运行结束时，将changeIsCompleted 置为 false，代表即将更新 stocks、goodsId、页面渲染完毕*/
+}
+
+
+
+
+/**
+ * [app 传参给 Js，传递当前商品库存{"data":{"state":"1","stock":"0.0"},"msg":"succeed","code":"0000"} ]
+ * @param {json} 类似于{"data":{"state":"1","stock":"0.0"},"msg":"succeed","code":"0000"}
+ * @return {[type]} [stocks]
+ */
+function appCallJsGetStocks(arg){
+    //更新库存
+    globalStocks = parseInt(arg.data.stock);
+
+    //可以购买的实际数量
+    var canBuyNums   = (limitUp && limitUp>0 && limitUp<globalStocks) ? limitUp : globalStocks;
+    canBuyNums = parseInt(canBuyNums);
+
+    //实际购买数量
+    var purchaseNums = parseInt($('.amount .count').val());
+
+    if(purchaseNums>canBuyNums){
+        $('.amount .count')[0].value = canBuyNums;
+    }
+
+    if(purchaseNums<1){
+        $('.amount .count')[0].value = 1;
+    }
+
+    updateChoosedCount();
+     
+}
+
+
+
+    //appCallJsGetImgDetail(fake);
+
+/**
+ * [app 传参给 Js，传递图文详情 Json]
+ * @return {[type]} [description]
+ */
+function appCallJsGetImgDetail(arg){
+    var tuwen = $("#detail");
+
+    if(!arg.data) return;
+
+    //插入图文详情元素
+    tuwen.append(arg.data);
+
+    //防止图文内容宽于页面
+    $("#detail *").css({
+        width: '100%'
+    });
+
+    $("#detail img").each(function() {
+        $(this).on('load',function(){
+           myScroll.refreshIscrollIns();  //刷新 iScroll 实例 ，获取改变后的高度
+        });
+
+        $(this).on('error',function(){
+            $(this).css({
+                'backgroundImage':'url("images/public/default.jpg")',
+                'backgroundColor':'#D4D4D4',
+                'backgroundSize' : 'contain',
+                'height': '7.5rem'
+            }).attr('src',' ');
+           myScroll.refreshIscrollIns();  //刷新 iScroll 实例 ，获取改变后的高度
+        });
+
+        $(this).on('abort',function(){
+            $(this).css({
+                'backgroundImage':'url("images/public/default.jpg")',
+                'backgroundColor':'#D4D4D4',
+                'backgroundSize' : 'contain',
+                'height': '7.5rem'
+            }).attr('src',' ');
+           myScroll.refreshIscrollIns();  //刷新 iScroll 实例 ，获取改变后的高度
+        });
+    });
+
+    $('<div id="end">— 已经到底了 —</div>').appendTo(tuwen);
+    myScroll.refreshIscrollIns();  //刷新 iScroll 实例 ，获取改变后的高度
+}
+
+
+//appCallJsTellCaiNiXiHuan(fakeguess)
+/**
+ * [appCallJsTellCaiNiXiHuan app 给 js传递“猜你喜欢”的数据]
+ * @param  {[String]} arg [猜你喜欢数据]
+ * @return {[type]}     [description]
+ */
+function appCallJsTellCaiNiXiHuan(fakeguess){
+    var data = fakeguess;
+
+    //如果猜你喜欢轮播实例存在，则更新
+    if(guessList){
+        guessList.destroy(false);
+        new EJS({url: 'templates/detail/guessyoulike.ejs'}).update("guess-list",data);
+
+    }else{
+        var guessHtml = new EJS({url:'templates/detail/guessyoulike.ejs'}).render(data);
+        $(guessHtml).appendTo('#guess-list');
+    }
+    
+
+    //猜你喜欢轮播图
+    guessList = new Swiper('#guess-list',{
+        freeMode : true,
+        slidesPerView : 3,
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true,
+        preventLinksPropagation : true/*,
+        spaceBetween:3*/
+    });
+
+    //插入猜你喜欢dom后刷新 iSroll 实例 
+    if(myScroll){
+        myScroll.refreshIscrollIns();
+    }else{
+        var myScrollTimer = setInterval(function(){
+            if(myScroll){
+                myScroll.refreshIscrollIns();
+                clearInterval(myScrollTimer);
+            }
+        }, 100)
+    }
+}
+
+
+/**
+ * [appCallJsBackClick Adroid 点击返回键收起侧边栏]
+ * @return {[type]} [description]
+ */
+function appCallJsBackClick(){
+    var sideBar = $('#sideBar');
+
+    jsCallAppSideBarIsShow(0);
+
+    sideBar.removeClass('show');
+    //myScroll.refreshIscrollIns();
+    setTimeout(function(){
+        sideBar.hide();
+    },650);
+}
+
+/*****************************jsCallApp***************************/
+
+/****************************public function*************************************/
+/**
+ * 更新显示已选择的数量
+ */
+function updateChoosedCount(){
+    var count = parseInt($('.amount .count').val()), //sidebar已选择的购买数
+        choosed = $('#choosed');    //choosed 下的
+
+    //将上次点击+-后的购物数量赋值给 lastCount
+    lastCount = count;
+
+    if(count > 0 ){
+
+        if(choosed.find('span.count').length <= 0){
+            $('<span class="count">'+count+'件</span>').appendTo('#choosed');
+        }else{
+            choosed.find('span.count').html(count+'件');
+        }
+
+    }else{
+        choosed.find('span.count').remove();
+    }
+
+    //更新抢购的还剩多少件
+    $('.residue i').html(globalStocks);
+}
+
+/**
+ * [ellipsis 评论超过两行，末尾添加省略号]
+ * @return {[type]} [description]
+ */
+function ellipsis(){
+    $(".user_reply").each(function(i){
+        var divH = $(this).height();
+        var $p   = $("p.ellipsis", $(this)),
+            $all = $("p.all", $(this));
+
+        if($p.height() > divH){
+            $(this).addClass('fold');
+            $('<p class="all" style="display:none;">'+ $p.html() +'</p>').insertAfter($p);
+            $('<i class="unfold"></i>').appendTo($(this))
+        }
+
+        while ($p.height() > divH) {
+            $p.text($p.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));
+        }
+    });
+}
+
+</script>
+<script src="javascripts/detail/detail.js"></script>
+</html>

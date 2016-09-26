@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+<html style="height:100%; font-size:12px;">
+<head>
+<script>
+    //进入页面时记录当前时间，以便计算加载文档所花时长
+    var loadStartTime = new Date().getTime();
+</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>商品详情</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/detail.css">
+<link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/iscroll.js"></script>
+<script src="javascripts/plugin/swiper.3.1.2.jquery.min.js"></script>
+<script src="javascripts/plugin/ejs_production.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<style>
+    .mainContent>*, #detail>*{
+        transform:translate3d(0,0,0);
+        -webkit-transform:translate3d(0,0,0);
+    }
+</style>
+</head>
+<body style="height:100%; font-size:12px; line-height:1.2; overflow:hidden;">
+    <!--<div id="topBar">下载“长江汇”app，立即抢购哟~ <a>点击下载</a><i class="close"></i></div>-->
+    <div class="mainContainer" style="height:100%; overflow: hidden;">
+        <div id="wrap" style="height:200%; overflow:hidden;">
+            <div id="up" style="height:50%; overflow:hidden;">
+                <div class="mainContent" style="padding-bottom:10px;">
+                    <!--carousel 幻灯片 start-->
+                    <section id="goodsInfo">
+                    </section>          
+
+                    <section id="goods-price" class="bd-btm-gray">
+                    </section>
+
+                    <section id="goods-choose" class="bd-btm-gray">
+
+                    </section>
+
+                    <section id="notice" class="bd-btm-gray">
+                    </section>
+
+                    <section id="comment">
+                    </section>
+
+                    <div id="pull-notice" class="bd-btm-gray"><i class="up"></i><span>上拉查看图文详情</span></div>
+                </div>        
+                <!--mainContent 放置页面主要内容 over-->
+            </div>
+            <div id="down" style="height:50%; overflow:hidden;">
+                <section id="detail">
+
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="sideBar">
+    </div>
+
+</body>
+<script src="javascripts/public/util.js"></script>
+<script src="javascripts/detail/countZero.js"></script>
+<script>
+
+//预先加载的假数据不能删除
+var fakeData = {
+    "code": "0000",
+    "msg": "succeed",
+    "data": {
+        "smtType": 2,
+        "goodsCode": "121212",
+        "goodsId":"-1",
+        "picList": [
+            {
+                "bigPic": "images/public/default.jpg",
+                "tip": "1"
+            },
+            {
+                "bigPic": "images/public/default.jpg",
+                "tip": "1"
+            },
+            {
+                "bigPic": "images/public/default.jpg",
+                "tip": "1"
+            }
+        ],
+        //商家承若
+        "promise": "",
+        "goodsType": 0,
+        "saleType": 0,
+        "state": 1,
+        "goodsName": " ",
+        "ads": " ",
+        //营销案类型  0=首单 1=折扣 2=满赠 3=满减 4=抢购
+        "caseType": 0,
+        "priceList": [
+            {
+                "levelMin":" ",
+                "levelMax":" ",
+                "groupPrice":" "
+            },
+            {
+                "levelMin": " ",
+                "levelMax": " ",
+                "groupPrice": " "
+            },
+            {
+                "levelMin": " ",
+                "levelMax": " ",
+                "groupPrice": " "
+            },
+            {
+                "levelMin": " ",
+                "levelMax": " ",
+                "groupPrice": " "
+            }
+        ],
+        "stocks": "1",
+        "isBack": " ",
+        "backMax": " ",
+        "score": "",
+        //优惠类型
+        "smtList": [
+        ],
+        "attrList": [
+        ],
+        "attrIds": null,
+        "goodsDetail": " ",
+        "assessCount": " ",
+        "goodPercent": " ",
+        "isFavor": 0,
+        "cartNums": "",
+        "innNum": "",
+        "highLimit":"",
+        "shineList": [
+        ]
+    }
+};
+
+var renderCount = 0,     //记录渲染次数（即appCallJsGetGoodsDetail运行次数），每render 1次或update 1次，加1
+    globalStocks= -1,    //用于记录当前商品的库存数，appCallJsGetGoodsDetail运行后会赋值在此
+    limitUp     = -1,
+    goodsId     = -1,    //用于记录当前商品的 id，   appCallJsGetGoodsDetail运行后会赋值在此
+    goodsCode   = -1,    //用于记录当前商品的 编号， appCallJsGetGoodsDetail运行后会赋值在此
+    quantity    = -1,    //用于记录当前购买的数量，点击+ -数量变化后，会赋值在此
+    changeIsCompleted = false,  //当 appCallJsGetGoodsDetail 调用完毕后，会将此值变更为true，代表 stocks、goodsId、页面更新完毕
+    xianchangmai= -1,
+    pullup      = $('#pull-notice'), //上拉加载元素
+    canLoad     = true,     //当加载过图文详情，置为false
+    guessList,          //猜你喜欢轮播图 swiper 实例
+    myScroll,           //页面滚动实例
+    lastCount;          //切换商品规格之前上次的购买数量
+
+var fakeData1={
+    "code": "0000",
+    "msg": "操作成功。",
+    "data": {
+        "goodsCode": "0112740463608065",
+        "goodsId": "803",
+        "picList": [
+            {
+                "bigPic": "http://oss.njcjh.cn/20151122/a0e90def0d36459080aa0daa8d628d69.jpg",
+                "tip": null
+            },
+            {
+                "bigPic": "http://oss.njcjh.cn/20151122/ce38498524884c3fa8f950e9190e24e3.jpg",
+                "tip": null
+            },
+            {
+                "bigPic": "http://oss.njcjh.cn/20151122/4f8f463b8daf4cf5914e891039a8b018.jpg",
+                "tip": null
+            },
+            {
+                "bigPic": "http://oss.njcjh.cn/20151122/fc39fb34b5a44c34bbc31ee6d696d1f4.jpg",
+                "tip": null
+            },
+            {
+                "bigPic": "http://oss.njcjh.cn/20151122/71935ef7f05f48a3b88e60e9854d49c4.jpg",
+                "tip": null
+            }
+        ],
+        "goodsType": 0,
+        "siteId": "2",
+        "saleType": 0,
+        "state": 1,
+        "goodsName": "Apple iPhone 6s plus (A1699) 64G 土豪金 移动联通电信4G手机",
+        "ads": "发布会现场10元抢 iPhone 6s plus ，你还不来！",
+        "priceList": [
+            {
+                "levelMin": "0",
+                "levelMax": "2",
+                "groupPrice": "10.00"
+            },
+            {
+                "levelMin": "2",
+                "levelMax": "999999999",
+                "groupPrice": "10.00"
+            }
+        ],
+        "stocks": "120.0",
+        "isBack": 0,
+        "backMax": 0,
+        "promise": "不可退",
+        "score": 0,
+        "smtCaseId": "26",
+        "smtType": 5,
+        "caseType": "3",
+        "caseTip": null,
+        "caseName": null,
+        "smtList": [
+            {
+                "smtTip": "活动11",
+                "smtName": "秒杀00012"
+            }
+        ],
+        "attrList": [
+            {
+                "attrTip": "规格",
+                "cartAttrList": [
+                    {
+                        "cartAttrid": "16",
+                        "selfAttr": "默认",
+                        "isDefault": 1
+                    }
+                ]
+            }
+        ],
+        "goodsDetail": null,
+        "assessCount": "0",
+        "goodPercent": "100",
+        "isFavor": 0,
+        "cartNums": "",
+        "isStartTimeGo": "1",
+        "isInstoreAlarm": "0",
+        "referPrice": "6888.00",
+        "limitUp": "2",
+        "currentTime": "1458804180",
+        "rushBeginTime": "1458871200",
+        "rushEndTime": "106618",
+        "highLimit": null,
+        "innNum": null,
+        "lowPrice": null,
+        "highPrice": null,
+        "isSetRushAlram": "0",
+        "shineList": null
+    }
+};
+
+//首先加载假数据
+appCallJsGetGoodsDetail(fakeData1,0);
+//appCallJsGetGoodsDetail(fakeData1,0);
+
+/**
+ * [App 传参给 Js ，传递给 Js 商品详情 Json]
+ * @param  {[json]} arg [渲染页面需要的json数据]
+ * @param  {[int]}  live [是否是现场买（主要应用于扫码，但每次都会传）]
+ * @return {[type]}     [description]
+ */
+function appCallJsGetGoodsDetail(arg, live){
+    //console.log('运行了 appCallJsGetGoodsDetail');
+
+    //处理商品不存在
+    if(arg.code != '0000'){
+        $('#carousel img').attr('src','images/public/default.jpg').data('src', 'images/public/default.jpg');
+        $('#carousel').append('<i class="sellout">不存在</i>');
+        $('.aboutPurchase').html('<li class="disabled">商品不存在</li>');
+        $('.goods-title .prefix').text('商品不存在');
+        $('.sellout').text('不存在');
+        $('#choosed .option').remove();
+        $('.goodsOptions dd span.active').each(function(index, el) {
+            var text = $(this).text();
+            $('<span class="option">'+text+'</span>').insertBefore('i.goods-options');
+        });
+        $('.comment-title').html('<div class="comment-title">评价晒单&nbsp;&nbsp;&nbsp;<span class="noComment" style="color:#8F8F8F;">(暂无评价)</span></div>');
+        $('.comment-list').children().remove();
+        $('.comment-about').remove();
+        $('#sideBar .count').text('0');
+        $('#choosed .count').remove();
+        globalStocks = 0;
+
+        myScroll.refreshIscrollIns();
+
+        return;
+    }
+
+    changeIsCompleted = false;      /*此方法运行初时，将changeIsCompleted 置为 false，代表即将更新 stocks、goodsId、页面*/
+    renderCount = renderCount + 1;  //每调用一次此函数，渲染次数增加
+
+    var data  = arg.data;
+
+    globalStocks = parseInt(data.stocks);   //赋值当前商品库存
+    limitUp      = parseInt(data.limitUp);  //限购
+    goodsId      = data.goodsId;            //赋值当前商品 id
+    goodsCode    = data.goodsCode;          //赋值当前商品 goodsCode
+    xianchangmai = live;                    //现场买
+
+    //上次+-的购物数量存在
+    if( lastCount ){
+        data.count = (function(){
+            if( limitUp ){
+                return lastCount > limitUp ? limitUp : lastCount;
+            }else{
+                return lastCount > globalStocks ? globalStocks : lastCount;
+            }
+        })();
+    }else{
+        data.count = globalStocks>0 ? 1 : 0;
+    }
+
+    /*第一次render，第二次即以上update*/
+    if(renderCount > 1){
+        console.log( "第"+ renderCount +"次运行appCallJsGetGoodsDetail，update");
+        new EJS({url: './templates/detail/promise.ejs'}).update("notice",data);
+        new EJS({url: './templates/detail/goodsInfo.ejs'}).update("goodsInfo",data);
+        new EJS({url: './templates/detail/goodsPrice.ejs'}).update("goods-price",data);
+        new EJS({url: './templates/detail/comment.ejs'}).update("comment",data);
+        new EJS({url: './templates/detail/choosed.ejs'}).update("goods-choose",data);
+
+        //倒计时
+        if(data.currentTime && data.rushBeginTime && data.rushEndTime && data.currentTime.length>0 && data.rushBeginTime.length>0 && data.rushEndTime.length>0){
+            startCount(data.currentTime, data.rushBeginTime, data.rushEndTime);
+        }
+
+        //清空 图文详情内容
+        $("#detail img").off('click');
+        $('#detail').empty();
+
+        //详情页，顶部轮播图片，重新实例化
+        instanceCarousel();
+        myScroll.refreshIscrollIns();
+        myScroll.upIscroll.scrollTo(0,0);
+
+    }else{
+        console.log("第"+renderCount+"次运行appCallJsGetGoodsDetail，render");
+        var promise     = new EJS({url:'./templates/detail/promise.ejs'}).render(data),
+            goodsInfo   = new EJS({url: './templates/detail/goodsInfo.ejs'}).render(data),
+            goodsPrice  = new EJS({url: './templates/detail/goodsPrice.ejs'}).render(data),
+            comment     = new EJS({url: './templates/detail/comment.ejs'}).render(data),
+            choosed     = new EJS({url: './templates/detail/choosed.ejs'}).render(data);
+
+        $(promise).appendTo('#notice');          //承诺
+        $(choosed).appendTo('#goods-choose');    //已选
+        $(goodsInfo).appendTo('#goodsInfo');     //轮播图片与标题
+        $(goodsPrice).appendTo('#goods-price');  //阶梯价 与 手机价
+        $(comment).appendTo('#comment');         //评论
+
+
+        //倒计时
+        if(data.currentTime && data.rushBeginTime && data.rushEndTime && data.currentTime.length>0 && data.rushBeginTime.length>0 && data.rushEndTime.length>0){
+            startCount(data.currentTime, data.rushBeginTime, data.rushEndTime);
+        }
+    }
+
+    //评论列表限时和隐藏
+    ellipsis();
+
+    changeIsCompleted = true;       /*此方法运行结束时，将changeIsCompleted 置为 false，代表即将更新 stocks、goodsId、页面渲染完毕*/
+}
+
+
+/**
+ * [app 传参给 Js，传递图文详情 Json]
+ * @return {[type]} [description]
+ */
+function appCallJsGetImgDetail(arg){
+    var tuwen = $("#detail");
+
+    if(!arg.data) return;
+
+    //插入图文详情元素
+    tuwen.append(arg.data);
+
+    //防止图文内容宽于页面
+    $("#detail *").css({
+        width: '100%'
+    });
+
+    $("#detail img").each(function() {
+        $(this).on('load',function(){
+           myScroll.refreshIscrollIns();  //刷新 iScroll 实例 ，获取改变后的高度
+        });
+
+        $(this).on('error',function(){
+            $(this).css({
+                'backgroundImage':'url("images/public/default.jpg")',
+                'backgroundColor':'#D4D4D4',
+                'backgroundSize' : 'contain',
+                'height': '7.5rem'
+            }).attr('src',' ');
+           myScroll.refreshIscrollIns();  //刷新 iScroll 实例 ，获取改变后的高度
+        });
+
+        $(this).on('abort',function(){
+            $(this).css({
+                'backgroundImage':'url("images/public/default.jpg")',
+                'backgroundColor':'#D4D4D4',
+                'backgroundSize' : 'contain',
+                'height': '7.5rem'
+            }).attr('src',' ');
+           myScroll.refreshIscrollIns();  //刷新 iScroll 实例 ，获取改变后的高度
+        });
+    });
+
+    $('<div id="end">— 已经到底了 —</div>').appendTo(tuwen);
+    myScroll.refreshIscrollIns();  //刷新 iScroll 实例 ，获取改变后的高度
+}
+
+
+
+/**
+ * [app 传参给 Js，传递当前商品库存{"data":{"state":"1","stock":"0.0"},"msg":"succeed","code":"0000"} ]
+ * @param {json} 类似于{"data":{"state":"1","stock":"0.0"},"msg":"succeed","code":"0000"}
+ * @return {[type]} [stocks]
+ */
+function appCallJsGetStocks(arg){
+    //更新库存
+    globalStocks = parseInt(arg.data.stock);
+
+    //可以购买的实际数量
+    var canBuyNums   = (limitUp && limitUp>0 && limitUp<globalStocks) ? limitUp : globalStocks;
+    canBuyNums = parseInt(canBuyNums);
+
+    //实际购买数量
+    var purchaseNums = parseInt($('.amount .count').val());
+
+    if(purchaseNums>canBuyNums){
+        $('.amount .count')[0].value = canBuyNums;
+    }
+
+    if(purchaseNums<1){
+        $('.amount .count')[0].value = 1;
+    }
+
+    updateChoosedCount();
+
+}
+
+
+/**
+ * [ellipsis 评论超过两行，末尾添加省略号]
+ * @return {[type]} [description]
+ */
+function ellipsis(){
+    $(".user_reply").each(function(i){
+        var divH = $(this).height();
+        var $p   = $("p.ellipsis", $(this)),
+            $all = $("p.all", $(this));
+
+        if($p.height() > divH){
+            $(this).addClass('fold');
+            $('<p class="all" style="display:none;">'+ $p.html() +'</p>').insertAfter($p);
+            $('<i class="unfold"></i>').appendTo($(this))
+        }
+
+        while ($p.height() > divH) {
+            $p.text($p.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));
+        }
+    });
+}
+
+
+
+    function ajaxGetImgDetail(){
+        $.ajax({
+            url: '/path/to/file',
+            type: 'GET',
+            dataType: 'json',
+            data: {'phone': phoneNum},
+            success:function(json){
+                appCallJsGetImgDetail(json);
+            },
+            error:function(xhr, errorType, error){
+                console.log("请求失败");
+            },
+            complete:function(xhr, status){
+                console.log("请求完成");
+            }
+        });
+    }
+
+</script>
+<script src="javascripts/detail/detail.js"></script>
+</html>

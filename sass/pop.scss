@@ -1,0 +1,27 @@
+.pop{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  transition: opacity 0.2s;
+  opacity: 1;
+  background-color:rgba(0,0,0,0.5);
+  display:none;
+}
+.pop .main{
+  background-color: #fff;
+  width: 80%;
+  margin:0 auto;
+  border-radius: .2rem;
+  padding: .6rem;
+  position: relative;
+}
+
+.pop .main .exit {
+  position: absolute;
+  top: .2rem;
+  right: .2rem;
+  font-size: .8rem;
+  font-weight: normal;
+  color: #666;
+}

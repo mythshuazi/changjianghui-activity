@@ -1,0 +1,108 @@
+body{
+  background-color:#18abea;
+  color:#fff;
+}
+img{
+  display:block;
+}
+.mainContainer{
+  -webkit-overflow-scrolling: touch;
+}
+
+#top{
+  div{height:1rem; background-color:#0E9DDE;}
+  ul{
+    background:url('../images/act-water/cloud.png') no-repeat scroll -10px 40%;
+    background-size:13%;
+    padding:.5rem 1.5rem .5rem 1.5rem;
+
+    li{
+      &:nth-child(1){
+        p:nth-of-type(1){
+          text-indent:.6rem;
+        }
+      }
+      text-align: justify;
+      margin-bottom:.4rem;
+      p{
+
+        font-size:.3rem;
+      }
+    }
+  }
+}
+
+#middle{
+  background: -webkit-gradient(linear, left top, left bottom, from(#18abea), to(#54C4EF));
+  background-image: -webkit-linear-gradient(to bottom, #18abea 0%,  #54C4EF 100%);
+  background-image: linear-gradient(to bottom, #18abea 0%, #54C4EF 100%);
+  .act{
+    margin-bottom:1rem;
+    p{
+      width:2.8rem;
+      height:.8rem;
+      line-height:.8rem;
+      text-align:center;
+      font-size:.4rem;
+      background-color:#2dd6f9;
+      border-radius: .2rem;
+      margin-bottom:.5rem;margin-left:.8rem;
+    }
+  }
+  .rule{
+    img{
+      margin:0 auto;
+      width:2rem;
+    }
+
+    ul{
+      padding:.5rem .8rem 1rem .8rem;
+      background:url('../images/act-water/water_bg.jpg') no-repeat scroll 0 0;
+      background-size:100% 100%;
+      li{
+        line-height:.6rem;
+        text-align:justify;
+      }
+    }
+  }
+}
+
+#download{
+  display:none;
+  height: .8rem;
+  line-height: .8rem;
+  padding: .2rem 0;
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  z-index:999;
+  background-color:rgba(0,0,0,0.6);
+  color:#fff;
+  background-image:url('../images/womens/icon.png');
+  background-position: 2% 50%;
+  background-repeat: no-repeat;
+  background-size:.8rem;
+  text-indent:1.2rem;
+
+  a{
+    display:inline-block;
+    text-indent:0;
+    text-align: center;
+    background-color:#ff4e00;
+    width:1.6rem;
+    border-radius:.1rem;
+    margin-left:.2rem;
+    padding:0 1px;
+    color:#fff;
+  }
+  .close{
+    width:.6rem;
+    height:.6rem;
+    position: absolute;
+    top:0.3rem;
+    right:.2rem;
+    background:transparent url('../images/womens/close.png') no-repeat scroll 0 0;
+    background-size:100%;
+  }
+}

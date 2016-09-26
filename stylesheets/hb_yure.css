@@ -1,0 +1,35 @@
+/* line 1, ../sass/hb_yure.scss */
+body {
+  background-color: #521e70;
+}
+
+/* line 5, ../sass/hb_yure.scss */
+img {
+  display: block;
+}
+/* line 8, ../sass/hb_yure.scss */
+img.download {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+}
+
+/* line 17, ../sass/hb_yure.scss */
+#countzero {
+  color: #fff;
+  font-size: .4rem;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 23, ../sass/hb_yure.scss */
+#countzero i {
+  display: inline-block;
+  width: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: .2rem;
+  font-size: .8rem;
+  padding: .4rem 2px;
+  position: relative;
+  top: .13rem;
+}

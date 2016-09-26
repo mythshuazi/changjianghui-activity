@@ -1,0 +1,323 @@
+﻿body{
+	background-color:#7BC1A9;
+	font-family: "microsoft yahei", 宋体, sans-serif;
+
+}
+button,input{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+}
+
+
+
+input::-webkit-input-placeholder{text-align: center;}
+input::input-placeholder{ text-align: center }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none !important;
+	margin: 0;
+}
+
+header {
+	img {
+		display:block;
+		height: 3.77rem;
+	}
+}
+
+.main {
+	
+	section {
+		
+		h2{
+			margin:0 .2rem;
+			background-size:98%;
+		    font-weight: normal;
+		    font-size: 15px;
+			color:#F5F86D;
+		    line-height: 1.2rem;
+		    position:relative;
+		    z-index:2;
+			text-align:center;
+			border-bottom:1px dotted #D4D686;
+		}
+
+		.content{
+
+		}
+
+		&.getHb{
+			.content{
+				position:relative;
+				height: 8.3rem !important;
+				overflow: hidden;
+
+				.hb{
+					background:url("../images/act-scramble/scramble_03.jpg") no-repeat scroll 0 0;
+					-webkit-background-size:100%;
+					background-size:100%;
+					height:8.3rem;
+				    position: relative;
+
+
+
+					&>p {
+						position:relative;
+						top:1.6rem;
+					}
+				    p{
+				    	text-align:center;
+				    	&.note{
+				    		color:#696A62;
+				    		font-size:.3rem;
+				    		line-height:.4rem;
+				    	}
+				    }
+
+					.mobile{
+						width:6rem;
+						font-size: .5rem;
+						display: block;
+						margin: 0 auto;
+						height: .9rem;
+						border: 1px solid #5B0F00;
+						border-radius: 4px;
+						position: relative;
+						top: 1.2rem;
+						left: .1rem;
+						text-align:center;
+						color: #32332E;
+						background-color: #FEFBDA;
+					}
+					.ship{
+						width:6rem;
+						font-size: .5rem;
+						display: block;
+						margin: 0 auto;
+						height: .9rem;
+						border: 1px solid #5B0F00;
+						border-radius: 4px;
+						position: relative;
+						top: 1.4rem;
+						left: .1rem;
+						text-align:center;
+						color: #32332E;
+						background-color: #FEFBDA;
+
+					}
+				    .use{
+						display: block;
+				    	text-align:center;
+				    	width:50%;
+				    	margin:0 auto;
+				    	height:1.1rem;
+				    	line-height:1.1rem;
+				    	border-radius:.1rem;
+				    	font-size:.55rem;
+				    	background-color:#FFD401;
+				    	color:#59000C;
+				    	font-weight:bold;
+						font-family: inherit;
+						position: absolute;
+						left:26%;
+						bottom: 1.2rem;
+				    }
+
+					.price {
+						position:absolute;
+						top:1.8rem;
+						width:100%;
+						color:#2F3430;
+						.rmb{
+							font-size:.5rem;
+							text-align:center;
+							i{
+								color:#F64D50;
+								font-size:.45rem;
+							}
+							span{
+								color:#F64D50;
+								font-size:1rem;
+								position: relative;
+								top:2px;
+							}
+						}
+						.date{
+							color: #63666B;
+							margin-top: .3rem;
+							font-size:.35rem;
+						}
+					}
+					.note{
+						position:absolute;
+						top:4.7rem;
+						width:100%;
+						text-align:center;
+						color:#FFE7E9;
+						font-size:.35rem;
+					}
+				}
+
+				p.intro{
+					position:absolute;
+					bottom:.4rem;
+					width:100%;
+					text-align: center;
+					font-size:.35rem;
+					color:#fff;
+					text-indent:.4rem;
+				}
+			}
+		}
+
+		&.input{
+			.content{
+			
+				.hb{
+					input{
+						display: block;
+					    position: relative;
+					    top: 2rem;
+					    height: 1rem;
+					    margin: 0 auto;
+					    border: 1px solid #630600;
+					    border-radius: .2rem;
+					    background-color: #FFF45C;
+					    outline:0;
+					    text-align:center;
+					}
+					input::-webkit-outer-spin-button,
+					input::-webkit-inner-spin-button {
+					  -webkit-appearance: none !important;
+					  margin: 0 !important;
+					}
+					.use{
+						bottom: -3.7rem;
+					}
+				    
+				}
+			}
+		}
+
+		&.empty{
+			.alias{
+				color:#580000;
+				font-size:.5rem;
+				line-height:.6rem;
+
+				top:2rem !important;
+			}
+			.use{
+				bottom:-3.7rem !important;
+			}
+		}
+
+		&.lucky {
+			margin:0 .3rem;
+			margin-top:1.2rem;
+			background-color:#4E9A80;
+			border-radius:.2rem;
+			overflow: hidden;
+			ul.content{
+				padding:0 .2rem .5rem .2rem;
+				li{
+					padding:.5rem 1.5rem .5rem 1.8rem;
+					position:relative;
+					border-bottom:1px dotted #D4D686;
+
+					img {
+						width:1.2rem;
+						height:1.2rem;
+						position:absolute;
+						top:.4rem;
+						left:.3rem;
+						background-color:#ccc;
+						border-radius:1rem;
+						border:1px solid #fff;
+					}
+
+					.comment{
+						p{
+							font-size:.35rem;
+							line-height:.5rem;
+							color: #D5F3E7;
+
+							.name{
+								color:#B0FEE4;
+							}
+						}
+					}
+
+					.price{
+						position:absolute;
+						top:0.7rem;
+						right:.2rem;
+
+						p{
+							text-align:center;
+							min-width:1rem;
+							color:#D5F3E7;
+
+							&.rmb{
+									color:#FFF35C;
+								}
+						}
+					}
+
+					&.king{
+						.price{
+							top:0.3rem;
+							p{
+								&.crown{
+									height:.4rem;
+									width:1rem;
+									background:url("../images/hb_share/hb_crown.png") no-repeat scroll 50% 0;
+									background-size:contain;
+								}
+							}
+						}
+					}
+
+					
+				}
+			}
+		}
+
+		&.rule {
+			margin:0 .3rem;
+			background-color:#4E9A80;
+			border-radius:.2rem;
+			margin-top:.5rem;
+			margin-bottom: .5rem;
+			ul.content{
+				padding:.5rem 0.2rem;
+				li{
+					line-height:.5rem;
+					font-size:.35rem;
+					margin-bottom:.3rem;
+					position:relative;
+					padding-left:.6rem;
+					text-align:justify;
+					color: #D5F3E7;
+
+					i{
+						position:absolute;
+						top:0;
+						left:0;
+						width:.5rem;
+						height:.5rem;
+						background-color:#19613B;
+						color:#F7F7DD;
+						border-radius:.5rem;
+						text-align:center;
+					}
+
+				}
+			}
+		}
+	}
+
+
+}

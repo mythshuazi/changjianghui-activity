@@ -1,0 +1,81 @@
+/* line 1, ../sass/act-presell.scss */
+body {
+  background-color: #4A04B2;
+  color: #fdfdfd;
+}
+
+/* line 5, ../sass/act-presell.scss */
+.qa {
+  padding: 0 .4rem 0 1rem;
+  font-size: .35rem;
+  text-align: justify;
+  position: relative;
+}
+/* line 10, ../sass/act-presell.scss */
+.qa:before {
+  content: " ";
+  display: block;
+  width: .4rem;
+  height: .4rem;
+  background: transparent url("../images/act-presell/arrow.jpg") no-repeat scroll 0 50%;
+  background-size: 80% 80%;
+  position: absolute;
+  top: 0;
+  left: .6rem;
+}
+/* line 22, ../sass/act-presell.scss */
+.qa P {
+  margin-top: .4rem;
+}
+/* line 24, ../sass/act-presell.scss */
+.qa P i {
+  color: #fbfc3c;
+}
+
+/* line 28, ../sass/act-presell.scss */
+.content {
+  padding-bottom: 1rem;
+}
+
+/* line 31, ../sass/act-presell.scss */
+.item {
+  text-align: center;
+}
+/* line 34, ../sass/act-presell.scss */
+.item .title {
+  font-size: .51rem;
+  line-height: 2rem;
+  background: transparent url("../images/act-presell/presell_00.jpg") no-repeat scroll 50% 36%;
+  background-size: 70%;
+}
+/* line 40, ../sass/act-presell.scss */
+.item p {
+  font-size: .36rem;
+}
+/* line 43, ../sass/act-presell.scss */
+.item .intro {
+  width: 74%;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.4;
+  text-indent: .72rem;
+}
+/* line 50, ../sass/act-presell.scss */
+.item .step {
+  font-size: .38rem;
+  background: transparent url("../images/act-presell/dotted.jpg") no-repeat scroll 50% 50%;
+  background-size: 94%;
+  margin: .3rem 0 .4rem 0;
+}
+/* line 55, ../sass/act-presell.scss */
+.item .step i {
+  color: #FAFD3A;
+  font-size: .5rem;
+}
+/* line 61, ../sass/act-presell.scss */
+.item img {
+  margin-top: .45rem;
+  margin-bottom: .2rem;
+}
+
+/*# sourceMappingURL=act-presell.css.map */

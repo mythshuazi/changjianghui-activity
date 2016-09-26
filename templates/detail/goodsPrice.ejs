@@ -1,0 +1,91 @@
+
+<% if(caseType==4 || smtType==1 || smtType==5) { %>
+    <div class="price-bar">
+
+        <% if(smtType==1) {%>
+            <span class="mobile-price">首单价:</span>
+            <i class="price-rmb">¥</i>
+            <span class="now-price-integer"><%= priceList[1].groupPrice%></span>
+        <% }else if(smtType == 5) { %>
+            <span class="mobile-price miaosha">秒杀价:</span>
+            <i class="price-rmb color-miaosha"> &nbsp;¥ </i>
+            <span class="now-price-integer color-miaosha"><%= priceList[1].groupPrice%></span>
+        <% }else if(caseType == 4) { %><!--惊爆价-->
+            <i class="price-rmb">¥</i>
+            <span class="now-price-integer"><%= highPrice%></span>
+        <% } %>
+        <% if(innNum){%>
+            <span class="innNum">约<%=innNum%></span>
+        <% } %>
+
+        <!--<span class="new-price-decimal"></span>-->
+        <% if(score && smtType == 5){ %>
+            <span class="integral">可获 <i class="color-miaosha"><%=score%></i> 积分</span>
+        <% }else if(score){ %>
+            <span class="integral">可获 <i><%=score%></i> 积分</span>
+        <% } %>
+    </div>
+    <div class="condition">
+        <% if(smtType!=2) {%>
+            <%if(smtType == 5){%>      <!--秒杀-->
+                <del class="original-price">参考价:￥<%= referPrice%></del>
+            <%}else if(caseType==4){%> <!--惊爆价-->
+                <p class="lowPrice">比市场价低￥<%=lowPrice%></p>
+            <%}else{%>
+                <del class="original-price">零售价:￥<%= referPrice%></del>
+            <% } %>
+        <% } %>
+        <% if( limitUp && parseInt(limitUp)>0 ) { %>
+            <p class="quota" style="color:#808080;">*每人限购<%=parseInt(limitUp)%>件&nbsp;&nbsp;&nbsp;</p>
+        <% } %>
+    </div>
+    <!--秒杀倒计时区域-->
+    <% if(smtType == 5){%>
+    <div id="miaosha" class="<%=miaosha_class%>">
+        <div class="describe">
+            <h3><%=miaosha_title%></h3>
+            <p>超低价销售, 数量有限, 抢完为止 <span class="residue">还剩 <i><%=parseInt(stocks)%></i> 件</span></p>
+
+        </div>
+        <div class="countZero">
+            <p class="note"><%=miaosha_tip%></p>
+            <div class="surplus"><span class="hh">00</span><i>:</i><span class="mm">00</span><i>:</i><span class="ss">00</span></div>
+        </div>
+    </div>
+    <%}%>
+    <!--秒杀倒计时区域-->
+
+<% }else{ %>
+    <div class="presell">
+        <ul class="clear">
+
+            <% for(var i=0; i<priceList.length; i++){  %>
+                <li>
+                    <div class="wrap">
+                        <% if(priceList[i].levelMin == 0){ %>
+                            <div class="hint">提前<%=priceList[i].levelMin%>-<%=priceList[i].levelMax%>小时</div>
+                        <% }else if (i==priceList.length-1 &&  priceList[i].levelMax == "999999999"){%>
+    	                    <div class="hint"><%=priceList[i].levelMin/24%>天以上</div>
+    	                <% }else{ %>
+    						<div class="hint"><%= priceList[i].levelMin / 24 %> ~ <%= priceList[i].levelMax / 24 %>天</div>
+                        <% } %>
+                        <div class="price"><i>￥</i><%= priceList[i].groupPrice %></div>
+                        <% if(priceList[i].perPrice) {%>
+                        <div class="perPrice"><i>￥</i><%= priceList[i].perPrice%></div>
+                        <% } %>
+                    </div>
+                </li>
+            <% } %>
+
+        </ul>
+
+        <div class="ladderPrice">
+            <% if( limitUp && parseInt(limitUp)>0 ) {%>
+            <p class="quota">* 每人限购：<i><%=parseInt(limitUp)%> </i>件</p>
+            <% } %>
+            <% if(score){ %>
+            <span class="integral">可获 <i><%= score%></i> 积分</span>
+            <% } %>
+        </div>
+    </div>
+<% } %>

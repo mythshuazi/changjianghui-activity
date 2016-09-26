@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    var startTime = new Date().getTime();
+</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>红包活动预热</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/hb_yure.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+$('html').css({
+    fontSize: $(window).width()/10
+});
+$(window).resize(function(){
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+});
+</script>
+</head>
+<body>
+	<header>
+		<img src="images/hb_yure/hb_yure_01.jpg"width="100%" onerror="this.src=''">
+    	<img src="images/hb_yure/hb_yure_02.jpg"width="100%" onerror="this.src=''">
+    	<img src="images/hb_yure/hb_yure_03.jpg"width="100%" onerror="this.src=''">
+	</header>		
+    <section id="countzero">
+    	<i id="dd">00</i> 天 <i id="hh">00</i> 时 <i id="mm">00</i> 分 <i id="ss">00</i> 秒
+    </section>
+    <footer>
+    	<img class="download" src="images/hb_yure/hb_yure_04.jpg"width="100%" onerror="this.src=''">
+    	<img src="images/hb_yure/hb_yure_05.jpg"width="100%" onerror="this.src=''">
+    </footer>
+</body>
+<script>
+String.prototype.toDDHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var days    = Math.floor(sec_num / 86400);
+
+    var hours   = Math.floor((sec_num - (days * 86400)) / 3600);
+    var minutes = Math.floor((sec_num - (days * 86400) - (hours * 3600)) / 60);
+    var seconds = sec_num - (days * 86400) - (hours * 3600) - (minutes * 60);
+    if (days    < 10) {days    = "0"+days;}
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    var time    = days+':'+hours+':'+minutes+':'+seconds;
+    return {
+        timeArr: [days.toString(),hours.toString(),minutes.toString(),seconds.toString()],
+        time:time
+    };
+};
+
+
+var serverTime = 123412; //服务器返回的倒计时总时差
+var dd = $('#dd'),hh = $('#hh'),mm = $('#mm'),ss = $('#ss');
+
+
+$(function(){
+    var loadTime = Math.floor( (new Date().getTime())/1000 - startTime/1000 );
+
+    realTime     = parseInt(serverTime) - loadTime;
+
+    var countTimer = setInterval(function(){        
+        if(realTime>0){
+            var count = realTime.toString().toDDHHMMSS();
+
+            dd.html(count.timeArr[0]);
+            hh.html(count.timeArr[1]);
+            mm.html(count.timeArr[2]);
+            ss.html(count.timeArr[3]);
+
+            --realTime;
+        }else{
+            clearInterval(countTimer);
+            dd.html('00');
+            hh.html('00');
+            mm.html('00');
+            ss.html('00');
+        }
+        
+    }, 1000);
+});
+</script>
+</html>

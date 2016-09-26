@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>主要看气质</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/activity.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<style>
+.kqz_body #list { margin-top: 1.5rem;}
+.kqz_body #top .content img {height: 2.44rem; }
+.rank{position:absolute; top:-1.3rem; left: 1.1rem;}
+.rank img{width:2.5rem; height:2rem;background:transparent !important;}
+.kqz_body .pt_item {margin-bottom: 1.5rem;}
+.kqz_body .pt_middle span{color:#004cd3; background-color:transparent;}
+.kqz_body .pt_pic {height: 5rem;}
+#bottom img{display:block;}
+.kqz_body .pt_middle span{font-size:0.5rem; width:2rem;}
+</style>
+</head>
+<body class="kqz_body" style="height:100%;">
+    <div class="mainContainer" style="height:100%; overflow:scroll;">
+        <div class="mainContent">        	
+        	<section id="top">
+        		<div class="content">
+                    <img class="scrollLoad" data-url="images/kanqizhi/res_01.jpg" width="100%" onerror="this.src=''">
+                    <img class="scrollLoad" data-url="images/kanqizhi/res_02.jpg" width="100%" onerror="this.src=''">
+                    <img class="scrollLoad" data-url="images/kanqizhi/res_03.jpg" width="100%" onerror="this.src=''">
+        		</div>
+        	</section>
+
+        	<section id="list">
+                <input type="hidden" id="attention" value="1">
+        		<ul class="portrait manjian">
+        		</ul>
+                <!-- <div class="more">查看更多<span> >></span>  </div> -->
+        	</section>
+
+        	<section id="bottom">        		
+                    <img class="scrollLoad" data-url="images/kanqizhi/res_05.jpg" width="100%" onerror="this.src=''">
+                    <img class="scrollLoad" data-url="images/kanqizhi/res_06.jpg" width="100%" onerror="this.src=''">
+                    <img class="scrollLoad" data-url="images/kanqizhi/res_07.jpg" width="100%" onerror="this.src=''">
+                    <img class="scrollLoad" data-url="images/kanqizhi/res_08.jpg" width="100%" onerror="this.src=''">
+        	</section>
+        </div>
+    </div>
+</body>
+<script>
+//图片滚动加载
+window.addEventListener('load',function(){
+	var data = [
+					{
+						id: '38',
+						name: '孟晓晓',
+						tel: '15225382578',
+						photo: 'http://oss.njcjh.cn/ethos/a53776506122440aad970f8a78ea0e0b.jpg',
+						votes: 3945
+					},
+					{
+						id: '52',
+						name: '王双喜',
+						tel: '18671683322',
+						photo: 'http://oss.njcjh.cn/ethos/4846ff0163084af4ac2cc220b29b23d4.jpg',
+						votes: 3755
+					},
+					{
+						id: '26',
+						name: '李艺凝',
+						tel: '13909677775',
+						photo: 'http://oss.njcjh.cn/ethos/073c1261f0b344748ad7e418b5d32f33.jpg',
+						votes: 1009
+					},
+					{
+						id: '23',
+						name: '李乐',
+						tel: '13764525342',
+						photo: 'http://oss.njcjh.cn/ethos/298fa9376c844823a7679f415c474efd.jpg',
+						votes: 720
+					},
+					{
+						id: '42',
+						name: '史红梅',
+						tel: '13871216711',
+						photo: 'http://oss.njcjh.cn/ethos/15cdfcbcec584c8e8d7a74e500372c64.jpg',
+						votes: 713
+					},
+					{
+						id: '35',
+						name: '马新亮',
+						tel: '13693977793',
+						photo: 'http://oss.njcjh.cn/ethos/7fadc87ac4444884bddbf8eaed5bd895.jpg',
+						votes: 679
+					},
+					{
+						id: '66',
+						name: '张大胜',
+						tel: '18571706870',
+						photo: 'http://oss.njcjh.cn/ethos/e6578cca097e4684af7a632064a578a5.jpg',
+						votes: 456
+					},
+					{
+						id: '20',
+						name: '胡大松',
+						tel: '15171851353',
+						photo: 'http://oss.njcjh.cn/ethos/66f2d4ae1b564773a7f30385f58bcf8b.jpg',
+						votes: 446
+					},
+					{
+						id: '86',
+						name: '张保',
+						tel: '13545566762',
+						photo: 'http://oss.njcjh.cn/ethos/533abb8b814a4c86baaf4fa3c7131747.jpg',
+						votes: 408
+					},
+					{
+						id: '64',
+						name: '俞能鹏',
+						tel: '15955390051',
+						photo: 'http://oss.njcjh.cn/ethos/00d568ad077a49e18c4e78db2726d354.jpg',
+						votes: 385
+					}
+				];
+
+
+    for(var i=0; i<data.length; i++){
+    	var item = data[i];
+
+		var html = '<li class="pt_item">'+
+	        				'<div class="pt_item_inner">'+
+	        					'<div class="pt_above">'+
+	        						'<img class="pt_pic scrollLoad" data-url="'+ item.photo +'" width="100%" onerror="this.src=\'\'">'+
+	        					'</div>'+
+	        					'<div class="pt_middle">'+
+	        						'<p class="pt_intro">'+ item.name +'</p>'+
+	        						'<div class="price"><i>票数：</i>'+ item.votes +'</div>'+
+	        						'<span class="vote">'+ '第 '+(i+1)+' 名' +'</span>'+
+	        					'</div>'+
+	        					'<div class="pt_prefix">'+ item.id +'</div>'+
+	        				'</div>'+
+	        			'</li>';
+
+	    $(html).appendTo('.portrait');
+
+	    if( i<3 ){
+	    	$('<div class="rank"><img src="images/kanqizhi/res_0'+ (9+i) +'.png" ></div>').insertAfter($('.pt_item').eq(i).find('.pt_prefix'));
+	    	$('.pt_item').eq(i).find('.vote').css('color','#FE5004');
+	    }
+    }
+
+	$('.scrollLoad').scrollLoading({container:$('.mainContainer')});
+}, false);
+
+jsCallAppTellHuoDongContent('最具气质船友评比结果揭晓啦！');
+/**
+ * [jsCallAppTellHuoDongContent 告诉app活动的内容]
+ * @param {[String]} [活动的具体内容，字符串形式]
+ * @return {[type]} [description]
+ */
+function jsCallAppTellHuoDongContent( text ){
+    try {
+        window.wst.jsCallAppTellHuoDongContent( text );
+    }
+    catch(error){
+        console.log(error.message);
+    }
+}
+    
+</script>
+</html>

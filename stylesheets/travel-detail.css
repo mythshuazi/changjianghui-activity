@@ -1,0 +1,117 @@
+/* line 1, ../sass/travel-detail.scss */
+body {
+  font: 12px/1.5;
+}
+
+/* line 4, ../sass/travel-detail.scss */
+.container {
+  padding-bottom: 20px;
+}
+
+/* line 7, ../sass/travel-detail.scss */
+.overview {
+  padding-bottom: 10px;
+}
+/* line 9, ../sass/travel-detail.scss */
+.overview img {
+  width: 10rem;
+  height: 3.86rem;
+}
+/* line 13, ../sass/travel-detail.scss */
+.overview .wrap {
+  padding: 0 10px;
+  position: relative;
+}
+/* line 18, ../sass/travel-detail.scss */
+.overview .source {
+  margin-top: 6px;
+}
+/* line 20, ../sass/travel-detail.scss */
+.overview .source span {
+  display: block;
+  font-size: 12px;
+  line-height: 12px;
+  color: #999;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+  transform-origin: 0 0;
+}
+/* line 34, ../sass/travel-detail.scss */
+.overview h3 {
+  margin-top: 18px;
+  font-weight: normal;
+  font-size: 18px;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  color: #000;
+}
+/* line 44, ../sass/travel-detail.scss */
+.overview .ls-tags {
+  margin-top: 12px;
+}
+/* line 48, ../sass/travel-detail.scss */
+.overview .price {
+  margin-top: 18px;
+  font-size: 18px;
+  color: #ff0000;
+}
+/* line 54, ../sass/travel-detail.scss */
+.overview .buy {
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  width: 85px;
+  height: 35px;
+  line-height: 35px;
+  background-color: #EA8010;
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  right: 10px;
+  bottom: -10px;
+}
+
+/* line 70, ../sass/travel-detail.scss */
+.sale h3, .specify h3 {
+  font-weight: normal;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+/* line 75, ../sass/travel-detail.scss */
+.sale p, .specify p {
+  font-size: 14px;
+  text-indent: 28px;
+  color: #000;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* line 82, ../sass/travel-detail.scss */
+.sale {
+  padding: 0 10px;
+  margin-top: 4px;
+}
+
+/* line 95, ../sass/travel-detail.scss */
+.specify {
+  padding: 0 10px;
+  margin-top: 28px;
+}
+
+/* line 107, ../sass/travel-detail.scss */
+.path {
+  padding-left: 28px;
+}
+/* line 109, ../sass/travel-detail.scss */
+.path td {
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+}
+
+/*# sourceMappingURL=travel-detail.css.map */

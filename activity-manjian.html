@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>全场满减</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/activity.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+});
+</script>
+</head>
+<body class="mj_whatever">
+    <div class="mainContainer">
+        <div class="mainContent">
+        	<section id="top">
+        		<div class="content">
+                    <img src="images/activity/mj_top_01.gif" width="100%">
+                    <img src="images/activity/mj_top_02.gif" width="100%">
+                    <ul class="btn">
+                        <li class="btn_xh active"></li>
+                        <li class="btn_cd"></li>
+                    </ul>
+        		</div>
+        	</section>
+
+        	<section id="list">
+                <div class="xh">
+                    <div class="title_xh"></div>
+            		<ul class="portrait manjian">
+            			<li class="pt_item" data-id="123">
+            				<div class="pt_item_inner pt_sellout">
+            					<div class="pt_above sellout">
+            						<img class="pt_pic scrollLoad" data-url="images/carousel/05.jpg" src="./images/public/default.jpg" width="100%">
+                                    <div class="pt_nothing"><i>抢光了</i></div>
+            					</div>
+            					<div class="pt_middle">
+            						<p class="pt_intro">苹果运动手表 Apple Watch 尊贵版</p>
+            						<div class="price fc-orange">￥599.00</div>
+            					</div>
+            					<div class="pt_bottom">
+            						<span class="buyNow"></span>
+            					</div>
+            					<div class="pt_prefix"></div>
+            				</div>
+            			</li>
+            			<li class="pt_item" data-id="222">
+            				<div class="pt_item_inner">
+            					<div class="pt_above">
+            						<img class="pt_pic scrollLoad" data-url="images/carousel/05.jpg" src="./images/public/default.jpg" width="100%">
+                                    <div class="pt_nothing"><i>抢光了</i></div>
+            					</div>
+            					<div class="pt_middle">
+            						<p class="pt_intro">苹果运动手表 Apple Watch 尊贵版</p>
+            						<div class="price fc-orange">￥599.00</div>
+            					</div>
+            					<div class="pt_bottom">
+            						<span class="buyNow"></span>
+            					</div>
+            					<div class="pt_prefix"></div>
+            				</div>
+            			</li>
+            		</ul>
+                    <div class="more">查看更多<span> >></span>  </div>                    
+                </div>
+    
+                <div class="cd">
+                    <div class="title_cd"></div>
+                    <ul class="portrait manjian">
+                        <li class="pt_item" data-id="4444">
+                            <div class="pt_item_inner">
+                                <div class="pt_above sellout">
+                                    <img class="pt_pic scrollLoad" data-url="images/carousel/05.jpg" src="./images/public/default.jpg" width="100%">
+                                </div>
+                                <div class="pt_middle">
+                                    <p class="pt_intro">苹果运动手表 Apple Watch 尊贵版</p>
+                                    <div class="price fc-orange">￥599.00</div>
+                                </div>
+                                <div class="pt_bottom">
+                                    <span class="buyNow"></span>
+                                </div>
+                                <div class="pt_prefix"></div>
+                            </div>
+                        </li>
+                        <li class="pt_item" data-id="5555">
+                            <div class="pt_item_inner">
+                                <div class="pt_above">
+                                    <img class="pt_pic scrollLoad" data-url="images/carousel/05.jpg" src="./images/public/default.jpg" width="100%">
+                                </div>
+                                <div class="pt_middle">
+                                    <p class="pt_intro">苹果运动手表 Apple Watch 尊贵版</p>
+                                    <div class="price fc-orange">￥599.00</div>
+                                </div>
+                                <div class="pt_bottom">
+                                    <span class="buyNow"></span>
+                                </div>
+                                <div class="pt_prefix"></div>
+                            </div>
+                        </li>
+                    </ul>
+            		<div class="more">查看更多<span> >></span>	</div>                    
+                </div>
+        	</section>
+
+            <section id="rule">
+                <div class="title">活动规则</div>
+                <ul class="rule_list">
+                    <li class="clear"><i>1</i><span>全场现货商品单笔订单满199减50、满399减100、满599减200；</span></li>
+                    <li class="clear"><i>2</i><span>全场预售商品单笔订单满199减100、满599减300、满999减500；</span></li>
+                    <li class="clear"><i>3</i><span>活动商品、非正价商品和油品不参加本活动；</span></li>
+                    <li class="clear"><i>4</i><span>每笔满足本活动规则的订单仅享受1次优惠。</span></li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    //图片滚动加载
+    $('.scrollLoad').scrollLoading();
+
+    /**
+     * [jsCallAppGo2GoodsDetail js 传参给 App，App获取商品id，跳转到对应的商品详情]
+     * @param  {[String]} goodsId [商品 id]
+     * @return {[type]}         [description]
+     */
+    function jsCallAppGo2GoodsDetail( goodsId ){
+        try{
+            window.wst.jsCallAppGo2GoodsDetail(goodsId);
+        }catch(error){
+            console.log(error.message);
+        }
+    }
+
+
+    //交互事件---------------------------------------------------
+    //点击商品，进入对应的商品详情页
+    $(document).on('tap', '.pt_item',function(){
+        var $this = $(this),
+            goodsId = $this.data('id');
+
+        if( $this.hasClass('pt_sellout') ) return;
+
+        jsCallAppGo2GoodsDetail( goodsId );
+    });
+
+    //切换现货、凑单区域
+    $('.btn li').on('tap',function(){
+        var xhScrTop = $('.xh').position().top,
+            cdScrTop = $('.cd').position().top,
+            $this    = $(this);
+
+            console.log(xhScrTop + ' || ' + cdScrTop);
+
+        $this.removeClass('active').siblings('li').removeClass('active');
+        $this.addClass('active');
+
+        if($this.hasClass('btn_xh')){
+            $('body').scrollTop(xhScrTop);
+        }else{
+            $('body').scrollTop(cdScrTop);
+        }
+    });
+
+
+</script>
+</html>

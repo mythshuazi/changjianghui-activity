@@ -1,0 +1,52 @@
+<% console.log('正在渲染 goodsInfo 模版')%>
+
+<section id="carousel" class="detail-carousel">
+    <div class="swiper-container">
+		<div class="swiper-wrapper">
+
+			<% if(picList.length>0) { %>
+		        <% for(var i=0; i<picList.length; i++){ %>
+		    		<div class="swiper-slide ">
+		    			<img class="swiper-lazy" data-src="<%= picList[i].bigPic %>" alt="<%= picList[i].tip%>" onerror="this.src='images/public/default.jpg'">
+		    		</div>
+		        <% } %>
+	        <% }else{ %>
+				<% for(var i=0; i<3; i++){ %>
+		    		<div class="swiper-slide ">
+		    			<img class="swiper-lazy" data-src="images/public/default.jpg" onerror="this.src='images/public/default.jpg'">
+		    		</div>
+		        <% } %>
+	        <% } %>
+
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<% if(state == 0) { %>
+		<i class="sellout">已下架</i>
+	<% }else if(parseFloat(stocks) <= 0 && state == 1){%>
+		<i class="sellout">卖光啦</i>
+	<% } %>
+	
+</section>
+<!--carousel 幻灯片 over-->
+
+<section class="goods-title">
+    <div class="main">
+        <p class="title">
+        	<% if(smtType!=0 && smtType!=4 && saleType==0 && state == 1){ %>
+        		<i class="prefix">现货</i><%=goodsName %>
+        	<%}else if( smtType!=0 && smtType!=4 && saleType==1 && state == 1 ){ %>
+        		<i class="prefix">预售</i><%=goodsName %>
+        	<%}else if( smtType==0 && parseFloat(stocks) > 0 && state == 1 ){ %>
+				<i class="prefix">首单</i><%=goodsName %>
+			<%}else if( smtType==4 && parseFloat(stocks) > 0 && state == 1 ){ %>
+				<i class="prefix">秒杀</i><%=goodsName %>
+			<%}else if(parseFloat(stocks) <= 0 && state == 1){%>
+				<i class="prefix">卖光啦</i><%=goodsName %>
+			<%}else if(state==0){%>
+				<i class="prefix">已下架</i><%=goodsName %>
+			<%}%>
+        </p>
+        <p class="intro"><%= ads %></p>
+    </div>
+</section>

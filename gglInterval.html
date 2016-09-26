@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>刮刮乐</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+    <style>
+        img{display:block;}
+        #noAction .naContent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #F5FBF9;
+            text-shadow: 1px 1px 0 #14C3E2;
+            text-align: center;
+        }
+        #noAction .naContent img {
+            width: 96%;
+            margin: 0 auto;
+            margin-top: .5rem;
+        }
+        #noAction .naContent img:first-child {
+            margin-top: 2rem;
+        }
+        #noAction .naContent .inner {
+            margin-top: 1rem;
+        }
+        #noAction .naContent span {
+            display: block;
+            font-size: .5rem;
+            line-height: .8rem;
+        }
+        #noAction .naContent p {
+            font-size: .6rem;
+            line-height: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="noAction">
+        <img src="images/ggl/no03.jpg" width="100%" onerror="this.src=\'\'">
+        <div class="naContent">
+            <img src="images/ggl/no01.png" onerror="this.src=\'\'">
+            <img src="images/ggl/no02.png" onerror="this.src=\'\'">
+            <div class="inner">
+                <span>开刮时间敬请期待</span>
+                <p>最高可得 <i>iPhone6s+5000元</i></p>
+                <p id="cjh" style="font-size:.4rem;text-shadow: 0 0 0 #73CBE4;color: #73CBE4;">最终活动及奖品以长江汇公告为准</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+        console.log(u);
+        console.log(isIos);
+
+        if(isIos){
+            $('<p style="margin-top: .5rem;font-size:.4rem;text-shadow: 0 0 0 #73CBE4;color: #73CBE4;line-height: .5rem;">该活动与奖品与苹果公司无关</p>').insertBefore('#cjh');
+        }
+    });
+</script>
+</html>

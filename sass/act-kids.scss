@@ -1,0 +1,94 @@
+body{
+  background:url("../images/act-kids/bg1.jpg") repeat scroll 0 0;
+  background-size: 1.5%;
+  color:#3E2E17;
+  line-height:1.2;
+}
+section{
+  padding:0 .4rem;
+  &:nth-of-type(n+2){
+    margin-top:1rem;
+  }
+}
+
+.title{
+  text-align:center;
+  p{
+    font-size:.4rem;
+    color:#664D25;
+  }
+  &>p{
+    margin-top:.2rem;
+  }
+  .outer{
+    display: inline-block;
+    padding: .5rem .7rem;
+    margin: 0 auto;
+    background: url("../images/act-kids/cloud01.png") no-repeat scroll 0 0;
+    background-size: 100% 100%;
+    color:#664D25;
+    p{
+      display:inline-block;
+      font-weight: bold;
+      text-align:center;
+      font-size:.5rem;
+    }
+  }
+}
+
+.intro{
+  font-size:.4rem;
+  font-weight:normal;
+  text-indent:.8rem;
+  line-height:1.8;
+  margin:.4rem 0;
+  padding:0 .2rem;
+  text-align:justify;
+}
+
+.photo{
+  padding: .4rem .4rem .43rem;
+  background:url("../images/act-kids/frame.png") no-repeat scroll 0 0;
+  background-size:100% 100%;
+  margin-bottom:.4rem;
+  position:relative;
+  img{
+    display:block;
+    width:100%;
+    margin:0 auto;
+  }
+
+  &:after{
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1.6rem;
+    background: url("../images/act-kids/bar.png") no-repeat scroll 0 0;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: .35rem;
+    right: .35rem;
+  }
+}
+
+.txt{
+  margin-bottom:.4rem;
+  margin-top: .6rem;
+  h4{
+    line-height:1rem;
+    font-size:.5rem;
+  }
+  p{
+    line-height:1.6;
+    font-size:.4rem;
+
+    &:before{
+      content:'';
+      display:inline-block;
+      height:.4rem;
+      width:.1rem;
+      background-color:#CA0202;
+      margin-right:.2rem;
+    }
+  }
+}

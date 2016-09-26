@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>礼券</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/hb_share.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+</head>
+<body>    
+    <header>
+    	<img src="images/act-scramble/scramble_01.jpg"  width="100%">
+    	<img src="images/act-scramble/scramble_02.jpg"  width="100%">
+    </header>
+    <div class="main"><!--input getHb empty-->
+    	<section class="getHb">
+    		<div class="content">
+    			<!--input-->
+    			<div class="hb">
+    				<input class="mobile" type="number" placeholder="请输入您的手机号" >
+    				<input class="ship" type="text" placeholder="请输入您的真实船号" >
+    				<button class="use" style="bottom:1.9rem">立刻领取</button>
+    			</div>
+
+    			<!--getHb-->
+    			<!--<div class="hb">
+					<div class="price">
+						<div class="rmb"><i>￥</i><span>999</span> 非油券</div>
+						<div class="date"><p>有效期：<span>2016-3-17</span> 至 <span>2016-6-17</span></p></div>
+					</div>
+					<div class="note">礼券已放入 138888888账户<p>请打开长江汇APP查看</p></div>
+					<button class="use">下载长江汇APP</button>
+    			</div>-->
+
+    			<!-- empty-->
+    			<!--<div class="hb">-->
+    				<!--<p class="alias">大侠，<br>红包已经被你抢走了</p>-->
+    				<!--<span class="use" style="bottom:1.5rem">立即领取</span>-->
+    			<!--</div>-->
+				<p class="intro">参加邀船有礼，再送您108元礼券，多邀多得。</p>
+    		</div>
+	    </section>
+
+    	<section class="lucky">
+    		<h2>看看船友们的手气如何</h2>
+    		<ul class="content">
+    			<li class="king">
+					<div class="comment">
+						<p><span class="name">大白</span>&nbsp;&nbsp;<span class="date">2016-1-18 10:08</span></p>
+						<p>红包领的好啊，好运跟你跑啊</p>
+					</div>
+					<div class="img-wrap"><img src="http://wx.qlogo.cn/mmopen/RK3YBVPJKWl0tL8DuXb0OeKgsicsVayhgM00L44KMwymmwAvhnpRp3Knia4cCE8f5Z6D6zQISxL282ydtThqm6fWqZxNAdktZe/0" onerror="this.src='images/public/tutoulong.png'"></div>
+					<div class="price">
+						<p class="crown" style="background-position:60% 0;"></p>
+						<p class="rmb" style="font-size:13px">20元</p>
+						<p>手气王</p>
+					</div>
+    			</li>
+    			<li>
+					<div class="comment">
+						<p><span class="name">大白</span>&nbsp;&nbsp;<span class="date">2016-1-18 10:08</span></p>
+						<p>红包领的好啊，好运跟你跑啊</p>
+					</div>
+					<div class="img-wrap"><img src="images/public/tutoulong.png" onerror="this.src='images/public/tutoulong.png'"></div>
+					<div class="price">
+						<p class="crown" style="background-position:60% 0;"></p>
+						<p class="rmb" style="font-size:13px">20元</p>
+						<p></p>
+					</div>
+    			</li>
+    		</ul>
+	    </section>
+
+    	<section class="rule">
+    		<h2>活动规则</h2>
+    		<ul class="content">
+    			<li><i>1</i>礼券需下载长江汇APP，用手机号注册后方可使用。</li>
+    			<li><i>2</i>礼券分为加油券和非油券两种，均有有效期，需在有效期内使用。</li>
+    			<li><i>3</i>非油券一个订单仅限使用一张，爱分享加油券一个油单仅限使用一张，可与可秒杀加油券和邀船加油券叠加使用。礼券不拆分、不找零。</li>
+    			<li><i>4</i>在法律允许的范围内，长江汇对本活动拥有解释权。如有问题，请联系长江汇客服：025-58520376
+				</li>
+    		</ul>
+	    </section>
+    </div>
+    
+</body>
+<script>
+	$(function(){
+		document.querySelector('.mobile').focus()
+	})
+</script>
+</html>

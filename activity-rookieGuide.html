@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>新手教程</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/activity.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+</head>
+<body class="guide_body">
+    <div class="mainContainer">
+        <div class="mainContent">
+        	<section id="top">
+        		<div class="content">
+                    <img class="scrollLoad" src="images/guide/guide_top_01.jpg" width="100%">
+                    <img class="scrollLoad" src="images/guide/guide_top_02.jpg" width="100%">
+                    <img class="scrollLoad" src="images/guide/guide_top_03.jpg" width="100%">
+        		</div>
+        	</section>
+
+        	<section id="list">
+				<div class="item">
+					<p class="title">下载长江汇APP并注册</p>
+					<img class="scrollLoad" data-url="images/guide/screenshot_01.png" src="./images/public/default.jpg" width="100%">
+					<div class="num">
+						<img class="scrollLoad" data-url="images/guide/num_01.png" src="./images/public/default.jpg">
+					</div>
+				</div>
+				<div class="item">
+					<p class="title">搜索及挑选商品</p>
+					<img class="scrollLoad" data-url="images/guide/screenshot_02.png" src="./images/public/default.jpg" width="100%">
+					<div class="num">
+						<img class="scrollLoad" data-url="images/guide/num_02.png" src="./images/public/default.jpg">
+					</div>
+				</div>
+				<div class="item">
+					<p class="title">加入购物车/立即购买</p>
+					<img class="scrollLoad" data-url="images/guide/screenshot_03.png" src="./images/public/default.jpg" width="100%">
+					<div class="num">
+						<img class="scrollLoad" data-url="images/guide/num_03.png" src="./images/public/default.jpg">
+					</div>
+				</div>
+				<div class="item">
+					<p class="title">确认及支付订单</p>
+					<img class="scrollLoad" data-url="images/guide/screenshot_04.png" src="./images/public/default.jpg" width="100%">
+					<div class="num">
+						<img class="scrollLoad" data-url="images/guide/num_04.png" src="./images/public/default.jpg">
+					</div>
+				</div>
+				<div class="item">
+					<p class="title">等待商家备货</p>
+					<img class="scrollLoad" data-url="images/guide/screenshot_05.png" src="./images/public/default.jpg" width="100%">
+					<div class="num">
+						<img class="scrollLoad" data-url="images/guide/num_05.png" src="./images/public/default.jpg">
+					</div>
+				</div>
+				<div class="item">
+					<p class="title">到体验店取货/送货至码头</p>
+					<div class="num">
+						<img class="scrollLoad" data-url="images/guide/num_06.png" src="./images/public/default.jpg">
+					</div>
+				</div>
+
+				<img src="images/guide/seek.jpg" width="100%">
+
+				<table>
+					<tr>
+						<th>产品名称</th>
+						<td><input type="text" placeholder="想要什么产品，告诉我们叫啥" disabled></td>
+					</tr>
+					<tr>
+						<th>产品数量</th>
+						<td><input type="text" placeholder="想买多少，大胆的说出来" disabled></td>
+					</tr>
+					<tr>
+						<th>产品价格</th>
+						<td><input type="text" placeholder="你期望单价多少？告诉我们" disabled></td>
+					</tr>
+				</table>
+
+				<div class="subbtn"></div>
+
+				<img class="scrollLoad future" data-url="images/guide/future.jpg" src="./images/public/default.jpg" width="100%">
+
+				<img class="scrollLoad" data-url="images/guide/oil.jpg" src="./images/public/default.jpg" width="100%">
+        	</section>
+        </div>
+    </div>
+</body>
+<script>
+	//图片滚动加载
+    $('.scrollLoad').scrollLoading();
+
+    //点击按钮连接到转到 app 求货页面
+    $('.subbtn').on('tap',function(){
+    	jsCallAppGo2AppSeekGoods();
+    });
+
+
+    function jsCallAppGo2AppSeekGoods(){
+    	try{
+    		window.wst.jsCallAppGo2AppSeekGoods();
+    	}catch(error){
+    		console.log(error.message):
+    	}
+    }
+
+</script>
+</html>

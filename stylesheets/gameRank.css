@@ -1,0 +1,277 @@
+/* line 1, ../sass/gameRank.scss */
+body {
+  height: 100%;
+  line-height: 1.4;
+}
+
+/* line 2, ../sass/gameRank.scss */
+.main {
+  height: 100%;
+  background: url("../images/gameAbout/bg.jpg") repeat-x scroll 0 0;
+  background-size: auto 100%;
+  opacity: 0.8;
+}
+
+/* line 6, ../sass/gameRank.scss */
+.pop {
+  display: block;
+  background-color: rgba(90, 187, 203, 0.2);
+  height: 100%;
+}
+/* line 10, ../sass/gameRank.scss */
+.pop .content {
+  height: 80%;
+  top: 1.5rem;
+}
+/* line 14, ../sass/gameRank.scss */
+.pop .inner {
+  border-radius: 1.2rem;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+/* line 21, ../sass/gameRank.scss */
+.pop p {
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* line 28, ../sass/gameRank.scss */
+ul {
+  overflow: hidden;
+}
+
+/* line 30, ../sass/gameRank.scss */
+.pop .title {
+  z-index: 2;
+}
+/* line 34, ../sass/gameRank.scss */
+.pop li {
+  overflow: hidden;
+}
+/* line 36, ../sass/gameRank.scss */
+.pop li div {
+  float: left;
+  font-size: .4rem;
+}
+
+/* line 44, ../sass/gameRank.scss */
+.friendHelp .none {
+  height: 44%;
+}
+/* line 47, ../sass/gameRank.scss */
+.friendHelp li {
+  padding: .3rem 0;
+  border-bottom: 1px solid #D8982A;
+}
+/* line 50, ../sass/gameRank.scss */
+.friendHelp li div {
+  height: 1.3rem;
+}
+/* line 55, ../sass/gameRank.scss */
+.friendHelp img {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid #fff;
+  display: inline-block;
+}
+/* line 63, ../sass/gameRank.scss */
+.friendHelp .pic {
+  width: 1.6rem;
+}
+/* line 66, ../sass/gameRank.scss */
+.friendHelp .info {
+  padding: .1rem 0;
+  width: 2.6rem;
+  height: 1.1rem;
+}
+/* line 70, ../sass/gameRank.scss */
+.friendHelp .info P {
+  text-align: left;
+}
+/* line 74, ../sass/gameRank.scss */
+.friendHelp .result {
+  padding: .1rem 0;
+  height: 1.1rem;
+  width: 2.8rem;
+}
+/* line 78, ../sass/gameRank.scss */
+.friendHelp .result p {
+  text-align: right;
+}
+/* line 81, ../sass/gameRank.scss */
+.friendHelp .result p:nth-of-type(1) {
+  line-height: 0.6rem;
+}
+/* line 84, ../sass/gameRank.scss */
+.friendHelp .result p:nth-of-type(2) {
+  line-height: 0.5rem;
+}
+/* line 88, ../sass/gameRank.scss */
+.friendHelp .name {
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 0.6rem;
+  width: 2.6rem;
+  text-overflow: ellipsis;
+}
+/* line 95, ../sass/gameRank.scss */
+.friendHelp .date {
+  line-height: .5rem;
+  color: #7C6F4B;
+  font-size: .3rem;
+  text-shadow: none;
+}
+/* line 101, ../sass/gameRank.scss */
+.friendHelp .meter {
+  color: #438F44;
+}
+
+/* line 111, ../sass/gameRank.scss */
+.totalRank .th {
+  padding: .7rem 0 .2rem 0;
+  position: absolute;
+  width: 7rem;
+  box-sizing: border-box;
+  background-color: #FBDB8E;
+  border-radius: .5rem;
+  left: .7rem;
+}
+/* line 120, ../sass/gameRank.scss */
+.totalRank .th div {
+  display: inline-block;
+  text-align: center;
+  font-size: .55rem !important;
+  font-weight: bold;
+}
+/* line 123, ../sass/gameRank.scss */
+.totalRank .th div:nth-child(1) {
+  width: 30%;
+}
+/* line 127, ../sass/gameRank.scss */
+.totalRank .th div:nth-child(2) {
+  width: 40%;
+}
+/* line 131, ../sass/gameRank.scss */
+.totalRank .th div:nth-child(3) {
+  width: 30%;
+}
+/* line 139, ../sass/gameRank.scss */
+.totalRank .points {
+  color: #449143;
+}
+/* line 141, ../sass/gameRank.scss */
+.totalRank .points i {
+  color: #39230B;
+}
+/* line 145, ../sass/gameRank.scss */
+.totalRank li {
+  padding: .35rem 0;
+  border-bottom: 1px solid #905d06;
+}
+/* line 148, ../sass/gameRank.scss */
+.totalRank li div {
+  font-size: .42rem;
+}
+/* line 150, ../sass/gameRank.scss */
+.totalRank li div:nth-child(1) {
+  width: 15%;
+}
+/* line 154, ../sass/gameRank.scss */
+.totalRank li div:nth-child(2) {
+  width: 25%;
+}
+/* line 159, ../sass/gameRank.scss */
+.totalRank li div:nth-child(3) {
+  width: 30%;
+}
+/* line 163, ../sass/gameRank.scss */
+.totalRank li div:nth-child(4) {
+  width: 30%;
+}
+/* line 168, ../sass/gameRank.scss */
+.totalRank li .head {
+  height: 1.4rem;
+}
+/* line 170, ../sass/gameRank.scss */
+.totalRank li .head img {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 1rem;
+  border: 2px solid #fff;
+  margin-left: .1rem;
+}
+/* line 179, ../sass/gameRank.scss */
+.totalRank li .pic {
+  width: .9rem;
+  height: .9rem;
+  font-weight: bold;
+}
+/* line 183, ../sass/gameRank.scss */
+.totalRank li .pic i {
+  position: relative;
+  top: .1rem;
+  display: block;
+  margin: 0 auto;
+  width: .8rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
+}
+/* line 196, ../sass/gameRank.scss */
+.totalRank li .phone, .totalRank li .points {
+  line-height: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 203, ../sass/gameRank.scss */
+.totalRank li:nth-child(1) .pic i {
+  background: url("../images/gameAbout/star1.png") no-repeat scroll 0 0;
+  background-size: 100%;
+}
+/* line 212, ../sass/gameRank.scss */
+.totalRank li:nth-child(2) .pic i {
+  background: url("../images/gameAbout/star2.png") no-repeat scroll 0 0;
+  background-size: 100%;
+}
+/* line 220, ../sass/gameRank.scss */
+.totalRank li:nth-child(3) .pic i {
+  background: url("../images/gameAbout/star3.png") no-repeat scroll 0 0;
+  background-size: 100%;
+}
+/* line 227, ../sass/gameRank.scss */
+.totalRank li .info {
+  padding: .2rem 0;
+}
+/* line 229, ../sass/gameRank.scss */
+.totalRank li .info p {
+  text-align: left;
+}
+/* line 232, ../sass/gameRank.scss */
+.totalRank li .info .alias {
+  color: #392409;
+}
+/* line 235, ../sass/gameRank.scss */
+.totalRank li .info .nick {
+  color: #3A2206;
+  font-size: .3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 245, ../sass/gameRank.scss */
+.totalRank li .result {
+  padding: .1rem 0;
+}
+
+/* line 251, ../sass/gameRank.scss */
+.intelayer {
+  height: 100%;
+  overflow-y: scroll;
+  padding: .5rem;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=gameRank.css.map */

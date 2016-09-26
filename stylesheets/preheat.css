@@ -1,0 +1,139 @@
+/* line 1, ../sass/preheat.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 4, ../sass/preheat.scss */
+body {
+  background: #390663 url("../images/preheat/preheat_bg.jpg") repeat-y scroll 0 10rem;
+  background-size: 100%;
+  color: #fefefe;
+}
+
+/* line 9, ../sass/preheat.scss */
+p {
+  text-align: justify;
+}
+
+/* line 13, ../sass/preheat.scss */
+#top img {
+  display: block;
+}
+
+/* line 18, ../sass/preheat.scss */
+#middle {
+  padding: .2rem;
+}
+/* line 21, ../sass/preheat.scss */
+#middle .wrap {
+  padding: .4rem;
+}
+/* line 25, ../sass/preheat.scss */
+#middle .txt h2 {
+  color: #380663;
+  background: transparent url("../images/preheat/preheat_05.jpg") no-repeat scroll 0 0;
+  background-size: 35%;
+  height: .8rem;
+  line-height: .8rem;
+  font-size: .3rem;
+  text-indent: .4rem;
+}
+/* line 34, ../sass/preheat.scss */
+#middle .txt h3 {
+  font-size: .3rem;
+  color: #fffc8f;
+  line-height: .6rem;
+}
+/* line 39, ../sass/preheat.scss */
+#middle .txt span {
+  color: #fffc8f;
+  text-decoration: underline;
+  font-size: .3rem;
+}
+/* line 46, ../sass/preheat.scss */
+#middle .txt ul li {
+  font-size: .3rem;
+  text-indent: .6rem;
+  line-height: .7rem;
+}
+/* line 53, ../sass/preheat.scss */
+#middle .txt table {
+  border-radius: .2rem;
+}
+/* line 55, ../sass/preheat.scss */
+#middle .txt table:nth-of-type(2) {
+  margin-top: .8rem;
+}
+/* line 58, ../sass/preheat.scss */
+#middle .txt table tr:nth-of-type(1) {
+  font-size: .45rem;
+}
+/* line 61, ../sass/preheat.scss */
+#middle .txt table td, #middle .txt table th {
+  text-align: center;
+  border: 1px solid #fffc8f;
+  padding: .2rem 0;
+}
+/* line 65, ../sass/preheat.scss */
+#middle .txt table td img, #middle .txt table th img {
+  height: .35rem;
+}
+/* line 69, ../sass/preheat.scss */
+#middle .txt table th {
+  font-weight: bold;
+  color: #fffc8f;
+  height: 1rem;
+}
+/* line 76, ../sass/preheat.scss */
+#middle .txt .note {
+  color: #c49ee4;
+  margin-top: .2rem;
+  margin-bottom: .4rem;
+}
+
+/* line 83, ../sass/preheat.scss */
+footer {
+  padding-bottom: 1rem;
+}
+/* line 85, ../sass/preheat.scss */
+footer p {
+  text-align: center;
+  color: #fffc8f;
+}
+
+/* line 91, ../sass/preheat.scss */
+body.invite-guide {
+  background: #5516AF;
+}
+/* line 94, ../sass/preheat.scss */
+body.invite-guide #middle .txt h2 {
+  color: #5015BF;
+  background: transparent url("../images/invite-ship-guide/invit-ship-guide_06.jpg") no-repeat scroll 0 0;
+  background-size: 35%;
+  height: 1.8rem;
+  line-height: 2.8rem;
+  font-size: .3rem;
+  text-indent: .6rem;
+}
+/* line 103, ../sass/preheat.scss */
+body.invite-guide #middle .txt ul li {
+  text-indent: 0;
+  font-size: .3rem;
+  line-height: .6rem;
+}
+/* line 110, ../sass/preheat.scss */
+body.invite-guide .rule li {
+  margin-bottom: .4rem;
+}
+/* line 115, ../sass/preheat.scss */
+body.invite-guide .warning li {
+  margin-bottom: .2rem;
+}
+/* line 120, ../sass/preheat.scss */
+body.invite-guide footer p {
+  text-align: center;
+  color: #fffc8f;
+  white-space: nowrap;
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+}

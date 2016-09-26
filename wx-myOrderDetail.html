@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>订单详情</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/wx-myOrder.css">
+</head>
+<body v-cloak class="detail">
+<div class="mainContainer">
+    <div v-if="dataLoaded" class="mainContent">
+        <section id="state">
+            <div v-if="orderTips" class="tips">{{orderTips}}</div>
+            <div class="title">
+                <span>{{orderType=='0' ? '长江汇自营' : '兆基石油'}}</span>
+                <i style="color:#323232;">{{orderState | orderStateToCn}}</i>
+            </div>
+            <div v-if="orderState<4" class="progress">
+                <div v-for="item in steps" v-bind:class="['step', {active:item.active}]">
+                    <p class="md">{{item.time | splitTime 'md' }}</p>
+                    <p class="hm">{{item.time | splitTime 'hm' }}</p>
+                    <div class="circle">
+                        <div><i></i></div>
+                        <span class="line"></span>
+                    </div>
+                    <p>{{item.text}}</p>
+                </div>
+            </div>
+        </section>
+        <section id="goodsList">
+            <ul class="landscape">
+                <li v-for="one in goodsList" class="ls_item">
+                    <div class="ls_left">
+                        <img class="ls_pic" data-url="{{one.bigPic}}" :src="one.picUrl" onerror="this.src='images/public/default.jpg'"/>
+                    </div>
+                    <div class="ls_right">
+                        <p class="ls_intro"><i v-if="parseInt(one.isGift)">赠</i>{{one.goodsName}}</p>
+                        <div class="ls_about">
+                            <div class="price">
+                                <span class="now_price">¥ <i class="price_num">{{one.actPrice}}</i></span><del class="old-price">¥ <i class="price_num">{{one.unitPrice}}</i></del>
+                            </div>
+                        </div>
+                        <div class="ls_prefix">
+                            <span>*{{one.goodsCount}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div v-if="remark" class="remark">备注：{{remark}}</div>
+        </section>
+        <section id="pickupInfo" class="table">
+            <div class="tableWrap">
+                <template v-if="orderType=='0'">
+                    <div class="headline">取货信息</div>
+                    <table>
+                        <tr><th>取件人</th><td>{{takerName}}</td></tr>
+                        <tr><th>手机号</th><td>{{takerTel.slice(0,3) + " " + takerTel.slice(3,7) + " " +  takerTel.slice(7,11) }}</td></tr>
+                        <tr><th>取货地点</th><td>{{storePosition}}</td></tr>
+                        <tr><th>取货时间</th><td>{{planTakeTime}}</td></tr>
+                        <tr><th>取货码</th><td style="color:#fe4f00">{{snCode}}</td></tr>
+                    </table>
+                </template>
+
+                <template v-if="orderType=='1'">
+                    <div class="tableWrap">
+                        <div class="headline">加油信息</div>
+                        <table>
+                            <tr><th>船名</th><td>{{shipName}}</td></tr>
+                            <tr><th>船主姓名</th><td>{{takerName}}</td></tr>
+                            <tr><th>手机号</th><td>{{takerTel}}</td></tr>
+                            <tr><th>加油方式</th><td>{{isDelivery}}</td></tr>
+                            <tr><th>加油时间</th><td>{{planTakeTime}}</td></tr>
+                            <tr v-if="orderState!=1"><th>加油码</th><td>{{snCode}}</td></tr>
+                        </table>
+                    </div>
+                </template>
+            </div>
+
+        </section>
+        <section id="orderInfo" class="table">
+            <div class="tableWrap">
+                <div class="headline">订单信息</div>
+                <table>
+                    <tr><th>订单号</th><td>{{orderCode}}</td></tr>
+                    <tr><th>下单时间</th><td>{{createTime}}</td></tr>
+                    <tr><th>订单金额</th><td>¥{{totalPrice}}</td></tr>
+                    <tr v-if="sumScore"><th>获得积分</th><td>{{sumScore}}</td></tr>
+                </table>
+            </div>
+
+        </section>
+        <section id="payInfo" class="table">
+            <div class="tableWrap">
+                <div class="headline">支付信息</div>
+                <table>
+                    <tr><th>商品总额</th><td>¥{{originPrice}}</td></tr>
+                    <tr><th>优惠总额</th><td>¥{{disCountAmount}}</td></tr>
+                    <tr><th>红包抵扣</th><td>¥{{couponPayMoney=='0' ? oilCouponPayMoney : couponPayMoney}}</td></tr>
+                    <tr v-if="scoreUsed != '0'"><th>积分抵扣</th><td>¥{{scoreUsed}}</td></tr>
+                    <tr><th>{{payType | transPayType}}</th><td>¥{{actPayMoney}}</td></tr>
+                </table>
+            </div>
+
+        </section>
+    </div>
+</div>
+
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script src="javascripts/plugin/vue-resource.js"></script>
+<script>
+    var openId = 'abc';
+
+    //测试数据在上线环境中删除
+    var fakeData = {
+        "code": "0000",
+        "msg": "操作成功。",
+        "data": {
+            "isShowShare": "0",
+            "couponPayMoney": "0",
+            "oilCouponPayMoney": "0",
+            "scoreUsed": "0",
+            "balanceMoney": "1.00",
+            "mutexCode": "",
+            "disCountAmount": "0.00",
+            "actPayMoney": "1.00",
+            "orderType": "0",
+            "hasMS": "0",
+            "takerName": "韩",
+            "takerTel": "18652970256",
+            "storePosition": "龙潭水道19号服务区长江汇体验店",
+            "planTakeTime": "2016-6-23 16:00",
+            "realTakeTime": "",
+            "snCode": "14eeb8ca740",
+            "orderState": "2",
+            "shopName": "长江汇自营",
+            "cancelTime": "",
+            "payTime": "6-23 15:02:09",
+            "stockupTime": "",
+            "finishTime": "",
+            "isDelete": "0",
+            "orderCode": "XC0111370970628096",
+            "createTime": "2016-6-23 15:02:03",
+            "payType": "6",
+            "originPrice": "1.00",
+            "totalPrice": "1.00",
+            "sumScore": "1",
+            "remarks": "",
+            "refundCode": "",
+            "refundId": "",
+            "isBackOrder": "0",
+            "offlinePayAble": true,
+            "goodsList": [
+                {
+                    "detailId": "382279",
+                    "unitPrice": "2.50",
+                    "actPrice": "1.00",
+                    "isGift": "0",
+                    "state": "0",
+                    "smtCaseId": "",
+                    "serviceCode": "",
+                    "picUrl": "http://oss.njcjh.cn/20160427/132954692ae646d5ad84146f57752bc5.jpg",
+                    "goodsId": "949",
+                    "goodsName": "西红柿 约1斤 默认",
+                    "caseType": "",
+                    "caseTip": "",
+                    "caseName": "",
+                    "goodsCount": "1",
+                    "refundState": "",
+                    "refundCount": 0,
+                    "isBack": "0",
+                    "backBax": "",
+                    "orderRefundId": null,
+                    "averageScore": 0,
+                    "averageCoupon": 0
+                }
+            ],
+            "isDelivery": "",
+            "dock": "",
+            "shipName": "韩0622",
+            "auxShowType": "",
+            "deliveryPrice": "0.00",
+            "deliverWay": "",
+            "isPincode": "0",
+            "couponNums": 0,
+            "showShareTitle": "",
+            "showShareContent": "",
+            "orderTips": "下单后7天内订单有效，过期订单自动作废~"
+        }
+    };
+    var  aaa =    {
+        "code": "0000",
+            "msg": "操作成功。",
+            "data": {
+        "isShowShare": "1",
+                "couponPayMoney": "0",
+                "oilCouponPayMoney": "0",
+                "scoreUsed": "0",
+                "balanceMoney": "0.00",
+                "mutexCode": "0987138D5799B00",
+                "disCountAmount": "100.00",
+                "actPayMoney": "0.01",
+                "orderType": "1",
+                "hasMS": "0",
+                "takerName": "ct",
+                "takerTel": "18020157746",
+                "storePosition": "六合站",
+                "planTakeTime": "2016-6-01 15:56",
+                "realTakeTime": "",
+                "snCode": "132a3a3c4c0",
+                "orderState": "2",
+                "shopName": "兆基石油",
+                "cancelTime": "",
+                "payTime": "6-06 11:18:11",
+                "stockupTime": "",
+                "finishTime": "6-06 11:18:11",
+                "isDelete": "0",
+                "orderCode": "0103597172338688",
+                "createTime": "2016-6-01 15:50:23",
+                "payType": "2",
+                "originPrice": "100.01",
+                "totalPrice": "0.01",
+                "sumScore": "0",
+                "remarks": "",
+                "refundCode": "",
+                "refundId": "",
+                "isBackOrder": "0",
+                "offlinePayAble": false,
+                "goodsList": [
+            {
+                "detailId": "371361",
+                "unitPrice": "100.01",
+                "actPrice": "0.01",
+                "isGift": "0",
+                "state": "0",
+                "smtCaseId": "",
+                "serviceCode": "",
+                "picUrl": "http://oss.njcjh.cn//20151208/2aa24a80abdb4757a047b0b8420ee19a.jpg",
+                "goodsId": "919",
+                "goodsName": "国三0#柴油",
+                "caseType": "",
+                "caseTip": "",
+                "caseName": "",
+                "goodsCount": "1",
+                "refundState": "",
+                "refundCount": 0,
+                "isBack": "0",
+                "backBax": "",
+                "orderRefundId": null,
+                "averageScore": 0,
+                "averageCoupon": 0
+            }
+        ],
+                "isDelivery": "停靠服务区加油(六合站)",
+                "dock": "",
+                "shipName": "CT157746",
+                "auxShowType": "1",
+                "deliveryPrice": "0.00",
+                "deliverWay": "0",
+                "isPincode": "1",
+                "couponNums": 0,
+                "showShareTitle": "人在江湖飘，先领油券再加油",
+                "showShareContent": "［船老板们看过来！］兆基石油发福利啦，先领油券再加油。油券在您到站加油的时候，可直接抵扣油款，见者有份！",
+                "orderTips": ""
+    }
+    };
+
+    window.addEventListener('load', function(){
+        var vm = new Vue({
+            el: 'body',
+            data:{
+                "dataLoaded":false, //自定义
+                "steps":"", //自定义属性
+                hasMS:"",
+                couponNums:"",
+                "isShowShare": "",
+                "couponPayMoney": "",
+                "oilCouponPayMoney": "",
+                "scoreUsed": "",
+                "balanceMoney": "",
+                "mutexCode": "",
+                "disCountAmount": "",
+                "actPayMoney": "",
+                "orderType": "",
+                "takerName": "",
+                "takerTel": "",
+                "storePosition": "",
+                "planTakeTime": "",
+                "realTakeTime": "",
+                "snCode": "",
+                "orderState": "",
+                "shopName": "",
+                "cancelTime": "",
+                "payTime": "",
+                "stockupTime": "",
+                "finishTime": "",
+                "isDelete": "",
+                "orderCode": "",
+                "createTime": "",
+                "payType": "",
+                "originPrice": "",
+                "totalPrice": "",
+                "sumScore": "",
+                "remarks": "",
+                "refundCode": "",
+                "refundId": "",
+                "isBackOrder": "",
+                "offlinePayAble": true,
+                "goodsList": [],
+                "isDelivery": "0",
+                "dock": "",
+                "shipName": "",
+                "auxShowType": "",
+                "deliveryPrice": "",
+                "deliverWay": "",
+                "isPincode": "",
+                "showShareTitle": "",
+                "showShareContent": "",
+                "orderTips": ""
+            },
+            created: function () {
+                this.fetchData();
+            },
+            methods: {
+                fetchData: function () {
+                    //ajax 发送请求，请求参数更改在此★★★★★
+                    /*this.$http.get('http://127.0.0.1:8000/test',{
+                        'openId':openId,
+                        'page': '0',
+                        'orderState': 5
+                    }).then(function(res){
+                        var resData = res.data;
+                         for(var k in resData.data){
+                            if(resData.data.hasOwnProperty(k))
+                                this.$set(k, resData.data[k]);
+                         }
+                    }, function (res) {
+                        console.log('请求失败');
+                    });*/
+
+                    //测试---★★★★★，上线删除
+                    setTimeout(function(){
+                        for(var k in fakeData.data){
+                            if(fakeData.data.hasOwnProperty(k))
+                                vm.$set(k, fakeData.data[k]);
+                        }
+                        vm.dataLoaded = true;
+                    },1000);
+                }
+            },
+            filters: {
+                //判断支付方式，转成中文
+                transPayType: function (val) {
+                    val = parseInt(val);
+                    var typeCn;
+                    switch (val){
+                        case 0:
+                            typeCn = '中国银行';
+                            break;
+                        case 1:
+                            typeCn = '支付宝';
+                            break;
+                        case 2:
+                            typeCn = '微信';
+                            break;
+                        case 3:
+                            typeCn = '银联';
+                            break;
+                        case 4:
+                            typeCn = '线下支付';
+                            break;
+                        case 6:
+                            typeCn = '余额支付';
+                            break;
+                        default:
+                            typeCn = '未选择';
+                            break;
+                    }
+
+                    return typeCn;
+                },
+                //判断订单状态，转成中文
+                orderStateToCn: function (val) {
+                    /*订单状态: 0=未支付 1=已取消 2=已支付 3=已备货 4=交易完成 5=未评价  6=已评价 7=退款中 8=退款完成*/
+                    var orderStateCn;
+                    switch (parseInt(val)) {
+                        case 0:
+                            orderStateCn = '待支付'; //订单提交成功
+                            break;
+                        case 1:
+                            orderStateCn = '已取消'; //4个全暗
+                            break;
+                        case 2:
+                            if(this.orderType=='1'){
+                                orderStateCn = '待加油';
+                            }else{
+                                orderStateCn = '待备货'; //订单提交、已支付亮
+                            }
+                            break;
+                        case 3:
+                            orderStateCn = '待取货'; //
+                            break;
+                        case 4:
+                            orderStateCn = '待评价'; //全亮
+                            break;
+                        case 5:
+                            orderStateCn = '未评价'; //全亮
+                            break;
+                        case 6:
+                            orderStateCn = '已完成'; //全亮
+                            break;
+                        case 7:
+                            orderStateCn = '退款中'; //全暗
+                            break;
+                        case 8:
+                            orderStateCn = '退款完成';//全暗
+                            break;
+                        case 10:
+                            orderStateCn = '已过期';
+                            break;
+                    }
+
+                    return orderStateCn;
+                },
+                //订单进程时间
+                splitTime: function (time,type) {
+                    if(time){
+                        if (type && type == 'md') {
+                            return time.split(' ')[0];
+                        } else {
+                            return time.split(' ')[1];
+                        }
+                    }
+
+                }
+            },
+            computed: {
+                //订单进程的显示数据判断与定义
+                steps: function (){
+                    var steps;
+                    //非油单------------------------
+                    if(this.orderType == '0'){
+                        //线下
+                        if(this.payType == 4){
+                            steps = [
+                                {text:'订单提交成功', active:false, time:this.createTime},
+                                {text:'已备货', active:false, time:this.stockupTime},
+                                {text:'已完成', active:false, time:this.finishTime}
+                            ];
+
+                            switch (parseInt(this.orderState)){
+                                case 0:
+                                case 2:
+                                    steps[0].active = true;
+                                    break;
+                                case 3:
+                                    steps[0].active = true;
+                                    steps[1].active = true;
+                                    break;
+                                case 4:
+                                case 5:
+                                case 6:
+                                    steps[0].active = true;
+                                    steps[1].active = true;
+                                    steps[2].active = true;
+                                    break;
+                            }
+                        }
+                        //线上
+                        else{
+                            steps = [
+                                {text:'订单提交成功', active:false, time:this.createTime},
+                                {text:'已支付', active:false, time:this.payTime},
+                                {text:'已备货', active:false, time:this.stockupTime},
+                                {text:'已完成', active:false, time:this.finishTime}
+                            ];
+                            switch (parseInt(this.orderState)){
+                                case 0:
+                                    steps[0].active = true;
+                                    break;
+                                case 2:
+                                    steps[0].active = true;
+                                    steps[1].active = true;
+                                    break;
+                                case 3:
+                                    steps[0].active = true;
+                                    steps[1].active = true;
+                                    steps[2].active = true;
+                                    break;
+                                case 4:
+                                case 5:
+                                case 6:
+                                    steps[0].active = true;
+                                    steps[1].active = true;
+                                    steps[2].active = true;
+                                    steps[3].active = true;
+                                    break;
+                            }
+                        }
+
+                        return steps;
+                    }
+                    //油单--------------------------
+                    if(this.orderType == '1'){
+                        steps = [
+                            {text:'订单提交成功', active:false, time:this.createTime},
+                            {text:'已支付', active:false, time:this.stockupTime},
+                            {text:'已加油', active:false, time:this.finishTime}
+                        ];
+
+                        switch (parseInt(this.orderState)){
+                            case 0:
+                                steps[0].active = true;
+                                break;
+                            case 2:
+                                steps[0].active = true;
+                                steps[1].active = true;
+                                break;
+                            case 4:
+                            case 5:
+                            case 6:
+                                steps[0].active = true;
+                                steps[1].active = true;
+                                steps[2].active = true;
+                                break;
+                        }
+                    }
+
+                    return steps;
+                }
+            }
+        });
+    }, false);
+</script>
+</html>

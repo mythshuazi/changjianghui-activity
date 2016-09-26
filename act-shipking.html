@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html style="height: 100%; font-size:36px;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>谁是跑船帝</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/act-shipking.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/act-shipking/top.jpg" width="100%">
+        </header>
+        <section class="content">
+            <div>
+                <div class="title"><h3 class="wave">参与方式</h3></div>
+                <p><i>1</i>关注长江汇微信服务号</p>
+                <img class="qrcode" src="images/act-shipking/qrcode.png" width="70%">
+                <p><i>2</i>进入服务号后，点击底部菜单栏“汇服务” — “谁是跑船帝”参与活动。</p>
+            </div>
+
+
+            <div>
+                <div class="title"><h3 class="tree">活动时间</h3></div>
+                <table>
+                    <tr>
+                        <th>参与时间：</th>
+                        <td>2016.9.1 10:00 ~2016.9.29 23:59</td>
+                    </tr>
+                    <tr>
+                        <th>结果公布：</th>
+                        <td>2016.9.30</td>
+                    </tr>
+                    <tr>
+                        <th>领奖时间：</th>
+                        <td>2016.9.30 ~ 2016.11.13</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <div class="title"><h3 class="wave">奖品明细</h3></div>
+                <p>按月排名：前10名进入榜单，月底进行结算。</p>
+                <table>
+                    <tr><td>第1名：跑船帝</td></tr>
+                    <tr><td>奖品： iPad mini 4 *1 或 2500元非油券*1</td></tr>
+                    <tr><td>第2名： 掌门</td></tr>
+                    <tr><td>奖品：红米note 3 *1 或 1500元非油券*1</td></tr>
+                    <tr><td>第3名： 堂主</td></tr>
+                    <tr><td>奖品：3D立体音响 *1 或500元非油券</td></tr>
+                    <tr><td>第4—10名：护法 （七大护法）</td></tr>
+                    <tr><td>奖品：剃须刀 *1  或 100元非油券</td></tr>
+                </table>
+                <p class="red">*所有奖项均是二选一</p>
+            </div>
+
+            <div>
+                <div class="title"><h3 class="tree">活动规则</h3></div>
+                <p><i>1</i>每月根据船友的航行总分排名进行实物奖品的排发。每月航行成绩＝本月自己航行的最好成绩＋朋友们的助力的最好成绩（邀请人越多，每月航行成绩越高）。</p>
+                <p><i>2</i>一人一手机一账号一奖项，到站领取实物商品时，每人限使用同一部手机，不得切换微信号，不得代领取。如工作人员核查发现，中奖船友同时用了几个微信号参与活动并且中奖，我们将根据其最高排名派只发1次奖品。</p>
+                <p><i>3</i>活动参赛者必须内河船友，如经工作人员核查发现，中奖者不是船友，我们将取消其中奖资格，排名依次顺位。</p>
+                <p><i>4</i>通过“跑船帝”活动获得的非油券的有效期是一个月，实物奖品限在活动结果公布后，45天内到长江汇服务号及长江汇VIP体验店兑奖，逾期将失去领取资格。</p>
+            </div>
+
+            <div>
+                <div class="title"><h3 class="wave">领奖方式</h3></div>
+                <p><i>1</i>活动结束后，长江汇金牌客服将主动联系中奖船友，通知领奖事宜。船友也可进入长江汇服务号，点击底部菜单栏“汇服务”—“谁是跑船帝”—“我的排名”查看自己的中奖信息；</p>
+                <p><i>2</i>中奖者需在领奖时间内，携带船舶证书及有效身份证件，到长江汇VIP体验店领奖。</p>
+            </div>
+        </section>
+        <footer>
+            <p></p>
+            <img src="images/act-shipking/bottom.jpg" width="100%">
+        </footer>
+    </div>
+</body>
+<script>
+    window.addEventListener('load',function(){
+        var isIos = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+        if(isIos){
+            $('<i style="display:block; line-height:1.5;">该活动与奖品和苹果公司无关</i><i style="display:block; line-height:1.5;">本活动最终解释权归长江汇所有</i>').appendTo('footer p');
+        }else{
+            $('<i style="display:block; line-height:1.5;">本活动最终解释权归长江汇所有</i>').appendTo('footer p');
+        }
+    },false);
+</script>
+</html>

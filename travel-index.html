@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/travel-common.css">
+<link rel="stylesheet" href="stylesheets/travel-index.css">
+<link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+</head>
+<body class="index" style="height:100%;">
+    <header>
+        <div class="roof">
+            <h2>首页</h2>
+            <!--<a class="left"></a>-->
+            <!--<a class="right"></a>-->
+        </div>
+    </header>
+    <section class="container">
+        <section class="carousel">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="#"><img src="images/travel/img1.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/travel/img2.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/travel/img3.jpg" alt=""></a></div>
+                </div>
+                <!-- 分页器 -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="catgory">
+            <div class="wrap">
+                <div class="one-cat">
+                    <a href="#"><img src="images/travel/index03.png" alt="" class="hot"></a>
+                </div>
+                <div class="two-cat">
+                    <a href="#"><img src="images/travel/index02.png" alt="" class="trip"></a>
+                    <a href="#"><img src="images/travel/index01.png" alt="" class="history"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="hot-des">
+            <div class="title">热门目的地</div>
+            <ul class="des-list">
+                <li><a>马尔代夫</a></li>
+                <li><a>泰国</a></li>
+                <li><a>日本</a></li>
+                <li><a>香港</a></li>
+                <li><a>台湾</a></li>
+                <li><a>新加坡</a></li>
+                <li><a>北京</a></li>
+                <li><a>上海杭州</a></li>
+                <li><a>马尔代夫</a></li>
+                <li><a>泰国</a></li>
+                <li><a>日本</a></li>
+                <li><a>香港</a></li>
+                <li><a>台湾</a></li>
+                <li><a>新加坡</a></li>
+                <li><a>北京</a></li>
+                <li><a>上海杭州</a></li>
+            </ul>
+        </section>
+
+        <section class="list">
+            <div class="title">你与世界，只差一次旅行</div>
+            <ul class="ls ls-index">
+                <li class="ls-item">
+                    <a href="">
+                        <div class="ls-img">
+                            <img src="images/act-kids/img3-04.jpg">
+                            <div class="ls-origin"><span>国内</span></div>
+                        </div>
+
+                        <div class="ls-intro">
+                            <h3 class="ls-title">日本本州旅游，东京一天自由活动</h3>
+                            <div class="ls-tags">
+                                <div><span>跟团游</span></div>
+                                <div><span>6天4晚</span></div>
+                                <div><span>东航双飞</span></div>
+                                <div><span>特色餐</span></div>
+                                <div><span>汤泡</span></div>
+                                <div><span>温泉酒店</span></div>
+                                <div><span>无购物</span></div>
+                            </div>
+                            <div class="ls-price">¥ 3999元</div>
+                            <div class="ls-from"><span>京东商城</span></div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="ls-scenery">
+                    <img src="images/travel/test.jpg" alt="" class="ls-pic">
+                    <h3 class="ls-title">南京巴厘岛风情自驾游</h3>
+                    <div class="ls-tags">
+                        <div><span>跟团游</span></div>
+                        <div><span>6天4晚</span></div>
+                        <div><span>东航双飞</span></div>
+                        <div><span>特色餐</span></div>
+                        <div><span>汤泡</span></div>
+                        <div><span>温泉酒店</span></div>
+                        <div><span>无购物</span></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </section>
+</body>
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/swiper.3.1.2.jquery.min.js"></script>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true,
+        pagination: '.swiper-pagination'
+    })
+</script>
+</html>

@@ -1,0 +1,285 @@
+@import "variables";
+body{
+  position:relative;
+}
+#succeed {
+  padding:10px 0 10px 0;
+
+
+  .payWrap{
+    border-top: 1px solid $boder-color;
+    border-bottom: 1px solid $boder-color;
+  }
+  .payState{
+    display: table;
+    margin:0 auto;
+    padding: 12px 0;
+    &>*{
+      display: table-cell;
+    }
+
+    div{
+      vertical-align: middle;
+
+      p {
+        color: $color-deepgray;
+        font-size: 12px;
+        text-align: left;
+
+        &:first-child {
+          color: $color-green;
+          font-size:15px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    i{
+      display: inline-block;
+      width:40px;
+      height:40px;
+      vertical-align: bottom;
+    }
+
+    &.succeed {
+      i{
+        background:url("../images/paysucceed/succeed.png") no-repeat;
+        background-size: contain;
+      }
+
+    }
+
+    &.failed {
+      i{
+        background:url("../images/paysucceed/failed.png") no-repeat;
+        background-size: 36px 36px;
+        background-position:2px;
+      }
+      .stateTxt {
+        color:#000;
+      }
+    }
+
+  }
+
+  .delivery {
+    margin-top:10px;
+    border-top: 1px solid $boder-color;
+    border-bottom: 1px solid $boder-color;
+    
+    p {
+      font-size: 12px;
+      line-height: 30px;
+      color: $color-deepgray;
+      text-indent: 25px;
+      background:url("../images/paysucceed/gps.png") no-repeat 4px;
+      background-size:15px;
+        border-bottom: 1px solid #F9F9F9;
+
+      &.money{
+        background:url("../images/paysucceed/money.png") no-repeat 4px;
+        background-size:15px;
+      }
+
+      &.date{
+        background:url("../images/paysucceed/date.png") no-repeat 4px;
+        background-size:15px;
+      }
+
+      &.addoil{
+        background:url("../images/paysucceed/addoil.png") no-repeat 5px;
+        background-size:15px;       
+      }
+
+      &.goods{
+        background:url("../images/paysucceed/goods.png") no-repeat 5px;
+        background-size:18px;   
+      }
+
+      &.qrcode {
+        border-bottom:0;
+        position:relative;
+        span{
+          width:134px;
+          text-align:left;
+          position:absolute;
+          right:10px;
+          top:0;
+          background:url("../images/paysucceed/qrcode.png") no-repeat right 6px;
+          background-size:18px;   
+        }
+      }
+
+      span{
+        color: #000000;
+      }
+    }
+  }
+
+  .link {
+    display:table;
+    table-layout: fixed;
+    padding:15px 0;
+    width:100%;
+    border-bottom:1px solid $boder-color;
+
+    li {
+      display: table-cell;
+      width:50%;
+      text-align: center;
+
+      span{
+        font-size: 12px;
+        height: 30px;
+        line-height: 30px;
+        display: inline-block;
+        color:#fff;
+        border-radius: 2px;
+        width:95%;
+        &.detail {
+          background-color: $color-orange;
+        }
+
+        &.index {
+          background-color: $color-yellow;
+        }
+      }
+
+
+    }
+  }
+}
+
+#guess {
+  h2.like {
+    text-align: center;
+    border-top:1px solid $boder-color;
+    border-bottom:1px solid $boder-color;
+
+    span{
+      display: inline-block;
+      line-height: 40px;
+      text-align: center;
+      text-indent: 20px;
+      background: url("../images/detail/like.png") no-repeat 0 14px;
+      -webkit-background-size: 15px;
+      background-size: 15px;
+    }
+
+  }
+
+  ul {
+    li{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+
+      float:left;
+      padding:5px;
+      width:50%;
+
+      border-bottom: 1px solid $boder-color;
+      &:nth-child(2n+1){
+        border-right: 1px solid $boder-color;
+      }
+
+
+      img{
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      p{
+        font-size:12px;
+        line-height: 1.4;
+        
+        &.intro{
+          height:34px;
+          word-wrap: break-word;
+          word-break: break-all;
+          overflow:hidden;
+        }
+
+        &.price{
+          color: $color-orange;
+          position:relative;
+
+          .rate {
+            color: $color-yellow;
+            font-size:12px;
+            position:absolute;
+            right:-4px;
+            top:2px;
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            -ms-transform: scale(0.8);
+            -o-transform: scale(0.8);
+            transform: scale(0.8);
+          }
+        }
+
+        .rmb {
+          font-size: 12px;
+          -webkit-transform: scale(0.8);
+          -moz-transform: scale(0.8);
+          -ms-transform: scale(0.8);
+          -o-transform: scale(0.8);
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}
+
+%abs {
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background-color:rgba(#000,0.6);
+}
+.pop {
+  @extend %abs;
+  padding-top:2rem;
+  background-color:rgba(#000,0.5);
+  .content {
+    img{display:block;}
+    width:8rem;
+    margin:0 auto;
+  }
+  .txt {
+    text-align:center;
+    position:relative;
+    top:-4rem;
+    h3{
+      color:#FFE07A;
+    }
+    p{
+      color:#760000;
+      margin: .3rem 0 .3rem 0;
+    }
+    button {
+      display:inline-block;
+      width:4rem;
+      height:1rem;
+      background-color:#FCEF65;
+      color:#FF2F52;
+      border:0;
+      outline:0;
+      font-weight:bold;
+      font-size:18px;
+      font-family:'Microsoft YaHei';
+    }
+  }
+  .close{
+    display:block;
+    position:absolute;
+    top:3.1rem;
+    right:1.4rem;
+    width:1rem;
+    height:1rem;
+    background:url("../images/paysucceed/hb_02.png") no-repeat scroll 0 0;
+    background-size:contain;
+  }
+}

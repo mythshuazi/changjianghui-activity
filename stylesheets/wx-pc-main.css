@@ -1,0 +1,278 @@
+/* line 1, ../sass/wx-pc-main.scss */
+input {
+  border: 0;
+  outline: 0;
+  padding: 0;
+}
+
+/* line 6, ../sass/wx-pc-main.scss */
+img {
+  display: block;
+}
+
+/* line 9, ../sass/wx-pc-main.scss */
+body {
+  background-color: #f7e5d1;
+}
+
+/* line 12, ../sass/wx-pc-main.scss */
+.mainContainer {
+  padding-bottom: 5rem;
+  background: #f7e5d1 url("../images/wx-parentsChild/parents-child_bg.jpg") no-repeat scroll 0 bottom;
+  background-size: 100%;
+}
+
+/* line 17, ../sass/wx-pc-main.scss */
+#top {
+  position: relative;
+}
+
+/* line 21, ../sass/wx-pc-main.scss */
+.ruleBtn {
+  width: 2.5rem;
+  height: 1rem;
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  background: url("../images/wx-parentsChild/rulebtn_04.png") no-repeat scroll 0 0;
+  background-size: 100%;
+}
+
+/* line 30, ../sass/wx-pc-main.scss */
+.apply {
+  display: block;
+  width: 100%;
+  background: url("../images/wx-parentsChild/main-apply-btn.jpg") no-repeat scroll 0 0;
+  background-size: 100%;
+  height: 3.5rem;
+}
+
+/* line 37, ../sass/wx-pc-main.scss */
+.searchWrap {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  height: 1.7rem;
+  background: url("../images/wx-parentsChild/parents-child_search.jpg") no-repeat scroll 0 0;
+  background-size: 100%;
+}
+/* line 45, ../sass/wx-pc-main.scss */
+.searchWrap [type=number] {
+  width: 5.5rem;
+  height: 1rem;
+  position: relative;
+  left: .65rem;
+  top: .2rem;
+  background: transparent;
+  font-size: .5rem;
+}
+/* line 54, ../sass/wx-pc-main.scss */
+.searchWrap .searchBtn {
+  width: 2rem;
+  height: 1.3rem;
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+}
+
+/* line 64, ../sass/wx-pc-main.scss */
+.gallery ul {
+  padding-right: .2rem;
+}
+/* line 67, ../sass/wx-pc-main.scss */
+.gallery li {
+  float: left;
+  width: 4.5rem;
+  margin-left: .3rem;
+  border-radius: .2rem;
+  position: relative;
+  margin-top: 1rem;
+}
+/* line 75, ../sass/wx-pc-main.scss */
+.gallery li .content {
+  position: relative;
+  height: 6.8rem;
+  z-index: 9;
+}
+/* line 80, ../sass/wx-pc-main.scss */
+.gallery li .border {
+  border: 0.08rem solid #664C27;
+  height: 5rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  border-radius: .2rem;
+  box-sizing: border-box;
+  background-color: #F7E7D7;
+}
+
+/* line 93, ../sass/wx-pc-main.scss */
+.wrap {
+  position: relative;
+}
+
+/* line 97, ../sass/wx-pc-main.scss */
+.rahmen {
+  width: 4.16rem;
+  margin: 0 auto;
+  background-color: #F7E7D7;
+}
+
+/* line 102, ../sass/wx-pc-main.scss */
+.photo {
+  display: block;
+  width: 4rem;
+  height: 3rem;
+  border: .08rem solid #664C27;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  margin: 0 auto;
+  border-radius: .2rem;
+}
+
+/* line 114, ../sass/wx-pc-main.scss */
+.info {
+  background: url("../images/wx-parentsChild/item.png") no-repeat scroll 0 0;
+  background-size: 100%;
+  height: 1.6rem;
+  position: absolute;
+  width: 100%;
+  bottom: -1rem;
+}
+/* line 122, ../sass/wx-pc-main.scss */
+.info p {
+  text-align: center;
+  color: #654B26;
+  font-size: .35rem;
+  font-weight: bold;
+  position: relative;
+  top: .5rem;
+  line-height: .44rem;
+}
+
+/* line 133, ../sass/wx-pc-main.scss */
+.vote {
+  width: 3.5rem;
+  height: 1.1rem;
+  background: url("../images/wx-parentsChild/parents-child_vote.jpg") no-repeat scroll 0 0;
+  background-size: 100%;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: .3rem;
+  left: .5rem;
+}
+
+/* line 145, ../sass/wx-pc-main.scss */
+.num {
+  position: absolute;
+  top: -0.8rem;
+  right: 1.6rem;
+  font-size: .5rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #664c27;
+  height: .8rem;
+  width: 1.4rem;
+  text-align: center;
+  line-height: 1.1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* line 161, ../sass/wx-pc-main.scss */
+.comment {
+  padding: 0 .1rem;
+  font-size: 12px;
+  line-height: 16px;
+  height: 32px;
+  overflow: hidden;
+  position: relative;
+  top: 1.1rem;
+  color: #0F9DB3;
+  text-align: center;
+}
+
+/* line 173, ../sass/wx-pc-main.scss */
+.pop .main {
+  padding: 0 !important;
+}
+
+/* line 182, ../sass/wx-pc-main.scss */
+.result li .content {
+  height: 5.8rem !important;
+}
+/* line 185, ../sass/wx-pc-main.scss */
+.result li .border {
+  height: 4rem !important;
+}
+/* line 189, ../sass/wx-pc-main.scss */
+.result ul {
+  margin-top: -0.8rem;
+}
+
+/* line 193, ../sass/wx-pc-main.scss */
+.order {
+  background-image: url("../images/wx-parentsChild/res-star-l.jpg"), url("../images/wx-parentsChild/res-star-r.jpg");
+  background-position: 10% 50%, 90% 50%;
+  background-size: 15%;
+  background-repeat: no-repeat;
+  height: 1rem;
+  position: relative;
+  top: 1.3rem;
+  color: #674B24;
+  text-align: center;
+  font-size: .55rem;
+  line-height: 1rem;
+}
+/* line 205, ../sass/wx-pc-main.scss */
+.order i {
+  font-size: .45rem;
+}
+
+/* line 210, ../sass/wx-pc-main.scss */
+.lucky .order {
+  background-image: url("../images/wx-parentsChild/res-star-l.jpg"), url("../images/wx-parentsChild/res-star-r.jpg");
+  background-position: 5% 50%, 95% 50%;
+  background-size: 10%;
+  background-repeat: no-repeat;
+  font-size: .43rem;
+}
+
+/* line 219, ../sass/wx-pc-main.scss */
+.win li:nth-of-type(1) .order, .win li:nth-of-type(2) .order, .win li:nth-of-type(3) .order {
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/* line 227, ../sass/wx-pc-main.scss */
+.win li:nth-of-type(1) .order {
+  background-image: url("../images/wx-parentsChild/res-one.jpg");
+}
+/* line 234, ../sass/wx-pc-main.scss */
+.win li:nth-of-type(2) .order {
+  background-image: url("../images/wx-parentsChild/res-two.jpg");
+}
+/* line 241, ../sass/wx-pc-main.scss */
+.win li:nth-of-type(3) .order {
+  background-image: url("../images/wx-parentsChild/res-three.jpg");
+}
+
+/* line 248, ../sass/wx-pc-main.scss */
+.about {
+  color: #CF0600;
+  text-align: center;
+  font-size: .4rem;
+  line-height: .5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* line 256, ../sass/wx-pc-main.scss */
+img.title {
+  margin: 1.2rem 0 .2rem;
+}
+
+/*# sourceMappingURL=wx-pc-main.css.map */

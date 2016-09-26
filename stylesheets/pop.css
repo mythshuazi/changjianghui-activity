@@ -1,0 +1,33 @@
+/* line 1, ../sass/pop.scss */
+.pop {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  transition: opacity 0.2s;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+/* line 11, ../sass/pop.scss */
+.pop .main {
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: .2rem;
+  padding: .6rem;
+  position: relative;
+}
+
+/* line 20, ../sass/pop.scss */
+.pop .main .exit {
+  position: absolute;
+  top: .2rem;
+  right: .2rem;
+  font-size: .8rem;
+  font-weight: normal;
+  color: #666;
+}
+
+/*# sourceMappingURL=pop.css.map */

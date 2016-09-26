@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html style="height:100%">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>领取礼物</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css"><!-- 
+<link rel="stylesheet" href="stylesheets/activity.css"> -->
+<script src="javascripts/plugin/zepto.js"></script><!-- 
+<script src="javascripts/plugin/scrollLoading.js"></script> -->
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<style>
+body{background-color:#F63E48;}
+.content{position: relative;}
+img{display:block;}
+#btn{position:absolute; top:8rem; left:2rem; width:6rem; height:1.5rem; line-height:1.5rem; background-color:#2CAF79; color:#fff;font-size:.5rem;font-weight: bold; text-align:center; border-radius: .4rem;}
+</style>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="mainContent">        
+        	<section id="top">
+        		<div class="content">
+                    <img src="images/activity/gift_01.jpg" width="100%">
+                    <img src="images/activity/gift_02.jpg" width="100%">
+                    <img src="images/activity/gift_03.jpg" width="100%">
+                    <img src="images/activity/gift_04.jpg" width="100%">
+                    <img src="images/activity/gift_05.jpg" width="100%">
+                    <div id="btn" data-goodsid='111111' >马上领取</div>
+        		</div>
+        	</section>
+        </div>
+    </div>
+</body>
+<script>
+
+$(function(){
+	var $btn    = $('#btn'),
+		goodsId = $btn.data('goodsid');
+
+	$btn.on('tap',function(){
+		jsCallAppGo2GoodsDetail( goodsId );
+	});
+});
+
+
+    /**
+     * [jsCallAppGo2GoodsDetail js 传参给 App，App获取商品id，跳转到对应的商品详情]
+     * @param  {[String]} goodsId [商品 id]
+     * @return {[type]}         [description]
+     */
+    function jsCallAppGo2GoodsDetail( goodsId ){
+        try{
+            window.wst.jsCallAppGo2GoodsDetail(goodsId);
+        }catch(error){
+            console.log(error.message);
+        }
+    }
+</script>
+</html>

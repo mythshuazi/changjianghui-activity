@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>优惠券详情</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/wx-couponDetail.css">
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+</head>
+<body v-cloak v-on:touchstart="slideUp" style="min-height: 100%;"  class="{{couponType==1?'feiOil':''}}">
+    <p class="explain">加油券使用说明</p>
+    <div class="container">
+        <ul id="nav" class="clear">
+            <li v-for="item in nav" v-touch:tap="shiftTab($index, item.type)"  :class="[item.classDef,{active:item.active}]">{{item.txt}}</li>
+        </ul>
+
+        <div  class="empty">
+            <img src="images/wx-coupon/empty.png" style="width:30%;display:block;margin-left:35%;">
+            <p style="text-align:center;color:#666;font-size:.4rem;    line-height: 1rem;">{{couponType==1 ? '暂无非油券' : '暂无加油券'}}</p>
+        </div>
+        <div id="coupon">
+            <ul v-show="listShow" class="{{type | judgeListClass}}">
+                <li v-for="item in list">
+                    <div class="inner">
+                        <div class="price">
+                            <i class="rmb">¥</i>{{item.amount}}
+                            <p v-if="couponType==1" class="condition">{{item.refMoney==0 ? '' : '满'+item.refMoney+'可用'}}</p>
+                        </div>
+                        <div class="detail">
+                            <h3>{{item.itemName || item.typeName}}</h3>
+                            <ul>
+                                <li v-if="item.shipNo">限{{item.shipNo}}使用</li>
+                                <li>限手机尾号 {{item.phoneNo.slice(-4)}} 使用</li>
+                                <li>{{item.channel | channelToCn}} 下单专享</li>
+                            </ul>
+                            <p>有效期{{item.openTime*1000 | toYMDHMS "yyyy.MM.dd"}} - {{item.expireTime*1000 | toYMDHMS "yyyy.MM.dd"}}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script src="javascripts/plugin/vue-resource.js"></script>
+<script>
+    var openId   = 'abc',
+        couponType = 1; //2油券 or 1非油券
+
+    var fake = {
+            "code": "0000",
+            "msg": "操作成功。",
+            "data": [
+                {
+                    "expireTime": "1465367145",
+                    "openTime": "1462861545",
+                    "channel": "1",
+                    "itemName": "邀船加油券",
+                    "amount": 100,
+                    "refMoney": 0,
+                    "shipNo": "中兴5500",
+                    "phoneNo": "15195905210",
+                    "itemType": 1
+                },
+                {
+                    "expireTime": "1465367245",
+                    "openTime": "1462861545",
+                    "channel": "2",
+                    "itemName": "邀船加油券",
+                    "amount": 58,
+                    "refMoney": 10,
+                    "shipNo": "华为v9",
+                    "phoneNo": "15195905310",
+                    "itemType": 1
+                }
+            ]
+        };
+    var feiyou = {
+        "code": "0000",
+        "msg": "操作成功。",
+        "data": [
+            {
+                "typeName": "全场通用非油券",
+                "amount": "1888",
+                "refMoney": "0",
+                "channel": "1",
+                "openTime": "1466505256",
+                "expireTime": "1469010856",
+                "phoneNo": "15951854983"
+            },
+            {
+                "typeName": "全场通用非油券",
+                "amount": "10",
+                "refMoney": "0",
+                "channel": "1",
+                "openTime": "1466506271",
+                "expireTime": "1469011871",
+                "phoneNo": "15951854983"
+            },
+            {
+                "typeName": "生鲜果蔬专属非油券",
+                "amount": "30",
+                "refMoney": "30",
+                "channel": "1",
+                "openTime": "1466508369",
+                "expireTime": "1469013969",
+                "phoneNo": "15951854983"
+            },
+            {
+                "typeName": "生鲜果蔬专属非油券",
+                "amount": "130",
+                "refMoney": "30",
+                "channel": "1",
+                "openTime": "1466508623",
+                "expireTime": "1469014223",
+                "phoneNo": "15951854983"
+            },
+            {
+                "typeName": "生鲜果蔬专属非油券",
+                "amount": "30.5",
+                "refMoney": "30",
+                "channel": "1",
+                "openTime": "1466508755",
+                "expireTime": "1469014355",
+                "phoneNo": "15951854983"
+            },
+            {
+                "typeName": "生鲜果蔬专属非油券",
+                "amount": "30",
+                "refMoney": "30",
+                "channel": "1",
+                "openTime": "1466508975",
+                "expireTime": "1469014575",
+                "phoneNo": "15951854983"
+            },
+            {
+                "typeName": "生鲜果蔬专属非油券",
+                "amount": "20",
+                "refMoney": "30",
+                "channel": "1",
+                "openTime": "1466509231",
+                "expireTime": "1469014831",
+                "phoneNo": "15951854983"
+            },
+            {
+                "typeName": "生鲜果蔬专属非油券",
+                "amount": "20",
+                "refMoney": "30",
+                "channel": "1",
+                "openTime": "1466509892",
+                "expireTime": "1469015492",
+                "phoneNo": "15951854983"
+            },
+            {
+                "typeName": "生鲜果蔬专属非油券",
+                "amount": "180",
+                "refMoney": "30",
+                "channel": "1",
+                "openTime": "1466510408",
+                "expireTime": "1469016008",
+                "phoneNo": "15951854983"
+            },
+            {
+                "typeName": "全场通用非油券",
+                "amount": "5",
+                "refMoney": "0",
+                "channel": "1",
+                "openTime": "1466513950",
+                "expireTime": "1468155550",
+                "phoneNo": "15951854983"
+            }
+        ]
+    };
+    var  fakeAmount = 100;
+    //window.addEventListener('load', function (){
+        var vm = new Vue({
+            el: 'body',
+            data: {
+                listShow:true,
+                canLoadPage:true, //是否可以加载分页
+                couponType:couponType,
+                nav:[
+                    {txt:'可使用', type:1, classDef:'usable',  active:true},
+                    {txt:'已过期', type:4, classDef:'overdue', active:false},
+                    {txt:'已使用', type:3, classDef:'used',    active:false}
+                ],
+                page:0, //分页页数，默认0
+                type:1, //1.可使用；4.已过期；3.已使用，默认1
+                list:[]
+            },
+            //页面默认请求数据
+            created: function(){
+                //this.fetchData(couponType, 0, 1);
+
+                //test fake data 上线删除
+                this.list = feiyou.data;
+            },
+            methods: {
+                //获取数据          油券or非油  分页 是否可用  请求分页
+                fetchData: function ( coupon, page, type, requestPage ) {
+                    this.canLoadPage = false;
+
+                    this.$http.get('http://www.xxxx.com/', {
+                        "openId": openId,                    //用户的微信openId  作为全局变量存储在页面上
+                        "couponType": coupon ? coupon : 1,   //1：获取非油券列表 2：获取加油券列表
+                        "page": page ? page : 0,             //页码，默认为第一页  0
+                        "type": type ? type : 0              //筛选条件    1：可使用 3：已使用 4：已过期
+                    }).then(function(res){
+                        console.log('请求成功');
+
+                        //请求分页，追加
+                        if(requestPage){
+                            this.list = this.list.concat(res.data.data);
+                        }
+                        //请求不同类型，替换
+                        else{
+                            this.list = res.data.data;
+                        }
+
+                        this.canLoadPage = true;
+                    }, function (res) {
+                        console.log('请求失败');
+                        this.canLoadPage = true;
+                    });
+                },
+                shiftTab: function (index, type) {
+                    this.listShow=false;
+                    //切换选项卡
+                    for(var i=0; i<this.nav.length; i++){
+                        this.nav[i].active = false;
+                    }
+                    this.nav[index].active = true;
+                    this.type = type; //可使用、已过期、已使用
+                    console.log(type);
+
+                    //请求数据
+                    //fetchData(couponType, 0, type);
+
+                },
+                //上滑判断触底，请求分页
+                slideUp: function() {
+                    var scTop      = document.documentElement.scrollTop || document.body.scrollTop,
+                        oneScreen  = window.screen.height,
+                        pageHeight = document.body.scrollHeight;
+
+                    if(scTop + oneScreen >= pageHeight-100 && this.canLoadPage){
+                        console.log('到底了');
+                        //this.page = this.page+1;
+                        //this.fetchData(couponType, this.page, this.type, true);
+
+                        //test 上线删除
+                        this.list.push({
+                            "expireTime": "1465367145",
+                            "openTime": "1462861545",
+                            "channel": "1",
+                            "itemName": "邀船加油券",
+                            "amount": fakeAmount++,
+                            "refMoney": 0,
+                            "shipNo": "中兴5500",
+                            "phoneNo": "151959052101",
+                            "itemType": 1
+                        })
+                    }
+                }
+            },
+            filters: {
+                judgeListClass: function (val) {
+                    var classAlias;
+                    switch (val){
+                        case 1:
+                            classAlias = 'usable';
+                            break;
+                        case 3:
+                            classAlias = 'used';
+                            break;
+                        case 4:
+                            classAlias = 'overdue';
+                            break;
+                    }
+
+                    return classAlias;
+                },
+                channelToCn: function (val) {
+                    var channelName;
+                    switch (parseInt(val)){
+                        case 1:
+                            channelName = 'APP';
+                            break;
+                        case 2:
+                            channelName = '微信';
+                            break;
+                        case 3:
+                            channelName = '全部';
+                            break;
+                    }
+
+                    return channelName;
+                },
+                toYMDHMS: function (time, fmt){
+                    var date = new Date(time);
+
+                    var o = {
+                        "M+" : date.getMonth()+1,                 //月份
+                        "d+" : date.getDate(),                    //日
+                        "h+" : date.getHours(),                   //小时
+                        "m+" : date.getMinutes(),                 //分
+                        "s+" : date.getSeconds(),                 //秒
+                        "q+" : Math.floor((date.getMonth()+3)/3), //季度
+                        "S"  : date.getMilliseconds()             //毫秒
+                    };
+                    if(/(y+)/.test(fmt))
+                        fmt=fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length));
+                    for(var k in o)
+                        if(new RegExp("("+ k +")").test(fmt))
+                            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+                    return fmt;
+                }
+
+            }
+        });
+    //},false);
+</script>

@@ -1,0 +1,218 @@
+/*public css*/
+/* line 2, ../sass/travel-common.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 7, ../sass/travel-common.scss */
+body {
+  font: 12px/1.4 "Microsoft YaHei";
+  position: relative;
+}
+
+/* line 15, ../sass/travel-common.scss */
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+
+/* line 21, ../sass/travel-common.scss */
+.container {
+  height: 100%;
+  padding-top: 48px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* line 27, ../sass/travel-common.scss */
+.roof {
+  color: #fff;
+  background-color: #4C96EC;
+  position: relative;
+}
+/* line 32, ../sass/travel-common.scss */
+.roof h2 {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 48px;
+  max-width: 180px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0 auto;
+}
+/* line 44, ../sass/travel-common.scss */
+.roof .left, .roof .right {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 14px;
+}
+/* line 50, ../sass/travel-common.scss */
+.roof .left {
+  left: 10px;
+  background: transparent url("../images/travel/arrow.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+/* line 56, ../sass/travel-common.scss */
+.roof .right {
+  right: 10px;
+  background: transparent url("") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+
+/*list css*/
+/* line 68, ../sass/travel-common.scss */
+.ls-item {
+  padding: 8px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+/* line 74, ../sass/travel-common.scss */
+.ls-img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+/* line 79, ../sass/travel-common.scss */
+.ls-img img {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+/* line 86, ../sass/travel-common.scss */
+.ls-origin {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  color: #fff;
+  background-color: rgba(102, 102, 102, 0.8);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 3px;
+  padding: 0 4px;
+  font-size: 12px;
+  line-height: 16px;
+}
+/* line 99, ../sass/travel-common.scss */
+.ls-origin span {
+  display: block;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+/* line 109, ../sass/travel-common.scss */
+.ls-intro {
+  height: 100px;
+  position: absolute;
+  left: 124px;
+  top: 8px;
+  right: 8px;
+}
+
+/* line 117, ../sass/travel-common.scss */
+.ls-title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 16px;
+  height: 32px;
+  text-align: justify;
+  overflow: hidden;
+}
+
+/* line 127, ../sass/travel-common.scss */
+.ls-price {
+  font-size: 18px;
+  line-height: 18px;
+  color: #ff0000;
+  padding: 9px 0;
+}
+
+/* line 134, ../sass/travel-common.scss */
+.ls-tags {
+  height: 36px;
+  overflow: hidden;
+  color: #999;
+}
+/* line 139, ../sass/travel-common.scss */
+.ls-tags div {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  border: 1px solid #aba9a9;
+  border-radius: 4px;
+  height: 14px;
+  padding: 0 2px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+/* line 150, ../sass/travel-common.scss */
+.ls-tags span {
+  display: block;
+  font-size: 12px;
+  line-height: 12px;
+  transform: scale(0.83);
+  -webkit-transform: scale(0.83);
+}
+
+/* line 160, ../sass/travel-common.scss */
+.ls-one {
+  padding: 6px 10px;
+}
+/* line 163, ../sass/travel-common.scss */
+.ls-one .ls-item {
+  border: 1px solid #ccc;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 171, ../sass/travel-common.scss */
+.ls-two {
+  background-color: #e6e6e6;
+}
+/* line 173, ../sass/travel-common.scss */
+.ls-two .ls-item {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+}
+/* line 178, ../sass/travel-common.scss */
+.ls-two .ls-tags {
+  height: 14px;
+  overflow: hidden;
+  margin: 9px 0;
+}
+/* line 183, ../sass/travel-common.scss */
+.ls-two .ls-price {
+  padding: 0;
+}
+/* line 186, ../sass/travel-common.scss */
+.ls-two .ls-source {
+  color: #999;
+  font-size: 12px;
+  margin-top: 8px;
+  -webkit-transform: scale(0.8);
+  -webkit-transform-origin: 0 0;
+  transform: scale(0.8);
+  transform-origin: 0 0;
+}
+/* line 195, ../sass/travel-common.scss */
+.ls-two .ls-origin {
+  background-color: transparent;
+  border: 1px solid #999;
+  color: #999;
+}
+
+/*# sourceMappingURL=travel-common.css.map */

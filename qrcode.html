@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html style="height:100%">
+<head>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>二维码</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<link rel="stylesheet" href="stylesheets/public.css">
+    <style>
+        body{
+            background-color:#EA5118;
+            background-image: url('images/download/yc-bottom.png'),url('images/download/yc-cloud.png'),url('images/download/yc-cloud.png'),url('images/download/yc-cloud.png'),url('images/download/yc-cloud.png'),url('images/download/yc-cloud.png');
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: left bottom, 10% 80%, 90% 72%, 85% 36%, 16% 45%, 70% 4%;
+            -webkit-background-size:100%, 9%, 7%, 7%, 5%,10%;
+            background-size:100%,9%, 7%, 7%, 5%,10%;
+        }
+        div{position:relative;top:18%;}
+        img{display:block;}
+        img.txt{margin:0 auto;margin-bottom:.8rem;}
+        img.qrCode{width:50%;margin:0 auto;border:1px solid #CECECE;}
+        p{font-size:.45rem;text-align:center;line-height:.8rem;color:#371209;background-color:#F6BE2B;width:65%;margin:0 auto; margin-top:.5rem;}
+    </style>
+</head>
+<body style="height:100%">
+<div>
+    <img class="txt" src="images/download/yc-txt.png" width="65%">
+    <img class="qrCode" src="images/download/ios.png">
+    <p>长按识别二维码下载长江汇APP</p>
+</div>
+</body>
+<script>
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        return ua.match(/MicroMessenger/i) == 'micromessenger';
+    }
+</script>
+</html>

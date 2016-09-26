@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>邀船有礼</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/act_inviteShip.css">
+</head>
+<body>
+<div class="mainContainer">
+    <div class="mainContent getPackage">
+        <section id="top">
+            <img src="images/act-inviteShip/shipGet_01.jpg" width="100%">
+            <div>
+                <h2>您的船友：<i>兆基88号</i></h2>
+                <p>
+                    加油吧优惠的基础上，还送您<i>60元</i>的吨油券（每吨立减30*2元），2016超集刮刮乐100%有奖，赶紧来体验吧～
+                </p>
+            </div>
+            <img src="images/act-inviteShip/shipGet_03.jpg" width="100%">
+        </section>
+        <section id="middle">
+            <div class="item" id="shipName">
+                <input type="text" placeholder="请输入船号"/>
+            </div>
+            <div class="item" id="mobileNum">
+                <input type="number" placeholder="请输入手机号"/>
+            </div>
+            <div class="item" id="validate">
+                <div><input type="text" placeholder="请输入验证码"/></div>
+                <div>
+                    <button class="getButton">获取验证码</button>
+                    <button class="wait60"><i>60秒后</i><i>可重新发送</i></button>
+                </div>
+            </div>
+            <button id="clickGet">点击领取</button>
+            <p class="rule"><span>活动规则</span></p>
+        </section>
+    </div>
+    <div class="mainContent share" style="display:none;">
+        <section class="top">
+            <img src="images/act-inviteShip/shipShare_01.jpg" width="100%">
+            <p class="note"><span class="rmb">208元</span>长江汇补贴红包<br>已经存入您的<span class="phone">13888888888</span>账户中。<br>还没用？赶紧下载长江汇用了它！</p>
+            <img src="images/act-inviteShip/shipShare_03.jpg" width="100%">
+        </section>
+        <section class="middle">
+            <button id="download">下载长江会APP</button>
+            <button id="meToo">我也要邀请，再得108元</button>
+            <p class="rule"><span>活动规则</span></p>
+        </section>
+    </div>
+</div>
+<div id="rulePop" class="pop" style="display:none;">
+    <div class="main">
+        <h2>活动规则</h2>
+        <div class="content" style="height:10rem; overflow:hidden;">
+            <ul class="txtWrap">
+                <li>1、活动时间：2016年3月15日 - 2016年12月31日</li>
+                <li>2、被邀请人注册成功即可获得208元奖励<span>（2张100元加油红包、1张8元非油品全场通用红包）</span>；</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;被邀请人在兆基石油加油后，长江汇奖励邀请人108元<span>（2张50元加油券、1张8元非油品全场通用红包）</span>。</li>
+                <li>3、加油券仅限本船使用，红包仅限本人使用。</li>
+                <li>4、油单和非油单需分开下单，非油品全场通用红包、加油券每次靠站（一次下单）只限使用一张。</li>
+                <li>5、为了维护活动的真实性，加油时请携带船籍证到长江汇体验店进行验证。</li><li>1、活动时间：2016年3月15日 - 2016年12月31日</li>
+                <li>2、被邀请人注册成功即可获得208元奖励<span>（2张100元加油红包、1张8元非油品全场通用红包）</span>；</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;被邀请人在兆基石油加油后，长江汇奖励邀请人108元<span>（2张50元加油券、1张8元非油品全场通用红包）</span>。</li>
+                <li>3、加油券仅限本船使用，红包仅限本人使用。</li>
+                <li>4、油单和非油单需分开下单，非油品全场通用红包、加油券每次靠站（一次下单）只限使用一张。</li>
+                <li>5、为了维护活动的真实性，加油时请携带船籍证到长江汇体验店进行验证。</li>
+            </ul>
+        </div>
+        <p>本活动最终解释权归长江船服电子商务科技有限公司所有</p>
+        <i class="exit">×</i>
+    </div>
+</div>
+
+
+
+<div id="memberPop" class="pop" style="display:none;">
+    <div class="main">
+        <p>哇，您已是长江汇会员啦！</p>
+        <p>邀请船友加入长江汇，</p>
+        <p>您得<span>108元</span>，Ta得<span>208元</span></p>
+        <div class="invite"></div>
+        <i class="exit">×</i>
+    </div>
+</div>
+
+<div id="failedPop" class="pop"  style="display:none;">
+    <div class="main">
+        <h2>领取失败</h2>
+        <p>该船号已和<span>138*****32</span>号码绑定，若有疑问，请携带船籍证书到长江汇体验店进行修改。</p>
+        <i class="exit">×</i>
+    </div>
+</div>
+<div id="publicPop" class="pop" >
+    <div class="main">
+        <div class="content"></div>
+        <i class="exit">×</i>
+    </div>
+</div>
+<div id="popShare" class="pop" style="display: none;">
+    <div class="main">
+        <img src="images/act-inviteShip/pop.png" >
+    </div>
+</div>
+</body>
+<script src="javascripts/plugin/iscroll.js"></script>
+<script src="javascripts/popup.js"></script>
+<script>
+    $(document).on('blur','#shipName input',function(){
+        var re = /^[\u4E00-\u9FA50-9]{2,15}$/;
+        var ship = $(this).val();
+
+        //超出15个，删除多余
+        if(ship.length>15){
+            console.log('超过15位');
+            $(this)[0].value = ship.substring(0,11);
+        }
+        $(this)[0].value = $(this)[0].value.replace(/[^\u4E00-\u9FA50-9]/g, "");
+
+    });
+    $(function(){
+        var $validateBtn = $('.getButton'),
+                $waitBtn = $('.wait60'),
+                countTimer;
+
+        var ruleScroll;
+        var rulePop = new Popup({
+            ancestor:'#rulePop',
+            main:'.main',
+            exit:'.exit',
+            initCallback:function(){
+                $(document).on('tap','.rule span',function(){
+                    rulePop.show();
+                });
+            },
+            showCallback:function(){
+                if(ruleScroll){
+                    ruleScroll.destroy();
+                    ruleScroll = null;
+                }
+                ruleScroll = new IScroll('#rulePop .content');
+            }
+        });
+
+        var memberPop = new Popup({
+            ancestor:'#memberPop',
+            main:'.main',
+            exit:'.exit',
+            top:'0.6',
+            initCallback:function(){
+                $(document).on('tap','#ddd',function(){
+                    memberPop.show();
+                });
+            }
+        });
+
+        var failedPop = new Popup({
+            ancestor:'#failedPop',
+            main:'.main',
+            exit:'.exit',
+            top:'0.6',
+            initCallback:function(){
+                $(document).on('tap','img',function(){
+                    failedPop.show();
+                });
+            }
+        });failedPop.show();
+
+        var publicPop = new Popup({
+            ancestor:'#publicPop',
+            main:'.main',
+            exit:'.exit',
+            top:'0.6',
+            txtWrap:'.content'
+        });
+
+        var sharePop = new Popup({
+            ancestor:'#popShare',
+            main:'.main',
+            exit:'.exit',
+            top :0.01,
+            initCallback:function(){
+                var the = this;
+                $(document).on('tap','#meToo',function(){
+                    the.show();
+                });
+            }
+        });
+
+
+
+        $(document).on('input propertychange','#mobileNum input',function(){
+            var re = /[1][345678]\d{9}/;
+            var phone = $(this).val();
+
+            //超出11位，删除多余
+            if(phone.length>11){
+                console.log('超过11位');
+                $(this)[0].value = phone.substring(0,11);
+
+                //小于等于11位
+            }else{
+                if(!re.test(phone)){
+                    $(this)[0].value = $(this)[0].value.replace(/[^\d]/g, "");
+
+                    if($(this).val().length==11){
+                        console.log('号码输入有误2');
+                    }
+
+                    $('.getBtn').addClass('disabled');	//禁用按钮
+                }
+            }
+
+        });
+
+        //获取验证码
+        $(document).on('tap','.getButton',function(){
+            var re = /[1][345678]\d{9}/;
+            var shipName = $('#shipName input').val();
+            var phone = $('#mobileNum input').val();
+
+            if(shipName ==''){
+                publicPop.show('<h2>未填写船名</h2><p>请正确输入船名！</p>');
+            }else if(!re.test(phone)){
+                publicPop.show('<h2>手机号码错误</h2><p>当前手机号码输入有误，请重新输入</p>');
+            }else{
+                //请求验证码
+                countDown60();
+                /*$.ajax({
+                    url: '/path/to/file',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {'phone': phoneNum},
+                    success:function(data){
+
+                    },
+                    error:function(xhr, errorType, error){
+                        console.log("请求失败");
+                    },
+                    complete:function(xhr, status){
+                        canAjaxLottery = true;
+                        console.log("请求完成");
+                    }
+                });*/
+            }
+        });
+
+        //领取红包
+        $(document).on('tap','.clickGet',function(){
+
+            $.ajax({
+                url: '/path/to/file',
+                type: 'GET',
+                dataType: 'json',
+                data: {'phone': phoneNum},
+                success:function(data){
+                    $('.getPackage').hide();
+                    $('.share').show();
+                },
+                error:function(xhr, errorType, error){
+                    console.log("请求失败");
+                },
+                complete:function(xhr, status){
+                    canAjaxLottery = true;
+                    console.log("请求完成");
+                }
+            });
+        });
+
+
+        //倒计时
+        function countDown60(){
+            var time = 10;
+            $validateBtn.hide();
+            $waitBtn.show();
+            countTimer = setInterval(function(){
+                if(time>0){
+                    --time;
+                    $waitBtn.children('i').eq(0).html(time+'秒后');
+                }else{
+                    countDownOver();
+                    clearInterval(countTimer);
+                }
+            },1000);
+
+        }
+
+        function countDownOver(){
+            $validateBtn.show();
+            $waitBtn.hide();
+        }
+    })
+</script>
+</html>

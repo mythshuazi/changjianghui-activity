@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>中奖名单</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/act-winlist.css">
+<link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <img src="images/act-winlist/head.jpg">
+        </header>
+        <section>
+
+        </section>
+        <section id="goodsList" class="goodsList">
+            <div v-cloak v-for="item in goodsList"  class="item">
+                <p class="title">{{item.goodname}}</p>
+                <img src="images/act-winlist/note.jpg" class="note">
+                <div class="wrap">
+                    <div class="swiper-container">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>手机号码</td>
+                                <td>船号</td>
+                                <td>付款时间</td>
+                            </tr>
+                            </thead>
+                        </table>
+                        <div class="swiper-wrapper">
+                            <div v-for="one in item.list" class="swiper-slide">
+                                <table>
+                                    <tbody>
+                                        <tr v-for="two in one">
+                                            <td>{{two.taker_tel}}</td>
+                                            <td>{{two.ship_name}}</td>
+                                            <td>{{two.pay_time}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination">
+                        </div>
+
+                        <!-- 如果需要导航按钮 -->
+                        <!--<div class="swiper-button-prev"></div>-->
+                        <!--<div class="swiper-button-next"></div>-->
+
+                        <!-- 如果需要滚动条 -->
+                        <!--<div class="swiper-scrollbar"></div>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script src="javascripts/plugin/vue-resource.js"></script>
+<script src="javascripts/plugin/swiper-3.3.1.min.js"></script>
+<script>
+    var res = {
+        "code": "0000",
+        "msg": "操作成功。",
+        "data": {
+            "page": 1,
+            "list": [
+                {
+                    "list": [
+                        {
+                            "taker_tel": "181****0688",
+                            "ship_name": "兆基0**",
+                            "pay_time": "2016-6-06 02:53:15"
+                        },
+                        {
+                            "taker_tel": "186****0256",
+                            "ship_name": "CL10**",
+                            "pay_time": "2016-6-06 02:32:20"
+                        },
+                        {
+                            "taker_tel": "186****0256",
+                            "ship_name": "CL10**",
+                            "pay_time": "2016-6-06 02:22:50"
+                        },
+                        {
+                            "taker_tel": "182****0324",
+                            "ship_name": "长江8**",
+                            "pay_time": "2016-6-01 05:19:45"
+                        },
+                        {
+                            "taker_tel": "182****0324",
+                            "ship_name": "长江8**",
+                            "pay_time": null
+                        }
+                    ],
+                    "goodname": "古井贡酒一瓶 500ml（须45天内领取）"
+                },
+                {
+                    "list": [
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": "2016-6-06 08:21:13"
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": "2016-6-06 04:53:40"
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": "2016-6-06 04:52:18"
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": "2016-6-06 04:51:37"
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": "2016-6-06 04:51:08"
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": "2016-6-06 04:49:25"
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": "2016-6-06 04:48:14"
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": null
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": null
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": null
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": ""
+                        },
+                        {
+                            "taker_tel": "182****0324",
+                            "ship_name": "长江8周星驰**",
+                            "pay_time": ""
+                        }
+                    ],
+                    "goodname": "赛亿 (shinee) KYT25-1 电风扇/定时台式转页扇（须45天内领取）"
+                },
+                {
+                    "list": [
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "CT1577**",
+                            "pay_time": "2016-6-06 04:46:09"
+                        },
+                        {
+                            "taker_tel": "181****0688",
+                            "ship_name": "兆基0**",
+                            "pay_time": "2016-6-06 02:54:10"
+                        },
+                        {
+                            "taker_tel": "182****2357",
+                            "ship_name": "Wbb1**",
+                            "pay_time": null
+                        },
+                        {
+                            "taker_tel": "180****7746",
+                            "ship_name": "你妈妈**",
+                            "pay_time": "2016-6-06 04:46:09"
+                        },
+                        {
+                            "taker_tel": "181****0688",
+                            "ship_name": "你爸爸**",
+                            "pay_time": "2016-6-06 02:54:10"
+                        },
+                        {
+                            "taker_tel": "182****2357",
+                            "ship_name": "你爷爷**",
+                            "pay_time": '世界末日'
+                        }
+                    ],
+                    "goodname": "Apple iPhone 6s Plus (A1699) 64G 土豪金 移动联通电信4G手机"
+                }
+            ]
+        }
+    };
+    window.addEventListener('load', function(){
+        var vm = new Vue({
+            el:"#goodsList",
+            data:{
+                goodsList:[]
+            },
+            created: function (){
+                //请求数据
+                /*this.$http.get('http://###########',{
+                    '参数名':'xxxxx'
+                }).then(function(res){
+                    var goods = res.data.list;
+
+                    for(var i=0; i<goods.length; i++){
+                        goods[i].list = this.group(goods[i].list, 5, {
+                            "taker_tel":"",
+                            "ship_name":"",
+                            "pay_time":""
+                        });
+                    }
+                    this.$set('goodsList', goods);
+                }, function (res) {
+                    console.log('请求失败');
+                });*/
+
+                //假数据操作----------------------------------------------
+                var goods = res.data.list;
+
+                for(var i=0; i<goods.length; i++){
+                    goods[i].list = this.group(goods[i].list, 10, {
+                        "taker_tel":"",
+                        "ship_name":"",
+                        "pay_time":""
+                    });
+                }
+
+                this.$set('goodsList', goods);
+                //假数据操作----------------------------------------------
+            },
+            compiled:function(){
+                //实例化 swiper
+                var mySwiper = new Swiper ('.swiper-container', {
+                    loop: true,
+
+                    // 如果需要分页器
+                    pagination: '.swiper-pagination',
+                    paginationType : 'fraction',
+                    paginationFractionRender: function (swiper, currentClassName, totalClassName) {
+                        return '第 <span class="' + currentClassName + '"></span> 页' +
+                                ' / ' +
+                                '共 <span class="' + totalClassName + '"></span> 页';
+                    }
+                })
+            },
+            methods:{
+                //将单个商品的 list 分组；arr 原数组；num每组的个数；fill不满一组填充的空数组
+                group:function (arr,num,fill){
+                    var tmpArr = [];
+
+                    repeat();
+
+                    function repeat(){
+                        if(arr.length>num){
+                            tmpArr.push( arr.splice(0, num) );
+
+                            repeat();
+                        }else{
+                            var len = arr.length;
+                            for(var i=0; i<(num - len); i++){
+                                arr = arr.concat(fill);
+                            }
+                            tmpArr.push( arr );
+                            return;
+                        }
+                    }
+
+                    return tmpArr;
+                }
+            }
+        });
+    }, false);
+</script>
+</html>

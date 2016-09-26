@@ -1,0 +1,375 @@
+@charset "UTF-8";
+/* line 5, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*商品数量上的增减样式 +口-*/
+/* line 8, ../sass/public.scss */
+html {
+  font-size: 62.5%;
+  font-family: "microsoft yahei", 宋体, sans-serif;
+  line-height: 18px;
+  text-size-adjust: none;
+}
+
+/* line 14, ../sass/public.scss */
+body {
+  font-size: 12px;
+  -webkit-text-size-adjust: none;
+}
+
+/* line 19, ../sass/public.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 22, ../sass/public.scss */
+a:link, a:hover, a:active, a:visited {
+  color: #000;
+}
+
+/* line 25, ../sass/public.scss */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: none;
+  border-radius: 0;
+}
+
+/* line 35, ../sass/public.scss */
+.mainContainer {
+  box-sizing: border-box;
+}
+
+/* line 39, ../sass/public.scss */
+section > * {
+  position: relative;
+}
+
+/* line 43, ../sass/public.scss */
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+/* line 48, ../sass/public.scss */
+h2 {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+/* line 53, ../sass/public.scss */
+h3 {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+/* line 58, ../sass/public.scss */
+h4 {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: bold;
+}
+
+/*字体颜色*/
+/* line 65, ../sass/public.scss */
+.fc-orange {
+  color: #ff4e00;
+}
+
+/*背景颜色*/
+/* line 70, ../sass/public.scss */
+.bg-gray, .disabled {
+  background-color: #808080 !important;
+}
+
+/* line 73, ../sass/public.scss */
+.bg-blue {
+  background-color: #3c86e5 !important;
+}
+
+/* line 76, ../sass/public.scss */
+.bg-orange {
+  background-color: #ff4e00 !important;
+}
+
+/*清除浮动*/
+/* line 82, ../sass/public.scss */
+.clear:after, .horizontal-list-wrap .horizontal-list-item:after, .portrait:after, .landscape:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/*评分星级*/
+/* line 89, ../sass/public.scss */
+.star, .star1, .star2, .star3, .star4, .star5 {
+  display: inline-block;
+  width: 72px;
+  height: 18px;
+  vertical-align: middle;
+  background-image: url("../images/detail/star.png");
+  background-repeat: no-repeat;
+  background-size: 195% 70%;
+}
+
+/* line 99, ../sass/public.scss */
+.star5 {
+  background-position: 0 0;
+}
+
+/* line 102, ../sass/public.scss */
+.star4 {
+  background-position: -14.4px 0;
+}
+
+/* line 105, ../sass/public.scss */
+.star3 {
+  background-position: -28.8px 0;
+}
+
+/* line 108, ../sass/public.scss */
+.star2 {
+  background-position: -43.2px 0;
+}
+
+/* line 111, ../sass/public.scss */
+.star1 {
+  background-position: -57.6px 0;
+}
+
+/*点击更多箭头*/
+/* line 116, ../sass/public.scss */
+.arrowMore {
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-image: url("../images/public/arrow.png");
+  width: 12px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*纵向排列的列表，左边是图片右边是介绍*/
+/* line 130, ../sass/public.scss */
+.horizontal-list-wrap .horizontal-list-item {
+  width: 100%;
+  border-bottom: 1px solid #F9F9F9;
+}
+/* line 135, ../sass/public.scss */
+.horizontal-list-wrap .horizontal-list-item .img-wrap {
+  float: left;
+  padding: 9.6px;
+}
+/* line 139, ../sass/public.scss */
+.horizontal-list-wrap .horizontal-list-item .img-wrap img {
+  display: block;
+  width: 96px;
+  height: 96px;
+  border: 1px solid #F9F9F9;
+}
+/* line 147, ../sass/public.scss */
+.horizontal-list-wrap .horizontal-list-item .intro-wrap {
+  padding-top: 14.4px;
+}
+/* line 150, ../sass/public.scss */
+.horizontal-list-wrap .horizontal-list-item .intro-wrap h3 {
+  height: 69.6px;
+}
+/* line 154, ../sass/public.scss */
+.horizontal-list-wrap .horizontal-list-item .intro-wrap span {
+  color: #ff4e00;
+  font-size: 14.4px;
+  font-weight: bold;
+}
+/* line 159, ../sass/public.scss */
+.horizontal-list-wrap .horizontal-list-item .intro-wrap span i {
+  font-weight: normal;
+  font-size: 12px;
+}
+/* line 165, ../sass/public.scss */
+.horizontal-list-wrap .horizontal-list-item .intro-wrap del {
+  margin-left: 12px;
+  color: #cecece;
+}
+
+/****************活动页面公用样式****************/
+/*portrait 布局，一行两个*/
+/* line 176, ../sass/public.scss */
+.portrait {
+  width: 100%;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+/* line 182, ../sass/public.scss */
+.portrait * {
+  box-sizing: border-box;
+}
+/* line 186, ../sass/public.scss */
+.portrait .pt_item {
+  float: left;
+  width: 50%;
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+/* line 193, ../sass/public.scss */
+.portrait .pt_item_inner {
+  background-color: #fff;
+  padding: 4px;
+  position: relative;
+}
+/* line 199, ../sass/public.scss */
+.portrait .pt_nothing {
+  display: none;
+}
+/* line 204, ../sass/public.scss */
+.portrait .pt_sellout .pt_nothing {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+/* line 214, ../sass/public.scss */
+.portrait .pt_sellout .pt_nothing i {
+  display: inline-block;
+  color: #fff;
+  font-size: .4rem;
+  line-height: 2.2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50px;
+}
+/* line 228, ../sass/public.scss */
+.portrait .pt_above {
+  position: relative;
+}
+/* line 232, ../sass/public.scss */
+.portrait .pt_middle {
+  margin: 5px 0;
+}
+/* line 235, ../sass/public.scss */
+.portrait .pt_intro {
+  font-size: 12px;
+  line-height: 15px;
+  height: 30px;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+  color: #323232;
+}
+/* line 244, ../sass/public.scss */
+.portrait .pt_pic {
+  display: block;
+}
+/* line 248, ../sass/public.scss */
+.portrait .pt_prefix {
+  position: absolute;
+}
+
+/*landscape 布局，一行一个*/
+/* line 255, ../sass/public.scss */
+.landscape {
+  width: 100%;
+  box-sizing: border-box;
+}
+/* line 260, ../sass/public.scss */
+.landscape .ls_intro {
+  font-size: 14px;
+  line-height: 16px;
+  height: 32px;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+  color: #323232;
+}
+/* line 270, ../sass/public.scss */
+.landscape .ls_left {
+  float: left;
+  margin-right: 10px;
+}
+/* line 278, ../sass/public.scss */
+.landscape .ls_pic {
+  width: 2.7rem;
+  height: 2.1rem;
+  display: block;
+}
+
+/* line 285, ../sass/public.scss */
+[v-cloak] {
+  display: none;
+}

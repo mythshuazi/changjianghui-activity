@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html style="height:100%; font-size:12px;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>闪付</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/flashPay.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+</head>
+<body>
+<div class="mainContainer paySucceed"><!--paySucceed submitSucceed failed 3 class-->
+    <div class="info">
+        <div class="state">
+            <img class="paySucceed submitSucceed" src="images/paysucceed/succeed.png">
+            <img class="failed" src="images/paysucceed/failed.png">
+            <p class="text">付款成功</p>
+        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <th>积分奖励</th><td>获得 <i class="integral">350</i> 个积分</td>
+                </tr>
+                <tr>
+                    <th>付款方式</th><td class="mode">银联支付</td>
+                </tr>
+                <tr>
+                    <th>实付金额</th><td><i class="rmb">350.00</i>元</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="btn">
+        <button class="paySucceed">完成</button>
+        <button class="submitSucceed">我已付款</button>
+        <button class="failed">重新支付</button>
+    </div>
+    <div id="pop">
+        <div class="main">
+            <div class="content">
+                <div class="inner">
+                    <div>
+                        <p>恭喜您获得</p>
+                        <div><i>10</i>个礼券</div>
+                    </div>
+                    <button class="send"></button>
+                    <button class="notSend"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="javascripts/popup.js"></script>
+<script>
+    $(function(){
+        var pop = new Popup({
+            container:'.mainContainer',
+            ancestor:'#pop',
+            main:'.main',
+            txt:'',
+            txtWrap:'.content',
+            callback:function(){
+                var the = this;
+                $('button').on('tap',function(){
+                    the.show();
+                });
+
+                $(document).on('tap','.notSend', function(){
+                    the.close();
+                });
+
+                $(document).on('tap','.send', function(){
+                    alert(111);
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

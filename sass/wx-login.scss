@@ -1,0 +1,149 @@
+body{font:12px/1.2 "Microsoft YaHei";}
+*{box-sizing: border-box;}
+input,button{
+  border:0;
+  outline:0;
+  margin:0;
+  padding:0;
+  font-family: "Microsoft YaHei";
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input::-webkit-input-placeholder{
+  color:#808080;
+}
+
+.nav{
+  border-bottom:1px solid #F0EDE6;
+  li{
+    padding: .5rem 0;
+    display: inline-block;
+    width:50%;
+    text-align: center;
+    color:#BCBCBC;
+    font-size:.5rem;
+  }
+
+  .accountLogin{
+    padding-left:1.5rem;
+  }
+
+  .msgLogin{
+    padding-right:1.5rem;
+  }
+
+  .active{
+    color:#FF4E00;
+    span{
+      border-bottom:2px solid #FF4E00;
+    }
+  }
+}
+
+
+.item{
+  padding:.2rem 0;
+  line-height:1rem;
+  border-bottom:1px solid #F0EDE6;
+  background:transparent url('../images/wx-login/user.png') no-repeat scroll 0.3rem 50%;
+  background-size:auto 40%;
+
+  input{
+    height:1rem;
+    line-height:1rem;
+    display:block;
+    margin-left:15%;
+    width:85%;
+    font-size:.45rem;
+  }
+}
+
+.code{
+  position:relative;
+  background-image: url('../images/wx-login/code.png');
+
+  div{
+    position:absolute;
+    top:20%;
+    right:0.4rem;
+    text-align:center;
+    border-left:2px solid #ccc;
+    padding-left:.2rem;
+
+    p{
+      font-size:.3rem;
+      line-height:.45rem;
+      margin:0;
+      padding:0;
+    }
+  }
+}
+
+.psw{
+  background-image: url('../images/wx-login/psw.png');
+}
+
+.phone.focus{
+  background-image: url('../images/wx-login/user-focus.png') !important;
+}
+.psw.focus{
+  background-image: url('../images/wx-login/psw-focus.png') !important;
+}
+.code.focus{
+  background-image: url('../images/wx-login/code-focus.png') !important;
+}
+
+.register{
+  border-top:1px solid #F0EDE6;
+  margin-top:.5rem;
+  background-image: url('../images/wx-login/register.png');
+}
+
+.confirm{
+  background-color:#BCBCBC;
+  border-radius:.15rem !important;
+  font-size:.45rem;
+  color:#fff;
+  display:block;
+  padding:.25rem 0;
+  width:94%;
+  margin:0 auto;
+  margin-top:.5rem;
+}
+
+
+
+p{
+  text-align:center;
+  color:#606060;
+  padding:.2rem 0;
+  font-size:.4rem;
+  i{
+    color:#1EC8BF;
+  }
+}
+
+.code{
+  display:none;
+}
+.msg{
+  .code{display:block !important;}
+}
+
+#entryCode{
+  .confirm{
+    background-color:#FF4E00;
+  }
+  p{
+    font-size:12px;
+    i{
+      color:#FF4E00;
+      font-size:.5rem;
+    }
+  }
+}
+
+.right{
+  background-color:#FF4E00 !important;
+}

@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>抢红包</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/hb.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+$('html').css({
+    fontSize: $(window).width()/10
+});
+$(window).resize(function(){
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+});
+</script>
+<style>
+	.refresh{
+		transition:transform 1s, opacity 1s;
+		transform:translateX(-300px);
+		-webkit-transition:-webkit-transform 1s, opacity 1s;
+		-webkit-transform:translateX(-300px);
+		opacity:0;
+	}
+</style>
+</head>
+<body>
+<script>
+
+
+/* $(function(){
+	var old_url = "${url}";
+	var cur_url = location.href.split('#')[0];
+	alert("old_url " + old_url);
+	alert("cur_url " + cur_url);
+	alert(old_url == cur_url);
+}); */
+
+
+
+window.onerror = function(err) {
+	log('window.onerror: ' + err)
+}
+
+function connectWebViewJavascriptBridge(callback) {
+if (window.WebViewJavascriptBridge) {
+callback(WebViewJavascriptBridge)
+} else {
+document.addEventListener('WebViewJavascriptBridgeReady', function() {
+callback(WebViewJavascriptBridge)
+}, false)
+}
+}
+
+connectWebViewJavascriptBridge(function(bridge) {
+var uniqueId = 1
+function log(message, data) {
+var log = document.getElementById('log')
+var el = document.createElement('div')
+el.className = 'logLine'
+el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+if (log.children.length) { log.insertBefore(el, log.children[0]) }
+else { log.appendChild(el) }
+}
+bridge.init(function(message, responseCallback) {// Objc Send 回调
+log('JS got a message', message)
+var data = { 'Javascript Responds':'Wee!' }
+log('JS responding with', data)
+responseCallback(data)// 响应 Objc
+})
+
+bridge.registerHandler('appCallJsShareSuccess', function(data,responseCallback) {// Objc callHandler 回调
+                                                              log('ObjC called appCallJsShareSuccess with', data)
+                                                              appCallJsShareSuccess(data);
+                                                              var responseData = { 'get goods info':'Javascript says data getted!' }
+                                                              log('JS responding with', responseData)
+                                                              responseCallback(responseData)// 响应 Objc
+                                                              })
+
+})
+
+
+</script>
+<div id='buttons' style="display:none"></div><div id='log' style="display:none"></div>
+    <div class="mainContainer" style="display:block;">
+		<section id="top">
+			<div id="qhb" >
+				<img src="images/sf_hb/sf_q01.jpg" width="100%">
+				<img src="images/sf_hb/sf_q02.jpg" width="100%">
+				<img src="images/sf_hb/sf_q03.jpg" width="100%">
+				<img class="rushBtn" src="images/sf_hb/sf_q04.jpg" width="80%">
+			</div>
+			<div id="lhb" style="display:none">
+				<img src="images/sf_hb/sf_get01.jpg" width="100%">
+				<img src="images/sf_hb/sf_get02.jpg" width="100%">
+				<img src="images/sf_hb/sf_get03.jpg" width="100%">
+				<input class="phone" type="number" value="${phone }" placeholder="请输入手机号码">
+				<a class="getBtn disabled"></a>				
+			</div>
+			<div id="aboutQhb" style="display:none">
+				<img src="images/sf_hb/sf_get01.jpg" width="100%">
+				<img src="images/sf_hb/prizedesk_01.jpg" width="100%">
+				<img src="images/sf_hb/prizedesk_02.jpg" width="100%">
+				<div id="bigPrize" style="display:none">
+					<img class="cartoon" src="images/sf_hb/prize.png">
+					<img class="prizeTxt" src="images/sf_hb/bigPrize.png">
+					<span class="rmb"><i class="num">88</i>元</span>
+					<p class="txt">
+						红包已放入 <span class="account">1388888888</span> 账户<br>
+						长江汇客户端内可用
+					</p>
+				</div>
+				<div id="smallPrize" style="display:none">
+					<img class="cartoon" src="images/sf_hb/prize.png">
+					<img class="prizeTxt" src="images/sf_hb/smallPrize.png">
+					<span class="rmb"><i class="num">88</i>元</span>
+					<p class="txt">
+						红包已放入 <span class="account">1388888888</span> 账户<br>
+						长江汇客户端内可用
+					</p>
+				</div>
+				<div id="noChance" style="display:none">
+					<img class="cartoon" src="images/sf_hb/noChance.png">
+				</div>
+				<div id="tooLate" style="display:none">
+					<img class="cartoon" src="images/sf_hb/tooLate.png">
+				</div>
+				<div id="intensity" style="display:none">
+					<img class="cartoon" src="images/sf_hb/intensity.png">
+				</div>				
+			</div>
+			<a class="btn share" style="display:none">分 享</a>
+			<a class="btn download" href="http://192.168.1.224:8086/bss/totalDown" style="display:none">下载长江汇客户端</a>
+			
+			<p><a class="rulueBtn">查看活动规则></a></p>
+		</section>
+		<section id="content">
+			<div class="item date">
+				<h2></h2>
+				<p>
+					大年三十、初一、初二、初三、初五 连续5天派发红包！每人每天1次抢红包机会，摩擦摩擦，摆好姿势抢红包吧，会有四位数大红包降临哦~
+				</p>
+				<span class="line"></span>
+				<ul>
+					<li>
+						<i></i><br>
+						年三十<br>
+						2月7日<br>
+						10点开抢
+					</li>
+					<li>
+						<i></i><br>
+						初一<br>
+						2月8日<br>
+						全天
+					</li>
+					<li>
+						<i></i><br>
+						初二<br>
+						2月9日<br>
+						全天
+					</li>
+					<li>
+						<i></i><br>
+						初三<br>
+						2月10日<br>
+						全天
+					</li>
+					<li>
+						<i></i><br>
+						初五<br>
+						2月12日<br>
+						全天
+					</li>
+				</ul>
+			</div>
+			<div class="item list">
+				<h2></h2>
+				<div class="listWrap">
+					<ul>
+					
+					</ul>				
+				</div>
+			</div>
+		</section>
+    </div>  
+    
+    <div id="rule" style="display:none;">
+    	<div class="wrap">
+	    	<h1>活动规则</h1>
+		    <p>1、千万红包狂欢送100%中奖，最大红包4888，仅限船友领取。</p>
+		    <p>2、每个用户每天只有一次抢红包机会。</p>
+		    <p>3、发放至手机号的红包需在长江汇客户端用该手机号注册后方可使用。</p>
+		    <p>4、使用红包时的下单手机号需与抢红包时使用的手机号一致。</p>
+		    <p>5、红包仅限于长江汇自营商品，消费地点：长江汇体验区龙潭水道19号服务区。</p>
+		    <p>6、参与活动的用户根据设备号、手机号判断，同一设备 / 手机号视为同一用户。</p>
+		    <div>本活动最终解释权归长江船服电子商务科技有限公司所有</div>
+    		<i class="close">×</i> 
+    	</div> 	
+	</div>
+	<div id="share" style="display:none;">
+		<div class="wrap">
+			<img class="arrow" src="images/sf_hb/share02.png">
+			<img class="sb" src="images/sf_hb/share01.gif">
+		</div>
+	</div>
+</body>
+<script>
+	var phone = "${phone}";
+	var share_title = "share_title";
+	var share_memo = "share_memo";
+	var urlRoot = "http://192.168.1.224:8086/bss/";
+	window.onload=function(){
+		var bingoList,
+			bingoListLen,
+			shareTitle,
+			shareMemo,
+			mobileNum,
+			screenW = $('body').width(),
+			changeBingoListTimer,
+			$ul  = $('.list ul'),
+			$btnShare = $('.share'),
+			$btnDownl = $('.download'),
+			$aboutQhb = $('#aboutQhb'),
+			$smallprize= $('#smallPrize'),
+			$bigPrize  = $('#bigPrize'),
+			$noChance  = $('#noChance'),
+			$tooLate   = $('#tooLate'),
+		    $intensity   = $('#intensity');
+
+		//注册事件------------------------------
+		//戳我抢红包----------------------------
+		$(document).on('tap','.rushBtn',function(){
+			$('#qhb').hide();
+			$('#lhb').show();
+		});
+		
+		//如果后台传了phone，类似已经“登陆”，改变按钮状态
+		function hasPhone(phone){
+			if(phone!=""){
+				$('.getBtn').removeClass('disabled');
+				$('#qhb').hide();
+				$('#lhb').show();
+				$('#aboutQhb').hide();
+				$('.btn').hide();
+			}
+		}
+
+		//领取红包------------------------------
+		var isRequest = false;
+		$(document).on('input propertychange', 'input.phone', function(){
+			var re = /[1][345678]\d{9}/;
+			var phone = $(this).val();
+
+			//超出11位，删除多余
+			if(phone.length>11){
+				console.log('超过11位');
+				$(this)[0].value = phone.substring(0,11);
+
+			//小于等于11位
+			}else{
+				if(re.test(phone)){
+					console.log('正确');
+					if(!isRequest){
+						//告诉app手机号
+						jsCallAppTellPhoneNum(phone);
+						phoneNumRegister(phone); //ajax 请求入库
+					}			
+				}else{
+					$(this)[0].value = $(this)[0].value.replace(/[^\d]/g, "");
+
+					if($(this).val().length==11){
+						console.log('号码输入有误2');
+					}
+
+					$('.getBtn').addClass('disabled');	//禁用按钮
+				}
+			}
+			
+		});
+
+		$(document).on('tap','.getBtn',function(){
+			if($(this).hasClass('disabled')) return ;
+					
+			var phone = $('.phone').val();
+
+			mobileNum = phone;
+			ajaxLottery(phone);		//ajax 请求抽奖
+		});
+
+		//ajax获取中奖名单
+		function ajaxGetBingoList(phoneNum){
+			var url1 = urlRoot + 'newyear/listPrizeRecord.as';
+			$.ajax({
+				url: url1,
+				type: 'GET',
+				dataType: 'json',
+				data: {'phone': phoneNum},
+				success:function(data){
+					changeBingoListTimer && clearInterval(changeBingoListTimer);
+					/*{
+					    "share_title": "长江汇红包，一“除”即发",
+					    "share_memo": "一大波红包正在赶来的路上，大爷您可有福了",
+					    "list": [
+					        {
+					            "belongs_phone": "138****1111",
+					            "amount": "20",
+					            "open_time": "2016.01.13"
+					        },
+					        {
+					            "belongs_phone": "135****3434",
+					            "amount": "50",
+					            "open_time": "2016.01.13"
+					        },
+					        {
+					            "belongs_phone": "189****6558",
+					            "amount": "20",
+					            "open_time": "2016.01.13"
+					        },
+					        {
+					            "belongs_phone": "138****5670",
+					            "amount": "1888",
+					            "open_time": "2016.01.13"
+					        }
+					    ]
+					}*/
+					bingoList    = data.list;
+					bingoListLen = bingoList.length;
+					shareTitle   = data.share_title;
+					shareMemo    = data.share_memo;
+					for(var i=0; i<bingoList.length; i++){
+						if(parseInt(bingoList[i].amount) >= 58){
+							bingoList[i].style = 'bold';
+						}else{
+							bingoList[i].style = 'normal';
+						}
+					}
+					appendToList();
+					changeBingoList();				
+				},
+				error:function(xhr, errorType, error){
+				},
+				complete:function(xhr, status){
+				}
+			});		
+		}
+
+		function changeBingoList(){
+			var $wrap= $('.listWrap'),
+				$ul  = $('.list ul'),
+				$aLi = $('.list ul li'),
+				ulH  = $ul.height(),
+				liH  = ($wrap.height()) / 5,
+				slideHeight=0;
+
+			//小于 5 不滚屏
+			if($aLi.length <= 5) return;
+
+			//复制 一屏的5个于底部，无缝连接
+			for(var i=0; i<5; i++){
+				$aLi.eq(i).clone().appendTo($ul);
+			}
+
+			changeBingoListTimer && clearInterval(changeBingoListTimer);
+
+			changeBingoListTimer = setInterval(function(){
+				console.log(11111);
+				if(Math.abs(slideHeight) >= ulH){
+					slideHeight = 0;
+					isBottom = true;
+					$ul.css({
+						'transition': 'transform 0s',
+	                    '-webkit-transition':'-webkit-transform 0s',
+					});
+					$ul.css({
+		                'transform':         'translate3d(0,0,0)',
+		                '-webkit-transform': 'translate3d(0,0,0)'
+					});
+				}else{
+					slideHeight -= liH;
+					$ul.css({
+						'transition': 'transform 1s',
+	                    '-webkit-transition':'-webkit-transform 1s',
+		                'transform':         'translate3d(0,'+slideHeight+'px'+',0)',
+		                '-webkit-transform': 'translate3d(0,'+slideHeight+'px'+',0)'
+					});
+				}
+
+				
+			}, 3000)
+		}
+
+		//将中奖列表中数据插入到ul中
+		function appendToList(){
+			var html='';
+			
+			for(var i=0; i<bingoList.length; i++){
+				html += '<li style="font-weight:'+ bingoList[i].style +'"><span>'+bingoList[i].belongs_phone+'</span><span>'+bingoList[i].open_time+'</span><span>'+'获得'+bingoList[i].amount+'元红包'+'</span></li>'
+			}
+			$ul.children('li').remove();
+
+			$ul.css({
+				'transition': 'transform 0s',
+	            '-webkit-transition':'-webkit-transform 0s',
+			});
+			$ul.css({
+	            'transform':         'translate3d(0,0,0)',
+	            '-webkit-transform': 'translate3d(0,0,0)'
+			});
+			$(html).appendTo($ul);
+		}
+
+		//ajax抽奖
+		function ajaxLottery(phoneNum){
+			/*{
+			    "code": "1",
+			    "msg": "红包已放入138****0000账户，长江汇客户端可以使用",
+			    "amount":"20"
+			}
+			{
+			    "code": "2",
+			    "msg": "不在活动时间内，无法参与抽奖"
+			}
+			{
+			    "code": "3",
+			    "msg": "今日红包机会已用完"
+			}
+			{
+			    "code": "4",
+			    "msg": "您来晚了，今日红包已被领完了"
+			}
+			{
+			    "code": "5",
+			    "msg": "红包活动已下架"
+			}*/
+			$('.getBtn').addClass('disabled');
+			$.ajax({
+				url: 'http://192.168.1.224:8086/bss/newyear/robCoupon.as',
+				type: 'GET',
+				dataType: 'json',
+				data: {'phone': phoneNum},
+				success:function(data){
+					switch(parseInt(data.code)){
+						case 1:
+							//alert(111);
+							$('#lhb').hide();
+							$aboutQhb.show();
+							if(data.amount <= 188){
+								$smallprize.show().find('.num').html(data.amount);
+								$smallprize.siblings('div').hide();
+								$smallprize.find('.account').html(phoneNum);
+							}else{
+								$bigPrize.show().find('.num').html(data.amount);
+								$bigPrize.siblings('div').hide();
+								$bigPrize.find('.account').html(phoneNum);
+							}
+							
+							$btnShare.show();
+							$btnDownl.show();
+
+							//刷新中奖列表
+							ajaxGetBingoList(phoneNum);
+							break;
+						case 2:
+
+							break;
+						case 3:
+							$('#lhb').hide();
+							$aboutQhb.show();
+							$noChance.show();
+							$noChance.siblings('div').hide();
+							$btnDownl.show();
+							break;
+						case 4:
+							$('#lhb').hide();
+							$aboutQhb.show();
+							$tooLate.show();
+							$tooLate.siblings('div').hide();
+							$btnDownl.show();
+							break;
+						case 5:
+
+							break;
+						case 6:
+							$('#lhb').hide();
+							$aboutQhb.show();
+							$intensity.show();
+							$intensity.siblings('div').hide();
+							$btnDownl.show();
+							break;
+					}
+				},
+				error:function(xhr, errorType, error){
+					console.log("请求失败");
+				},
+				complete:function(xhr, status){
+					console.log("请求完成");
+					$('.getBtn').removeClass('disabled');
+				}
+			})
+		}
+
+		//ajax手机号码入库
+		function phoneNumRegister(phoneNum){
+			isRequest = true;
+			$.ajax({
+				url: 'http://192.168.1.224:8086/bss/newyear/regist.as',
+				type: 'GET',
+				dataType: 'json',
+				data: {'phone': phoneNum},
+				success:function(data){
+					$('.getBtn').removeClass('disabled');
+				},
+				error:function(xhr, errorType, error){
+					console.log("请求失败");
+				},
+				complete:function(xhr, status){
+					isRequest = false;
+					console.log("请求完成");
+				}
+			});
+		}
+		
+		//app调用js
+		function appCallJsShareSuccess(){
+			alert(1);
+			$('#share').hide();
+			$('#qhb').hide();
+			$('#lhb').show();
+			$('#aboutQhb').hide();
+			$('.btn').hide();
+		}
+		
+		//告诉app手机号
+		function jsCallAppTellPhoneNum(phoneNum) {
+		try {
+			if (/ipad|iphone|mac/i.test(navigator.userAgent)) { //iOS
+				connectWebViewJavascriptBridge(function(bridge) {
+					function log(message, data) {
+						var log = document.getElementById('log');
+						var el = document.createElement('div');
+						el.className = 'logLine';
+						el.innerHTML = '[Objc Response] ' + message + ':<br/>' + JSON.stringify(data);
+						if (log.children.length) {
+							log.insertBefore(el, log.children[0]);
+						} else {
+							log.appendChild(el);
+						}
+					}
+					bridge.callHandler('jsCallAppTellPhoneNum', phoneNum, function(responseData) {
+						log('JS got response', responseData);
+					});
+				});
+			} else if (/android/i.test(navigator.userAgent)) { // Android
+				window.wst.jsCallAppTellPhoneNum(phoneNum);
+			}
+		} catch (error) {
+			console.log(error.message);
+		}
+	    }
+		
+		//告诉app分享内容
+		function jsCallAppTellHuoDongContent(text) {
+			try {
+				if (/ipad|iphone|mac/i.test(navigator.userAgent)) { //iOS
+					connectWebViewJavascriptBridge(function(bridge) {
+						function log(message, data) {
+							var log = document.getElementById('log');
+							var el = document.createElement('div');
+							el.className = 'logLine';
+							el.innerHTML = '[Objc Response] ' + message + ':<br/>' + JSON.stringify(data);
+							if (log.children.length) {
+								log.insertBefore(el, log.children[0]);
+							} else {
+								log.appendChild(el);
+							}
+						}
+						bridge.callHandler('jsCallAppTellHuoDongContent', text, function(responseData) {
+							log('JS got response', responseData);
+						});
+					});
+				} else if (/android/i.test(navigator.userAgent)) { // Android
+					window.wst.jsCallAppTellHuoDongContent(text);
+				}
+			} catch (error) {
+				console.log(error.message);
+			}
+		}
+		
+		//规则----------------------------------------
+		$(document).on('tap','.rulueBtn',function(){
+			popShow($('#rule'));
+		});
+
+		$(document).on('tap','.close',function(){
+			popHide($('#rule'));
+		});
+
+		$(document).on('touchmove','#rule',function(e){
+			e.preventDefault();
+		});
+
+		//分享-----------------------------------------
+		$(document).on('tap','.share',function(){
+			popShow($('#share'));
+		});
+
+		$(document).on('tap','#share',function(e){
+				popHide($(this));
+		});
+		$(document).on('touchmove','#share',function(e){
+				e.preventDefault();
+		});
+		
+		function popShow(obj){
+			var $inner= obj.find('.wrap'),
+				winH  = $(window).height(),
+				scrTop= $('body').scrollTop();
+
+			obj.show();
+			if(obj.attr('id')=='rule'){
+				$inner.css({
+					marginTop:(winH - $inner.height())/2 + scrTop - 40
+				});
+			}else{
+				$inner.css({
+					marginTop:scrTop
+				});
+			}		
+
+		}
+		function popHide(obj){
+			obj.hide();
+		}
+
+		//告诉app手机号
+		jsCallAppTellPhoneNum(phone);
+		//告诉app活动分享信息
+		jsCallAppTellHuoDongContent('{"title":"'+share_title+'","content":"'+share_memo+'"}');
+		ajaxGetBingoList('');
+		//定是执行
+		setInterval(function(){
+			ajaxGetBingoList('');
+		}, 1000 * 60 * 5);
+		//初始化按钮
+		//hasPhone(phone);
+	
+	};
+	
+	
+</script>
+</html>

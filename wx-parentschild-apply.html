@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>亲子活动报名</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/wx-pc-apply.css">
+</head>
+<body v-cloak style="border-top:1px solid transparent;position: relative;">
+<div class="mainContainer">
+    <div class="mainContent" style="padding-bottom:3rem">
+        <input v-model="shipName" v-on:blur="validShip" type="text" class="common shipName" placeholder="输入您的船号">
+        <input v-model="userName" v-on:blur="validName" type="text" class="common userName" placeholder="输入萌宝姓名">
+        <input v-model="phoneNum" v-on:blur="validPhone" type="tel" class="common phoneNum" placeholder="输入您的联系电话">
+        <input v-model="comment" v-on:input="validComment" type="text" class="common" placeholder="输入参赛宣言（20字内）">
+        <div v-show="uploaded" class="showImg">
+            <div class="imgWrap" style="background-image: url('images/kanqizhi/attention_03.jpg')"></div>
+        </div>
+        <input @click="upload" :disabled="canUpload" type="button" class="uploadImg">
+        <div class="note">
+            <img src="images/wx-parentsChild/parents-child_note.jpg" width="80%">
+        </div>
+        <input @click="confirm" type="button" class="confirm">
+    </div>
+</div>
+
+<div v-if="showShare" v-touch:tap="hideShare" class="share">
+    <img src="images/wx-parentsChild/share.gif" width="100%">
+</div>
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script src="javascripts/plugin/vue-resource.js"></script>
+<script>
+    window.addEventListener('load', function(){
+        var vm = new Vue({
+            el:'body',
+            data: {
+                shipName:'',
+                userName:'',
+                phoneNum:'',
+                comment:'',
+                canUpload:true,
+                canConfirm:true,
+                showShare:false,
+                uploaded:false
+            },
+            methods: {
+                upload: function () {
+                    alert(1111);
+                },
+                confirm: function () {
+                    console.log(this.userName);
+                    console.log(this.phoneNum);
+                    /*this.$http.get('http://www.xxxx.com/', {
+                        name: this.userName,
+                        phone: this.phoneNum
+                    }).then(function(res){
+                        console.log('请求成功');
+                     }, function (res) {
+                        console.log('请求失败');
+                     });*/
+                },
+                validName: function(){
+                    var re = /.{1,10}/;
+                    if(re.test(re)){
+                        this.uConfirm = true;
+                    }else{
+                        alert("萌宝姓名不能为空，不能超过10个字~");
+                    }
+                },
+                validPhone: function () {
+                    var re = /[1][345678]\d{9}/;
+
+                    if(re.test(this.phoneNum)){
+                        this.phoneNum = true;
+                    }else{
+                        alert("请输入正确的手机号");
+                    }
+                },
+                validShip: function(){
+                    var re = /^[\u4E00-\u9FA50-9]{2,15}$/;
+                    var ship = this.shipName;
+
+                    //超出15个，删除多余
+                    if(ship.length>15){
+                        console.log('超过15位');
+                        this.shipName = ship.substring(0,15);
+                    }
+                    this.shipName = this.shipName.replace(/[^\u4E00-\u9FA50-9]/g, "");
+                },
+                validComment:function(){
+                    if(this.comment.length>20){
+                        console.log('超过20位');
+                        this.comment = this.comment.substring(0,20);
+                    }
+                    this.comment = this.comment.replace(/\s+/g, '');
+                },
+                hideShare: function () {
+                    this.showShare = false;
+                }
+            }
+        });
+    }, false);
+</script>
+</html>

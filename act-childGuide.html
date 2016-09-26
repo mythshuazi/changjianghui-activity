@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>晒宝宝萌照，赢上海迪士尼亲子游</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <script type="text/javascript">
+        function setHtmlSize(){
+            document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+        }
+        setHtmlSize();
+        window.addEventListener('resize',setHtmlSize,false);
+    </script>
+    <style>
+        body{text-align:justify; color:#664c26;font-size:.4rem;line-height:1.6; background:#f7e8d8 url("images/act-childGuide/bottom.jpg") no-repeat scroll 0 bottom;background-size:100%; padding-bottom:4.5rem; }
+        section{margin:0 .8rem;}
+        img{display:block;}
+        section img{ margin:.3rem auto;}
+        .cloud{background:url("images/act-childGuide/cloud.jpg") no-repeat scroll 0 0; background-size:100% 100%; width:3rem;height:2rem; line-height:2rem; text-align:center; font-size:.5rem; font-weight:bold; margin:.7rem auto;}
+        span{font-weight:bold;}
+        i{color:#e1451a}
+        .date{margin-bottom:.6rem;}
+        .sub{padding-bottom:.2rem;}
+        .note{padding-top:.6rem;}
+    </style>
+</head>
+<script>
+    window.onerror = function(err) {
+        log('window.onerror: ' + err)
+    }
+
+    function connectWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge)
+        } else {
+            document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                callback(WebViewJavascriptBridge)
+            }, false)
+        }
+    }
+
+    connectWebViewJavascriptBridge(function(bridge) {
+        var uniqueId = 1
+        function log(message, data) {
+            var log = document.getElementById('log')
+            var el = document.createElement('div')
+            el.className = 'logLine'
+            el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+            if (log.children.length) {
+                log.insertBefore(el, log.children[0])
+            } else {
+                log.appendChild(el)
+            }
+        }
+        bridge.init(function(message, responseCallback) {// Objc Send 回调
+            log('JS got a message', message)
+            var data = {
+                'Javascript Responds' : 'Wee!'
+            }
+            log('JS responding with', data)
+            responseCallback(data)// 响应 Objc
+        })
+    })
+</script>
+<body>
+<div class="main">
+    <header>
+        <img src="images/act-childGuide/top_01.jpg" width="100%">
+        <img src="images/act-childGuide/top_02.jpg" width="100%">
+    </header>
+    <section class="apply">
+        <div class="cloud">报名环节</div>
+        <div class="item date">
+            <span>报名时间：</span><i>7月1日 — 7月15日</i>
+        </div>
+        <div class="item">
+            <span>报名步骤：</span>
+            <div class="sub">
+                <p>1、扫描下面二维码并关注<i>长江汇</i>服务号；</p>
+                <img src="images/act-childGuide/twocode.jpg" width="55%">
+            </div>
+            <div class="sub">
+                <p>2、点击汇服务－萌宝大赛服务号；</p>
+                <img src="images/act-childGuide/step_01.jpg" width="86%">
+            </div>
+            <div class="sub">
+                <p>3、点击<i>我要报名</i>并登录长江汇账号，提交报名信息。</p>
+                <img src="images/act-childGuide/step_02.jpg" width="86%">
+            </div>
+            <div>
+                <span>注：</span>报名截至时间到<i>7月15日17:00</i>，长江汇工作人员在1个工作日内完成审核工作，审核通过会在长江汇服务号通知您哦，请及时关注！
+            </div>
+
+            <div class="sub note">
+                <span>注意事项：</span>
+                <ul>
+                    <li>（1）仅限十四岁及以下儿童参与此次活动；</li>
+                    <li>（2）照片要求清晰，无关模糊的视为无效；</li>
+                    <li>（3）保证所填写的信息有效，无法确认是水运从业者的视为无效。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="vote">
+        <div class="item">
+            <div class="cloud">投票环节</div>
+        </div>
+        <div class="item date">
+            <span>投票时间：</span><i>7月1日 — 7月22日</i>
+        </div>
+        <div class="item">
+            <div class="sub">
+                <span>投票步骤：</span>进入萌宝活动页，点击<i>投他一票</i>（需先登录长江汇账号哦）。
+                <img src="images/act-childGuide/step_03.jpg" width="86%">
+            </div>
+            <div class="sub note">
+                <span>注意事项：</span>
+                <ul>
+                    <li>（1）投票期间，<i>每人每天限投一次票。</i></li>
+                    <li>（2）禁止使用机器人、刷票等方式进行刷票，非政策方式得到的投票视为无效。</li>
+                    <li>（3）本活动最终解释权归长江汇所有。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="release">
+        <div class="item">
+            <div class="cloud">结果公布</div>
+            <p style="text-indent:.8rem;">
+                长江汇工作人员会在<i>7月23日 — 7月25日</i>评选及确认中奖名单，并会及时通知中奖的25组船友，确认出行事宜；也会在长江汇APP、南京长江汇订阅号、长江汇服务号公布获奖名单，请船友们及时查看！
+            </p>
+            <div class="sub note">
+                <span>注意事项：</span>
+                <ul>
+                    <li>（1）因迪斯尼门票购票需实名，故请在客服人员联系出行事宜时必提供完整的身份信息。</li>
+                    <li>（2）请在确认期间内保持手机畅通，逾期将视为自动放弃。</li>
+                    <li>（3）此活动资格不可转让，一经查实，视为自动放弃。</li>
+                    <li>（4）因萌宝活动非常火爆，为了感谢船友们对我们活动的热情参与，长江汇领导决定：<i>增加5组幸运家庭名额！</i></li>
+                    <li>（5）新增5组子游幸运家庭名额，抽取规则为前21-100名中随机抽取</li>
+                    <li>（6）参与活动未获得迪士尼亲子游，且通过审核的参赛家庭，都可以获得迪士尼定制书包一个。</li>
+                    <li><i>（获得参与奖的参赛家庭需在三个月内到兴隆洲加油站自取，逾期作废）</i></li>
+                    <li>▼萌宝大赛活动结束后，长江汇工作人员将对获奖的船员子女进行资格核查，如发现刷票</li>
+                    <li>▼届时，船友们前来兴隆洲加油站领奖时请出示您的船舶证书及个人船员资格证，谢谢合作！</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+</div>
+</body>
+<script>
+    //告诉app分享内容
+    function jsCallAppTellHuoDongContent(text) {
+        try {
+            if (/ipad|iphone|mac/i.test(navigator.userAgent)) { //iOS
+                connectWebViewJavascriptBridge(function(bridge) {
+                    function log(message, data) {
+                        var log = document.getElementById('log');
+                        var el = document.createElement('div');
+                        el.className = 'logLine';
+                        el.innerHTML = '[Objc Response] ' + message + ':<br/>' + JSON.stringify(data);
+                        if (log.children.length) {
+                            log.insertBefore(el, log.children[0]);
+                        } else {
+                            log.appendChild(el);
+                        }
+                    }
+                    bridge.callHandler('jsCallAppTellHuoDongContent', text, function(responseData) {
+                        log('JS got response', responseData);
+                    });
+                });
+            } else if (/android/i.test(navigator.userAgent)) { // Android
+                window.wst.jsCallAppTellHuoDongContent(text);
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    var share_title = "2016长江汇萌宝大赛火热进行中！晒宝宝萌照，赢上海迪士尼亲子游！";
+    var share_memo = "寻找长江最萌宝贝，亲亲我的宝贝,和宝贝一起向迪士尼快乐出发！";
+    //告诉app活动分享信息
+    jsCallAppTellHuoDongContent('{"title":"'+share_title+'","content":"'+share_memo+'"}');
+</script>
+</html>

@@ -1,0 +1,376 @@
+*{box-sizing:border-box;}
+body{background-color:#FEFEFE;}
+[v-cloak] { display: none }
+
+#top img{display:block;}
+
+section{
+  margin-bottom:.4rem;
+}
+
+#nav{
+  ul{
+    border-bottom:1px solid #F0EDE6;
+  }
+  li{
+    display:inline-block;
+    width:20%;
+    text-align:center;
+    color: #323232;
+    line-height: 1rem;
+    font-size: .4rem;
+  }
+
+  span{
+    display:inline-block;
+
+    &.active{
+      color:#fe4f00;
+      border-bottom:2px solid #fe4f00;
+    }
+  }
+}
+
+#all{
+  border-top:1px solid #F0EDE6;
+}
+
+.landscape{
+  padding-left:.3rem;
+  padding-right:.3rem;
+  li{
+    padding: .3rem 0;
+    border-bottom: 1px solid #F0EDE6;
+    color: #323232;
+  }
+  .ls_right{
+    position:relative;
+  }
+  .ls_left{
+    position:relative;
+  }
+  .ls_intro {
+    font-size: 15px;
+    line-height: 18px;
+    height: 36px;
+    i{
+      background-color:#20C7BE;
+      color:#fff;
+      padding:0 2px;
+      margin-right:4px;
+    }
+  }
+  .ls_prefix{
+    position:absolute;
+    bottom:0;
+    right:.2rem;
+    //width:2rem;
+    //height:.8rem;
+    //line-height:.8rem;
+    text-align:center;
+    //background-color:#ff4e00;
+    color:#323232;
+    font-size:.4rem;
+  }
+  .ls_about{
+    margin-top:.2rem;
+  }
+  .now_price{
+    color:#fe4f00;
+    font-size:.4rem;
+    .price_num{
+      font-size:.55rem !important;
+    }
+  }
+  .old-price{
+    display:block;
+    color:#BDBDBD;
+    font-size:12px;
+  }
+  .price_num{
+    font-size:12px;
+  }
+  .surplus{
+    color:#808080;
+    i{color:#fe4f00;}
+  }
+  .nothing{
+    display:none;
+  }
+}
+
+.title{
+  display:table;
+  width:100%;
+  padding: .4rem .3rem;
+  font-size:.45rem;
+  border-bottom:1px solid #F0EDE6;
+
+  &>*{
+    display:table-cell;
+    width:50%;
+  }
+
+  span{
+    text-indent:1rem;
+    text-align:left;
+    color:#323232;
+  }
+  i{
+    font-size:.4rem;
+    text-align:right;
+    color:#FF4E00;
+  }
+}
+
+.total{
+  padding:0 .5rem 0 .3rem;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  line-height:1.5rem;
+  border-bottom:1px solid #E4E4E4;
+  border-top:1px solid #F0EDE6;
+  margin-top: .3rem;
+
+
+  .date,.count{
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    width: 33%;               /* For old syntax, otherwise collapses. */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    color:#BDBDBD;
+    font-size:.4rem;
+
+    i{
+      color: #323232;
+    }
+  }
+  .count{text-align:center;}
+
+  .footing{
+    text-align:right;
+    font-size:.45rem;
+  }
+}
+
+
+.title{
+  background:transparent url('../images/wx-myOrder/ico_title.png') no-repeat scroll .5rem 50% ;
+  background-size:auto 50%;
+  margin-bottom: .3rem;
+}
+
+
+
+.detail{
+  background-color:#F5F5F5;
+  section{
+    background-color:#fff;
+    &#state{
+      margin-bottom:0;
+      padding-bottom:.4rem;
+    }
+    &#payInfo{
+      margin-bottom:0;
+    }
+  }
+}
+
+.progress{
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  text-align:center;
+  margin-top: .5rem;
+  color: #7F7F7F;
+  
+  .step{
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    p{
+      height:18px;
+    }
+  }
+}
+
+.circle{
+  margin: 8px auto;
+  div{
+    border: 1px solid #A7A7A7;
+    background-color: #fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 1rem;
+    margin: 0 auto;
+    position:relative;
+    z-index: 2  ;
+    i{
+      display: block;
+      width: 12px;
+      height: 12px;
+      margin: 2px auto;
+      border-radius: 8px;
+      background-color: #A7A7A7;
+    }
+  }
+
+  .line {
+    display:block;
+    position:relative;
+    top:-9px;
+    height:1px;
+    background-color:#DADADA;
+  }
+}
+
+.step:nth-of-type(1){
+  .line{
+    width:50%;
+    left:50%;
+  }
+}
+.step:last-child{
+   .line{
+     width:50%;
+   }
+ }
+.active {
+  .circle{
+    div{
+      border: 1px solid #fe4f00;
+      i{
+        background-color: #fe4f00;
+      }
+    }
+  }
+}
+
+.remark{
+  color:#313131;
+  padding:.3rem;
+}
+
+#goodsList{
+  border-top:1px solid #F0EDE6;
+  padding-bottom: .3rem;
+}
+
+
+.table{
+  .tableWrap{
+    padding-bottom:.2rem;
+  }
+  .headline{
+    border-bottom:1px solid #F0EDE6;
+    line-height:1rem;
+    font-size:.45rem;
+    text-indent:.3rem;
+  }
+
+  table{
+    width:100%;
+    color:#666666;
+    font-size: .4rem;
+    tr{
+      height:.8rem;
+    }
+    th{
+      width:20%;
+      text-indent:.3rem;
+    }
+    td{
+      width:50%;
+      text-align:right;
+      padding-right:.3rem;
+    }
+  }
+}
+.tips{
+  background-color:#f5f5f5;
+  font-size:12px;
+  line-height:30px;
+  position:relative;
+  text-indent:40px;
+  color:#fb3838;
+
+  &:before{
+    content:' ';
+    display:block;
+    position:absolute;
+    left:10px;
+    width:24px;
+    height:30px;
+    background:url("../images/wx-myOrder/tips.png") no-repeat scroll 50% 50%;
+    background-size:100%;
+  }
+}
+
+
+.orderList{
+  background-color:#F5F5F5;
+  #nav{
+    background-color:#fff;
+  }
+  .item{
+    background-color:#fff;
+    margin-bottom:.4rem;
+  }
+  .empty{
+    div{
+      line-height:1rem;
+      font-size:.5rem;
+      text-align:center;
+      margin-top:3rem;
+
+      &:before{
+        content:'.';
+        display:inline-block;
+        width:1rem;
+        height:1rem;
+        color:transparent;
+        background:url('../images/wx-myOrder/empty.png') no-repeat scroll 50% 50%;
+        background-size:auto 80%;
+      }
+    }
+  }
+
+  .landscape{
+    li{
+      border:0;
+    }
+    .ls_left{
+      border: 1px solid #F0EDE6;
+    }
+    .ls_right{
+      height:2.4rem;
+    }
+    .ls_intro{
+      min-height:18px;
+      max-height:36px;
+    }
+    .ls_about{
+      position: absolute;
+      bottom: 0;
+      left: 3.5rem;
+    }
+    .ls_pic{
+      width:3.2rem;
+      height:2.4rem;
+    }
+    .price_num{
+      font-size:.4rem;
+    }
+  }
+}

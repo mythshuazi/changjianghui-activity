@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>邀船有礼指南</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/preheat.css">
+    <script src="javascripts/plugin/zepto.js"></script>
+    <script type="text/javascript">
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+        $(window).resize(function(){
+            $('html').css({
+                fontSize: $(window).width()/10
+            });
+        });
+    </script>
+    <style>
+        #middle{ margin-top: -1rem;}
+        #middle .txt{color:#f7eeb3;}
+        #middle .txt li>p{font-size:.35rem !important;}
+        .prize-txt{font-size:.33rem;}
+        #middle .txt li>p span{font-size:.35rem !important;}
+        #middle .txt span { text-decoration: initial; color:#FFD611;}
+        @media screen and (max-width: 320px){
+            .prize-txt{white-space:nowrap !important; -webkit-transform: scale(1);transform: scale(1); }
+        }
+		@media screen and (min-width:321px) and (max-width: 360px){
+            .prize-txt{white-space:nowrap !important; -webkit-transform: scale(0.8);transform: scale(0.8); text-indent:-1rem;}
+        }
+    </style>
+</head>
+<body class="invite-guide">
+<script>
+    window.onerror = function(err) {
+        log('window.onerror: ' + err)
+    }
+
+    function connectWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge)
+        } else {
+            document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                callback(WebViewJavascriptBridge)
+            }, false)
+        }
+    }
+
+    connectWebViewJavascriptBridge(function(bridge) {
+        var uniqueId = 1
+        function log(message, data) {
+            var log = document.getElementById('log')
+            var el = document.createElement('div')
+            el.className = 'logLine'
+            el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+            if (log.children.length) {
+                log.insertBefore(el, log.children[0])
+            } else {
+                log.appendChild(el)
+            }
+        }
+        bridge.init(function(message, responseCallback) {// Objc Send 回调
+            log('JS got a message', message)
+            var data = {
+                'Javascript Responds' : 'Wee!'
+            }
+            log('JS responding with', data)
+            responseCallback(data)// 响应 Objc
+        })
+    })
+</script>
+<div class="mainContainer" style="height:100%; overflow:scroll;">
+    <div class="mainContent">
+        <section id="top">
+            <div class="content">
+                <img src="images/invite-ship-guide/invit-ship-guide_01.jpg" width="100%">
+                <img src="images/invite-ship-guide/invit-ship-guide_02.jpg" width="100%">
+                <img src="images/invite-ship-guide/invit-ship-guide_03.jpg" width="100%">
+            </div>
+        </section>
+        <section id="middle">
+            <div class="txt rule">
+                <h2>活动规则</h2>
+                <div class="wrap">
+                    <ul>
+                        <li>
+                            <p>1、已在长江汇APP注册过的船友均可成为邀请人，通过长江汇APP邀船有礼功能邀请从未注册过长江汇APP的船友，被邀请人注册成功可获得60元吨油券（2张30元吨油券），吨油券为每吨立减的金额。</p>
+                        </li>
+                        <li>
+                            <p>2、被邀请人在兆基石油加油站线上下单并完成加油后，邀请人可获得50元吨油券奖励。</p>
+                        </li>
+                        <li>
+                            <p><span>3、彩蛋活动时间：2016.4.8~2016.6.30</span></p>
+                            <div class="prize-txt">
+                                <p>邀请 <span>5</span> 条船成功加油，可兑换价值 <span>500 元红米2手机一部</span>；</p>
+                                <p>邀请 <span>10</span> 条船成功加油，可兑换价值 <span>1000 元红米3手机一部</span>；</p>
+                                <p>邀请 <span>20</span> 条船成功加油，可兑换价值 <span>2000 元小米NOTE一部</span>；</p>
+                                <p>邀请 <span>50</span> 条船成功加油，可兑换价值 <span>5000 元iPhone6s一部</span>。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p><span>注：</span>被邀请人在注册后也可成为邀请人邀请其他船友哟！多邀多得，上不封顶！船友们赶紧拉上自己的好友行动起来吧！</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="txt warning">
+                <h2>注意事项</h2>
+                <div class="wrap">
+                    <ul>
+                        <li>
+                            <p>1、请将长江汇APP更新到最新版本以参加本次活动。</p>
+                        </li>
+                        <li>
+                            <p>2、每个被邀请的新账号只能获得一次60元吨油券，邀请人可通过邀请多条船成功加油获得对应数量的50元吨油券。</p>
+                        </li>
+                        <li>
+                            <p>3、礼券均为长江汇APP现金抵用券，在长江汇APP下单直接抵扣现金，每张券仅限本人使用，且均有使用期限，过期无效。</p>
+                        </li>
+                        <li>
+                            <p>4、邀船加油券每次靠泊加油下单时只限使用一个，“非油红包”每次靠泊只限使用一个。</p>
+                        </li>
+                        <li>
+                            <p>5、订单失效礼券自动返还到账户内；退单则不返还。</p>
+                        </li>
+                        <li>
+                            <p>6、靠泊的船号需与下单的船号保持一致，否则将无法使用加油券。</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+    <footer>
+    </footer>
+</body>
+<script>
+    $(function(){
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+        if(isIos){
+            $('<p >该活动与奖品和苹果公司无关</p><p>本活动最终解释权归南京长江船服电子商务科技有限公司所有</p>').appendTo('footer');
+        }else{
+            $('<p>本活动最终解释权归南京长江船服电子商务科技有限公司所有</p>').appendTo('footer');
+        }
+    });
+
+    //告诉app分享内容
+    function jsCallAppTellHuoDongContent(text) {
+        try {
+            if (/ipad|iphone|mac/i.test(navigator.userAgent)) { //iOS
+                connectWebViewJavascriptBridge(function(bridge) {
+                    function log(message, data) {
+                        var log = document.getElementById('log');
+                        var el = document.createElement('div');
+                        el.className = 'logLine';
+                        el.innerHTML = '[Objc Response] ' + message + ':<br/>' + JSON.stringify(data);
+                        if (log.children.length) {
+                            log.insertBefore(el, log.children[0]);
+                        } else {
+                            log.appendChild(el);
+                        }
+                    }
+                    bridge.callHandler('jsCallAppTellHuoDongContent', text, function(responseData) {
+                        log('JS got response', responseData);
+                    });
+                });
+            } else if (/android/i.test(navigator.userAgent)) { // Android
+                window.wst.jsCallAppTellHuoDongContent(text);
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    var share_title = "船舶加油，首选长江汇";
+    var share_memo = "用长江汇加油，服务不错，现在还送208元券，2016年超集刮刮乐100％有奖，值得您来体验！";
+    //告诉app活动分享信息
+    jsCallAppTellHuoDongContent('{"title":"'+share_title+'","content":"'+share_memo+'"}');
+</script>
+</html>

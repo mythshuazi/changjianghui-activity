@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>下载</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<style>
+	img{display:block;}
+	#top{position:relative;}
+	.wrap a{
+		display:block;
+		position:absolute;
+		top:0;
+		right:1.3rem;
+		width:3.5rem;
+		height:1rem;
+	}
+	.wrap .ios {
+		background:transparent url("images/activity/download_btn01.png") no-repeat scroll 0 0;
+		background-size: 100% 100%;
+		top:4rem;
+	}
+	.wrap .android {
+		background:transparent url("images/activity/download_btn02.png") no-repeat scroll 0 0;
+		background-size: 100% 100%;
+		top:5.2rem;
+	}
+</style>
+</head>
+<body>
+	<div class="mainContainer">
+        <div class="mainContent">
+        	<div id="top">
+        		<img class="scrollLoad" src="images/activity/download_01.jpg" width="100%" style="height:2.4rem">
+        		<img class="scrollLoad" src="images/activity/download_02.jpg" width="100%" style="height:2.4rem">
+        		<img class="scrollLoad" src="images/activity/download_03.jpg" width="100%" style="height:2.4rem">
+        		<div class="wrap">
+        			<a class="ios" href=""></a>
+        			<a class="android" href=""></a>
+        		</div>
+        	</div>
+        	<div id="bottom">
+        		<img class="scrollLoad" src="images/activity/download_04.png" width="100%" style="height:2.45rem;">
+        		<img class="scrollLoad" src="images/activity/download_06.png" width="100%" style="height:2.45rem;">
+        		<img class="scrollLoad" src="images/activity/download_07.png" width="100%" style="height:2.45rem;">
+        		<img class="scrollLoad" data-url="images/activity/download_08.png" src="images/public/default.jpg" width="100%" style="height:2.4rem;">
+        		<img class="scrollLoad" data-url="images/activity/download_09.png" src="images/public/default.jpg" width="100%" style="height:2.4rem;">
+        		<img class="scrollLoad" data-url="images/activity/download_10.png" src="images/public/default.jpg" width="100%" style="height:2.4rem;">
+        		<img class="scrollLoad" data-url="images/activity/download_11.png" src="images/public/default.jpg" width="100%" style="height:2.4rem;">
+        		<img class="scrollLoad" data-url="images/activity/download_12.png" src="images/public/default.jpg" width="100%" style="height:2.4rem;">
+        		<img class="scrollLoad" data-url="images/activity/download_13.jpg" src="images/public/default.jpg" width="100%" style="height:2.9rem">
+        	</div>
+        </div>
+	</div>
+</body>
+<script>
+$(function(){
+	//图片滚动加载
+    $('.scrollLoad').scrollLoading();
+
+});
+</script>
+</html>

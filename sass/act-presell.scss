@@ -1,0 +1,65 @@
+﻿body{
+  background-color:#4A04B2;
+  color:#fdfdfd;
+}
+.qa{
+  padding:0 .4rem 0 1rem;
+  font-size:.35rem;
+  text-align:justify;
+  position:relative;
+  &:before{
+    content:" ";
+    display:block;
+    width:.4rem;
+    height:.4rem;
+    background:transparent url("../images/act-presell/arrow.jpg") no-repeat scroll 0 50%;
+    background-size: 80% 80%;
+    position: absolute;
+    top: 0;
+    left: .6rem;
+  }
+
+  P{
+    margin-top:.4rem;
+    i{color:#fbfc3c;}
+  }
+}
+
+.content{
+  padding-bottom: 1rem;
+}
+.item{
+  text-align:center;
+
+  .title{
+    font-size: .51rem;
+    line-height: 2rem;
+    background: transparent url("../images/act-presell/presell_00.jpg") no-repeat scroll 50% 36%;
+    background-size:70%;
+  }
+  p{
+    font-size: .36rem;
+  }
+  .intro{
+    width:74%;
+    margin:0 auto;
+    text-align:justify;
+    line-height: 1.4;
+    text-indent:.72rem;
+  }
+  .step{
+    font-size:.38rem;
+    background: transparent url("../images/act-presell/dotted.jpg") no-repeat scroll 50% 50%;
+    background-size:94%;
+    margin: .3rem 0 .4rem 0;
+    i{
+      color:#FAFD3A;
+      font-size:.5rem;
+    }
+  }
+
+  img{
+    margin-top: .45rem;
+    margin-bottom: .2rem;
+  }
+}

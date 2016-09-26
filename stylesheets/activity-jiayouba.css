@@ -1,0 +1,30 @@
+/* line 1, ../sass/activity-jiayouba.scss */
+.jyb li {
+  background: #D4D4D4 url("../images/public/default.jpg") no-repeat scroll 50% 50%;
+  background-size: contain;
+}
+
+/* line 6, ../sass/activity-jiayouba.scss */
+.jyb {
+  background-color: #E9BC00;
+}
+/* line 13, ../sass/activity-jiayouba.scss */
+.jyb img.scrollLoad {
+  display: block;
+  opacity: 0;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+}
+/* line 22, ../sass/activity-jiayouba.scss */
+.jyb .above li {
+  height: 3.5rem;
+}
+/* line 27, ../sass/activity-jiayouba.scss */
+.jyb .under {
+  padding: 0 .5rem;
+  padding-bottom: 1rem;
+}
+/* line 31, ../sass/activity-jiayouba.scss */
+.jyb .under img {
+  margin-top: 1rem;
+}

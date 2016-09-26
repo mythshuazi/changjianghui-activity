@@ -1,0 +1,235 @@
+@charset "UTF-8";
+/* line 1, ../sass/flashPay.scss */
+body {
+  background-color: #fff;
+  font-family: "microsoft yahei", 瀹嬩綋, sans-serif;
+  line-height: 1.2;
+}
+
+/* line 6, ../sass/flashPay.scss */
+button, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+/* line 13, ../sass/flashPay.scss */
+input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+/* line 14, ../sass/flashPay.scss */
+input::input-placeholder {
+  text-align: center;
+}
+
+/* line 15, ../sass/flashPay.scss */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+/* line 20, ../sass/flashPay.scss */
+img {
+  display: block;
+}
+
+/* line 24, ../sass/flashPay.scss */
+.integral {
+  color: #20C7BF;
+}
+
+/* line 27, ../sass/flashPay.scss */
+.rmb {
+  color: #FF4E00;
+}
+
+/* line 32, ../sass/flashPay.scss */
+.info .state {
+  border-bottom: 1px solid #F0EDE6;
+}
+/* line 34, ../sass/flashPay.scss */
+.info .state > * {
+  margin: 0 auto;
+}
+/* line 37, ../sass/flashPay.scss */
+.info .state img {
+  width: 1.2rem;
+}
+/* line 40, ../sass/flashPay.scss */
+.info .state .text {
+  text-align: center;
+  font-size: .55rem;
+  line-height: 1.6;
+}
+/* line 47, ../sass/flashPay.scss */
+.info table {
+  width: 100%;
+  table-layout: fixed;
+}
+/* line 50, ../sass/flashPay.scss */
+.info table tr {
+  border-bottom: 1px solid #F0EDE6;
+  width: 100%;
+  font-size: 14px;
+  line-height: 36px;
+}
+/* line 56, ../sass/flashPay.scss */
+.info table tr th {
+  width: 20%;
+  text-align: center;
+  color: #818181;
+}
+/* line 62, ../sass/flashPay.scss */
+.info table tr td {
+  width: 80%;
+  font-size: 15px;
+}
+
+/* line 71, ../sass/flashPay.scss */
+.btn button {
+  font-size: 16px;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  background-color: #FF4E00;
+  line-height: 40px;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+/* line 85, ../sass/flashPay.scss */
+.mainContainer.paySucceed .state {
+  padding: 1rem 0;
+}
+/* line 88, ../sass/flashPay.scss */
+.mainContainer.paySucceed .submitSucceed {
+  display: none;
+}
+/* line 91, ../sass/flashPay.scss */
+.mainContainer.paySucceed .paySucceed {
+  display: block;
+}
+/* line 94, ../sass/flashPay.scss */
+.mainContainer.paySucceed .failed {
+  display: none;
+}
+/* line 97, ../sass/flashPay.scss */
+.mainContainer.paySucceed .text {
+  color: #28B63E;
+}
+
+/* line 103, ../sass/flashPay.scss */
+.mainContainer.submitSucceed .state {
+  padding: 1rem 0;
+}
+/* line 106, ../sass/flashPay.scss */
+.mainContainer.submitSucceed .paySucceed {
+  display: none;
+}
+/* line 109, ../sass/flashPay.scss */
+.mainContainer.submitSucceed .submitSucceed {
+  display: block;
+}
+/* line 112, ../sass/flashPay.scss */
+.mainContainer.submitSucceed .failed {
+  display: none;
+}
+/* line 116, ../sass/flashPay.scss */
+.mainContainer.submitSucceed .text {
+  color: #28B63E;
+}
+
+/* line 122, ../sass/flashPay.scss */
+.mainContainer.failed table {
+  display: none;
+}
+/* line 125, ../sass/flashPay.scss */
+.mainContainer.failed .state {
+  padding: 3rem 0;
+  border-bottom: 0;
+}
+/* line 129, ../sass/flashPay.scss */
+.mainContainer.failed .paySucceed {
+  display: none;
+}
+/* line 132, ../sass/flashPay.scss */
+.mainContainer.failed .submitSucceed {
+  display: none;
+}
+/* line 135, ../sass/flashPay.scss */
+.mainContainer.failed .failed {
+  display: block;
+}
+/* line 139, ../sass/flashPay.scss */
+.mainContainer.failed .text {
+  color: #FB0F11;
+}
+/* line 143, ../sass/flashPay.scss */
+.mainContainer.failed button.failed {
+  margin-top: 0;
+}
+
+/* line 148, ../sass/flashPay.scss */
+#pop {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 152, ../sass/flashPay.scss */
+#pop .main {
+  width: 8rem;
+  height: 10rem;
+}
+/* line 156, ../sass/flashPay.scss */
+#pop .main .inner {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 10rem;
+  background: url("../images/paysucceed/liquan.png") no-repeat scroll 0 0;
+  background-size: 100%;
+}
+/* line 163, ../sass/flashPay.scss */
+#pop .main .inner > div {
+  position: relative;
+  top: 2.8rem;
+  font-size: 14px;
+}
+/* line 167, ../sass/flashPay.scss */
+#pop .main .inner > div p {
+  color: #ED5656;
+}
+/* line 170, ../sass/flashPay.scss */
+#pop .main .inner > div div {
+  color: #F40000;
+  font-size: 16px;
+  line-height: 30px;
+}
+/* line 174, ../sass/flashPay.scss */
+#pop .main .inner > div div i {
+  font-size: 18px;
+}
+/* line 180, ../sass/flashPay.scss */
+#pop .main .inner button {
+  position: absolute;
+}
+/* line 182, ../sass/flashPay.scss */
+#pop .main .inner button.send {
+  width: 3.8rem;
+  height: 1rem;
+  top: 6rem;
+  left: 2rem;
+  opacity: 0.5;
+}
+/* line 190, ../sass/flashPay.scss */
+#pop .main .inner button.notSend {
+  width: 2rem;
+  height: .5rem;
+  top: 7.1rem;
+  left: 2.8rem;
+  opacity: 0.5;
+}

@@ -1,0 +1,14 @@
+<% console.log('正在渲染 promise 模版')%>
+<% if(promise){ %>
+	<div class="notice-bar clear">
+		<!--<div class="notice-title">承诺 </div>-->
+		<%if(promise.indexOf(',') > 0){%>
+			<%promise = promise.split(',')%>
+			<% for(var i=0; i<promise.length; i++){ %>
+			<p><%=promise[i]%></p>
+			<% } %>
+		<% }else{ %>
+			<p><%=promise%></p>
+		<% } %>
+	</div>
+<% } %>

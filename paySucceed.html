@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html style="height:100%; font-size:12px;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>支付成功</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/paySucceed.css"/>
+<!-- <link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css"> -->
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="mainContent">
+            <section id="succeed">
+                <div class="payWrap">
+                    <div class="payState succeed">
+                        <i></i>
+                        <div>
+                            <p class="stateTxt">付款成功!</p>
+                            <p>+20积分</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="delivery">
+                    <p class="money">应付金额：<span>￥22,789,999.00</span></p>
+                    <p class="date">取货时间：<span>2015-08-27</span></p>
+                    <p class="place">取货地点：<span>兆基石油六合站</span></p>
+                    <p class="qrcode addoil">加油码<span>点击查看二维码</span></p>
+                    <p class="qrcode goods">取货码<span>点击查看二维码</span></p>
+                </div>
+                <ul class="link">
+                    <li><span class="detail">订单详情</span></li>
+                    <li><span class="index">回到首页</span></li>
+                </ul>
+            </section>
+
+            <section id="guess">
+                <h2 class="like"><span>猜你喜欢</span></h2>
+                <ul class="clear">
+                    <li data-id=1>
+                        <img class="scrollLoad" data-url="" width="100%" src="" onerror="this.src='images/public/default.jpg'">
+                        <p class="intro">361°时尚年轻运动装 男士夹克衫</p>
+                        <p class="price"><i class="rmb">￥</i>599 <i class="rate">好评率：98%</i></p>
+
+                    </li>
+                    <li data-id=2>
+                        <img class="scrollLoad" data-url="" width="100%" src="" onerror="this.src='images/public/default.jpg'">
+                        <p class="intro">苹果运动手表 Apple Watch 尊贵版</p>
+                        <p class="price"><i class="rmb">￥</i>5278 <i class="rate">好评率：95%</i></p>
+                    </li>
+                    <li data-id=3>
+                        <img class="scrollLoad" data-url="" width="100%" src="" onerror="this.src='images/public/default.jpg'">
+                        <p class="intro">361°时尚年轻运动装 男士夹克衫</p>
+                        <p class="price"><i class="rmb">￥</i>599 <i class="rate">好评率：98%</i></p>
+
+                    </li>
+                    <li data-id=4>
+                        <img class="scrollLoad" data-url="" width="100%" src="" onerror="this.src='images/public/default.jpg'">
+                        <p class="intro">苹果运动手表 Apple Watch 尊贵版</p>
+                        <p class="price"><i class="rmb">￥</i>5278 <i class="rate">好评率：95%</i></p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div id="pop" class="pop">
+        <div class="content">
+            <img src="./images/paysucceed/hb_01.png" width="100%">
+            <div class="txt">
+                <h3>恭喜获得<span class="count">20</span>个红包</h3>
+                <p>
+                    分享红包给好友<br>
+                    可用于抵扣支付金额
+                </p>
+                <button class="send">发红包</button>
+            </div>
+            <i class="close"></i>
+        </div>
+    </div>
+</body>
+<script>
+var jsCallAppTellGo2Where = function (methodId, value){
+    try{
+        window.wst.jsCallAppTellGo2Where(methodId, value);
+    }catch(error){
+        console.log(error.message);
+    }
+};
+
+var jsCallApp2ShareRedBag = function(){
+    try{
+        window.wst.jsCallApp2ShareRedBag();
+    }catch(error){
+        console.log(error.message);
+    }
+};
+
+var load = function(){
+    var goToDetailBtn = document.querySelector('.detail'),
+        goToIndexBtn  = document.querySelector('.index'),
+        goToGoodsEles = document.querySelectorAll('#guess li');
+
+        goToDetailBtn.addEventListener('touchstart',function(){
+            jsCallAppTellGo2Where(0, orderId);
+        },false);
+
+        goToIndexBtn.addEventListener('touchstart',function(){
+            jsCallAppTellGo2Where(1,"");
+        },false);
+
+        for(var i=0; i<goToGoodsEles.length; i++){
+            var item = goToGoodsEles[i];
+            item.addEventListener('touchstart',function(){
+                console.log( this.dataset.id);
+                jsCallAppTellGo2Where(2, this.dataset.id)
+            },false);
+        }
+
+        $(document).on('touchmove','#pop',function(e){
+            //e.preventDefault();
+            console.log(1111);
+            alert(111);
+        },false);
+
+        $(document).on('tap','.close',function(){
+            $('#pop').hide();
+        });
+
+        $(document).on('tap','#pop',function(e){
+            if($(e.target).hasClass('pop')){
+                $('#pop').hide();
+            }
+        });
+
+        $(document).on('tap','.send',function(){
+            jsCallApp2ShareRedBag();
+        });
+}
+
+window.addEventListener('load',load,false);
+
+
+</script>
+</html>

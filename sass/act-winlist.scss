@@ -1,0 +1,91 @@
+body{
+  font:12px/1.2, 'Microsoft YaHei' ;
+  color:#808080;
+  background-color:#F5F5F5;
+}
+
+header{
+  img{
+    display:block;
+    width:100%;
+  }
+}
+
+
+
+.title{
+  text-align:center;
+  width: 100%;
+  font-size:.5rem;
+  color:#323232;
+  margin-top:.5rem;
+  line-height: .7rem;
+
+  li{
+    display:table-cell;
+    text-align: center;
+  }
+}
+
+.note{
+  display:block;
+  width:40%;
+  margin:0 auto;
+  margin-top:.6rem;
+  margin-bottom:.2rem;
+}
+
+.wrap{
+  margin:0 .2rem;
+}
+table{
+  width:100%;
+  box-sizing: border-box;
+  background-color:#fff;
+  tr{
+    width:100%;
+  }
+  thead{
+    background-color:#F61D4A;
+    color:#fff;
+    border:1px solid #F61D4A;
+    td{
+      font-size:.4rem;
+    }
+  }
+  td{
+    text-align:center;
+    font-size:.35rem;
+    line-height:.8rem;
+    height: .8rem;
+  }
+  td:nth-of-type(1){
+    width:28%;
+  }
+  td:nth-of-type(2){
+    width:30%;
+  }
+  tbody td{
+    border-bottom:1px solid #e6e6e6;
+    border-right:1px solid #e6e6e6;
+    border-left:1px solid #e6e6e6;
+  }
+}
+
+.swiper-container{
+  padding-bottom:1rem;
+  margin-bottom:.5rem !important;
+}
+
+
+.swiper-pagination{
+  -webkit-transition: 0ms;
+  -moz-transition: 0ms;
+  -ms-transition: 0ms;
+  -o-transition: 0ms;
+  transition: 0ms;
+}
+
+.swiper-pagination-current{
+  color:#fb1010;
+}

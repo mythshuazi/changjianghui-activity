@@ -1,0 +1,18 @@
+﻿<% if(data && data.length>0){ %>
+
+<div class="swiper-wrapper">
+    <% for(var i=0; i<data.length; i++){ %>
+    <% var item = data[i];%>
+
+    <div class="swiper-slide" data-id="<%=item.goodsId%>">
+    	<div class="wrap">    		
+	        <img class="swiper-lazy" data-src="<%=item.picUrl%>" src="images/public/default.jpg" onerror="this.src='images/public/default.jpg'">
+	        <p class="intro"><%=item.goodsName%></p>
+	        <p class="price"><i class="rmb">￥</i><%=item.minPrice%></p>
+    	</div>
+    </div>
+
+    <% } %>
+</div>
+
+<% } %>

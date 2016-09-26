@@ -1,0 +1,47 @@
+<!--轮播 start-->
+<section id="carousel" class="detail-carousel">
+    <div class="swiper-container">
+		<div class="swiper-wrapper">
+
+			<% if(picList.length>0) { %>
+		        <% for(var i=0; i<picList.length; i++){ %>
+		    		<div class="swiper-slide ">
+		    			<img class="swiper-lazy" data-src="<%= picList[i].bigPic %>" onerror="this.src='images/public/default.jpg'">
+						<!--<img src="images/detail/jingbao.png" alt="">-->
+		    		</div>
+		        <% } %>
+	        <% }else{ %>
+				<% for(var i=0; i<3; i++){ %>
+		    		<div class="swiper-slide ">
+		    			<img class="swiper-lazy" data-src="images/public/default.jpg" onerror="this.src='images/public/default.jpg'">
+		    		</div>
+		        <% } %>
+	        <% } %>
+
+		</div>
+		<div class="page swiper-pagination"></div>
+	</div>
+	<% if(state == 0) { %>
+		<img src="images/detail/xiajia.png" class="flag sellout">
+	<% }else if(parseFloat(stocks) <= 0 && state == 1){%>
+		<img src="images/detail/shouqing.png" class="flag sellout">
+	<% } %>
+	<% if(caseType == 4){%>
+		<img class="flag jingbao" src="images/detail/jingbao.png">
+	<% } %>
+	<% if(caseType !=4 && smtType !=1 && smtType !=5){%>
+		<img class="flag ladder" src="images/detail/ladder.png">
+	<% } %>
+
+	
+</section>
+<!--轮播 over-->
+
+<section class="goods-title">
+    <div class="main">
+        <p class="title"><!--smtType:-1不参加任何营销；1首单；5抢购秒杀|||state:1上架；0下架-->
+			<%=goodsName %>
+        </p>
+        <p class="intro"><%= ads %></p>
+    </div>
+</section>

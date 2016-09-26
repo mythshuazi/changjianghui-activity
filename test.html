@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Title</title>
+    <style>
+        button{display:block; width:8rem; height:3rem; margin:2rem auto;}
+    </style>
+</head>
+<body>
+    <button onclick="window.wst.jsCallApp2AddShopCar(JSON.stringify({'goodsId':'246','nums':'1'}))">加入购物车</button>
+    <button onclick="window.wst.jsCallApp2BuyNow(JSON.stringify({'goodsId':'246','nums':'1'}), '2')">新增立即购买</button>
+    <button onclick="window.wst.jsCallApp2ShopCar()">跳转到购物车</button>
+</body>
+</html>

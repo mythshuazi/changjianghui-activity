@@ -1,0 +1,310 @@
+/* line 2, ../sass/gameAbout.scss */
+body {
+  height: 100%;
+}
+
+/* line 3, ../sass/gameAbout.scss */
+button {
+  border: 0;
+  outline: 0;
+}
+
+/* line 4, ../sass/gameAbout.scss */
+.container {
+  height: 100%;
+  background: url("../images/gameAbout/indexBg.jpg") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+
+/* line 9, ../sass/gameAbout.scss */
+.ruleBtn {
+  display: block;
+  background: url("../images/gameAbout/ruleBtn.png") no-repeat scroll 0 0;
+  background-size: 100%;
+  width: 2.6rem;
+  height: 1.1rem;
+  position: relative;
+  left: 7rem;
+  top: .5rem;
+}
+
+/* line 18, ../sass/gameAbout.scss */
+.login {
+  width: 100%;
+  position: absolute;
+  bottom: .5rem;
+}
+
+/* line 23, ../sass/gameAbout.scss */
+.login {
+  display: none;
+}
+/* line 25, ../sass/gameAbout.scss */
+.login a {
+  background: url("../images/gameAbout/login.png") no-repeat scroll 0 0;
+  background-size: 100%;
+  width: 7rem;
+  height: 1rem;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 35, ../sass/gameAbout.scss */
+.btns {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}
+
+/* line 39, ../sass/gameAbout.scss */
+.btns button {
+  display: block;
+  margin: 0 auto;
+  width: 6rem;
+  height: 1.5rem;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* line 48, ../sass/gameAbout.scss */
+.start {
+  background-image: url("../images/gameAbout/start.png");
+}
+
+/* line 51, ../sass/gameAbout.scss */
+.rank {
+  background-image: url("../images/gameAbout/rank.png");
+}
+
+/* line 54, ../sass/gameAbout.scss */
+.help {
+  background-image: url("../images/gameAbout/help.png");
+}
+
+/* line 57, ../sass/gameAbout.scss */
+.me .help {
+  display: none;
+}
+
+/* line 60, ../sass/gameAbout.scss */
+.friend .start {
+  display: none;
+}
+
+/* line 61, ../sass/gameAbout.scss */
+.friend .rank {
+  display: none;
+}
+
+/* line 62, ../sass/gameAbout.scss */
+.friend .help {
+  margin-top: 1rem;
+}
+
+/* line 63, ../sass/gameAbout.scss */
+.friend .login {
+  display: none;
+}
+
+/* line 65, ../sass/gameAbout.scss */
+.pop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  background: url("../images/gameAbout/popBg.jpg") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+/* line 73, ../sass/gameAbout.scss */
+.pop .content {
+  position: relative;
+  top: 4.2rem;
+  min-height: 4rem;
+  width: 8rem;
+  padding: .2rem;
+  display: block;
+  margin: 0 auto;
+  border-radius: 1.4rem;
+  background-color: #FDAA02;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FCBF04), to(#FC9401));
+  background-image: -webkit-linear-gradient(to bottom, #FCBF04 0%, #FC9401 100%);
+  background-image: linear-gradient(to bottom, #FCBF04 0%, #FC9401 100%);
+  border: 1px solid #DF8200;
+  box-shadow: 1px 1px 2px #797979;
+}
+/* line 89, ../sass/gameAbout.scss */
+.pop .title {
+  width: 4.5rem;
+  height: 1.4rem;
+  background: transparent url("../images/gameAbout/title.png") no-repeat scroll 0 0;
+  background-size: 100%;
+  position: absolute;
+  top: -0.6rem;
+  left: 2rem;
+  text-align: center;
+  color: #f3e7ce;
+  font-size: .55rem;
+  line-height: 1.2rem;
+}
+/* line 102, ../sass/gameAbout.scss */
+.pop .inner {
+  box-shadow: 0 0 3px #828080;
+  min-height: 4rem;
+  border-radius: 1.1rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FBDB8E), to(#F8E5AC));
+  background-image: -webkit-linear-gradient(to bottom, #FBDB8E 0%, #F8E5AC 100%);
+  background-image: linear-gradient(to bottom, #FBDB8E 0%, #F8E5AC 100%);
+  padding: .5rem;
+}
+/* line 111, ../sass/gameAbout.scss */
+.pop .close {
+  position: absolute;
+  right: 0;
+  top: -1.2rem;
+  background: transparent url("../images/gameAbout/close.png") no-repeat scroll 0 0;
+  background-size: 100%;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* line 122, ../sass/gameAbout.scss */
+.pop {
+  display: none;
+}
+/* line 125, ../sass/gameAbout.scss */
+.pop .ruleContent {
+  display: none;
+  font-size: .4rem;
+  color: #39230B;
+  text-shadow: 1px 1px 1px #fff;
+  font-weight: bold;
+}
+/* line 132, ../sass/gameAbout.scss */
+.pop .ruleContent li {
+  margin-top: .3rem;
+  line-height: .5rem;
+}
+/* line 136, ../sass/gameAbout.scss */
+.pop p {
+  text-align: center;
+  margin-top: .5rem;
+  line-height: 1rem;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 1px 1px 7px #fff;
+}
+/* line 144, ../sass/gameAbout.scss */
+.pop .description {
+  display: none;
+  margin-top: 1rem;
+}
+/* line 147, ../sass/gameAbout.scss */
+.pop .description img {
+  display: block;
+}
+/* line 150, ../sass/gameAbout.scss */
+.pop .description a {
+  display: block;
+  width: 4rem;
+  height: 1.4rem;
+  margin: 0 auto;
+  margin-top: .5rem;
+  background: transparent url("../images/gameAbout/start2.png") no-repeat scroll;
+  background-size: 100%;
+}
+
+/* line 162, ../sass/gameAbout.scss */
+.myRank {
+  font-size: .4rem;
+}
+/* line 164, ../sass/gameAbout.scss */
+.myRank p {
+  line-height: 1rem;
+  margin: 0;
+}
+/* line 168, ../sass/gameAbout.scss */
+.myRank .total {
+  font-size: .6rem;
+  color: #449143;
+}
+/* line 172, ../sass/gameAbout.scss */
+.myRank .order {
+  font-size: .6rem;
+  color: #FE9B00;
+}
+/* line 176, ../sass/gameAbout.scss */
+.myRank a.who {
+  display: block;
+  text-align: center;
+  color: #429142;
+  text-decoration: underline;
+}
+/* line 183, ../sass/gameAbout.scss */
+.myRank a.fengyun {
+  display: block;
+  width: 5rem;
+  height: 1.2rem;
+  margin: 0 auto;
+  margin-top: .5rem;
+  background: url("../images/gameAbout/fengyun.png") no-repeat scroll 0 0;
+  background-size: 100% auto;
+}
+/* line 193, ../sass/gameAbout.scss */
+.myRank a.hero {
+  display: block;
+  width: 5rem;
+  height: 1.2rem;
+  margin: 0 auto;
+  background: url("../images/gameAbout/hero.png") no-repeat scroll 0 0;
+  background-size: 100% auto;
+}
+/* line 202, ../sass/gameAbout.scss */
+.myRank .btn {
+  display: inline-block;
+  width: 4rem;
+  height: 1.2rem;
+  position: relative;
+  top: 3rem;
+}
+/* line 209, ../sass/gameAbout.scss */
+.myRank .month {
+  background: url("../images/gameAbout/month.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  margin: 0 0.6rem;
+}
+/* line 215, ../sass/gameAbout.scss */
+.myRank .share {
+  background: url("../images/gameAbout/share.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+
+/* line 221, ../sass/gameAbout.scss */
+.twoCode {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
+/* line 228, ../sass/gameAbout.scss */
+.twoCode img {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 3rem;
+}
+
+/* line 235, ../sass/gameAbout.scss */
+.sharePop {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
+
+/*# sourceMappingURL=gameAbout.css.map */

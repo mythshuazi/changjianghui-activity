@@ -1,0 +1,201 @@
+body{
+  background-color:#fff;
+  font-family: "microsoft yahei", 宋体, sans-serif;
+  line-height:1.2;
+}
+button,input{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  background-color:transparent;
+}
+input::-webkit-input-placeholder{text-align: center;}
+input::input-placeholder{ text-align: center }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+img{
+  display:block;
+}
+
+.integral{
+  color:#20C7BF;
+}
+.rmb{
+  color:#FF4E00;
+}
+
+.info{
+  .state{
+    border-bottom:1px solid #F0EDE6;
+    &>*{
+      margin:0 auto;
+    }
+    img{
+      width:1.2rem;
+    }
+    .text{
+      text-align:center;
+      font-size:.55rem;
+      line-height:1.6;
+    }
+  }
+
+  table{
+    width:100%;
+    table-layout: fixed;
+    tr{
+      border-bottom:1px solid #F0EDE6;
+      width:100%;
+      font-size:14px;
+      line-height:36px;
+
+      th{
+        width:20%;
+        text-align: center;
+        color: #818181;
+      }
+
+      td{
+        width:80%;
+        font-size:15px;
+      }
+    }
+  }
+}
+
+.btn{
+  button{
+    font-size: 16px;
+    color:#fff;
+    display:block;
+    margin:0 auto;
+    width:90%;
+    background-color:#FF4E00;
+    line-height:40px;
+    border-radius:5px;
+    margin-top:30px;
+  }
+}
+
+.mainContainer.paySucceed{
+  .state{
+    padding:1rem 0;
+  }
+  .submitSucceed{
+    display:none;
+  }
+  .paySucceed{
+    display:block;
+  }
+  .failed{
+    display:none;
+  }
+  .text{
+    color:#28B63E;
+  }
+}
+
+.mainContainer.submitSucceed{
+  .state{
+    padding:1rem 0;
+  }
+  .paySucceed{
+    display:none;
+  }
+  .submitSucceed{
+    display:block;
+  }
+  .failed{
+    display:none;
+  }
+
+  .text{
+    color:#28B63E;
+  }
+}
+
+.mainContainer.failed{
+  table{
+    display:none;
+  }
+  .state{
+    padding:3rem 0;
+    border-bottom:0;
+  }
+  .paySucceed{
+    display:none;
+  }
+  .submitSucceed{
+    display:none;
+  }
+  .failed{
+    display:block;
+  }
+
+  .text{
+    color:#FB0F11;
+  }
+
+  button.failed{
+    margin-top:0;
+  }
+}
+
+#pop{
+  display: none;
+  background-color:rgba(0,0,0,0.5);
+
+  .main{
+    width:8rem;
+    height:10rem;
+
+    .inner{
+      position:relative;
+      text-align:center;width:100%;
+      height:10rem;
+      background:url('../images/paysucceed/liquan.png') no-repeat scroll 0 0;
+      background-size:100%;
+
+      &>div{
+        position:relative;
+        top:2.8rem;
+        font-size:14px;
+        p{
+          color: #ED5656;
+        }
+        div{
+          color: #F40000;
+          font-size: 16px;
+          line-height: 30px;
+          i{
+            font-size: 18px;
+          }
+        }
+      }
+
+      button{
+        position: absolute;
+        &.send{
+          width: 3.8rem;
+          height: 1rem;
+          top: 6rem;
+          left: 2rem;
+          opacity: 0.5;
+        }
+
+        &.notSend{
+          width: 2rem;
+          height: .5rem;
+          top: 7.1rem;
+          left: 2.8rem;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+}

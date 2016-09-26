@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>亲子活动报名</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/wx-pc-main.css">
+<link rel="stylesheet" href="stylesheets/pop.css">
+</head>
+<body style="min-height:100%;position:relative;">
+<div class="mainContainer">
+    <section id="top">
+        <img src="images/wx-parentsChild/main-top.png" width="100%">
+        <a class="ruleBtn" href=""></a>
+    </section>
+
+    <section id="btns">
+        <div class="apply">
+            <a href="" style="position:absolute;top:0;left:2.4rem;width:5.5rem;height:2.4rem;"></a>
+        </div>
+        <div class="searchWrap">
+            <input class="searchNum" type="number" placeholder="搜萌宝名字或者编号">
+            <span class="searchBtn" data-id=""></span>
+        </div>
+        <img class="empty" style="display: none;" src="images/wx-parentsChild/null.jpg" width="100%">
+    </section>
+
+    <section id="gallery" class="gallery">
+        <ul class="clear">
+            <li id="1">
+                <div class="content">
+                    <div class="wrap">
+                        <div class="rahmen">
+                            <div class="photo" data-url="images/download/download_01.jpg" style="background-image:url('images/kanqizhi/attention_03.jpg')"></div>
+                        </div>
+                        <div class="info">
+                            <p class="name">小芈月</p>
+                            <p class="count">999999票</p>
+                        </div>
+                        <i class="num">158</i>
+                    </div>
+                    <p class="comment">来打开附件撒旦法拉开距离空间</p>
+                    <input class="vote" type="button">
+                </div>
+                <div class="border"></div>
+            </li>
+            <li id="2">
+                <div class="content">
+                    <div class="wrap">
+                        <div class="rahmen">
+                            <div class="photo" data-url="images/download/download_01.jpg" style="background-image:url('images/kanqizhi/attention_03.jpg')"></div>
+                        </div>
+                        <div class="info">
+                            <p class="name">小芈月</p>
+                            <p class="count">999999票</p>
+                        </div>
+                        <i class="num">158</i>
+                    </div>
+                    <p class="comment">来打开附件撒旦法拉开距离空间</p>
+                    <input class="vote" type="button">
+                </div>
+                <div class="border"></div>
+            </li>
+            <li id="3">
+                <div class="content">
+                    <div class="wrap">
+                        <div class="rahmen">
+                            <div class="photo" data-url="images/download/download_01.jpg" style="background-image:url('images/kanqizhi/attention_03.jpg')"></div>
+                        </div>
+                        <div class="info">
+                            <p class="name">小芈月</p>
+                            <p class="count">999999票</p>
+                        </div>
+                        <i class="num">158</i>
+                    </div>
+                    <p class="comment">来打开附件撒旦法拉开距离空间</p>
+                    <input class="vote" type="button">
+                </div>
+                <div class="border"></div>
+            </li>
+        </ul>
+    </section>
+</div>
+<div id="voteYet" class="pop">
+    <div class="main">
+        <img src="images/wx-parentsChild/vote_yet.jpg" width="100%">
+        <i class="exit">×</i>
+    </div>
+</div>
+<div id="voteSuccess" class="pop">
+    <div class="main">
+        <img src="images/wx-parentsChild/vote_success.jpg" width="100%">
+        <i class="exit">×</i>
+    </div>
+</div>
+<div id="twoCode" class="pop">
+    <div class="main">
+        <img src="images/wx-parentsChild/twoDcode.jpg" width="100%">
+        <i class="exit">×</i>
+    </div>
+</div>
+<div id="note" class="pop" style="z-index: 999;">
+    <div class="main">
+        <div id="content" style="background:url('images/wx-parentsChild/vote_success2.jpg') no-repeat scroll 0 0; background-size:100% 100%;padding:3.2rem 0;text-align:center;font-size:.6rem;line-height:.8rem;"></div>
+        <i class="exit">×</i>
+    </div>
+</div>
+</body>
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/popup.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script>
+    $('.photo').scrollLoading({
+        asBackground:true
+    });
+    var note = new Popup({
+        ancestor:'#note',
+        main:'.main',
+        txtWrap:'#content',
+        txt:'',
+        exit:'.exit'
+    });
+    note.show('投票失败！');
+
+
+    $(function(){
+        var voteYet = new Popup({
+            ancestor:'#voteYet',
+            main:'.main',
+            exit:'.exit'
+        });
+
+        var voteSuc = new Popup({
+            ancestor:'#voteSuccess',
+            main:'.main',
+            exit:'.exit'
+        });
+
+        var twoCode = new Popup({
+            ancestor:'#twoCode',
+            main:'.main',
+            exit:'.exit'
+        });
+
+
+        $(document).on('tap','.vote',function(){
+            /*voteYet.show();*/
+            alert($(this).closest('li').find('.count i').html());
+            voteSuc.show();
+
+//            twoCode.show();
+        });
+
+        /*$(document).on('input propertychange', '.searchWrap input', function() {
+            var id = $(this).val();
+            $('.searchWrap a').attr('href','#'+id);
+        } );*/
+
+        $(document).on('focus','.searchNum', function(){
+            $('.empty').hide();
+        });
+        $(document).on('tap', '.searchWrap span', function(){
+            var id = '#' + $('.searchNum').val();
+            var len = $(id).length;
+
+            if(len<=0){
+                $('.empty').show();
+            }else{
+                $('body').scrollTop($(id).offset().top - 0.8*Math.ceil(parseFloat($('html').css('fontSize'))));
+            }
+        });
+    })
+</script>
+</html>

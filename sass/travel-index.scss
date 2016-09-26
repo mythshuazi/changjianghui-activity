@@ -1,0 +1,130 @@
+/*index  css*/
+.carousel{
+  img{
+    width:10rem;
+    height:3.3rem;
+    display:block;
+  }
+}
+
+$hotW:6rem;
+$hotH:$hotW * 0.62;
+$border:1px solid #eee;
+.catgory{
+  overflow:hidden;
+  border-bottom:$border;
+
+  .wrap{
+    div{float:left;}
+  }
+
+  img{
+    display:block;
+    width:100%;
+  }
+
+  .one-cat{
+    width:$hotW;
+    border-right:1px solid #ccc;
+    border-top:1px solid #ccc;
+
+    .hot{
+      height:$hotH;
+    }
+  }
+
+  .two-cat{
+    width:10rem - $hotW;
+    height:$hotH;
+    border-right:1px solid #ccc;
+    border-top:1px solid #ccc;
+
+    .trip{  height:$hotH / 2;  border-bottom:$border;}
+    .history{  height:$hotH / 2;  }
+  }
+}
+
+.title{
+  color:#333;
+  font-size:16px;
+  line-height:40px;
+  text-indent:16px;
+  border-left:5px solid #99db6f;
+  border-bottom:$border;
+  border-right:$border;
+}
+
+.des-list{
+  overflow: hidden;
+  li{
+    color:#333;
+    font-size:12px;
+    border-bottom:$border;
+    border-right:$border;
+    float:left;
+    width:25%;
+    line-height:40px;
+    text-align:center;
+  }
+}
+
+.ls-index{
+  background-color:#e6e6e6;
+
+  li{
+    margin-bottom:10px;
+    background-color:#fff;
+  }
+  .ls-tags{
+    height:14px;
+    overflow:hidden;
+  }
+
+  .ls-price{
+    padding: 9px 0;
+  }
+
+  .ls-from{
+    height:12px;
+    span{
+      display:block;
+      color:#999;
+      font-size:12px;
+      height:12px;
+      line-height:12px;
+      transform: scale(0.8);
+      -webkit-transform: scale(0.8);
+      transform-origin: 0 0;
+    }
+  }
+
+  .ls-origin{
+    color:#999;
+    border:1px solid #999;
+    background-color:transparent;
+  }
+}
+
+.ls-item{
+  .ls-tags{
+    margin-top:9px;
+  }
+}
+
+.ls-scenery{
+  .ls-pic{
+    width:100%;
+    height:4rem;
+  }
+  .ls-title{
+    box-sizing: content-box;
+    height:18px;
+    margin:10px 10px 10px;
+  }
+  .ls-tags{
+    box-sizing: content-box;
+    margin:10px 10px 10px;
+    overflow: hidden;
+  }
+
+}

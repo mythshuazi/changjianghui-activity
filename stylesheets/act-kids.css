@@ -1,0 +1,111 @@
+/* line 1, ../sass/act-kids.scss */
+body {
+  background: url("../images/act-kids/bg1.jpg") repeat scroll 0 0;
+  background-size: 1.5%;
+  color: #3E2E17;
+  line-height: 1.2;
+}
+
+/* line 7, ../sass/act-kids.scss */
+section {
+  padding: 0 .4rem;
+}
+/* line 9, ../sass/act-kids.scss */
+section:nth-of-type(n+2) {
+  margin-top: 1rem;
+}
+
+/* line 14, ../sass/act-kids.scss */
+.title {
+  text-align: center;
+}
+/* line 16, ../sass/act-kids.scss */
+.title p {
+  font-size: .4rem;
+  color: #664D25;
+}
+/* line 20, ../sass/act-kids.scss */
+.title > p {
+  margin-top: .2rem;
+}
+/* line 23, ../sass/act-kids.scss */
+.title .outer {
+  display: inline-block;
+  padding: .5rem .7rem;
+  margin: 0 auto;
+  background: url("../images/act-kids/cloud01.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  color: #664D25;
+}
+/* line 30, ../sass/act-kids.scss */
+.title .outer p {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  font-size: .5rem;
+}
+
+/* line 39, ../sass/act-kids.scss */
+.intro {
+  font-size: .4rem;
+  font-weight: normal;
+  text-indent: .8rem;
+  line-height: 1.8;
+  margin: .4rem 0;
+  padding: 0 .2rem;
+  text-align: justify;
+}
+
+/* line 49, ../sass/act-kids.scss */
+.photo {
+  padding: .4rem .4rem .43rem;
+  background: url("../images/act-kids/frame.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  margin-bottom: .4rem;
+  position: relative;
+}
+/* line 55, ../sass/act-kids.scss */
+.photo img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+/* line 61, ../sass/act-kids.scss */
+.photo:after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.6rem;
+  background: url("../images/act-kids/bar.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: .35rem;
+  right: .35rem;
+}
+
+/* line 74, ../sass/act-kids.scss */
+.txt {
+  margin-bottom: .4rem;
+  margin-top: .6rem;
+}
+/* line 77, ../sass/act-kids.scss */
+.txt h4 {
+  line-height: 1rem;
+  font-size: .5rem;
+}
+/* line 81, ../sass/act-kids.scss */
+.txt p {
+  line-height: 1.6;
+  font-size: .4rem;
+}
+/* line 85, ../sass/act-kids.scss */
+.txt p:before {
+  content: '';
+  display: inline-block;
+  height: .4rem;
+  width: .1rem;
+  background-color: #CA0202;
+  margin-right: .2rem;
+}
+
+/*# sourceMappingURL=act-kids.css.map */

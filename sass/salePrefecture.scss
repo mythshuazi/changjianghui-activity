@@ -1,0 +1,65 @@
+body{
+  background-color:#FFC411;
+}
+#top{
+  img{
+    height: 2.72rem;
+  }
+  span{
+    display: block;
+    position: absolute;
+    bottom: -0.4rem;
+    right: .6rem;
+    width: 2rem;
+    height: .7rem;
+    background: url("../images/salePrefecture/sale_ruleBtn.jpg") no-repeat scroll 0 0;
+    background-size: 100%;
+    -webkit-background-size: 100%;
+  }
+}
+#list{
+  margin-top:.8rem;
+  padding-top:0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFC411), to(#FFE78D));
+  background-image: -webkit-linear-gradient(to bottom, #FFC411 0%,  #FFE78D 100%);
+  background-image: linear-gradient(to bottom, #FFC411 0%, #FFE78D 100%);
+}
+
+.portrait{
+  .pt_item_inner{
+    border-color:#6E457F;
+  }
+
+  .pt_pic{
+    border-color:#6B4B7C;
+    height:3.13rem;
+  }
+
+  .addCart{
+    background-color:#8E2FBF;
+    border-bottom: 1px solid #7A429D;
+  }
+
+  .pt_intro{
+    color:#343434;
+  }
+
+  .price_wrap{
+    .price{
+      color:#F60100;
+    }
+  }
+
+  .pt_sellout .pt_nothing i {
+    margin-top: 0.45rem;
+  }
+
+  .pt_prefix{
+    background:url('../images/salePrefecture/prefix.png') no-repeat scroll 0 0;
+    width: .8rem;
+    height: 1rem;
+    top: -0.2rem;
+    left: -2px;
+    background-size:100%;
+  }
+}

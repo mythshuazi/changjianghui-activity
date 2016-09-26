@@ -1,0 +1,114 @@
+body{
+  font: 12px/1.5;
+}
+.container{
+  padding-bottom: 20px;
+}
+.overview{
+  padding-bottom: 10px;
+  img{
+    width:10rem;
+    height:3.86rem;
+  }
+  .wrap{
+    padding:0 10px;
+    position:relative;
+  }
+
+  .source{
+    margin-top:6px;
+    span{
+      display:block;
+      font-size:12px;
+      line-height:12px;
+      color:#999;
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      transform: scale(0.8);
+      transform-origin: 0 0;
+    }
+  }
+
+  h3{
+    margin-top:18px;
+    font-weight: normal;
+    font-size:18px;
+    height:20px;
+    line-height:20px;
+    overflow: hidden;
+    color:#000;
+  }
+
+  .ls-tags{
+    margin-top:12px;
+  }
+
+  .price{
+    margin-top:18px;
+    font-size:18px;
+    color:#ff0000;
+  }
+
+  .buy{
+    font-size:18px;
+    color:#fff;
+    display:block;
+    width:85px;
+    height:35px;
+    line-height:35px;
+    background-color:#EA8010;
+    text-align:center;
+    border-radius:4px;
+    position:absolute;
+    right: 10px;
+    bottom: -10px;
+  }
+}
+
+%h3Style{
+  font-weight:normal;
+  font-size:18px;
+  margin-bottom:4px;
+}
+%pStyle{
+  font-size:14px;
+  text-indent:28px;
+  color:#000;
+  line-height:1.5;
+  text-align:justify;
+}
+.sale{
+  padding:0 10px;
+  margin-top:4px;
+
+  h3{
+    @extend %h3Style;
+  }
+
+  p{
+    @extend %pStyle;
+  }
+}
+
+.specify{
+  padding:0 10px;
+  margin-top:28px;
+
+  h3{
+    @extend %h3Style;
+  }
+  p{
+    @extend %pStyle;
+  }
+}
+
+.path{
+  padding-left:28px;
+  td{
+    font-size:14px;
+    color:#000;
+    line-height:1.5;
+  }
+}

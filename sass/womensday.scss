@@ -1,0 +1,289 @@
+img{display:block;}
+body{background-color:#fff5f6;}
+
+.mainContainer{
+  -webkit-overflow-scrolling: touch;
+}
+
+#download{
+  display:block;
+  height: .8rem;
+  line-height: .8rem;
+  padding: .2rem 0;
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  z-index:999;
+  background-color:rgba(0,0,0,0.6);
+  color:#fff;
+  background-image:url('../images/womens/icon.png');
+  background-position: 2% 50%;
+  background-repeat: no-repeat;
+  background-size:.8rem;
+  text-indent:1.2rem;
+
+  a{
+    display:inline-block;
+    text-indent:0;
+    text-align: center;
+    background-color:#ff4e00;
+    width:1.6rem;
+    border-radius:.1rem;
+    margin-left:.2rem;
+    padding:0 1px;
+    color:#fff;
+  }
+  .close{
+    width:.6rem;
+    height:.6rem;
+    position: absolute;
+    top:0.3rem;
+    right:.2rem;
+    background:transparent url('../images/womens/close.png') no-repeat scroll 0 0;
+    background-size:100%;
+  }
+}
+#top{
+  img{
+    height: 3.53rem;
+  }
+}
+
+#half{
+  width:9rem;
+  margin:0 auto;
+  margin-top: .8rem;
+  padding-top: 2.2rem;
+  background:url('../images/womens/38_title1.jpg') no-repeat scroll 0 0;
+  -webkit-background-size:100%;
+  background-size:100%;
+
+  .item{
+    background-color:#fff;
+    padding:.15rem;
+    border-radius:.2rem;
+    position:relative;
+    margin-top:.5rem;
+
+    .inner{
+      border:1px dashed #d87970;
+      border-radius:.2rem;
+      padding:.25rem;
+      position: relative;
+    }
+    img{
+      width:5rem;
+      height:3.57rem;
+      border:1px solid #d7796d;
+    }
+    .detail{
+      width: 2.6rem;
+      height: 3.57rem;
+      position: absolute;
+      top: .25rem;
+      right: .2rem;
+      color: #733739;
+    }
+    &.right{
+      .detail{
+        left:.24rem;
+      }
+
+      img{
+        position: relative;
+        left:3.1rem;
+      }
+      h3{
+        text-align: right;
+      }
+      ul{
+        width: 2.3rem;
+      }
+      li{
+        text-indent:0;
+        text-align: right;
+      }
+      li:after{
+        content:'';
+        display: block;
+        background-color:#733739;
+        width:.1rem;
+        height:.1rem;
+        -webkit-border-radius:.2rem;
+        -moz-border-radius:.2rem;
+        border-radius:.2rem;
+        position: absolute;
+        top:.25rem;
+        right:-0.3rem;
+      }
+      .original{
+        text-align: right;
+      }
+    }
+
+    &.left{
+      li:before{
+        content:'';
+        display: block;
+        background-color:#733739;
+        width:.1rem;
+        height:.1rem;
+        -webkit-border-radius:.2rem;
+        -moz-border-radius:.2rem;
+        border-radius:.2rem;
+        position: absolute;
+        top:.25rem;
+      }
+    }
+
+    h3{
+       line-height: .7rem;
+       margin-top: .2rem;
+       font-size: .45rem;
+     }
+    li{
+      position: relative;
+      line-height:.5rem;
+      text-indent:.3rem;
+      font-size: .35rem;
+    }
+    .original{
+      color: #ef7277;
+      font-size: .4rem;
+      line-height: .8rem;
+    }
+
+    .nowPrice{
+      position: absolute;
+      top:0;
+      width:1.5rem;
+      height:1.5rem;
+      background-color: #ef98a0;
+      border-radius:1rem;
+      box-sizing: border-box;
+      padding-top: .3rem;
+      text-align: center;
+      transform: rotate(-10deg);
+      -webkit-transform: rotate(-10deg);
+
+      p{
+        line-height: .5rem;
+        color: #fff;
+        font-size:.3rem;
+        &.price{
+          font-size:.4rem;
+        }
+      }
+    }
+
+    &.right{
+      .nowPrice{
+        right:-0.2rem;
+      }
+    }
+
+    &.left{
+      .nowPrice{
+        left:-0.2rem;
+      }
+    }
+  }
+}
+.portrait {
+  padding:0 .2rem;
+
+  & .pt_sellout .pt_nothing i{
+    border-radius: 2.2rem;
+    margin-top:0.2rem;
+  }
+
+  .pt_item{
+    padding: 0 3px;
+  }
+  .wrap {
+    padding: 4px;
+    background: #fff;
+    border-radius: .2rem;
+  }
+  .pt_item_inner {
+    background-color: #fff;
+    padding: 4px;
+    position: relative;
+    border: 1px dashed #d87970;
+    border-radius: .2rem;
+  }
+
+  .pt_pic {
+    height:2.6rem;
+    border: 1px solid #d7796d;
+  }
+
+  .pt_intro {
+    line-height:18px;
+    color:#733739;
+    height:38px;
+  }
+
+  .price_wrap {
+    //display:table;
+    position:relative;
+    width:100%;
+    margin: 8px 0;
+
+    // &>* {
+    // 	display:table-cell;
+    // }
+    .price{
+      font-size:18px;
+      text-align:left;
+      color:#ed6e79;
+
+      .rmb{
+        font-size:14px;
+      }
+    }
+    .rate{
+      font-size:12px;
+      text-align:right;
+      color:#bebebe;
+      position: absolute;
+      top:0;
+      right:0;
+
+      i {
+        font-size:12px;
+        display:inline-block;
+        transform:scale(0.8,0.8);
+        -webkit-transform:scale(0.8,0.8);
+      }
+    }
+    @media screen and (max-width:321px ){
+      .rate{
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        position: absolute;
+        right: -11px;
+      }
+    }
+  }
+
+  .addCart {
+    font-size:.4rem;
+    color:#fff;
+    text-align: center;
+    display:block;
+    height: 1rem;
+    line-height:1rem;
+    background-color:#ed6e79;
+    border-bottom: 1px solid #ed6e79;
+  }
+
+
+}
+#list {
+  margin-top: .6rem;
+  padding-top:3rem;
+  background:url("../images/womens/38_title2.jpg") no-repeat scroll 0 0;
+  background-size:100%;
+}

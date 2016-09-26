@@ -1,0 +1,47 @@
+
+<%if(smtList.length>0){%>
+	<div class="youhui">
+		<%for(var i=0; i<smtList.length; i++) { %>
+		<p>
+			<% if(smtList[i].smtTip == '首单'){%>
+				<i class="prefix bgcolor-shoudan"><%=smtList[i].smtTip%></i>
+			<% }else if(smtList[i].smtTip == '打折'){%>
+				<i class="prefix bgcolor-dazhe"><%=smtList[i].smtTip%></i>
+			<% }else if(smtList[i].smtTip == '满减'){%>
+				<i class="prefix bgcolor-manjian"><%=smtList[i].smtTip%></i>
+			<% }else if(smtList[i].smtTip == '满赠'){%>
+				<i class="prefix bgcolor-manzen"><%=smtList[i].smtTip%></i>
+			<% }else if(smtList[i].smtTip == '惊爆'){%>
+				<i class="prefix bgcolor-jingbao"><%=smtList[i].smtTip%></i>
+			<% }else if(smtList[i].smtTip == '预售'){%>
+				<i class="prefix bgcolor-yushou"><%=smtList[i].smtTip%></i>
+			<% }else{ %>
+				<i class="prefix"><%=smtList[i].smtTip%></i>
+			<% } %>
+			<%=smtList[i].smtName%>
+		</p>
+		<% } %>
+		<% if(highLimit && highTips){%>
+			<p><i class="prefix" style="background-color:#C685D7;">限购</i><%=highTips%></p>
+		<%}%>
+	</div>
+<%}%>
+
+<%if(attrList && attrList.length>0) { %>
+	<div id="choosed">	
+		<span class="selected">已选</span>
+		
+			<% for(var i=0; i<attrList.length; i++){  %>
+				<%var item=attrList[i]; %>
+				<%for(var j=0;j<item.cartAttrList.length; j++){%>
+					<% if(item.cartAttrList[j].isDefault == 1){ %>
+						<span class="option"><%= item.cartAttrList[j].selfAttr %></span>
+					<% } %>
+				<%}%>
+			<%}%>
+
+		<% if(smtType != 5){%>
+		<i class="goods-options arrowMore"></i>
+		<% } %>
+	</div>
+<%}%>

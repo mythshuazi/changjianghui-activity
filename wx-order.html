@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>我的订单</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<script type="text/javascript">
+    function setHtmlSize(){
+        document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+    }
+    setHtmlSize();
+    window.addEventListener('resize',setHtmlSize,false);
+</script>
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/wx-myOrder.css">
+</head>
+<body v-cloak v-on:touchstart="slideUp" class="orderList">
+<div class="mainContainer">
+    <div class="mainContent">
+        <section id="nav">
+            <ul>
+                <li v-for="item in nav"><span v-touch:tap="fetchData($index,item.type)" v-bind:class="{'active':item.active}">{{item.text}}</span></li>
+            </ul>
+        </section>
+        <section id="order">
+            <div v-if="list.length>0" id="all">
+                <div v-for="item in list"  class="item">
+                    <div class="title">
+                        <span>{{item.orderType}}</span>
+                        <i>{{item.orderState | orderStateToCn $index}}</i>
+                    </div>
+                    <ul class="landscape">
+                        <li v-for="one in item.goods" class="ls_item" data-id="111">
+                            <div class="ls_left">
+                                <img class="ls_pic" data-url="{{one.bigPic}}" :src="one.bigPic" onerror="this.src='images/public/default.jpg'"/>
+                            </div>
+                            <div class="ls_right">
+                                <p class="ls_intro">{{one.goodsName}} {{one.standard}}</p>
+                                <div class="ls_about">
+                                    <div class="price">
+                                        <span class="now_price">¥ &nbsp;<i class="price_num">{{one.appPrice}}</i></span><del class="old-price">¥ <i class="price_num">{{one.price}}</i></del>
+                                    </div>
+                                </div>
+                                <div class="ls_prefix">
+                                    <span>*{{one.nums}}</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="total">
+                        <div v-if="item.msValidityHint" class="date">订单有效期至：<i>{{item.msValidityHint | splitValidate}}</i></div>
+                        <div v-else class="date">{{item.creatTime | transDate "yyyy-MM-dd hh:mm"}}</div>
+                        <div class="footing">合计：{{item.totalPrice}}</div>
+                    </div>
+                </div>
+            </div>
+            <div v-else class="empty">
+                <div>目前没有订单</div>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script src="javascripts/plugin/vue-resource.js"></script>
+<script>
+    var openId = 'abc';
+    var fake = {
+        "code": "0000",
+        "msg": "操作成功。",
+        "data": {
+            "page": 1,
+            "list": [
+                {
+                    "payType": "4",
+                    "totalPrice": "160.00",
+                    "msValidityHint": "",
+                    "goods": [
+                        {
+                            "standard": "L",
+                            "nums": 1,
+                            "appPrice": "160.00",
+                            "goodsName": "女1套南极人超柔暖绒保暖内衣",
+                            "bigPic": "http://oss.njcjh.cn/20151231/f21a9fe6839a4441a36099473720089f.jpg",
+                            "saleType": "0",
+                            "price": "161.00",
+                            "goodsId": 1164
+                        },
+                        {
+                            "price": "5.00",
+                            "appPrice": "0.00",
+                            "standard": "默认",
+                            "saleType": "0",
+                            "goodsName": "杨小平测试赠品1",
+                            "bigPic": "http://oss.njcjh.cn/20160608/d6912fcc9dd54ee29753375f8c3992aa.jpg",
+                            "nums": 1,
+                            "goodsId": 2386
+                        }
+                    ],
+                    "offlinePayAble": true,
+                    "AuxShowType": "1",
+                    "auxSnCodes": "0",
+                    "orderCode": "0108454470971392",
+                    "orderId": 409194,
+                    "creatTime": 1465953287,
+                    "orderState": "0",
+                    "snCode": "1444f5798c0",
+                    "isDelivery": "",
+                    "totalNums": 2,
+                    "orderType": "长江汇自营",
+                    "orderTypeName": "0"
+                },
+                {
+                    "payType": "6",
+                    "auxSnCodes": "0",
+                    "creatTime": 1465902096,
+                    "orderId": 409158,
+                    "msValidityHint": "订单有效期至：2016-07-08",
+                    "orderCode": "MS0108244793966592",
+                    "isDelivery": "",
+                    "orderState": "3",
+                    "orderType": "长江汇自营",
+                    "totalNums": 1,
+                    "orderTypeName": "0",
+                    "AuxShowType": "1",
+                    "totalPrice": "1.00",
+                    "goods": [
+                        {
+                            "goodsName": "赛亿 (shinee) KYT25-1 电风扇/定时台式转页扇（须45天内领取）2",
+                            "standard": "默认",
+                            "nums": 1,
+                            "saleType": "0",
+                            "price": "32.00",
+                            "appPrice": "1.00",
+                            "bigPic": "http://oss.njcjh.cn/20160612/e5052aa08fb345dd8dd3c49b64f33dc8.jpg",
+                            "goodsId": 2401
+                        }
+                    ],
+                    "offlinePayAble": false,
+                    "snCode": "1438c105b40"
+                },
+                {
+                    "goods": [
+                        {
+                            "nums": 1,
+                            "goodsName": "吉列手动剃须刀威锋3刮胡刀（1刀头）",
+                            "bigPic": "http://oss.njcjh.cn/20160422/0c724af059534902bf8b6b3093cf12d2.jpg",
+                            "goodsId": 2094,
+                            "price": "11.00",
+                            "saleType": "0",
+                            "standard": "默认",
+                            "appPrice": "9.00"
+                        }
+                    ],
+                    "orderTypeName": "0",
+                    "snCode": "143a1563c80",
+                    "payType": "6",
+                    "auxSnCodes": "0",
+                    "offlinePayAble": true,
+                    "totalNums": 1,
+                    "creatTime": 1465302872,
+                    "isDelivery": "",
+                    "AuxShowType": "1",
+                    "totalPrice": "9.00",
+                    "orderType": "长江汇自营",
+                    "msValidityHint": "",
+                    "orderCode": "0108267631063040",
+                    "orderState": "3",
+                    "orderId": 409187
+                }
+            ]
+        }
+    };
+
+
+    window.addEventListener('load', function() {
+
+
+        Vue.http.get('/someUrl', {
+            'openId':openId,
+            'page': '0',
+            'orderState': 5
+        }).then(function(res){
+
+
+        }, function(err){
+            console.log(err);
+        });
+
+
+
+        var vm = new Vue({
+            el: 'body',
+            data: {
+                nav:[
+                    {text:'全部',  type:5,active:true},
+                    {text:'待支付',type:0,active:false},
+                    {text:'待备货',type:2,active:false},
+                    {text:'待取货',type:3,active:false},
+                    {text:'待评价',type:4,active:false}
+                ],
+                list:[],
+                page:0,
+                canLoadPage:true
+            },
+            created: function() {
+                this.init();
+            },
+            methods: {
+                init: function() {
+                    // 第一次请求,默认请求全部
+                    /*this.$http.get('http://127.0.0.1:8000/test',{
+                        'openId':openId,
+                        'page': '0',
+                        'orderState': 5
+                    }).then(function(res){
+                        //this.$data.list = res.data.list;
+                        this.$set('list', res.data.data.list)
+                    }, function (res) {
+                        console.log('请求失败');
+                    });*/
+                    setTimeout(function(){
+                        vm.$set('list', fake.data.list)
+                    },1000);
+                },
+                //点击选项卡，切换列表
+                fetchData: function (index, type) {
+                    //切换导航的 active class
+                    if(!this.nav[index].active){
+                        for(var i=0; i<this.nav.length; i++){
+                            this.nav[i].active = false;
+                        }
+                        this.nav[index].active = true;
+
+                        // 请求其他tab
+                        this.$http.get('http://127.0.0.1:8000/test1',{
+                            'openId':openId,
+                            'page': '0',
+                            'orderState': type
+                        }).then(function(res){
+                            this.list = res.data.data.list;
+                            this.page = res.data.data.page;
+                        }, function (res) {
+                            console.log('请求失败');
+                        });
+                    }
+                },
+                //请求分页
+                fetchPage: function(){
+                    this.$set('canLoadPage', false);
+                    this.$http.get('http://127.0.0.1:8000/test1',{
+                        "openId": openId,
+                        "page": this.page,
+                        "orderState": this.orderState
+                    }).then(function (response) {
+                        // success callback
+                        this.$set('list', this.list.concat(response.data.data.list));
+                        this.$set('page', response.data.data.page);
+                        this.$set('canLoadPage', true);
+                    }, function (response) {
+                        // error callback
+                        console.log('获取分页失败');
+                        this.$set('canLoadPage', true);
+                    });
+
+                    //test 上线删除
+                    /*this.list.push({
+                        "orderId": 407799,
+                        "creatTime": new Date().getTime()/1000,
+                        "totalPrice": 20.9,
+                        "orderType": "长江汇自营",
+                        "orderTypeName": "0",
+                        "orderState": "1",
+                        "snCode": "140c82d7580",
+                        "payType": "6",
+                        "isDelivery": "",
+                        "auxSnCodes": "0",
+                        "orderCode": "POS0107484698628096",
+                        "msValidityHint": "",
+                        "AuxShowType": "1",
+                        "offlinePayAble": true,
+                        "totalNums": 1,
+                        "goods": [
+                            {
+                                "goodsId": 38,
+                                "nums": 1,
+                                "price": 20.9,
+                                "appPrice": "20.90",
+                                "goodsName": "lvshuai天喔 Q猪猪肉脯(原味) 138g",
+                                "saleType": "0",
+                                "bigPic": "http://oss.njcjh.cn/20151119/c4ad8627d9604a0ab34c16c0eccc3cad.jpg",
+                                "standard": "默认"
+                            }
+                        ]
+                    });
+                    this.$set('canLoadPage', true);*/
+                },
+                //上滑判断触底，调用请求分页方法
+                slideUp: function() {
+                    var scTop      = document.documentElement.scrollTop || document.body.scrollTop,
+                        oneScreen  = window.screen.height,
+                        pageHeight = document.body.scrollHeight;
+                    //console.log(scTop + oneScreen);
+                    //console.log(pageHeight);
+                    //console.log('------------------------')
+                    if(scTop + oneScreen >= pageHeight-50 && this.canLoadPage){
+
+                        console.log('到底了');
+                        this.fetchPage()
+                    }
+
+
+                }
+            },
+            filters: {
+                //判断订单状态转换成中文
+                orderStateToCn: function (val,index) {
+                    val = parseInt(val);
+                    var state;
+
+                    //非油单
+                    if(this.list[index].orderTypeName=='0'){
+                        switch (val) {
+                            case 0:
+                                state = '待支付';
+                                break;
+                            case 1:
+                                state = '已取消';
+                                break;
+                            case 2:
+                                state = '待备货';
+                                break;
+                            case 3:
+                                state = '待取货';
+                                break;
+                            case 4:
+                                state = '待评价';
+                                break;
+                            case 6:
+                                state = '已完成';
+                                break;
+                            case 7:
+                                state = '退款中';
+                                break;
+                            case 8:
+                                state = '退款完成';
+                                break;
+                            case 10:
+                                state = '已过期';
+                                break;
+                        }
+                    }
+                    //油单
+                    else{
+                        switch (val) {
+                            case 0:
+                                state = '待支付';
+                                break;
+                            case 1:
+                                state = '已取消';
+                                break;
+                            case 2:
+                                state = '待加油';
+                                break;
+                            case 3:
+                                state = '配送中';
+                                break;
+                            case 4:
+                                state = '交易完成';
+                                break;
+                            case 6:
+                                state = '已完成';
+                                break;
+                            default:
+                                state ='';
+                        }
+                    }
+                    return state;
+                },
+                //转换日期格式
+                transDate: function(time, fmt) {
+                    time = time*1000;
+
+                    var date = new Date(time);
+
+                    var o = {
+                        "M+" : date.getMonth()+1,                 //月份
+                        "d+" : date.getDate(),                    //日
+                        "h+" : date.getHours(),                   //小时
+                        "m+" : date.getMinutes(),                 //分
+                        "s+" : date.getSeconds(),                 //秒
+                        "q+" : Math.floor((date.getMonth()+3)/3), //季度
+                        "S"  : date.getMilliseconds()             //毫秒
+                    };
+                    if(/(y+)/.test(fmt))
+                        fmt=fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length));
+                    for(var k in o)
+                        if(new RegExp("("+ k +")").test(fmt))
+                            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+                    return fmt;
+                },
+                //分隔有效期
+                splitValidate: function (val){
+                    val = val.split('：');
+
+                    return val[val.length-1];
+                }
+            }
+        });
+    }, false);
+</script>
+</html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>金融吧</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/activity.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+</head>
+<body>
+	<div class="mainContainer financial">
+        <div class="mainContent">
+			<ul>
+				<li>
+					<img class="scrollLoad" data-url="images/activity/financial_01.jpg"  width="100%" onerror="this.src=''"> 
+					<div class="wrap">
+						<p class="name">中国银行水上金融服务中心</p>
+						<button>查看详情</button>
+					</div>
+				</li>
+				<li>
+					<img class="scrollLoad" data-url="images/activity/financial_02.jpg" width="100%" onerror="this.src=''"> 
+					<div class="wrap">
+						<p class="name">长城-长江汇联名卡</p>
+						<button>查看详情</button>
+					</div>
+				</li>
+				<li>
+					<img class="scrollLoad" data-url="images/activity/financial_03.jpg" width="100%" onerror="this.src=''"> 
+					<div class="wrap">
+						<p class="name">银联商务MPOS</p>
+						<button>查看详情</button>
+					</div>
+				</li>
+				<li>
+					<img class="scrollLoad" data-url="images/activity/financial_04.jpg" width="100%" onerror="this.src=''"> 
+					<div class="wrap">
+						<p class="name">银联钱包</p>
+						<button>查看详情</button>
+					</div>
+				</li>
+				<li>
+					<img class="scrollLoad" data-url="images/activity/financial_05.jpg" width="100%" onerror="this.src=''"> 
+					<div class="wrap">
+						<p class="name">中国银行易商理财</p>
+						<button>查看详情</button>
+					</div>
+				</li>
+			</ul>
+			<div class="foot">
+				中国银行——致力民生工程，承担社会责任！<br>
+				中国银行服务咨询、预约电话：025-83416500<br>
+				中国银行信用卡服务专线：40066-95566
+			</div>
+        </div>
+	</div>
+</body>
+<script>
+	$(function(){
+		//图片滚动加载
+	    $('.scrollLoad').scrollLoading();
+
+	});
+</script>
+</html>

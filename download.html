@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html style="height:100%">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>下载页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="stylesheets/public.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+
+    var u = navigator.userAgent;
+	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+	var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	var isPc  = isAndroid || isIos ? false : true;
+
+	//console.log('isAndroid:'+isAndroid + '||'+'isIos:' + isIos + '||'+'isPc:' + isPc);
+</script>
+<style>
+	.container{overflow-y: scroll;overflow-x:hidden; height:86%;-webkit-overflow-scrolling: touch;}
+	div.btnWrap{height:14%;width:100%; background-color:rgba(0,0,0,0.5); text-align: center;}
+	img{display:block;background:#D4D4D4 url("images/public/default.jpg") no-repeat scroll 50% 50%; background-size:contain;}
+	a{display:inline-block; width: 7.5rem; margin:0 auto; height:60%; font-size:.4rem; font-weight:bold;color: #343235; background:#F4D020 url("images/download/download_icon.png") no-repeat scroll 1.5rem 50%; background-size:auto 50%;text-align: center; border-radius: .2rem; text-indent: 1rem;}
+	a:hover{color:#343235;}
+	div.pc a{font-size:.3rem;background-position:.5rem 50%;width:4.5rem; text-indent:.5rem;cursor:pointer;}
+	div.pc a:first-child{background-position:1.2rem 50%;margin-right:.4rem; text-indent:1rem;}
+</style>
+</head>
+<body style="height:100%">
+	<div class="container">
+	    <img class="scrollLoad" data-url="images/download/download_01.jpg" width="100%" onerror="this.src=''" style="height:6.7rem;">
+	    <img class="scrollLoad" data-url="images/download/download_02.jpg" width="100%" onerror="this.src=''" style="height:5.62rem;">
+	    <img class="scrollLoad" data-url="images/download/download_03.jpg" width="100%" onerror="this.src=''" style="height:5.62rem;">
+	    <img class="scrollLoad" data-url="images/download/download_04.jpg" width="100%" onerror="this.src=''" style="height:5.62rem;">
+	    <img class="scrollLoad" data-url="images/download/download_05.jpg" width="100%" onerror="this.src=''" style="height:5.62rem;">
+	    <img class="scrollLoad" data-url="images/download/download_06.jpg" width="100%" onerror="this.src=''" style="height:5.25rem;">
+	</div>
+	    <div class="btnWrap" id="ios" style="display:none;">
+	    	<a>下载长江汇 APP</a>
+	    </div>
+	    <div class="btnWrap" id="android" style="display:none;">
+	    	<a href="javascript:void(0);" data-href="222">下载长江汇 APP</a>
+	    </div>
+	    <div class="btnWrap pc" id="pc" style="display:none;">
+	    	<a>IOS 下载</a><a>Android 下载</a>
+	    </div>
+</body>
+<script>
+	$(function(){		
+
+		$('.scrollLoad').scrollLoading({container:$('.container')});
+		reSize(whichShow());
+
+		$(window).resize(function(){
+			reSize(whichShow());
+		});
+
+		$(document).on('tap','#android a',function(){
+			jsCallAppGo2DownApp();
+		});
+
+		function whichShow(){
+			if(isIos){
+				$('#ios').show();
+				return '#ios';
+			}else if(isAndroid){
+				$('#android').show();
+				return '#android';
+			}else{
+				$('#pc').show();
+				return '#pc';
+			}
+		}
+
+		function reSize(id){	
+			$('.btnWrap a').css({
+				lineHeight: $(id+' a').height()+'px',
+				marginTop:  (($(id).height() - $(id+' a').height()) )* 0.5
+			});
+		}
+
+		function  jsCallAppGo2DownApp(){
+			try{
+				var btn = $('#android a'), downUrl;
+				downUrl = btn.data('href');
+				if(window.wst){
+					window.wst.jsCallAppGo2DownApp(downUrl);
+				}else{
+					location.href = "";
+				}
+				
+			}catch(error){
+
+			}
+		}
+
+	});
+
+	
+</script>
+</html>

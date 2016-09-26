@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html style="height: 100%; font-size:36px;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>谁是跑船帝</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <script src="javascripts/plugin/zepto.js"></script>
+    <script type="text/javascript">
+        function setHtmlSize(){
+            document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+        }
+        setHtmlSize();
+        window.addEventListener('resize',setHtmlSize,false);
+    </script>
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/gameAbout.css">
+    </head>
+<body>
+    <div class="container me">
+        <span class="ruleBtn"></span>
+
+        <div class="btns">
+            <button class="start"></button>
+            <button class="rank"></button>
+            <button class="help"></button>
+        </div>
+        <div class="login">
+            <a href=""></a>
+        </div>
+
+        <div class="pop">
+            <div class="content">
+                <div class="title"></div>
+                <i class="close"></i>
+                <div class="inner">
+                    <div class="description">
+                        <img class="description" src="images/gameAbout/description.png" width="100%">
+                        <a href=""></a>
+                    </div>
+
+                    <div class="ruleContent">
+                        <ul>
+                            <li>1、活动奖项设置</li>
+                            <li>2、中奖查询活动进行一个月后，可查询上月的中奖情况。</li>
+                            <li>3、如何查询中奖信息？<br>点击游戏开始页面中的“我的排名”按钮即可。。</li>
+                            <li>4、如何领奖？<br>
+                                获奖的船有你请携带手机和身份证到长江汇体验店领取您的奖品。
+                            </li>
+                            <li> 5、成绩计算<br>
+                                每月航行成绩：由本月自己的最好距离和朋友帮助航行的最好距离累计产生</li>
+                        </ul>
+                        <p>本活动最终解释权归南京长江船服所有</p>
+                    </div>
+
+                    <div class="myRank">
+                        <p>我的总分为 <span class="total">0</span> 米</p>
+                        <p>其中好友帮我开动了 <span class="teammate">0</span> 米</p>
+                        <p>本月排名 <span class="order">0</span> 名</p>
+
+                        <a class="who" href="">看看谁帮我助力了？</a>
+
+                        <a class="fengyun" href=""></a>
+                        <a class="hero" href=""></a>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="myRank">-->
+                <!--<a href="" class="btn month"></a>-->
+                <!--<a href="javascript:void(0);" class="btn share"></a>-->
+            <!--</div>-->
+
+        </div>
+
+
+        <div class="twoCode">
+            <img  src="images/gameAbout/td.png" width="80%">
+        </div>
+
+        <div class="sharePop">
+            <img  src="images/gameAbout/popShare.jpg" width="100%">
+        </div>
+    </div>
+
+</body>
+<script>
+    var ua = navigator.userAgent.toLowerCase();
+    var isWeChat = ua.match(/MicroMessenger/i)=="micromessenger";
+    var isLogin = true;
+    $(function(){
+        var login = $('.login'),
+            ruleBtn = $('.ruleBtn'),
+            pop = $('.pop'),
+            title = $('.title');
+
+        if(!isLogin){
+            login.show();
+        }
+        //活动规则
+        ruleBtn.on('tap',function(){
+            pop.show().find('.inner').children().hide();
+            $('.myRank').hide();
+            $('.ruleContent').show();
+            title.text('活动规则');
+        });
+
+        //游戏开始说明
+        $(document).on('click','.start', function(){
+            if(isLogin){
+                pop.show().find('.inner').children().hide();
+                $('.myRank').hide();
+                $('.description').show();
+                title.text('游戏说明');
+                $('.close').hide();
+            }
+        });
+
+        //我的排名
+        $(document).on('tap','.rank', function(){
+            var myRank = $('.inner .myRank');
+            if(isLogin){
+                $.ajax({
+                    type: 'POST',
+                    url: '/projects',
+                    data: { name: 'Zepto.js' },
+                    dataType: 'json',
+                    timeout: 300,
+                    success: function(data){
+
+                    },
+                    error: function(xhr, type){
+                    }
+                });
+
+                title.html('我的成绩');
+                //有成绩
+                pop.show().find('.inner').children().hide();
+                myRank.show();
+                $('.total').text('199999');
+                $('.teammate').text('55555');
+                $('.order').text('20');
+
+                //无成绩
+//                myRank.html('<p style="margin-top:1rem;">您还没有一展身手</p><p style="font-size:.6rem;">赶紧去挑战吧！</p>')
+            }
+        });
+
+        //分享排名
+        $(document).on('tap', '.share', function(e){
+
+            e.stopPropagation();
+            if(isWeChat){
+                $('.sharePop').show();
+            }else{
+                alert(isWeChat)
+            }
+        });
+        $('.sharePop').on('tap',function(){
+            $(this).hide();
+        });
+
+        //关闭弹窗
+        $(document).on('tap','.close', function(){
+            pop.hide();
+        });
+    });
+</script>
+</html>

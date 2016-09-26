@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>登录</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/wx-login.css">
+<script src="javascripts/plugin/zepto.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+</head>
+<body>
+    <div class="container">
+        <!--------------------登录-------------------->
+        <div id="loginWrap">
+            <ul class="nav clear">
+                <li class="accountLogin active"><span>帐号登录</span></li><li class="msgLogin"><span>短信登录</span></li>
+            </ul>
+            <form id="login">
+                <div  class="item phone">
+                    <input type="number" placeholder="请输入手机号码">
+                </div>
+                <div  class="item psw">
+                    <input type="password" placeholder="请输入帐号密码">
+                </div>
+                <div  class="item code">
+                    <input type="number" placeholder="请输入验证码">
+                    <div class="getCode">
+                        <p>点此获取</p>
+                        <p>短信验证码</p>
+                    </div>
+                    <div class="countZero" style="display:none;">
+                        <p>重新获取</p>
+                        <p class="seconds">60秒</p>
+                    </div>
+                </div>
+                <input class="confirm" type="submit" value="登 录">
+            </form>
+            <p>我是一个新用户，<i>快速注册</i></p>
+        </div>
+
+        <!--------------------快速注册-------------------->
+        <div id="quickRegster">
+            <div class="item register">
+                <input type="number" placeholder="请输入手机号">
+            </div>
+            <input class="confirm" type="submit" value="获取验证码">
+        </div>
+
+        <!--------------------设定密码-------------------->
+        <div id="entryCode">
+            <p>验证码已发送至：<i>15667898989</i></p>
+            <div class="item code" style="display:block;">
+                <input type="number" placeholder="请输入验证码">
+                <div class="getCode">
+                    <p>点此获取</p>
+                    <p>短信验证码</p>
+                </div>
+                <div class="countZero" style="display:none;">
+                    <p>重新获取</p>
+                    <p class="seconds">60秒</p>
+                </div>
+            </div>
+            <div class="item psw">
+                <input type="password" placeholder="请设定密码">
+            </div>
+            <input class="confirm" type="submit" value="提 交">
+        </div>
+
+    </div>
+</body>
+<script>
+    $(function(){
+        var itemPhone = $('.phone'),inputPhone=itemPhone.find('input');
+
+        //登录手机号码input自动聚焦
+        focusPhoneInput();
+
+        //切换帐号、短信显示
+        $(document).on('tap', '.nav li',function(){
+            var formLogin = $('#login'),
+                itemPsw   = formLogin.find('.psw');
+
+            focusPhoneInput();
+
+            (!$(this).hasClass('active')) && $(this).addClass('active');
+            if( $(this).index() == 1 ){
+                formLogin.addClass('msg');
+                itemPsw.hide();
+            }else{
+                formLogin.removeClass('msg');
+                itemPsw.show();
+            }
+            $(this).siblings('li').removeClass('active');
+        });
+
+        //聚焦时切换icon
+        $(document).on('focus', '.item input', function(){
+            $(this).parent().addClass( 'focus' );
+            $(this).parent().siblings().removeClass('focus');
+        });
+
+        //自动聚焦函数
+        function focusPhoneInput(){
+            setTimeout(function(){
+                inputPhone.focus();
+                itemPhone.addClass('focus');
+            },100);
+        }
+
+
+        //确认点击后按钮禁用，防止多次点击
+    });
+
+    function countZero(){
+        var getCode = $('.getCode');
+        var countZ  = $('.countZero');
+        var secondWrap = countZ.find('.seconds');
+        var seconds = 60;
+
+        getCode.hide();
+        countZ.show();
+
+        var timer = setInterval(function(){
+            seconds = seconds-1;
+            if(seconds >= 0){
+                secondWrap.html(seconds+ '秒');
+            }else{
+                secondWrap.html('60秒');
+                clearInterval(timer);
+                getCode.show();
+                countZ.hide();
+            }
+
+        },1000);
+    }
+</script>
+</html>

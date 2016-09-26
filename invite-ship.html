@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>邀船有礼</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="javascripts/plugin/zepto.js"></script>
+    <script type="text/javascript">
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+        $(window).resize(function(){
+            $('html').css({
+                fontSize: $(window).width()/10
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/invite-ship.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="mainContent">
+            <section id="top">
+                <img src="images/inviteShip/ship_01.jpg" width="100%">
+                <img src="images/inviteShip/ship_02.jpg" width="100%">
+                <img src="images/inviteShip/ship_03.jpg" width="100%">
+                <div>
+                    <p>吨油券为每吨立减对应的金额，加油价格更低，更划算。推荐船友来兆基加油，<i>Ta</i>注册成功立即获得<i class="it">2次30元</i>吨油券，船友加油成功，<i>您</i>得<i class="me">50元</i>吨油券，多邀多得，更有<i>iPhone6s</i>好礼相送！赶紧去邀请船友吧~</p>
+                </div>
+            </section>
+            <section id="middle">
+                <img src="images/inviteShip/button.jpg" width="80%"/>
+                <p class="rule"><span>活动规则</span></p>
+            </section>
+            <section id="bottom" style="display:none;">
+                <div id="listWrap">
+                    <dl>
+                        <dt>
+                            <div>您已成功邀请</div>
+                            <div><i class="count"></i>位船友</div>
+                        </dt>
+                        <dt class="lookPrize">
+                            <div>获得<i class="total"></i>元吨油券</div>
+                            <p class="check"><span>查看奖励</span></p>
+                        </dt>
+                    </dl>
+                    <ul class="inviteList">
+
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="shipNum" class="pop loading" style="display:none;">
+        <div class="main">
+            <input id="shipInput" type="text" placeholder="请输入您自己的船号"/>
+            <p><span>*</span> 请务必填写您真实的船号！</p>
+            <p class="err" style="color:#D01425;display:none"></p>
+            <div class="confirm">确 定</div>
+            <i class="exit">×</i>
+        </div>
+    </div>
+    <div id="rulePop" class="pop" style="display: none;">
+        <div class="main">
+            <h2>活动规则</h2>
+            <div class="content" style="height:10rem; overflow:hidden;">
+                <ul class="txtWrap">
+
+                </ul>
+            </div>
+            <i class="exit">×</i>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+<script src="javascripts/plugin/iscroll.js"></script>
+<script src="javascripts/popup.js"></script>
+<script src="javascripts/invite-ship.js"></script>
+<script>
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+
+    var shipName,shipNameTmp, ruleHtml, pageCount= 0,isLogin, renderCount=0;
+    var shipNum; //船号弹窗
+
+    var $shipPop = $('#shipNum'),
+        $shipInput = $('#shipInput'), //输入船号input
+        $err = $('#shipNum .err'),    //输入船号错误提示区域
+        $confirm = $('.confirm');     //输入船号确定按钮
+
+    var fake = {
+        "code": "0000",
+        "msg": "操作成功。",
+        "data": {
+            "total": 0,
+            "count": 0,
+            "token": "5343708856",
+            "ship_name": "",
+            "t_award": "208",
+            "act_rule": "<li>1、活动时间：上线时间 - 2016年12月31日</li><li>1、活动时间：上线时间 - 2016年12月31日</li><li>1、活动时间：上线时间 - 2016年12月31日</li><li>1、活动时间：上线时间 - 2016年12月31日</li><li>1、活动时间：上线时间 - 2016年12月31日</li><li>1、活动时间：上线时间 - 2016年12月31日</li><li>2、被邀请人注册成功即可获得208元奖励<span>（2张100元加油红包、1张8元非油品全场通用红包）</span>；</li><li>　&nbsp;被邀请人在兆基石油加油后，长江汇奖励邀请人108元<span>（2张50元加油券、1张8元非油品全场通用红包）</span></li><li>3、加油券限本船使用，红包限本人使用。</li><li>4、油单和非油单需分开下单，加油券每次停靠站（一次下单）只能使用一张，非油品全场通用红包每次靠站可使用多个。</li><li>5、为了维护活动的真实性，加油时请携带船籍证到长江汇体验店进行验证。</li><li>5、为了维护活动的真实性，加油时请携带船籍证到长江汇体验店进行验证。</li><li>5、为了维护活动的真实性，加油时请携带船籍证到长江汇体验店进行验证。</li>",
+            "y_award": "108"
+        }
+    };
+    appCallJsInitData(fake,'1');
+    /**
+     * 初始化页面信息
+     * @param json
+     * @param denglu '1' || '0'
+     */
+    function appCallJsInitData(json, denglu){
+        json = (json.constructor == String) ? $.parseJSON(json) : json;
+        if(json.code == '0000'){
+            renderCount++;
+
+            var data = json.data;
+            isLogin  = denglu;
+            $('.it').html(data.t_award);
+            $('.me').html(data.y_award);
+            $('.count').html(data.count);
+            $('.total').html(data.total);
+            shipName = data.ship_name;
+            ruleHtml = data.act_rule;
+
+            if(renderCount==1){
+                //输入船号弹窗-----------------------
+                shipNum = new Popup({
+                    ancestor:'#shipNum',
+                    main:'.main',
+                    exit:['.exit'],
+                    top:'0.6',
+                    initCallback:function(){
+                        var the = this;
+                        $(document).on('tap','#middle img',function(){
+                            if(isLogin=='1'){
+                                //无船名
+                                if( !shipName || shipName == '' || shipName.length<2){
+                                    the.show();
+                                //有船名
+                                }else{
+                                    jsCallAppYaoChuanShareHtml();
+                                }
+                            }else{
+                                jsCallAppYaoChuanShareHtml(); //登录
+                            }
+
+                        });
+                    }
+                });
+
+
+                //规则弹窗-----------------------
+                var ruleScroll;
+                var rulePop = new Popup({
+                    ancestor:'#rulePop',
+                    main:'.main',
+                    exit:'.exit',
+                    txtWrap:'.txtWrap',
+                    txt:ruleHtml,
+                    initCallback:function(){
+                        var the = this;
+                        $(document).on('tap','.rule span',function(){
+                            the.show();
+                        });
+                    },
+                    showCallback:function(){
+                        if(ruleScroll){
+                            ruleScroll.destroy();
+                            ruleScroll = null;
+                        }
+                        ruleScroll = new IScroll('#rulePop .content');
+                    }
+                });
+
+
+                //查看奖励
+                $(document).on('tap','.lookPrize',function(){
+                    jsCallApp2MinePageHtml();
+                });
+
+                //发送船号
+                $(document).on('tap','.confirm',function(){
+                    if($(this).hasClass('loading')) return false;
+
+                    var userInputShipName = $shipInput[0].value.replace(/\s/g, '');
+
+                    $shipInput[0].value = userInputShipName;
+                    if(userInputShipName.length<=2 || userInputShipName.length>15){
+                        $err.show().html('船号不能少于2个字符且不能超过15个字符!');
+                    }else{
+                        $(this).addClass('loading');
+                        $shipPop.addClass('loading');
+                        $err.show().html('正在录入船号，请稍等...');
+                        $shipInput.prop('disabled',true).css('color','#C1C1C1');
+                        $(this).css('backgroundColor','#c1c1c1');
+                        shipNameTmp = $shipInput.val();
+                        jsCallAppEditShipIdHtml( shipNameTmp ); //发送请求录入船号
+                    }
+
+                });
+
+                //立刻提醒
+                $(document).on('tap','.inviteList .remind',function(){
+                    if($(this).html() == '立刻提醒'){
+                        var phone = $(this).siblings('.phone').data('phone');
+                        jsCallApp2AlertHtml(phone.toString());
+                    }
+                });
+            }
+
+
+        }
+    }
+
+
+    /*var fakeList = {
+        "code": "0000",
+        "msg": "操作成功",
+        "data":[
+                {"phone":13311111111, "state":"未使用长江汇","is_alarm":"已提醒"},
+                {"phone":13411111112, "state":"未使用长江汇","is_alarm":"已提醒"},
+                {"phone":13511111113, "state":"未使用长江汇","is_alarm":"立刻提醒"}
+            ]
+
+    };
+    appCallJsInitList(fakeList);*/
+
+    /**
+     *
+     * @param json 加载列表信息
+     * @param json.flags 如果是分页 "1",其他 "0"
+     */
+    function appCallJsInitList(json){
+        json = (json.constructor == String) ? $.parseJSON(json) : json;
+        if(json.code = '0000'){
+            $('footer').addClass('hasListBgColor');
+            $('#bottom').show();
+            var list = json.data, listHtml='';
+            for(var i=0; i<list.length; i++){
+                listHtml += '<li>'+
+                                '<span class="phone" data-phone="'+ list[i].phone +'">' + hidePhone(list[i].phone) + '</span>'+
+                                '<span>' + list[i].state + '</span>'+
+                                '<span class="remind '+color(list[i].is_alarm)+'" >' + list[i].is_alarm + '</span>'+
+                            '</li>';
+            }
+
+            if(json.flags == "1"){
+                $(listHtml).appendTo('.inviteList');
+            }else{
+                $('.inviteList').html(listHtml);
+            }
+
+            //分页加1
+            pageCount = pageCount+1;
+        }
+
+        function hidePhone(num){
+            num = num.toString();
+            var num2= num;
+            return num.slice(0,3) + '****' + num2.slice(-4);
+        }
+
+        function color(str){
+            if(str=='立刻提醒'){
+                return 'warn';
+            }
+        }
+    }
+
+    /**
+     *船号是否写入成功
+     * @param flag [string] '0' || '1'
+     */
+    function appCallJsIsEditShipIdSuccess(flag){
+        if(flag=='0'){
+            shipName = ''; //失败将船名赋值为空
+            $err.show().html('船号录入失败，请重新输入船号!');
+            $confirm.removeClass('loading');
+            $shipPop.removeClass('loading');
+            $shipInput.prop('disabled',false).css('color','initial');
+            $confirm.css('backgroundColor','#EA3232');
+        }else{
+            shipName = shipNameTmp;
+            $err.show().html('恭喜，船号录入成功!');
+            shipNum.close();
+            $shipInput.prop('disabled',true).css('color','#C1C1C1');
+            $confirm.css('backgroundColor','#EA3232');
+            jsCallAppYaoChuanShareHtml(); //直接调分享
+        }
+    }
+
+
+    /**
+     * 是否提醒成功
+     * @param flag '0' || '1'
+     */
+    function appCallJsIsAlertSuccess(flag, phone){
+        if(flag == '1'){
+            $('.inviteList li').each(function(index){
+                var $phoneSpan = $(this).children('span').eq(0),
+                    $warnSpan = $(this).children('span').eq(2);
+                if( $phoneSpan.data('phone') == phone ){
+                    $warnSpan.html('已提醒');
+                }
+            });
+        }
+    }
+
+    //填写船号
+    function jsCallAppEditShipIdHtml(shipId){
+        try{
+            if(isAndroid){
+                window.wst.jsCallAppEditShipId(shipId);
+            }else{
+                jsCallAppEditShipId(shipId)
+            }
+        }catch(err){
+            console.log(err.message);
+        }
+    }
+
+    //我要邀请
+    function jsCallAppYaoChuanShareHtml(){
+        try{
+            if(isAndroid){
+                window.wst.jsCallAppYaoChuanShare();
+            }else{
+                jsCallAppYaoChuanShare();
+            }
+
+        }catch(err){
+            console.log(err.message);
+        }
+    }
+
+    //查看奖励
+    function jsCallApp2MinePageHtml(){
+        try{
+            if(isAndroid){
+                window.wst.jsCallApp2MinePage();
+            }else{
+                jsCallApp2MinePage();
+            }
+
+        }catch(err){
+            console.log(err.message);
+        }
+    }
+
+    //立即提醒
+    function jsCallApp2AlertHtml(phone){
+        try{
+            if(isAndroid){
+                window.wst.jsCallApp2Alert(phone);
+            }else{
+                jsCallApp2Alert(phone);
+            }
+
+        }catch(err){
+            console.log(err.message);
+        }
+    }
+
+    //告诉app到了底部，需要加载分页数据
+    function jsCallAppLoadMoreHtml(e){
+        //当在弹窗上向上滑动时，不加载分页
+        if($(e.target).closest('.pop').length > 0)
+            return false;
+
+
+        var body = $('body');
+        var windowH  = $(window).height() > $(window).width() ? $(window).height() : $(window).width(),
+            bodyH    = body.height(),
+            bodySct  = body.scrollTop(),
+            isLoading=false,
+            isBottom ;
+        console.log('★★★★★★★★★★页面高:'+ bodyH);
+        console.log('★★★★★★★★★★屏幕高+滚动高 :'+(windowH+bodySct) );
+
+        isBottom = Math.abs(windowH + bodySct - bodyH) <= 2;
+        console.log('★★★★★★★★★★isBottom:'+isBottom);
+
+        if( (isLoading == false) && isBottom ){
+            console.log('★★★★★★★★★★(isLoading ==' +isLoading+') && isBottom:'+ ((isLoading == false) && isBottom))
+            console.log('★★★★★★★★★★isLogin:'+isLogin);
+            if(isLogin == '1'){
+                console.log('★★★★★★★★★★isLogin:'+isLogin);
+
+                try{
+                    console.log('★★★★★★★★★★调jsCallAppLoadMore')
+                    if(isAndroid){
+                        window.wst.jsCallAppLoadMore( pageCount );
+                    }else{
+                        jsCallAppLoadMore( pageCount );
+                    }
+                }catch(err){
+                    console.log(err.message);
+                }
+            }
+        }
+    }
+
+    //滚动加载分页-----------------------
+    slide({
+        ele:$(window),
+        up:jsCallAppLoadMoreHtml
+    });
+
+    $(function(){
+        if(isIos){
+            $('<p style="line-height: 1.6">该活动及奖品与苹果公司无关</p><p style="line-height: 1.6">本活动最终解释权归南京长江船服电子商务科技有限公司所有</p>').appendTo('footer');
+        }else{
+            $('<p style="line-height: 1.6">本活动最终解释权归南京长江船服电子商务科技有限公司所有</p>').appendTo('footer');
+        }
+    })
+</script>
+</html>

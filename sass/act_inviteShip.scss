@@ -1,0 +1,275 @@
+*{box-sizing: border-box;}
+body{position:relative; font-family:"Microsoft YaHei";}
+img{
+  display:block;
+}
+input,button{
+  border:0;
+  outline:0;
+  padding:0;
+  margin:0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+.getPackage #top{
+  div{
+    padding: .2rem 0;
+    background:url("../images/act-inviteShip/shipGet_02.jpg") no-repeat scroll 0 0;
+    background-size:100% 100%;
+    text-align: center;
+    h2{
+      font-weight: normal;
+      line-height: .8rem;
+      font-size: .5rem;
+      i{
+        font-weight:bold;
+      }
+    }
+    p{
+      padding: 0 1rem;
+      font-size: .45rem;
+      line-height: .7rem;
+      i{
+        color: #BF2422;
+      }
+    }
+  }
+}
+.getPackage #middle{
+  padding:0 1rem;
+  padding-bottom:.5rem;
+
+  .item{
+    margin:.4rem 0 ;
+    input,button{
+      width:100%;
+      outline:0;
+      border:1px solid #d3d3d3;
+      border-radius:.2rem;
+      background-color:#f2f2f2;
+      height:1.2rem;
+      line-height:1rem;
+      text-indent:.2rem;
+      font-size:.45rem;
+      color:#323232;
+    }
+
+    &#validate{
+      &>*{
+        box-sizing: border-box;
+        display:inline-block;
+      }
+      div:nth-child(1){
+        width:58%;
+      }
+      div:nth-child(2){
+        width:40%;
+      }
+      button{
+        position: relative;
+        margin-left:4%;
+        padding:0;
+        background-color: #f5bd28;
+        border-color: #f5bd28;
+        color:#fff;
+        font-size:.4rem;
+        &.wait60{
+          display:none;
+          background-color:#ABABAB;
+          border-color: #ABABAB;
+          &:after{
+            content:'.';
+            color:#ABABAB;
+          }
+          i{
+            position:absolute;
+            bottom:0;
+            left:0;
+            height:.5rem;
+            width:100%;
+            text-align: center;
+            line-height:.5rem;
+            &:nth-child(1){
+              top:0.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #clickGet{
+    width:100%;
+    height:1.3rem;
+    background-color:#ec3331;
+    color:#fff;
+    font-size:.55rem;
+    border:0;
+    outline:0;
+    border-radius:.2rem;
+  }
+
+
+}
+.rule{
+  margin-top:.5rem;
+  text-align: center;
+  span{
+    display:inline-block;
+    padding:1px 0;
+    color:#2d2d2d;
+    border-bottom:1px solid #2d2d2d;
+    font-size:.4rem;
+  }
+}
+.share{
+  #top{
+    .note{
+      background:url('../images/act-inviteShip/shipShare_02.jpg') no-repeat scroll 0 0;
+      background-size:100% 100%;
+      height:3rem;
+      font-size:.42rem;
+      line-height:.7rem;
+      text-align: center;
+      padding-top:.55rem;
+      color:#352f39;
+      span{
+        color:#c01c1d;
+      }
+    }
+  }
+  #middle{
+    padding:0 1rem 1rem 1rem ;
+    button,a{
+      display:block;
+      width:100%;
+      height:1.3rem;
+      line-height:1.3rem;
+      text-align: center;
+      border:0;
+      color:#fff;
+      font-size:.5rem;
+      border-radius:.2rem;
+      margin-top:.5rem;
+
+      &#download{
+        background-color:#26C0A4;
+      }
+      &#meToo{
+        background-color:#EA3232;
+      }
+    }
+  }
+}
+
+.pop{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+
+  .main{
+    background-color: #fff;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: .2rem;
+    padding:.9rem .6rem;
+    position:relative;
+
+    h2{
+      text-align:center;
+      font-size:.5rem;
+      margin-bottom:.4rem;
+    }
+    .exit{
+      position:absolute;
+      top:.2rem;
+      right:.2rem;
+      font-size:.8rem;
+      font-weight: normal;
+      color:#666;
+    }
+  }
+}
+#rulePop{
+  ul{
+    li{
+      font-size:.4rem;
+      line-height:.6rem;
+      margin-bottom:.2rem;
+      color:#323232;
+      text-align:justify;
+    }
+    span{
+      font-size:.3rem;
+      color:#666;
+    }
+  }
+  
+  p{
+    margin-left:-12%;
+    font-size:.4rem;
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    text-align: center;
+    white-space: nowrap;
+    margin-top: .6rem;
+  }
+}
+
+#memberPop{
+  .main{
+
+    p{
+      text-align:center;
+      font-size:.45rem;
+      line-height:.7rem;
+      span{
+        color:#C91F28;
+      }
+    }
+    .invite{
+      width: 66%;
+      height: 1.2rem;
+      background:url('../images/act-inviteShip/button.jpg') no-repeat scroll 0 0;
+      background-size:100% 100%;
+      margin:0 auto;
+      margin-top: .5rem;
+    }
+  }
+}
+
+#failedPop,#publicPop{
+  .main{
+    h2{
+      color:#FC0302;
+      font-size:.55rem;
+    }
+    p{
+      font-size: .45rem;
+      line-height: .7rem;
+      text-align: justify;
+    }
+  }
+}
+
+#popShare{
+  .main{
+    background-color:transparent;
+    width:100%;
+    margin-left:0;
+    padding:0;
+    height:6.33rem;
+
+    img{
+      width: 70%;
+      margin-left: 30%;
+    }
+  }
+}

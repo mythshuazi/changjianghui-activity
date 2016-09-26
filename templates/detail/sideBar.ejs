@@ -1,0 +1,57 @@
+<% console.log('正在渲染 sidebar 模版')%>
+<div class="sideBarContent">
+    <section class="goodsInfo">
+
+        <% if(picList.length>0){%>
+            <img src="<%= picList[0].bigPic%>" alt="" onerror="this.src='images/public/default.jpg'">
+        <% }else{ %>
+            <img src="images/public/default.jpg">
+        <% }%>
+        
+        <div class="price">
+            <p><%=goodsName%></p>                     
+        </div>
+    </section>
+    <section class="goodsOptions">
+		<% if(attrList) { %>
+        <% for(var i=0; i<attrList.length; i++){ %>
+            <dl class="clear options">
+                <dt><%= attrList[i].attrTip %></dt>
+                <dd>
+
+                    <% for(var j=0,cartAttrList=attrList[i]['cartAttrList']; j<cartAttrList.length; j++){%>
+                        <span class="<%if(cartAttrList[j]['isDefault']==1){%>active<%}%>" data-cartAttrid="<%=cartAttrList[j]['cartAttrid'] %>"><%=cartAttrList[j]['selfAttr']%></span>
+                    <%}%>
+                    
+                </dd>
+            </dl>
+        <% } %>
+        
+        <dl class="clear">
+            <dt>数量</dt>
+            <dd>
+                <div class="amount">
+                    <span class="reduce">－</span><input type="number" class="count" value="<%=count%>"><span class="add">＋</span>
+                </div>
+            </dd>
+        </dl>
+        <dl>
+            <dt></dt>
+            <dd class="noteThat" style="color:red"></dd>
+        </dl>
+
+	    <%}%>
+    </section>
+    <ul class="aboutPurchase">
+        <% if(smtType!=5) { %>
+            <%if( parseFloat(stocks) <= 0 && state == 1 ) { %>
+                <li class="disabled">商品已售完</li>
+            <% }else if( parseFloat(stocks) > 0 && state == 1 ){ %>
+                <li class="addCart">加入购物车</li>
+                <li class="buyNow ">立即购买</li>
+            <% }else if(state == 0){ %>
+                <li class="disabled">商品已下架</li>
+            <% } %>
+        <% } %>
+    </ul>
+</div>

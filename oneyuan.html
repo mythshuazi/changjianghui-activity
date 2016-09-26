@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>一元专区</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/ejs_production.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script src="javascripts/plugin/swiper.3.1.2.jquery.min.js"></script>
+<script type="text/javascript">
+    $('html').css({
+        fontSize: $(window).width()/10
+    });
+    $(window).resize(function(){
+        $('html').css({
+            fontSize: $(window).width()/10
+        });
+    });
+</script>
+<link rel="stylesheet" href="stylesheets/public.css">
+<link rel="stylesheet" href="stylesheets/oneyuan.css">
+<link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+</head>
+<body>
+<div class="mainContainer">
+    <div class="mainContent">
+        <section id="top">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ">
+                        <img class="swiper-lazy" data-route="http://www.baidu.com" data-src="images/oneyuan/oneyuan.jpg" src=""  onerror="this.src=''" >
+                    </div>
+                    <div class="swiper-slide ">
+                        <img class="swiper-lazy" data-route="http://www.baidu.com" data-src="images/oneyuan/oneyuan.jpg" src=""  onerror="this.src=''" >
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section id="middle">
+            <ul class="landscape">
+                <li class="ls_item ls_sellout" data-id="111">
+                    <div class="ls_left">
+                        <img class="ls_pic scrollLoad" data-url="images/guide/screenshot_03.png" src="" onerror="this.src='images/public/default.jpg'"/>
+                        <div class="nothing"><i>抢光了</i></div>
+                    </div>
+                    <div class="ls_right">
+                        <p class="ls_intro">NIKE新款跑鞋新款轻松跑步 奔跑吧兄弟同款轻松晨跑运动鞋</p>
+                        <div class="ls_about">
+                            <div class="price">
+                                <span class="now_price">¥ <i class="price_num">1.00</i></span><del class="old-price">¥ <i class="price_num">111.00</i></del>
+                            </div>
+                            <p class="surplus">还剩 <i>95</i> 件</p>
+                        </div>
+                        <div class="ls_prefix">
+                            <span>立即购买</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section id="bottom">
+            <div class="rule">
+                <h2><i class="left">.</i>活动规则<i class="right">.</i></h2>
+                <ul class="content">
+                    <li><i>1</i>每个长江汇新用户都可以优惠购买1件新手一元抢商品；</li>
+                    <li><i>2</i>一部手机对应一个手机号码且未在长江汇购买过商品的用户视为一个新用户。</li>
+                </ul>
+            </div>
+        </section>
+        <footer>
+            在法律允许的范围内，本活动最终解释权归<i>长江汇</i>所有
+        </footer>
+    </div>
+</div>
+
+</body>
+<script>
+    $('.scrollLoad').scrollLoading();
+    var carousel = new Swiper('.swiper-container',{
+        lazyLoading : true,
+        lazyLoadingInPrevNext : true
+    });
+
+    $(document).on('click', '.swiper-container img', function(){
+            jsCallAppRoute($(this).data('route'));
+    });
+
+    /**
+     *
+     * @param url String
+     */
+    function jsCallAppRoute(url){
+        try{
+            window.wst.jsCallAppRoute(url);
+        }catch(error){
+            console.log(error.message);
+        }
+    }
+</script>
+</html>
