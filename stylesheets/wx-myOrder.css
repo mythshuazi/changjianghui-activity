@@ -224,7 +224,7 @@ section {
   padding-bottom: .4rem;
 }
 /* line 179, ../sass/wx-myOrder.scss */
-.detail section#payInfo {
+.detail section:last-child {
   margin-bottom: 0;
 }
 

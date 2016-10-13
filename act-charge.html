@@ -20,55 +20,67 @@
         window.addEventListener('resize',setHtmlSize,false);
     </script>
     <style>
-        body{background-color:#5DBCFF;color:#323232;}
+        body{background-color:#0f9f47;color:#323232;}
         .content{padding:0 .4rem .4rem .4rem;}
-        h3.title{color:#323232;
-            font-size: .4rem;
-            line-height: .8rem;
-            background: url("images/act-charge/recharge_03.jpg") no-repeat scroll 0 0;
-            background-size: 40% 100%;
-            text-indent: .6rem;
-            margin-bottom: .2rem;    margin-top: .5rem;
-        }
-        p{font-size:.34rem;color:#323232;line-height:1.8; text-align: justify;}
+        header div{position:absolute;width:100%;top:5.6rem;}
+        header p{text-align:center;line-height:1.2; font-size: .3rem;color:#3E1B08;}
+        header i{color:#E81C25 !important;}
+        h3.title{ color: #EC5F58; text-shadow: 2px 2px 2px #fff; font-size: .5rem; line-height: 1.95rem; height: 1.5rem; background: url(images/act-charge/recharge_03.jpg) no-repeat scroll 0 0; background-size: 36% 100%; text-indent: .75rem; margin-bottom: .2rem; margin-top: .5rem;}
+        p{font-size:.34rem;color:#fff;line-height:1.8; text-align: justify;}
         p i{color:#FBFF04;}
         .item img{display:block;margin:0 auto;margin-top:.6rem;}
-        .item p{font-size:.36rem;}
+        .item p{font-size:.36rem; padding-left: .3rem;}
+        footer{text-align:center;padding:2rem 0 1rem 0;}
+        footer p{color: #075428; text-align: center; font-size: .35rem; line-height: .5rem; border: 1px solid #075428; display: inline-block; margin: 0 auto; border-radius: .4rem; padding: 0 .2rem; background-color:#0f9f47;position:relative; z-index: 999;}
+        footer:after{
+            display:block;
+            content:"";
+            height:1px;
+            background-color:#075428;
+            position: relative;top:-0.25rem;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <header>
         <img src="images/act-charge/recharge_01.jpg" width="100%">
-        <img style="margin-top:.4rem;" src="images/act-charge/recharge_02.jpg" width="100%">
+        <div>
+            <p><i>10月1日-10月30日</i>期间</p>
+            <p>长江汇APP充值吧，话费、流量便</p>
+            <p>捷到账，更享最高<i>满300返60</i>礼券</p>
+        </div>
     </header>
     <section class="content">
         <div class="item">
-            <h3 class="title">话费惠：</h3>
-            <p>充50<i>返5元</i>（5元现金券，消费满10元可用1张）</p>
-            <p>充100<i>返20元</i>（20元现金券，消费满40元可用1张）</p>
-            <p>充300<i>返80元</i>（80元现金券，消费满160元可用1张）</p>
+            <h3 class="title">话费惠</h3>
+            <p>充50<i>返5元</i>（5元现金券，消费满15元可用1张）</p>
+            <p>充100<i>返15元</i>（15元现金券，消费满45元可用1张）</p>
+            <p>充300<i>返60元</i>（60元现金券，消费满180元可用1张）</p>
         </div>
         <div class="item">
-            <h3 class="title">流量惠：</h3>
-            <p>充500M(全国通用)<i>返5元</i>（5元现金券，消费满10元可用1张）</p>
-            <p>充1G(全国通用)<i> 返10元 </i>（10元现金券，消费满20元可用1张，联通除外）</p>
+            <h3 class="title">流量惠</h3>
+            <p>充500M(约30元)<i>返5元</i>（5元现金券，消费满15元可用1张）</p>
+            <p>充1G(约50元)<i> 返10元 </i>（10元现金券，消费满30元可用1张，<span style="color:#E71E28">联通该档无定价，不参加</span>）</p>
         </div>
         <div class="item">
-            <h3 class="title">操作指导：</h3>
+            <h3 class="title" style="text-indent: 0.5rem;">操作指导</h3>
             <img src="images/act-charge/recharge_04.jpg" width="90%">
             <img src="images/act-charge/recharge_05.jpg" width="90%">
             <img src="images/act-charge/recharge_06.jpg" width="90%">
         </div>
         <div class="item">
-            <h3 class="title">注意！注意！</h3>
-            <p>① 现金券是充值成功后，立即自动到达您的账户上；</p>
-            <p>② 现金券有效期：当日生效，45天内有效；</p>
-            <p>③ 每人每次靠泊限使用1张券；</p>
-            <p>④ 使用时每个手机对应一个账号，不可切换使用；</p>
-            <p>⑤ 同一账号优惠券本期活动优惠总额不得超过500元；</p>
+            <h3 class="title" style="text-indent: 0.5rem;">注意注意！</h3>
+            <p>① 现金券为系统自动发放；</p>
+            <p>② 优惠券有效期：当日生效，45天内有效；</p>
+            <p>③ 每人每次靠泊优惠券使用总额不得超过500元；</p>
+            <p>④ 使用时每个手机对应一个账号，不可切换使用。</p>
         </div>
     </section>
 </div>
+
+<footer>
+    <p>本活动最终解释权归长江汇所有</p>
+</footer>
 </body>
 </html>

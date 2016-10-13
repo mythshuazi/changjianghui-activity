@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>家电换新</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <script type="text/javascript">
+        function setHtmlSize(){
+            document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+        }
+        setHtmlSize();
+        window.addEventListener('resize',setHtmlSize,false);
+    </script>
+    <style>
+        body{background-color:#da2339;}
+        img{display:block; width: 100%; margin-bottom:.5rem;}
+        header{
+            height:17rem;background:#da2339 url('images/act-jiadian/jd01.jpg') no-repeat scroll 0 0;
+            background-size:100%;
+        }
+        header div{margin: 0 .5rem;  padding: .2rem .4rem;  border: 2px dashed #000;  border-radius: .2rem;  color: #fff;  font-size: .35rem;  line-height: 1.6;  text-indent: .7rem;    position: relative;  top: 13rem;
+        }
+        header i{ color:#FFF66B }
+        header span{font-weight:bold;}
+        header em{text-decoration:underline;}
+        .buyBtn{    background: #da2339 url(images/act-jiadian/btn.jpg) no-repeat scroll 0 0;
+            background-size: auto 100%;
+            width: 5.5rem;
+            height: 2rem;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 1.2rem;}
+        footer{text-align: center; text-decoration: underline; font-size:.35rem; color:#fff;padding:1rem 0;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <span>活动时间：<em>2016年10月1日 — 10月15日</em></span>
+                <p>船友买家电，无需靠岸下船找电器城啦！用长江汇APP可以代购高价值家电，代购不加价，全渠道比价为您省钱，更能免费配送到站！首批代购类目含<i>电视、冰箱、洗衣机、厨卫小家电</i>四大类品类。</p>
+            </div>
+        </header>
+        <section class="content">
+            <img class="mys" src="images/public/default.jpg" data-url="images/act-jiadian/jd02.jpg">
+            <span class="buyBtn"></span>
+            <img class="mys" src="images/public/default.jpg" data-url="images/act-jiadian/jd03.jpg">
+            <img class="mys" src="images/public/default.jpg" data-url="images/act-jiadian/jd04.jpg">
+        </section>
+    </div>
+    <footer>
+        以上活动最终解释权归长江汇所有
+    </footer>
+</body>
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/plugin/scrollLoading.js"></script>
+<script>
+    $(function(){
+        $('.mys').scrollLoading();
+    })
+</script>
+</html>

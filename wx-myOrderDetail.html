@@ -60,6 +60,19 @@
             </ul>
             <div v-if="remark" class="remark">备注：{{remark}}</div>
         </section>
+        <section id="payInfo" class="table">
+            <div class="tableWrap">
+                <div class="headline">支付信息</div>
+                <table>
+                    <tr><th>商品总额</th><td>¥{{originPrice}}</td></tr>
+                    <tr><th>优惠总额</th><td>¥{{disCountAmount}}</td></tr>
+                    <tr><th>红包抵扣</th><td>¥{{couponPayMoney=='0' ? oilCouponPayMoney : couponPayMoney}}</td></tr>
+                    <tr v-if="scoreUsed != '0'"><th>积分抵扣</th><td>¥{{scoreUsed}}</td></tr>
+                    <tr><th>{{payType | transPayType}}</th><td>¥{{actPayMoney}}</td></tr>
+                </table>
+            </div>
+
+        </section>
         <section id="pickupInfo" class="table">
             <div class="tableWrap">
                 <template v-if="orderType=='0'">
@@ -97,19 +110,6 @@
                     <tr><th>下单时间</th><td>{{createTime}}</td></tr>
                     <tr><th>订单金额</th><td>¥{{totalPrice}}</td></tr>
                     <tr v-if="sumScore"><th>获得积分</th><td>{{sumScore}}</td></tr>
-                </table>
-            </div>
-
-        </section>
-        <section id="payInfo" class="table">
-            <div class="tableWrap">
-                <div class="headline">支付信息</div>
-                <table>
-                    <tr><th>商品总额</th><td>¥{{originPrice}}</td></tr>
-                    <tr><th>优惠总额</th><td>¥{{disCountAmount}}</td></tr>
-                    <tr><th>红包抵扣</th><td>¥{{couponPayMoney=='0' ? oilCouponPayMoney : couponPayMoney}}</td></tr>
-                    <tr v-if="scoreUsed != '0'"><th>积分抵扣</th><td>¥{{scoreUsed}}</td></tr>
-                    <tr><th>{{payType | transPayType}}</th><td>¥{{actPayMoney}}</td></tr>
                 </table>
             </div>
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>大转盘分享</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <script type="text/javascript">
+        function setHtmlSize(){
+            document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+        }
+        setHtmlSize();
+        window.addEventListener('resize',setHtmlSize,false);
+    </script>
+    <style>
+        header{
+            height:8.3rem;background:transparent url("images/act-turnplate/top.jpg") no-repeat scroll 0 0;
+            background-size:100% 100%;
+        }
+        section{background:#AE67B5 url("images/act-turnplate/bg.jpg") no-repeat scroll 50% 2rem;background-size:92%;padding-bottom:2rem;}
+        .tip{color: #fff;font-size: .45rem;position: relative;top: 1.47rem;left: 2.8rem;}
+        .btn{background:transparent url("images/act-turnplate/btn.jpg") no-repeat scroll 0 0; display:block; width:9rem;height:2rem;background-size:100%;margin:0 auto;}
+        img{display:block; width:94%;margin:0 auto; margin-top:.8rem;}
+        img:first-child{margin-top:2rem;}
+    </style>
+</head>
+<body>
+    <header>
+        <span class="tip">最高可免500元话费</span>
+    </header>
+    <section>
+        <span class="btn"></span>
+        <div class="act">
+            <img src="images/act-turnplate/1yuan.jpg">
+            <img src="images/act-turnplate/invite.jpg">
+        </div>
+    </section>
+</body>
+</html>

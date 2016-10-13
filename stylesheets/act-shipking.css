@@ -11,10 +11,9 @@ img {
 
 /* line 10, ../sass/act-shipking.scss */
 section {
-  border-top: 1px solid #abe7ff;
   padding: 0 .4rem;
 }
-/* line 13, ../sass/act-shipking.scss */
+/* line 12, ../sass/act-shipking.scss */
 section p {
   font-size: .4rem;
   color: #15698D;
@@ -22,7 +21,7 @@ section p {
   margin: .5rem 0;
   line-height: .6rem;
 }
-/* line 19, ../sass/act-shipking.scss */
+/* line 18, ../sass/act-shipking.scss */
 section p i {
   width: .5rem;
   height: .5rem;
@@ -34,26 +33,26 @@ section p i {
   text-align: center;
   margin-right: .2rem;
 }
-/* line 31, ../sass/act-shipking.scss */
+/* line 30, ../sass/act-shipking.scss */
 section p.red {
   color: #FB6149;
 }
-/* line 35, ../sass/act-shipking.scss */
+/* line 34, ../sass/act-shipking.scss */
 section table {
   font-size: .4rem;
   color: #15698D;
 }
-/* line 38, ../sass/act-shipking.scss */
+/* line 37, ../sass/act-shipking.scss */
 section table td {
   height: .6rem;
 }
 
-/* line 44, ../sass/act-shipking.scss */
+/* line 43, ../sass/act-shipking.scss */
 .title {
-  margin: .6rem 0;
+  padding: .6rem 0;
   text-align: center;
 }
-/* line 47, ../sass/act-shipking.scss */
+/* line 46, ../sass/act-shipking.scss */
 .title h3 {
   display: inline-block;
   padding: .5rem .8rem;
@@ -61,19 +60,19 @@ section table td {
   font-size: .55rem;
   color: #09455F;
 }
-/* line 54, ../sass/act-shipking.scss */
+/* line 53, ../sass/act-shipking.scss */
 .title h3.wave {
   background: transparent url("../images/act-shipking/wave.png") no-repeat scroll 0 bottom;
   background-size: 100%;
 }
-/* line 58, ../sass/act-shipking.scss */
+/* line 57, ../sass/act-shipking.scss */
 .title h3.tree {
   background: transparent url("../images/act-shipking/tree.png") no-repeat scroll 0 0;
   background-size: auto 1.2rem;
   padding: .5rem 1rem;
 }
 
-/* line 66, ../sass/act-shipking.scss */
+/* line 65, ../sass/act-shipking.scss */
 .content {
   background-color: #ABE7FF;
   background: -webkit-gradient(linear, left top, left bottom, from(#ABE7FF), to(#ffffff));
@@ -81,18 +80,17 @@ section table td {
   background-image: linear-gradient(to bottom, #ABE7FF 0%, #ffffff 100%);
 }
 
-/* line 72, ../sass/act-shipking.scss */
+/* line 71, ../sass/act-shipking.scss */
 footer {
   position: relative;
 }
-/* line 74, ../sass/act-shipking.scss */
+/* line 73, ../sass/act-shipking.scss */
 footer p {
   font-size: .42rem;
   width: 100%;
   text-align: center;
   color: #15698D;
   position: absolute;
-  bottom: 1.5rem;
   bottom: 1.5rem;
 }
 
