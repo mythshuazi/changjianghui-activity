@@ -154,81 +154,57 @@ section {
   color: #FF4E00;
 }
 
-/* line 126, ../sass/wx-myOrder.scss */
+/* line 125, ../sass/wx-myOrder.scss */
 .total {
-  padding: 0 .5rem 0 .3rem;
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;
-  /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;
-  /* TWEENER - IE 10 */
-  display: -webkit-flex;
-  /* NEW - Chrome */
-  display: flex;
-  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  line-height: 1.5rem;
-  border-bottom: 1px solid #E4E4E4;
-  border-top: 1px solid #F0EDE6;
-  margin-top: .3rem;
+  padding: 0 .3rem;
 }
-/* line 140, ../sass/wx-myOrder.scss */
-.total .date, .total .count {
-  -webkit-box-flex: 1;
-  /* OLD - iOS 6-, Safari 3.1-6 */
-  -moz-box-flex: 1;
-  /* OLD - Firefox 19- */
-  width: 33%;
-  /* For old syntax, otherwise collapses. */
-  -webkit-flex: 1;
-  /* Chrome */
-  -ms-flex: 1;
-  /* IE 10 */
-  flex: 1;
-  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  color: #BDBDBD;
-  font-size: .4rem;
-}
-/* line 150, ../sass/wx-myOrder.scss */
-.total .date i, .total .count i {
+/* line 127, ../sass/wx-myOrder.scss */
+.total table {
+  width: 100%;
   color: #323232;
+  padding: 0 .2rem;
+  font-size: 15px;
+  line-height: 22px;
 }
-/* line 154, ../sass/wx-myOrder.scss */
-.total .count {
-  text-align: center;
+/* line 134, ../sass/wx-myOrder.scss */
+.total .sale {
+  color: #808080;
 }
-/* line 156, ../sass/wx-myOrder.scss */
-.total .footing {
+/* line 137, ../sass/wx-myOrder.scss */
+.total .actual {
   text-align: right;
-  font-size: .45rem;
+}
+/* line 139, ../sass/wx-myOrder.scss */
+.total .actual i {
+  color: #FF4E00;
 }
 
-/* line 163, ../sass/wx-myOrder.scss */
+/* line 181, ../sass/wx-myOrder.scss */
 .title {
   background: transparent url("../images/wx-myOrder/ico_title.png") no-repeat scroll 0.5rem 50%;
   background-size: auto 50%;
   margin-bottom: .3rem;
 }
 
-/* line 171, ../sass/wx-myOrder.scss */
+/* line 189, ../sass/wx-myOrder.scss */
 .detail {
   background-color: #F5F5F5;
 }
-/* line 173, ../sass/wx-myOrder.scss */
+/* line 191, ../sass/wx-myOrder.scss */
 .detail section {
   background-color: #fff;
 }
-/* line 175, ../sass/wx-myOrder.scss */
+/* line 193, ../sass/wx-myOrder.scss */
 .detail section#state {
   margin-bottom: 0;
   padding-bottom: .4rem;
 }
-/* line 179, ../sass/wx-myOrder.scss */
+/* line 197, ../sass/wx-myOrder.scss */
 .detail section:last-child {
   margin-bottom: 0;
 }
 
-/* line 185, ../sass/wx-myOrder.scss */
+/* line 203, ../sass/wx-myOrder.scss */
 .progress {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -244,7 +220,7 @@ section {
   margin-top: .5rem;
   color: #7F7F7F;
 }
-/* line 195, ../sass/wx-myOrder.scss */
+/* line 213, ../sass/wx-myOrder.scss */
 .progress .step {
   -webkit-box-flex: 1;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -257,16 +233,16 @@ section {
   flex: 1;
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
-/* line 202, ../sass/wx-myOrder.scss */
+/* line 220, ../sass/wx-myOrder.scss */
 .progress .step p {
   height: 18px;
 }
 
-/* line 208, ../sass/wx-myOrder.scss */
+/* line 226, ../sass/wx-myOrder.scss */
 .circle {
   margin: 8px auto;
 }
-/* line 210, ../sass/wx-myOrder.scss */
+/* line 228, ../sass/wx-myOrder.scss */
 .circle div {
   border: 1px solid #A7A7A7;
   background-color: #fff;
@@ -277,7 +253,7 @@ section {
   position: relative;
   z-index: 2;
 }
-/* line 219, ../sass/wx-myOrder.scss */
+/* line 237, ../sass/wx-myOrder.scss */
 .circle div i {
   display: block;
   width: 12px;
@@ -286,7 +262,7 @@ section {
   border-radius: 8px;
   background-color: #A7A7A7;
 }
-/* line 229, ../sass/wx-myOrder.scss */
+/* line 247, ../sass/wx-myOrder.scss */
 .circle .line {
   display: block;
   position: relative;
@@ -295,72 +271,72 @@ section {
   background-color: #DADADA;
 }
 
-/* line 239, ../sass/wx-myOrder.scss */
+/* line 257, ../sass/wx-myOrder.scss */
 .step:nth-of-type(1) .line {
   width: 50%;
   left: 50%;
 }
 
-/* line 245, ../sass/wx-myOrder.scss */
+/* line 263, ../sass/wx-myOrder.scss */
 .step:last-child .line {
   width: 50%;
 }
 
-/* line 251, ../sass/wx-myOrder.scss */
+/* line 269, ../sass/wx-myOrder.scss */
 .active .circle div {
   border: 1px solid #fe4f00;
 }
-/* line 253, ../sass/wx-myOrder.scss */
+/* line 271, ../sass/wx-myOrder.scss */
 .active .circle div i {
   background-color: #fe4f00;
 }
 
-/* line 260, ../sass/wx-myOrder.scss */
+/* line 278, ../sass/wx-myOrder.scss */
 .remark {
   color: #313131;
   padding: .3rem;
 }
 
-/* line 265, ../sass/wx-myOrder.scss */
+/* line 283, ../sass/wx-myOrder.scss */
 #goodsList {
   border-top: 1px solid #F0EDE6;
   padding-bottom: .3rem;
 }
 
-/* line 272, ../sass/wx-myOrder.scss */
+/* line 290, ../sass/wx-myOrder.scss */
 .table .tableWrap {
   padding-bottom: .2rem;
 }
-/* line 275, ../sass/wx-myOrder.scss */
+/* line 293, ../sass/wx-myOrder.scss */
 .table .headline {
   border-bottom: 1px solid #F0EDE6;
   line-height: 1rem;
   font-size: .45rem;
   text-indent: .3rem;
 }
-/* line 282, ../sass/wx-myOrder.scss */
+/* line 300, ../sass/wx-myOrder.scss */
 .table table {
   width: 100%;
   color: #666666;
   font-size: .4rem;
 }
-/* line 286, ../sass/wx-myOrder.scss */
+/* line 304, ../sass/wx-myOrder.scss */
 .table table tr {
   height: .8rem;
 }
-/* line 289, ../sass/wx-myOrder.scss */
+/* line 307, ../sass/wx-myOrder.scss */
 .table table th {
   width: 20%;
   text-indent: .3rem;
 }
-/* line 293, ../sass/wx-myOrder.scss */
+/* line 311, ../sass/wx-myOrder.scss */
 .table table td {
   width: 50%;
   text-align: right;
   padding-right: .3rem;
 }
 
-/* line 300, ../sass/wx-myOrder.scss */
+/* line 318, ../sass/wx-myOrder.scss */
 .tips {
   background-color: #f5f5f5;
   font-size: 12px;
@@ -369,7 +345,7 @@ section {
   text-indent: 40px;
   color: #fb3838;
 }
-/* line 308, ../sass/wx-myOrder.scss */
+/* line 326, ../sass/wx-myOrder.scss */
 .tips:before {
   content: ' ';
   display: block;
@@ -381,27 +357,27 @@ section {
   background-size: 100%;
 }
 
-/* line 321, ../sass/wx-myOrder.scss */
+/* line 339, ../sass/wx-myOrder.scss */
 .orderList {
   background-color: #F5F5F5;
 }
-/* line 323, ../sass/wx-myOrder.scss */
+/* line 341, ../sass/wx-myOrder.scss */
 .orderList #nav {
   background-color: #fff;
 }
-/* line 326, ../sass/wx-myOrder.scss */
+/* line 344, ../sass/wx-myOrder.scss */
 .orderList .item {
   background-color: #fff;
   margin-bottom: .4rem;
 }
-/* line 331, ../sass/wx-myOrder.scss */
+/* line 349, ../sass/wx-myOrder.scss */
 .orderList .empty div {
   line-height: 1rem;
   font-size: .5rem;
   text-align: center;
   margin-top: 3rem;
 }
-/* line 337, ../sass/wx-myOrder.scss */
+/* line 355, ../sass/wx-myOrder.scss */
 .orderList .empty div:before {
   content: '.';
   display: inline-block;
@@ -411,35 +387,35 @@ section {
   background: url("../images/wx-myOrder/empty.png") no-repeat scroll 50% 50%;
   background-size: auto 80%;
 }
-/* line 350, ../sass/wx-myOrder.scss */
+/* line 368, ../sass/wx-myOrder.scss */
 .orderList .landscape li {
   border: 0;
 }
-/* line 353, ../sass/wx-myOrder.scss */
+/* line 371, ../sass/wx-myOrder.scss */
 .orderList .landscape .ls_left {
   border: 1px solid #F0EDE6;
 }
-/* line 356, ../sass/wx-myOrder.scss */
+/* line 374, ../sass/wx-myOrder.scss */
 .orderList .landscape .ls_right {
   height: 2.4rem;
 }
-/* line 359, ../sass/wx-myOrder.scss */
+/* line 377, ../sass/wx-myOrder.scss */
 .orderList .landscape .ls_intro {
   min-height: 18px;
   max-height: 36px;
 }
-/* line 363, ../sass/wx-myOrder.scss */
+/* line 381, ../sass/wx-myOrder.scss */
 .orderList .landscape .ls_about {
   position: absolute;
   bottom: 0;
   left: 3.5rem;
 }
-/* line 368, ../sass/wx-myOrder.scss */
+/* line 386, ../sass/wx-myOrder.scss */
 .orderList .landscape .ls_pic {
   width: 3.2rem;
   height: 2.4rem;
 }
-/* line 372, ../sass/wx-myOrder.scss */
+/* line 390, ../sass/wx-myOrder.scss */
 .orderList .landscape .price_num {
   font-size: .4rem;
 }

@@ -122,42 +122,60 @@ section{
     color:#FF4E00;
   }
 }
-
 .total{
-  padding:0 .5rem 0 .3rem;
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-
-  line-height:1.5rem;
-  border-bottom:1px solid #E4E4E4;
-  border-top:1px solid #F0EDE6;
-  margin-top: .3rem;
-
-
-  .date,.count{
-    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
-    -moz-box-flex: 1;         /* OLD - Firefox 19- */
-    width: 33%;               /* For old syntax, otherwise collapses. */
-    -webkit-flex: 1;          /* Chrome */
-    -ms-flex: 1;              /* IE 10 */
-    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    color:#BDBDBD;
-    font-size:.4rem;
-
+  padding: 0 .3rem;
+  table{
+    width: 100%;
+    color: #323232;
+    padding: 0 .2rem;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .sale{
+    color:#808080;
+  }
+  .actual{
+    text-align:right;
     i{
-      color: #323232;
+      color:#FF4E00
     }
   }
-  .count{text-align:center;}
-
-  .footing{
-    text-align:right;
-    font-size:.45rem;
-  }
 }
+//.total{
+//  padding:0 .5rem 0 .3rem;
+//  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+//  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+//  display: -ms-flexbox;      /* TWEENER - IE 10 */
+//  display: -webkit-flex;     /* NEW - Chrome */
+//  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+//
+//  line-height:1.5rem;
+//  border-bottom:1px solid #E4E4E4;
+//  border-top:1px solid #F0EDE6;
+//  margin-top: .3rem;
+//
+//
+//  .date,.count{
+//    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+//    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+//    width: 33%;               /* For old syntax, otherwise collapses. */
+//    -webkit-flex: 1;          /* Chrome */
+//    -ms-flex: 1;              /* IE 10 */
+//    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+//    color:#BDBDBD;
+//    font-size:.4rem;
+//
+//    i{
+//      color: #323232;
+//    }
+//  }
+//  .count{text-align:center;}
+//
+//  .footing{
+//    text-align:right;
+//    font-size:.45rem;
+//  }
+//}
 
 
 .title{

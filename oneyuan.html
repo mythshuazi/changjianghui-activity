@@ -84,9 +84,16 @@
 <script>
     $('.scrollLoad').scrollLoading();
     var carousel = new Swiper('.swiper-container',{
+        loop: true,
+        autoplay: 1000,
+        pagination : '.swiper-pagination',
         lazyLoading : true,
         lazyLoadingInPrevNext : true
     });
+
+    setTimeout(function(){
+        $('.swiper-pagination').css('opacity',1);
+    },1500);    
 
     $(document).on('click', '.swiper-container img', function(){
             jsCallAppRoute($(this).data('route'));

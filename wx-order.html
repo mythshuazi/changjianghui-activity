@@ -51,11 +51,29 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="total">
+                    <!--<div class="total">
                         <div v-if="item.msValidityHint" class="date">订单有效期至：<i>{{item.msValidityHint | splitValidate}}</i></div>
                         <div v-else class="date">{{item.creatTime | transDate "yyyy-MM-dd hh:mm"}}</div>
                         <div class="footing">合计：{{item.totalPrice}}</div>
+                    </div>-->
+                    <div class="total">
+                        <table>
+                            <tr  style="width: 45%;">
+                                <td>
+                                    <div class="footing">合计：{{item.sumPrice}}</div>
+                                </td>
+                                <td class="actual" rowspan="2" >
+                                    <div>实付：<i>{{item.totalPrice}}</i></div>
+                                </td>
+                            </tr>
+                            <tr class="sale" style="width: 55%;">
+                                <td>
+                                    <div>优惠抵扣：{{item.hasMinus}}</div>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
+
                 </div>
             </div>
             <div v-else class="empty">

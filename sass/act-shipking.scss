@@ -49,6 +49,8 @@ section{
     margin:0 auto;
     font-size:.55rem;
     color:#09455F;
+    position: relative;
+    left: .4rem;
 
     &.wave{
       background:transparent url("../images/act-shipking/wave.png") no-repeat scroll 0 bottom;

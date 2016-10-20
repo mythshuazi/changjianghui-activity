@@ -3,6 +3,7 @@ body{background-color:#FEFEFE;}
   display:block;
   height:4.5rem;
   cursor: pointer;
+  width:100%;
 }
 
 .landscape{
@@ -152,4 +153,10 @@ footer{
   i{
     color:#fe4f00;
   }
+}
+
+.swiper-pagination{
+  opacity:0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }
