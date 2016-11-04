@@ -35,14 +35,15 @@
                     <div class="inner">
                         <div class="price">
                             <i class="rmb">¥</i>{{item.amount}}
-                            <p v-if="couponType==1" class="condition">{{item.refMoney==0 ? '' : '满'+item.refMoney+'可用'}}</p>
+                            <p v-if="couponType==1" class="condition">{{item.refMoney==0 ? '' : '满'+item.refMoney+'元可用'}}</p>
                         </div>
                         <div class="detail">
                             <h3>{{item.itemName || item.typeName}}</h3>
                             <ul>
                                 <li v-if="item.shipNo">限{{item.shipNo}}使用</li>
                                 <li>限手机尾号 {{item.phoneNo.slice(-4)}} 使用</li>
-                                <li>{{item.channel | channelToCn}} 下单专享</li>
+                                <li v-if="item.lineType && couponType==1">{{item.lineType}}</li>
+                                <li v-if="item.channel && couponType==2">{{item.channel | channelToCn}}下单专享</li>
                             </ul>
                             <p>有效期{{item.openTime*1000 | toYMDHMS "yyyy.MM.dd"}} - {{item.expireTime*1000 | toYMDHMS "yyyy.MM.dd"}}</p>
                         </div>
@@ -59,7 +60,7 @@
 <script src="javascripts/plugin/vue-resource.js"></script>
 <script>
     var openId   = 'abc',
-        couponType = 1; //2油券 or 1非油券
+        couponType = 2; //2油券 or 1非油券
 
     var fake = {
             "code": "0000",
@@ -98,6 +99,7 @@
                 "amount": "1888",
                 "refMoney": "0",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466505256",
                 "expireTime": "1469010856",
                 "phoneNo": "15951854983"
@@ -107,6 +109,7 @@
                 "amount": "10",
                 "refMoney": "0",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466506271",
                 "expireTime": "1469011871",
                 "phoneNo": "15951854983"
@@ -116,6 +119,7 @@
                 "amount": "30",
                 "refMoney": "30",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466508369",
                 "expireTime": "1469013969",
                 "phoneNo": "15951854983"
@@ -125,6 +129,7 @@
                 "amount": "130",
                 "refMoney": "30",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466508623",
                 "expireTime": "1469014223",
                 "phoneNo": "15951854983"
@@ -134,6 +139,7 @@
                 "amount": "30.5",
                 "refMoney": "30",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466508755",
                 "expireTime": "1469014355",
                 "phoneNo": "15951854983"
@@ -143,6 +149,7 @@
                 "amount": "30",
                 "refMoney": "30",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466508975",
                 "expireTime": "1469014575",
                 "phoneNo": "15951854983"
@@ -152,6 +159,7 @@
                 "amount": "20",
                 "refMoney": "30",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466509231",
                 "expireTime": "1469014831",
                 "phoneNo": "15951854983"
@@ -161,6 +169,7 @@
                 "amount": "20",
                 "refMoney": "30",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466509892",
                 "expireTime": "1469015492",
                 "phoneNo": "15951854983"
@@ -170,6 +179,7 @@
                 "amount": "180",
                 "refMoney": "30",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466510408",
                 "expireTime": "1469016008",
                 "phoneNo": "15951854983"
@@ -179,6 +189,7 @@
                 "amount": "5",
                 "refMoney": "0",
                 "channel": "1",
+                "lineType":"士大夫就离开",
                 "openTime": "1466513950",
                 "expireTime": "1468155550",
                 "phoneNo": "15951854983"

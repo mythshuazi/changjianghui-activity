@@ -63,7 +63,6 @@
     width:25%;
     color:#F45655;
     font-size:.7rem;
-    font-size:.7rem;
     line-height: 2.2rem;
     text-align:center;
     font-weight:bold;
@@ -86,6 +85,8 @@
   .detail{
     width:75%;
     padding-left:.8rem;
+    position: relative;
+    top: -0.1rem;
 
     h3{
       color:#323232;
@@ -100,7 +101,7 @@
 
       li{
         font-size:.3rem;
-        line-height:.4rem;
+        line-height: .5rem;
       }
     }
 

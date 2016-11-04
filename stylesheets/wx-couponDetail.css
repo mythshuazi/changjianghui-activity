@@ -73,18 +73,17 @@
   width: 25%;
   color: #F45655;
   font-size: .7rem;
-  font-size: .7rem;
   line-height: 2.2rem;
   text-align: center;
   font-weight: bold;
   position: relative;
 }
-/* line 71, ../sass/wx-couponDetail.scss */
+/* line 70, ../sass/wx-couponDetail.scss */
 .usable > li .price i, .overdue > li .price i, .used > li .price i {
   font-size: .5rem;
   font-weight: normal;
 }
-/* line 76, ../sass/wx-couponDetail.scss */
+/* line 75, ../sass/wx-couponDetail.scss */
 .usable > li .price p, .overdue > li .price p, .used > li .price p {
   font-size: 10px;
   position: absolute;
@@ -94,86 +93,88 @@
   color: #666;
   font-weight: normal;
 }
-/* line 86, ../sass/wx-couponDetail.scss */
+/* line 85, ../sass/wx-couponDetail.scss */
 .usable > li .detail, .overdue > li .detail, .used > li .detail {
   width: 75%;
   padding-left: .8rem;
+  position: relative;
+  top: -0.1rem;
 }
-/* line 90, ../sass/wx-couponDetail.scss */
+/* line 91, ../sass/wx-couponDetail.scss */
 .usable > li .detail h3, .overdue > li .detail h3, .used > li .detail h3 {
   color: #323232;
   font-size: .4rem;
   margin-bottom: .1rem;
 }
-/* line 96, ../sass/wx-couponDetail.scss */
+/* line 97, ../sass/wx-couponDetail.scss */
 .usable > li .detail ul, .overdue > li .detail ul, .used > li .detail ul {
   list-style: disc;
   list-style-position: inside;
   color: #666666;
 }
-/* line 101, ../sass/wx-couponDetail.scss */
+/* line 102, ../sass/wx-couponDetail.scss */
 .usable > li .detail ul li, .overdue > li .detail ul li, .used > li .detail ul li {
   font-size: .3rem;
-  line-height: .4rem;
+  line-height: .5rem;
 }
-/* line 107, ../sass/wx-couponDetail.scss */
+/* line 108, ../sass/wx-couponDetail.scss */
 .usable > li .detail p, .overdue > li .detail p, .used > li .detail p {
   color: #F45655;
   font-size: .3rem;
   line-height: .6rem;
 }
 
-/* line 115, ../sass/wx-couponDetail.scss */
+/* line 116, ../sass/wx-couponDetail.scss */
 .overdue > li {
   background-image: url("../images/wx-coupon/detail-bg-gray.png");
 }
-/* line 117, ../sass/wx-couponDetail.scss */
+/* line 118, ../sass/wx-couponDetail.scss */
 .overdue > li .inner {
   background: transparent url("../images/wx-coupon/overdue.png") no-repeat scroll 7.2rem 0.4rem;
   background-size: 20%;
 }
 
-/* line 122, ../sass/wx-couponDetail.scss */
+/* line 123, ../sass/wx-couponDetail.scss */
 .used > li {
   background-image: url("../images/wx-coupon/detail-bg-gray.png");
 }
-/* line 124, ../sass/wx-couponDetail.scss */
+/* line 125, ../sass/wx-couponDetail.scss */
 .used > li .inner {
   background: transparent url("../images/wx-coupon/used.png") no-repeat scroll 7.2rem 0.4rem;
   background-size: 20%;
 }
 
-/* line 130, ../sass/wx-couponDetail.scss */
+/* line 131, ../sass/wx-couponDetail.scss */
 .overdue *, .used * {
   color: #808080 !important;
 }
 
-/* line 134, ../sass/wx-couponDetail.scss */
+/* line 135, ../sass/wx-couponDetail.scss */
 .feiOil {
   background: #f44e4e url("../images/wx-coupon/feioil.jpg") no-repeat scroll 0 -0.3rem;
   background-size: 100%;
 }
-/* line 137, ../sass/wx-couponDetail.scss */
+/* line 138, ../sass/wx-couponDetail.scss */
 .feiOil .explain {
   background-color: #f14b01 !important;
 }
-/* line 140, ../sass/wx-couponDetail.scss */
+/* line 141, ../sass/wx-couponDetail.scss */
 .feiOil #nav {
   -webkit-box-shadow: 1px 1px 1px 1px #cccccc;
   -moz-box-shadow: 1px 1px 1px 1px #cccccc;
   box-shadow: 1px 1px 1px 1px #cccccc;
   margin-bottom: 4.2rem;
 }
-/* line 146, ../sass/wx-couponDetail.scss */
+/* line 147, ../sass/wx-couponDetail.scss */
 .feiOil #nav li {
   color: #fff;
   background-color: #e01a19 !important;
 }
-/* line 149, ../sass/wx-couponDetail.scss */
+/* line 150, ../sass/wx-couponDetail.scss */
 .feiOil #nav li.active {
   background-color: #f44e4e !important;
 }
-/* line 153, ../sass/wx-couponDetail.scss */
+/* line 154, ../sass/wx-couponDetail.scss */
 .feiOil .empty p {
   color: #fff !important;
 }
