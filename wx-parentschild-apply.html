@@ -17,34 +17,88 @@
 </script>
 <link rel="stylesheet" href="stylesheets/public.css">
 <link rel="stylesheet" href="stylesheets/wx-pc-apply.css">
+    <link rel="stylesheet" href="stylesheets/pop.css">
 </head>
 <body v-cloak style="border-top:1px solid transparent;position: relative;">
 <div class="mainContainer">
-    <div class="mainContent" style="padding-bottom:3rem">
+    <div class="mainContent" style="padding-bottom:3rem"><!--顺序改变-->
+        <div class="title">填写资料</div>
+        <input v-model="userName" v-on:blur="validName" type="text" class="common userName" placeholder="输入您姓名">
+        <input v-model="phoneNum" v-on:blur="validPhone" type="tel" class="common phoneNum" placeholder="输入您的手机号码">
         <input v-model="shipName" v-on:blur="validShip" type="text" class="common shipName" placeholder="输入您的船号">
-        <input v-model="userName" v-on:blur="validName" type="text" class="common userName" placeholder="输入萌宝姓名">
-        <input v-model="phoneNum" v-on:blur="validPhone" type="tel" class="common phoneNum" placeholder="输入您的联系电话">
-        <input v-model="comment" v-on:input="validComment" type="text" class="common" placeholder="输入参赛宣言（20字内）">
-        <div v-show="uploaded" class="showImg">
-            <div class="imgWrap" style="background-image: url('images/kanqizhi/attention_03.jpg')"></div>
-        </div>
-        <input @click="upload" :disabled="canUpload" type="button" class="uploadImg">
+        <!--<input v-model="comment" v-on:input="validComment" type="text" class="common" placeholder="输入参赛宣言（20字内）">-->
         <div class="note">
-            <img src="images/wx-parentsChild/parents-child_note.jpg" width="80%">
+            需上传1张大小不能超过<i>1MB</i>照片<!--改变-->
+        </div>
+        <div v-show="uploaded" class="showImg">
+            <div class="imgWrap" style="/*background-image: url('images/kanqizhi/attention_03.jpg')*/"></div>
+            <input @click="upload" :disabled="canUpload" type="button" class="uploadImg"><!--位置改变-->
         </div>
         <input @click="confirm" type="button" class="confirm">
     </div>
 </div>
 
 <div v-if="showShare" v-touch:tap="hideShare" class="share">
-    <img src="images/wx-parentsChild/share.gif" width="100%">
+    <img src="images/wx-parentsChild/share.png" width="100%"><!--图片更改-->
+</div>
+<div id="sucess" class="pop">
+    <div class="main" style="padding:0;">
+        <div class="textWrap">
+            <p class="tt">恭喜您，报名成功</p>
+            <p style="font-size:.3rem;line-height: 1.6;">
+                您提交的照片工作人员会在1-2个<br>
+                工作日内进行审核，通过后会在<br>
+                <i style="color:#FF515B">长江汇服务</i>通知您，请及时关注。
+            </p>
+        </div>
+        <i class="exit">×</i>
+    </div>
+</div>
+<div id="twoCode" class="pop">
+    <div class="main" style="padding:0;">
+        <div class="textWrap">
+            <p style="color:#F9225B;">您还没有关注长江汇服务号，关注后即</p>
+            <p style="color:#F9225B;">可参加活动咯</p>
+            <img src="images/wx-parentsChild/twoDcode.jpg">
+            <p>长按图片可识别二维码</p>
+        </div>
+        <i class="exit">×</i>
+    </div>
+</div>
+<div id="note" class="pop" style="z-index: 999;">
+    <div class="main" style="padding:0;">
+        <div class="textWrap">
+            <p class="tt"></p>
+        </div>
+        <i class="exit">×</i>
+    </div>
 </div>
 </body>
 <script src="javascripts/plugin/hammer.min.js"></script>
 <script src="javascripts/plugin/vue.js"></script>
 <script src="javascripts/plugin/vue-touch.min.js"></script>
 <script src="javascripts/plugin/vue-resource.js"></script>
+<script src="javascripts/plugin/zepto.js"></script>
+<script src="javascripts/popup.js"></script>
 <script>
+    var applySuccess = new Popup({
+        ancestor:'#sucess',
+        main:'.main',
+        exit:'.exit'
+    });
+    var note = new Popup({
+        ancestor:'#note',
+        main:'.main',
+        txtWrap:'.tt',
+        txt:'',
+        exit:'.exit'
+    });
+    var twoCode = new Popup({
+        ancestor:'#twoCode',
+        main:'.main',
+        exit:'.exit'
+    });
+    setTimeout(function(){twoCode.show()},1000);
     window.addEventListener('load', function(){
         var vm = new Vue({
             el:'body',
@@ -56,7 +110,7 @@
                 canUpload:true,
                 canConfirm:true,
                 showShare:false,
-                uploaded:false
+                uploaded:true //改变原来是false
             },
             methods: {
                 upload: function () {

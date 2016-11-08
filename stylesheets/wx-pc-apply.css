@@ -2,16 +2,16 @@
 body {
   background: url("../images/wx-parentsChild/parents-child_bg2.jpg") no-repeat scroll right bottom;
   background-size: 100%;
-  min-height: 19rem;
-  background-color: #f6e4cf;
+  min-height: 16.9rem;
+  background-color: #B0E4CD;
 }
 
-/* line 7, ../sass/wx-pc-apply.scss */
+/* line 8, ../sass/wx-pc-apply.scss */
 [v-cloak] {
   display: none;
 }
 
-/* line 8, ../sass/wx-pc-apply.scss */
+/* line 9, ../sass/wx-pc-apply.scss */
 input {
   border: 0;
   outline: 0;
@@ -20,66 +20,88 @@ input {
   margin-bottom: .5rem;
 }
 
-/* line 16, ../sass/wx-pc-apply.scss */
+/* line 17, ../sass/wx-pc-apply.scss */
 .mainContent {
-  padding-top: 2rem;
+  padding-top: 1.3rem;
 }
 
-/* line 19, ../sass/wx-pc-apply.scss */
+/* line 20, ../sass/wx-pc-apply.scss */
 .common {
-  background: transparent url("../images/wx-parentsChild/parents-text.jpg") no-repeat scroll 0 0;
   background-size: 100% 100%;
-  height: 1.4rem;
+  height: 1.1rem;
   width: 8rem;
   text-indent: .6rem;
-  color: #a0917e;
+  color: #648072;
   font-size: .5rem;
+  border: 1px solid #637F71;
+  border-radius: .1rem;
+  font-weight: bold;
+  background-color: #b0e4cd;
 }
 
-/* line 29, ../sass/wx-pc-apply.scss */
-.showImg {
-  width: 7.2rem;
-  height: 4.2rem;
-  padding: .4rem;
-  background: transparent url("../images/wx-parentsChild/parents-child_imgwrap.jpg") no-repeat scroll 0 0;
-  margin: 0 auto;
-  background-size: 100% 100%;
+/* line 32, ../sass/wx-pc-apply.scss */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-size: .45rem;
+  color: #85AA98;
+  font-weight: normal;
 }
-/* line 37, ../sass/wx-pc-apply.scss */
+
+/* line 39, ../sass/wx-pc-apply.scss */
+.showImg {
+  width: 8rem;
+  height: 4.8rem;
+  margin: 0 auto;
+  border: 1px solid #637F71;
+  border-radius: .1rem;
+  background: #f7f8f3 url("../images/wx-parentsChild/headbg.jpg") no-repeat scroll 50% 50%;
+  background-size: contain;
+  margin-top: .5rem;
+  position: relative;
+}
+/* line 50, ../sass/wx-pc-apply.scss */
 .showImg .imgWrap {
-  height: 4.2rem;
+  height: 4.8rem;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 50%;
 }
 
-/* line 45, ../sass/wx-pc-apply.scss */
+/* line 58, ../sass/wx-pc-apply.scss */
 .uploadImg {
-  width: 3.5rem;
-  height: 1.2rem;
-  background: transparent url("../images/wx-parentsChild/parents-child_upload.jpg") no-repeat scroll 0 0;
-  background-size: 100%;
+  position: absolute;
+  top: 1.7rem;
+  left: 3.2rem;
+  width: 1.8rem;
+  height: 2rem;
+  background: transparent url(../images/wx-parentsChild/parents-child_upload.png) no-repeat scroll 0 0;
+  background-size: contain;
   margin-top: .4rem;
   margin-bottom: .2rem;
 }
 
-/* line 54, ../sass/wx-pc-apply.scss */
-.note img {
-  display: block;
-  margin: 0 auto;
+/* line 69, ../sass/wx-pc-apply.scss */
+.note {
+  text-align: center;
+  color: #637F71;
+  font-size: .45rem;
+}
+/* line 73, ../sass/wx-pc-apply.scss */
+.note i {
+  color: #F9245E;
 }
 
-/* line 60, ../sass/wx-pc-apply.scss */
+/* line 78, ../sass/wx-pc-apply.scss */
 .confirm {
-  background: transparent url("../images/wx-parentsChild/parents-child_confirm.jpg") no-repeat scroll 0 0;
+  background: transparent url(../images/wx-parentsChild/parents-child_confirm.jpg) no-repeat scroll 0 0;
   background-size: 100% 100%;
-  width: 5rem;
-  height: 2rem;
+  width: 8rem;
+  height: 1.35rem;
   margin-top: 1rem;
   margin-bottom: 0;
 }
 
-/* line 69, ../sass/wx-pc-apply.scss */
+/* line 87, ../sass/wx-pc-apply.scss */
 .share {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -87,10 +109,113 @@ input {
   width: 100%;
   bottom: 0;
 }
-/* line 75, ../sass/wx-pc-apply.scss */
+/* line 93, ../sass/wx-pc-apply.scss */
 .share img {
   position: relative;
   top: 1rem;
+}
+
+/* line 99, ../sass/wx-pc-apply.scss */
+.title {
+  background: transparent url("../images/wx-parentsChild/title.png") no-repeat scroll 0 0;
+  background-size: auto 100%;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  color: #fff;
+  font-size: .6rem;
+  margin-bottom: 1.2rem;
+  text-indent: .6rem;
+}
+
+/* line 109, ../sass/wx-pc-apply.scss */
+.pop {
+  z-index: 999;
+}
+/* line 111, ../sass/wx-pc-apply.scss */
+.pop .main {
+  background-image: url("../images/wx-parentsChild/pop.png"), url("../images/wx-parentsChild/pop2.png");
+  background-repeat: no-repeat,no-repeat;
+  background-position: left top, left bottom;
+  background-size: 100% auto,100% auto;
+  height: 8rem;
+  overflow: visible !important;
+  display: box;
+  /* OLD - Android 4.4- */
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  /* 09 */
+  -webkit-box-orient: horizontal;
+  /* 12 */
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  /* 09 */
+  -webkit-box-align: center;
+  /* 12 */
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+/* line 149, ../sass/wx-pc-apply.scss */
+.pop .textWrap {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: .5rem;
+  position: relative;
+}
+/* line 158, ../sass/wx-pc-apply.scss */
+.pop .exit {
+  color: transparent !important;
+  background: transparent url("../images/wx-parentsChild/exit.png") no-repeat scroll 0 0;
+  background-size: 100%;
+  top: -1.4rem !important;
+  right: 0 !important;
+  height: 1rem !important;
+  width: .8rem;
+}
+
+/* line 171, ../sass/wx-pc-apply.scss */
+.pop .textWrap .tt {
+  color: #FF515B;
+  font-size: .54rem;
+  font-weight: bold;
+}
+/* line 176, ../sass/wx-pc-apply.scss */
+.pop .textWrap .tt:before {
+  content: ".";
+  color: transparent;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  top: -0.1rem;
+  background: transparent url("../images/wx-parentsChild/lip.png") no-repeat scroll 0 0;
+  background-size: 100%;
+  margin-right: .3rem;
+}
+
+/* line 193, ../sass/wx-pc-apply.scss */
+#twoCode img {
+  display: block;
+  width: 76%;
+  margin: 0 auto;
+}
+/* line 198, ../sass/wx-pc-apply.scss */
+#twoCode .textWrap {
+  font-size: .3rem;
 }
 
 /*# sourceMappingURL=wx-pc-apply.css.map */

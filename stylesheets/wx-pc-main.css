@@ -12,22 +12,21 @@ img {
 
 /* line 9, ../sass/wx-pc-main.scss */
 body {
-  background-color: #f7e5d1;
+  background-color: #9CDFE5;
 }
 
 /* line 12, ../sass/wx-pc-main.scss */
 .mainContainer {
-  padding-bottom: 5rem;
-  background: #f7e5d1 url("../images/wx-parentsChild/parents-child_bg.jpg") no-repeat scroll 0 bottom;
-  background-size: 100%;
+  padding-bottom: 1.2rem;
+  background-color: #9CDFE5;
 }
 
-/* line 17, ../sass/wx-pc-main.scss */
+/* line 16, ../sass/wx-pc-main.scss */
 #top {
   position: relative;
 }
 
-/* line 21, ../sass/wx-pc-main.scss */
+/* line 20, ../sass/wx-pc-main.scss */
 .ruleBtn {
   width: 2.5rem;
   height: 1rem;
@@ -38,63 +37,73 @@ body {
   background-size: 100%;
 }
 
-/* line 30, ../sass/wx-pc-main.scss */
-.apply {
+/* line 31, ../sass/wx-pc-main.scss */
+.apply a {
   display: block;
-  width: 100%;
+  height: 1.3rem;
+  width: 3.8rem;
+  margin: 0 auto;
   background: url("../images/wx-parentsChild/main-apply-btn.jpg") no-repeat scroll 0 0;
-  background-size: 100%;
-  height: 3.5rem;
+  background-size: 100% 100%;
+  margin-top: 1rem;
+  margin-bottom: .8rem;
 }
 
-/* line 37, ../sass/wx-pc-main.scss */
+/* line 42, ../sass/wx-pc-main.scss */
 .searchWrap {
   position: relative;
-  width: 90%;
+  width: 91%;
   margin: 0 auto;
-  height: 1.7rem;
+  height: 1.3rem;
   background: url("../images/wx-parentsChild/parents-child_search.jpg") no-repeat scroll 0 0;
   background-size: 100%;
 }
-/* line 45, ../sass/wx-pc-main.scss */
+/* line 50, ../sass/wx-pc-main.scss */
 .searchWrap [type=number] {
-  width: 5.5rem;
-  height: 1rem;
+  width: 5.1rem;
+  height: .86rem;
   position: relative;
-  left: .65rem;
-  top: .2rem;
+  left: .9rem;
+  top: .32rem;
   background: transparent;
-  font-size: .5rem;
+  font-size: .34rem;
 }
-/* line 54, ../sass/wx-pc-main.scss */
+/* line 59, ../sass/wx-pc-main.scss */
 .searchWrap .searchBtn {
-  width: 2rem;
-  height: 1.3rem;
+  width: 2.9rem;
+  height: 1rem;
+  top: .23rem;
   position: absolute;
   right: 0;
   background-color: transparent;
 }
 
-/* line 64, ../sass/wx-pc-main.scss */
+/* line 70, ../sass/wx-pc-main.scss */
 .gallery ul {
-  padding-right: .2rem;
+  padding: .25rem;
+  padding-top: 0;
 }
-/* line 67, ../sass/wx-pc-main.scss */
+/* line 74, ../sass/wx-pc-main.scss */
 .gallery li {
   float: left;
-  width: 4.5rem;
-  margin-left: .3rem;
+  width: 4.65rem;
   border-radius: .2rem;
   position: relative;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
-/* line 75, ../sass/wx-pc-main.scss */
+/* line 81, ../sass/wx-pc-main.scss */
+.gallery li:nth-of-type(2n+1) {
+  margin-right: .2rem;
+}
+/* line 85, ../sass/wx-pc-main.scss */
 .gallery li .content {
   position: relative;
-  height: 6.8rem;
   z-index: 9;
+  background-color: #fff;
+  border-radius: 3px;
+  padding-bottom: .3rem;
 }
-/* line 80, ../sass/wx-pc-main.scss */
+/* line 92, ../sass/wx-pc-main.scss */
 .gallery li .border {
   border: 0.08rem solid #664C27;
   height: 5rem;
@@ -106,113 +115,123 @@ body {
   background-color: #F7E7D7;
 }
 
-/* line 93, ../sass/wx-pc-main.scss */
+/* line 105, ../sass/wx-pc-main.scss */
 .wrap {
   position: relative;
 }
 
-/* line 97, ../sass/wx-pc-main.scss */
+/* line 109, ../sass/wx-pc-main.scss */
 .rahmen {
-  width: 4.16rem;
+  width: 100%;
   margin: 0 auto;
-  background-color: #F7E7D7;
+  box-sizing: border-box;
+  padding-top: .15rem;
 }
 
-/* line 102, ../sass/wx-pc-main.scss */
+/* line 115, ../sass/wx-pc-main.scss */
 .photo {
   display: block;
-  width: 4rem;
-  height: 3rem;
-  border: .08rem solid #664C27;
+  width: 4.3rem;
+  height: 3.15rem;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: 50% 50%;
   margin: 0 auto;
-  border-radius: .2rem;
 }
 
-/* line 114, ../sass/wx-pc-main.scss */
+/* line 125, ../sass/wx-pc-main.scss */
 .info {
-  background: url("../images/wx-parentsChild/item.png") no-repeat scroll 0 0;
   background-size: 100%;
-  height: 1.6rem;
-  position: absolute;
   width: 100%;
-  bottom: -1rem;
 }
-/* line 122, ../sass/wx-pc-main.scss */
+/* line 132, ../sass/wx-pc-main.scss */
 .info p {
   text-align: center;
-  color: #654B26;
   font-size: .35rem;
-  font-weight: bold;
-  position: relative;
-  top: .5rem;
   line-height: .44rem;
 }
-
-/* line 133, ../sass/wx-pc-main.scss */
-.vote {
-  width: 3.5rem;
-  height: 1.1rem;
-  background: url("../images/wx-parentsChild/parents-child_vote.jpg") no-repeat scroll 0 0;
-  background-size: 100%;
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  bottom: .3rem;
-  left: .5rem;
+/* line 137, ../sass/wx-pc-main.scss */
+.info p.name {
+  color: #FF515A;
+  font-size: .45rem;
+  line-height: .8rem;
+}
+/* line 143, ../sass/wx-pc-main.scss */
+.info p.count {
+  color: #3A3A3A;
+}
+/* line 146, ../sass/wx-pc-main.scss */
+.info p.count i {
+  border-bottom: 1px solid #3a3a3a;
 }
 
-/* line 145, ../sass/wx-pc-main.scss */
+/* line 153, ../sass/wx-pc-main.scss */
+.vote {
+  width: 4rem;
+  height: .88rem;
+  background: url("../images/wx-parentsChild/parents-child_vote.jpg") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  display: block;
+  margin: 0 auto;
+  margin-top: .25rem;
+}
+
+/* line 166, ../sass/wx-pc-main.scss */
 .num {
   position: absolute;
   top: -0.8rem;
-  right: 1.6rem;
+  right: 1.5rem;
   font-size: .5rem;
   font-weight: bold;
-  color: #fff;
-  background-color: #664c27;
+  color: #0C6971;
+  background-color: #fff;
   height: .8rem;
-  width: 1.4rem;
+  width: 1.6rem;
   text-align: center;
   line-height: 1.1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
 
-/* line 161, ../sass/wx-pc-main.scss */
+/* line 182, ../sass/wx-pc-main.scss */
 .comment {
   padding: 0 .1rem;
   font-size: 12px;
-  line-height: 16px;
-  height: 32px;
+  line-height: 20px;
   overflow: hidden;
-  position: relative;
-  top: 1.1rem;
-  color: #0F9DB3;
   text-align: center;
+  position: absolute;
+  top: .3rem;
+  left: .3rem;
+  color: #fff;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(0.8);
+  transform-origin: left;
+  -webkit-transform-origin: left;
 }
 
-/* line 173, ../sass/wx-pc-main.scss */
+/* line 201, ../sass/wx-pc-main.scss */
 .pop .main {
   padding: 0 !important;
 }
 
-/* line 182, ../sass/wx-pc-main.scss */
+/* line 210, ../sass/wx-pc-main.scss */
 .result li .content {
   height: 5.8rem !important;
 }
-/* line 185, ../sass/wx-pc-main.scss */
+/* line 213, ../sass/wx-pc-main.scss */
 .result li .border {
   height: 4rem !important;
 }
-/* line 189, ../sass/wx-pc-main.scss */
+/* line 217, ../sass/wx-pc-main.scss */
 .result ul {
   margin-top: -0.8rem;
 }
 
-/* line 193, ../sass/wx-pc-main.scss */
+/* line 221, ../sass/wx-pc-main.scss */
 .order {
   background-image: url("../images/wx-parentsChild/res-star-l.jpg"), url("../images/wx-parentsChild/res-star-r.jpg");
   background-position: 10% 50%, 90% 50%;
@@ -226,12 +245,12 @@ body {
   font-size: .55rem;
   line-height: 1rem;
 }
-/* line 205, ../sass/wx-pc-main.scss */
+/* line 233, ../sass/wx-pc-main.scss */
 .order i {
   font-size: .45rem;
 }
 
-/* line 210, ../sass/wx-pc-main.scss */
+/* line 238, ../sass/wx-pc-main.scss */
 .lucky .order {
   background-image: url("../images/wx-parentsChild/res-star-l.jpg"), url("../images/wx-parentsChild/res-star-r.jpg");
   background-position: 5% 50%, 95% 50%;
@@ -240,27 +259,27 @@ body {
   font-size: .43rem;
 }
 
-/* line 219, ../sass/wx-pc-main.scss */
+/* line 247, ../sass/wx-pc-main.scss */
 .win li:nth-of-type(1) .order, .win li:nth-of-type(2) .order, .win li:nth-of-type(3) .order {
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
-/* line 227, ../sass/wx-pc-main.scss */
+/* line 255, ../sass/wx-pc-main.scss */
 .win li:nth-of-type(1) .order {
   background-image: url("../images/wx-parentsChild/res-one.jpg");
 }
-/* line 234, ../sass/wx-pc-main.scss */
+/* line 262, ../sass/wx-pc-main.scss */
 .win li:nth-of-type(2) .order {
   background-image: url("../images/wx-parentsChild/res-two.jpg");
 }
-/* line 241, ../sass/wx-pc-main.scss */
+/* line 269, ../sass/wx-pc-main.scss */
 .win li:nth-of-type(3) .order {
   background-image: url("../images/wx-parentsChild/res-three.jpg");
 }
 
-/* line 248, ../sass/wx-pc-main.scss */
+/* line 276, ../sass/wx-pc-main.scss */
 .about {
   color: #CF0600;
   text-align: center;
@@ -270,9 +289,109 @@ body {
   margin-top: 1rem;
 }
 
-/* line 256, ../sass/wx-pc-main.scss */
+/* line 284, ../sass/wx-pc-main.scss */
 img.title {
   margin: 1.2rem 0 .2rem;
+}
+
+/* line 287, ../sass/wx-pc-main.scss */
+.empty {
+  display: none;
+  color: #0C6971;
+  font-size: .4rem;
+  text-align: center;
+  margin-top: .3rem;
+}
+
+/* line 294, ../sass/wx-pc-main.scss */
+.pop {
+  z-index: 999;
+}
+/* line 296, ../sass/wx-pc-main.scss */
+.pop .main {
+  background-image: url("../images/wx-parentsChild/pop.png"), url("../images/wx-parentsChild/pop2.png");
+  background-repeat: no-repeat,no-repeat;
+  background-position: left top, left bottom;
+  background-size: 100% auto,100% auto;
+  height: 8rem;
+  overflow: visible !important;
+  display: box;
+  /* OLD - Android 4.4- */
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  /* 09 */
+  -webkit-box-orient: horizontal;
+  /* 12 */
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  /* 09 */
+  -webkit-box-align: center;
+  /* 12 */
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+/* line 334, ../sass/wx-pc-main.scss */
+.pop .textWrap {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: .5rem;
+  position: relative;
+}
+/* line 343, ../sass/wx-pc-main.scss */
+.pop .exit {
+  color: transparent !important;
+  background: transparent url("../images/wx-parentsChild/exit.png") no-repeat scroll 0 0;
+  background-size: 100%;
+  top: -1.4rem !important;
+  right: 0 !important;
+  height: 1rem !important;
+  width: .8rem;
+}
+
+/* line 356, ../sass/wx-pc-main.scss */
+.pop .textWrap .tt {
+  color: #FF515B;
+  font-size: .54rem;
+  font-weight: bold;
+}
+/* line 361, ../sass/wx-pc-main.scss */
+.pop .textWrap .tt:before {
+  content: ".";
+  color: transparent;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  top: -0.1rem;
+  background: transparent url("../images/wx-parentsChild/lip.png") no-repeat scroll 0 0;
+  background-size: 100%;
+  margin-right: .3rem;
+}
+
+/* line 378, ../sass/wx-pc-main.scss */
+#twoCode img {
+  display: block;
+  width: 76%;
+  margin: 0 auto;
+}
+/* line 383, ../sass/wx-pc-main.scss */
+#twoCode .textWrap {
+  font-size: .3rem;
 }
 
 /*# sourceMappingURL=wx-pc-main.css.map */
