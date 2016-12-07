@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* 字体 (参数$font-size，是效果图中的尺寸) */
+/* 我们项目的视觉稿为750px */
+/*$rem-baseline: 75px !default;*/
+/* 我们项目的视觉稿为1080px*/
+/*$rem-baseline: 108*1.15px !default;*/
+/* rem */
+/* line 2, ../sass/ribbon.scss */
+body {
+  font-size: 0.11111rem;
+  font-family: "microsoft yahei", 瀹嬩綋, sans-serif;
+  line-height: 1.4;
+}
+
+/* line 8, ../sass/ribbon.scss */
+img {
+  display: block;
+}
+
+/* line 12, ../sass/ribbon.scss */
+.ribbon {
+  background: transparent url("../images/wx-bargain/ribbon.png");
+}
+
+/*# sourceMappingURL=ribbon.css.map */

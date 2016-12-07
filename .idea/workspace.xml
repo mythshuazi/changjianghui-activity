@@ -2,59 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35458b79-421a-4b42-b914-3a043a3f8db4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/act-childGuide/cloud.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/act-childGuide/top_02.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/act-turnplate.rar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/item.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/main-top.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/null.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_download.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_imgwrap.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_note.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_rule.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_upload.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-text.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/res-01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/res-02.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/res-03.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/res-lucky.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/res-one.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/res-star-l.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/res-star-r.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/res-three.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/res-two.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/share.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/vote_success.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/vote_success2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/wx-parentsChild/vote_yet.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/fabd89737d2ef64ee2a8b2acb696707ade7ee1f3/wx-pc-apply.scssc" afterPath="$PROJECT_DIR$/.sass-cache/fabd89737d2ef64ee2a8b2acb696707ade7ee1f3/wx-pc-apply.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/act-double11.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/act-solicit-article.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/act-turnplate-illustrate.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sass/act-double11.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sass/bargain.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sass/bargin-goods.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wx-bargain-help.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wx-bargain-index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wx-bargain-result.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wx-bargin-goods.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/act-childGuide.rar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/fabd89737d2ef64ee2a8b2acb696707ade7ee1f3/wx-pc-main.scssc" afterPath="$PROJECT_DIR$/.sass-cache/fabd89737d2ef64ee2a8b2acb696707ade7ee1f3/wx-pc-main.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-childGuide/bottom.jpg" afterPath="$PROJECT_DIR$/images/act-childGuide/bottom.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-childGuide/step_01.jpg" afterPath="$PROJECT_DIR$/images/act-childGuide/step_01.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-childGuide/step_02.jpg" afterPath="$PROJECT_DIR$/images/act-childGuide/step_02.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-childGuide/step_03.jpg" afterPath="$PROJECT_DIR$/images/act-childGuide/step_03.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-childGuide/top_01.jpg" afterPath="$PROJECT_DIR$/images/act-childGuide/top_01.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-childGuide/twocode.jpg" afterPath="$PROJECT_DIR$/images/act-childGuide/twocode.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/wx-parentsChild/main-apply-btn.jpg" afterPath="$PROJECT_DIR$/images/wx-parentsChild/main-apply-btn.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_bg2.jpg" afterPath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_bg2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_confirm.jpg" afterPath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_confirm.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_search.jpg" afterPath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_search.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_vote.jpg" afterPath="$PROJECT_DIR$/images/wx-parentsChild/parents-child_vote.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/wx-parentsChild/rulebtn_04.png" afterPath="$PROJECT_DIR$/images/wx-parentsChild/rulebtn_04.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/wx-parentsChild/twoDcode.jpg" afterPath="$PROJECT_DIR$/images/wx-parentsChild/twoDcode.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-charge/recharge_01.jpg" afterPath="$PROJECT_DIR$/images/act-charge/recharge_01.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-charge/recharge_03.jpg" afterPath="$PROJECT_DIR$/images/act-charge/recharge_03.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-charge/recharge_04.jpg" afterPath="$PROJECT_DIR$/images/act-charge/recharge_04.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-charge/recharge_05.jpg" afterPath="$PROJECT_DIR$/images/act-charge/recharge_05.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-charge/recharge_06.jpg" afterPath="$PROJECT_DIR$/images/act-charge/recharge_06.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/act-seckill/head.jpg" afterPath="$PROJECT_DIR$/images/act-seckill/head.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/act-childGuide.html" afterPath="$PROJECT_DIR$/act-childGuide.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/wx-pc-apply.scss" afterPath="$PROJECT_DIR$/sass/wx-pc-apply.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/act-charge.html" afterPath="$PROJECT_DIR$/act-charge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/act-seckill.html" afterPath="$PROJECT_DIR$/act-seckill.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/wx-pc-main.scss" afterPath="$PROJECT_DIR$/sass/wx-pc-main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheets/wx-pc-apply.css" afterPath="$PROJECT_DIR$/stylesheets/wx-pc-apply.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheets/wx-pc-apply.css.map" afterPath="$PROJECT_DIR$/stylesheets/wx-pc-apply.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheets/wx-pc-main.css" afterPath="$PROJECT_DIR$/stylesheets/wx-pc-main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheets/wx-pc-main.css.map" afterPath="$PROJECT_DIR$/stylesheets/wx-pc-main.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wx-parentschild-apply.html" afterPath="$PROJECT_DIR$/wx-parentschild-apply.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wx-parentschild-main.html" afterPath="$PROJECT_DIR$/wx-parentschild-main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wx-parentschild-over.html" afterPath="$PROJECT_DIR$/wx-parentschild-over.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wx-parentschild-rule.html" afterPath="$PROJECT_DIR$/wx-parentschild-rule.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wx-parentschild-result.html" afterPath="$PROJECT_DIR$/wx-parentschild-result.html" />
     </list>
     <ignored path="changjianghui-activity.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,105 +47,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="wx-parentschild-main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wx-parentschild-main.html">
+      <file leaf-file-name="wx-bargain-index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wx-bargain-index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.172414">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            <state vertical-scroll-proportion="-14.172414">
+              <caret line="74" column="91" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="91" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wx-pc-main.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/wx-pc-main.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="155" column="43" selection-start-line="155" selection-start-column="43" selection-end-line="155" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wx-parentschild-apply.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wx-parentschild-apply.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="166" column="42" selection-start-line="166" selection-start-column="42" selection-end-line="166" selection-end-column="42" />
-              <folding>
+                <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#p#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#5136#5595#0" expanded="false" />
+                <element signature="e#5626#6370#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wx-parentschild-rule.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wx-parentschild-rule.html">
+      <file leaf-file-name="wx-bargin-goods.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wx-bargin-goods.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.036101084">
-              <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.42595977">
+              <caret line="111" column="94" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="94" />
               <folding>
-                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#5815#7111#0" expanded="false" />
+                <element signature="e#7918#9402#0" expanded="false" />
+                <element signature="e#9486#11583#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wx-parentschild-result.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wx-parentschild-result.html">
+      <file leaf-file-name="wx-bargain-help.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wx-bargain-help.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6896552">
-              <caret line="12" column="87" selection-start-line="12" selection-start-column="85" selection-end-line="12" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wx-parentschild-over.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wx-parentschild-over.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.862069">
-              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="act-childGuide.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/act-childGuide.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="177" column="16" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="16" />
+            <state vertical-scroll-proportion="-7.448276">
+              <caret line="24" column="65" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="65" />
               <folding>
-                <element signature="n#style#0;n#p#1;n#div#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wx-pc-apply.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/wx-pc-apply.scss">
+      <file leaf-file-name="wx-bargain-result.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wx-bargain-result.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="99" column="2" selection-start-line="99" selection-start-column="2" selection-end-line="105" selection-end-column="43" />
-              <folding />
+            <state vertical-scroll-proportion="-59.206898">
+              <caret line="102" column="68" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
+              <folding>
+                <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bargain.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sass/bargain.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="8.016949">
+              <caret line="481" column="28" selection-start-line="481" selection-start-column="28" selection-end-line="481" selection-end-column="28" />
+              <folding>
+                <element signature="e#913#1296#0" expanded="false" />
+                <element signature="e#1326#1382#0" expanded="false" />
+                <element signature="e#2011#2179#0" expanded="false" />
+                <element signature="e#2189#2226#0" expanded="false" />
+                <element signature="e#2241#2282#0" expanded="false" />
+                <element signature="e#2292#2472#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -196,22 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sass/act-kids.scss" />
-        <option value="$PROJECT_DIR$/gameRank.html" />
-        <option value="$PROJECT_DIR$/sass/travel-list01.scss" />
-        <option value="$PROJECT_DIR$/act-presell.html" />
-        <option value="$PROJECT_DIR$/sass/act-presell.scss" />
-        <option value="$PROJECT_DIR$/act-seckill.html" />
-        <option value="$PROJECT_DIR$/hb_share.html" />
-        <option value="$PROJECT_DIR$/sass/travel-index.scss" />
-        <option value="$PROJECT_DIR$/act-midAutumn.html" />
-        <option value="$PROJECT_DIR$/sass/act-midAutumn.scss" />
-        <option value="$PROJECT_DIR$/travel-index.html" />
-        <option value="$PROJECT_DIR$/travel-list01.html" />
-        <option value="$PROJECT_DIR$/travel-list02.html" />
-        <option value="$PROJECT_DIR$/travel-recommend.html" />
-        <option value="$PROJECT_DIR$/sass/travel-recommend.scss" />
-        <option value="$PROJECT_DIR$/sass/travel-common.scss" />
         <option value="$PROJECT_DIR$/travel-detail.html" />
         <option value="$PROJECT_DIR$/sass/travel-detail.scss" />
         <option value="$PROJECT_DIR$/act-invite-guide.html" />
@@ -239,14 +171,30 @@
         <option value="$PROJECT_DIR$/sass/oneyuan.scss" />
         <option value="$PROJECT_DIR$/sass/wx-couponDetail.scss" />
         <option value="$PROJECT_DIR$/wx-couponDetail.html" />
-        <option value="$PROJECT_DIR$/act-charge.html" />
         <option value="$PROJECT_DIR$/wx-parentschild-over.html" />
         <option value="$PROJECT_DIR$/wx-parentschild-main.html" />
         <option value="$PROJECT_DIR$/sass/wx-pc-apply.scss" />
         <option value="$PROJECT_DIR$/wx-parentschild-apply.html" />
         <option value="$PROJECT_DIR$/act-childGuide.html" />
         <option value="$PROJECT_DIR$/wx-parentschild-rule.html" />
+        <option value="$PROJECT_DIR$/sass/_convertUnit.scss" />
+        <option value="$PROJECT_DIR$/act-seckill.html" />
+        <option value="$PROJECT_DIR$/act-double11.html" />
+        <option value="$PROJECT_DIR$/sass/act-double11.scss" />
         <option value="$PROJECT_DIR$/sass/wx-pc-main.scss" />
+        <option value="$PROJECT_DIR$/wx-parentschild-result.html" />
+        <option value="$PROJECT_DIR$/act-charge.html" />
+        <option value="$PROJECT_DIR$/act-turnplate-illustrate.html" />
+        <option value="$PROJECT_DIR$/act-solicit-article.html" />
+        <option value="$PROJECT_DIR$/wx-bargain.html" />
+        <option value="$PROJECT_DIR$/javascripts/plugin/flexible_css.js,flexible.js" />
+        <option value="$PROJECT_DIR$/sass/ribbon.scss" />
+        <option value="$PROJECT_DIR$/javascripts/plugin/dropload.js" />
+        <option value="$PROJECT_DIR$/wx-bargain-help.html" />
+        <option value="$PROJECT_DIR$/sass/bargain.scss" />
+        <option value="$PROJECT_DIR$/wx-bargin-goods.html" />
+        <option value="$PROJECT_DIR$/wx-bargain-result.html" />
+        <option value="$PROJECT_DIR$/wx-bargain-index.html" />
       </list>
     </option>
   </component>
@@ -302,8 +250,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -331,7 +279,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="D:\Program Files\nodejs\node.exe" />
     <property name="SearchEverywhereHistoryKey" value="苹果&#9;null&#9;null&#10;jiayouba&#9;FILE&#9;file://F:/wwwroot/changjianghui-activity/stylesheets/activity-jiayouba.css&#10;加油&#9;null&#9;null&#10;jyb_guide_03&#9;FILE&#9;file://F:/wwwroot/changjianghui-activity/images/jiayouba/jyb_guide_03.jpg&#10;微信&#9;null&#9;null&#10;property change&#9;null&#9;null" />
@@ -406,26 +354,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19642857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19619326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32598424" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789558" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31811023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31973898" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -441,211 +389,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gameIndex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8288288">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/gameAbout.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.4864864">
-          <caret line="180" column="3" selection-start-line="180" selection-start-column="3" selection-end-line="180" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/gameRank.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036036037">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/typescriptCompiler/external/lib.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6415094">
-          <caret line="5147" column="4" selection-start-line="5147" selection-start-column="4" selection-end-line="5147" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascripts/plugin/swiper-3.3.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3327616">
-          <caret line="14" column="29448" selection-start-line="14" selection-start-column="29448" selection-end-line="14" selection-end-column="29448" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/转盘/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6137184">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-kids.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.137184">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/ggl_share.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="64" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ggl-share.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.5172415">
-          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-ship.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7383015">
-          <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/act-sevenday.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.2287693">
-          <caret line="122" column="44" selection-start-line="122" selection-start-column="44" selection-end-line="122" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-sevenday.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-public-share.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-salePrefecture.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascripts/plugin/scrollLoading.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0330033">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-preheat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-midAutumn.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.965517">
-          <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-likeshare.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-58.62069">
-          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-jiadian.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.0">
-          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-iphone.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5862069">
-          <caret line="37" column="70" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-hotList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/act-winlist.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7677643">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/travel-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9809359">
-          <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/wx-myOrder.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/act-shipking.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036036037">
-          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/act-shipking.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.036036037">
           <caret line="73" column="45" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-seckill.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/act-turnplate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7117117">
-          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -723,20 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/act-charge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5315315">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wx-order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036036037">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cjhb_action.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -744,89 +482,306 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wx-parentschild-over.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0990991">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sass/wx-pc-apply.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.036036037">
           <caret line="99" column="2" selection-start-line="99" selection-start-column="2" selection-end-line="105" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-boot.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-public-share.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-likeshare.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036036037">
+          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ggl-share.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6918919">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-water.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.855856">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-childGuide.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0270271">
+          <caret line="177" column="16" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/_convertUnit.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-jiadian.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wx-parentschild-rule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04144144">
+          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity-kanqizhi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-double11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.48276">
+          <caret line="182" column="14" selection-start-line="182" selection-start-column="14" selection-end-line="182" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/act-double11.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6896552">
+          <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity-popularize.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="18.62069">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity-kanqizhi_result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6896552">
+          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/plugin/scrollLoading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/kanqizhi/attention_03.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/wx-pc-main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="302" column="15" selection-start-line="302" selection-start-column="15" selection-end-line="302" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-seckill.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036036037">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-turnplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3963964">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-solicit-article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.172414">
+          <caret line="31" column="94" selection-start-line="31" selection-start-column="94" selection-end-line="31" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-charge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.072072074">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="4" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/act-turnplate-illustrate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036036037">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="6" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wx-parentschild-result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3333334">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/plugin/flexible_css.js,flexible.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="3059" selection-start-line="0" selection-start-column="3059" selection-end-line="0" selection-end-column="3059" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/bargin-goods.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wx-parentschild-main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5805893">
+          <caret line="90" column="34" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/plugin/dropload.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3333333">
+          <caret line="5" column="162" selection-start-line="5" selection-start-column="152" selection-end-line="5" selection-end-column="162" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wx-parentschild-apply.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="166" column="42" selection-start-line="166" selection-start-column="42" selection-end-line="166" selection-end-column="42" />
+        <state vertical-scroll-proportion="-2.4610052">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/plugin/dropload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22916667">
+          <caret line="276" column="4" selection-start-line="276" selection-start-column="4" selection-end-line="276" selection-end-column="4" />
           <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wx-order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="168.89655">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wx-bargain-help.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.448276">
+          <caret line="24" column="65" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#p#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/act-childGuide.html">
+    <entry file="file://$PROJECT_DIR$/sass/bargain.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="177" column="16" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="16" />
+        <state vertical-scroll-proportion="8.016949">
+          <caret line="481" column="28" selection-start-line="481" selection-start-column="28" selection-end-line="481" selection-end-column="28" />
           <folding>
-            <element signature="n#style#0;n#p#1;n#div#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#913#1296#0" expanded="false" />
+            <element signature="e#1326#1382#0" expanded="false" />
+            <element signature="e#2011#2179#0" expanded="false" />
+            <element signature="e#2189#2226#0" expanded="false" />
+            <element signature="e#2241#2282#0" expanded="false" />
+            <element signature="e#2292#2472#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/wx-pc-main.scss">
+    <entry file="file://$PROJECT_DIR$/wx-bargain-result.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="155" column="43" selection-start-line="155" selection-start-column="43" selection-end-line="155" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wx-parentschild-result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6896552">
-          <caret line="12" column="87" selection-start-line="12" selection-start-column="85" selection-end-line="12" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wx-parentschild-over.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.862069">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wx-parentschild-main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.172414">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        <state vertical-scroll-proportion="-59.206898">
+          <caret line="102" column="68" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wx-parentschild-rule.html">
+    <entry file="file://$PROJECT_DIR$/wx-bargain-index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036101084">
-          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+        <state vertical-scroll-proportion="-14.172414">
+          <caret line="74" column="91" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="91" />
           <folding>
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5136#5595#0" expanded="false" />
+            <element signature="e#5626#6370#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wx-bargin-goods.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42595977">
+          <caret line="111" column="94" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5815#7111#0" expanded="false" />
+            <element signature="e#7918#9402#0" expanded="false" />
+            <element signature="e#9486#11583#0" expanded="false" />
           </folding>
         </state>
       </provider>

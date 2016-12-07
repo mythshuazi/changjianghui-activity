@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>砍价结果页</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+    <link rel="stylesheet" href="stylesheets/bargain.css?v=2">
+    <script src="javascripts/plugin/flexible_css.js,flexible.js"></script>
+</head>
+<body v-cloak id="main" class="main help" style="height:100%;">
+    <div class="container" style="height:100%;overflow:scroll;-webkit-overflow-scrolling:touch">
+    <header>
+        <img src="images/wx-bargain/top.jpg" width="100%">
+        <div class="ribbon">2016.12.01-2016.12.31</div>
+        <span class="btn-rule" v-touch:tap="showPopRule=true">活动规则</span>
+    </header>
+    <main>
+        <div class="from">
+            <p>你，{{next_nickname}} 等</p>
+            <p>总共为 <i>{{nickname}}</i> 砍了 <i>{{all_price}}</i> 元</p>
+
+            <span class="btn-join" v-touch:tap="goToIndex"></span>
+        </div>
+        <div class="its-goods">
+            <!--<p><span>TA在砍价的商品为</span></p>-->
+            <div class="goods-about">
+                <div class="goods-pic">
+                    <img class="default" :src="big_pic" @error="big_pic = ''">
+                </div>
+                <div class="goods-info">
+                    <p class="goods-name">{{bargain_name}}</p>
+                    <div class="price">
+                        <p class="original">原价：<i>¥{{refer_price}}</i></p>
+                        <p class="mini">最低可砍至 ¥<i>{{bargain_price}}</i></p>
+                    </div>
+                </div>
+                <div class="result">
+                    <p>Ta的专享价：<i>¥{{refer_price-all_price}}</i></p>
+                    <p>共砍了：<i>¥{{all_price}}</i></p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+    <!--规则弹窗-->
+    <div class="pop rule" v-show="showPopRule" v-touch:tap="closePop($event,'showPopRule')">
+        <div class="content">
+            <p class="f-red">活动规则</p>
+
+            <span class="close" v-touch:tap="closePop('showPopRule')">×</span>
+        </div>
+    </div>
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script src="javascripts/plugin/zepto.min.js"></script>
+<script>
+    var vm,
+        data = {
+            bargain_price:2.00, //商品最低价格
+            bargain_name:'商品名称商品名称商品名称商品名称', //商品名称
+            big_pic:"http://oss.njcjh.cn/20151224/7473bed84c36497683c0e7c413922e1c.jpg", //商品图片
+            case_state:1,
+            bargain_count:2,
+            up_limit:100.0,
+            nickname:'Myth刷子', //发起人微信昵称
+            all_price:10.01,     //一共砍了多少
+            refer_price:18.50,   //商品原价
+            state:0,
+            applycount:1,
+            wx_nickname:22,   //我的昵称
+            next_nickname:'温文稳问'  //上一个帮忙砍价的微信名
+        };
+
+    $(function(){
+        data.showPopRule = false;
+        vm = new Vue({
+            el:'#main',
+            data:data,
+            methods: {
+                goToIndex: function(){
+                    //添加进入 活动首页 代码
+                    console.log('添加进入 活动首页 代码');
+                },
+                closePop:function(propName){
+                    if(arguments.length == 1){
+                        this[propName] = false;
+                    }else{
+                        var e = arguments[0];
+                        if(e.target.className.indexOf('pop') != -1){
+                            this[arguments[1]] = false;
+                        }
+                    }
+                }
+            }
+        })
+    });
+</script>
+</html>

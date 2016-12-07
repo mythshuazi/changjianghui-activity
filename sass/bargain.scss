@@ -1,0 +1,527 @@
+@import "convertUnit";
+body{
+  font-size:px2rem(12px);
+  font-family: "microsoft yahei", 宋体, sans-serif;
+  line-height:1.4;
+  color:#323232;
+  background-color:#3f1854;
+}
+*{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+[v-cloak]{
+  display:none;
+}
+img{
+  display:block;
+}
+
+header{
+  position:relative;
+
+  .btn-rule{
+    position:absolute;
+    width:px2rem(216px);
+    height:px2rem(69px);
+    line-height:px2rem(69px);
+    top:px2rem(70px);
+    right:px2rem(32px);
+    background-color:#ffd6b5;
+    font-size:px2rem(40px);
+    border:1px solid #4b1e1a;
+    text-align:center;
+    border-radius:1rem;
+  }
+}
+
+main{
+  margin-top: -3rem;
+}
+.default{
+  background:#d4d4d4 url("../images/public/default.jpg") no-repeat scroll 50% 50%;
+  background-size:contain;
+}
+
+.btn{
+  display:block;
+  margin:0 auto;
+  height:px2rem(122px);
+  width:px2rem(902px);
+  position:relative;
+  top:px2rem(28px);
+}
+.ribbon{
+  color:#fff;
+  font-size:px2rem(44px);
+  line-height: 1rem;
+  text-align:center;
+  background:transparent url("../images/wx-bargain/ribbon.png");
+  background-size:100% 100%;
+  position:absolute;
+  top:px2rem(835px);
+  left:2rem;
+
+  width:px2rem(640px);
+  height:px2rem(145px);
+
+  -webkit-transform: rotate(-2deg);
+  -webkit-transform-origin:100% 0%;
+  transform-origin:100% 0%;
+}
+
+.index{
+  .swiper-container {
+    width: 100%;
+    padding-bottom:px2rem(100px);
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: px2rem(800px);
+    height: px2rem(1000px);
+
+    img{
+      width:100%;
+      height: px2rem(800px);
+      background:#d4d4d4 url("../images/public/default.jpg") no-repeat scroll 50% 50%;
+      background-size:contain;
+    }
+    .intro{
+      height:px2rem(200px);
+      background-color:#fff;
+      padding:px2rem(10px) px2rem(27px);
+      position:relative;
+    }
+
+    .name{
+      font-size:px2rem(41px);
+      line-height:px2rem(90px);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .price{
+      font-size:px2rem(41px);
+      line-height:px2rem(57px);
+      padding:px2rem(16px) 0;
+      display:table;
+
+      &>*{
+        display:table-cell;
+      }
+    }
+
+    .rmb{
+      font-size:px2rem(30px);
+    }
+
+    .original{
+      padding-right:px2rem(18px);
+    }
+    .mini{
+      font-size:px2rem(30px);
+      border:1px solid #c9c9c9;
+      border-radius:.1rem;
+      padding:0 px2rem(9px);
+      span{  color:#ee0000;  font-size:px2rem(41px); }
+    }
+
+    .radio{
+      display:block;
+      position:absolute;
+      width:px2rem(58px);
+      height:px2rem(58px);
+      border:1px solid #979797;
+      border-radius:1rem;
+      top:px2rem(77px);
+      right:px2rem(12px);
+
+      &.active{
+        background-color:#ee0000;
+      }
+    }
+
+    &.sellout{
+      &:before{
+        content:"";
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height: px2rem(800px);
+        background:rgba(0,0,0,0.5) url("../images/wx-bargain/sellout.png") no-repeat scroll 50% 50%;
+        background-size:px2rem(350px);
+      }
+    }
+  }
+
+  .btn-wrap{
+    height:px2rem(170px);
+    background-color:#1f0c2a;
+    //margin-top:px2rem(150px);
+    z-index: 1;
+  }
+  .btn-launch{
+    background:transparent url("../images/wx-bargain/btn-launch.png") no-repeat scroll 0 0;
+    background-size:100% ;
+  }
+  .btn-check{
+    background:transparent url("../images/wx-bargain/btn-check.png") no-repeat scroll 0 0;
+    background-size:100% ;
+  }
+
+  main{
+    padding-bottom:.45rem;
+  }
+}
+
+.goods{
+  color:#fff;
+  main{
+    margin-top:0;
+  }
+  .goods-pic{
+    height:7.5rem;
+    width:100%;
+
+    background-color:transparent;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -webkit-background-size:cover;
+    background-size:cover;
+  }
+  .goods-describe{
+    font-size:px2rem(42px);
+    background-color:#707070;
+    height:px2rem(187px);
+    padding:px2rem(33px) px2rem(30px) px2rem(35px) px2rem(30px);
+
+    p:last-child {
+      color: #fec536;
+      i{
+        color:#fc2c2c;
+        font-size:px2rem(51px);
+      }
+    }
+  }
+
+
+
+  section.help-info{
+    padding:px2rem(51px) px2rem(27px) 0px px2rem(27px);
+  }
+
+  .txt{
+    font-size:px2rem(40px);
+    p{
+      line-height:1.9;
+      i{
+        color:#fffc00;
+      }
+    }
+    p:last-child{
+      text-indent: px2rem(40px);
+    }
+  }
+
+  .btns{
+    overflow:hidden;
+    padding: .9rem 0 1rem 0;
+    span{
+      height:px2rem(140px);
+    }
+    .btn-cancel{
+      float:left;
+      width:px2rem(302px);
+      background:transparent url("../images/wx-bargain/btn-cancel.png") no-repeat scroll 0 0;
+      background-size:100% 100%;
+    }
+    .btn-invite{
+      float:right;
+      width:px2rem(684px);
+      background:transparent url("../images/wx-bargain/btn-invite.png") no-repeat scroll 0 0;
+      background-size:100% 100%;
+    }
+  }
+
+  .table{
+    padding:px2rem(27px);
+    padding-top:0;
+    border-top:1px solid #1a1732;
+    //background-color:#fff9f3;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#29af8a),color-stop(px2rem(115px),#29af8a),color-stop(px2rem(115px),#fff9f3), color-stop(100%,#fff9f3));
+    background: -webkit-linear-gradient(top, #29af8a 0%,#29af8a px2rem(115px),#fff9f3 px2rem(115px),#fff9f3 100%);
+    border-radius: .1rem;
+    //border-bottom-left-radius: 0;
+    //border-bottom-right-radius: 0;
+    table{
+      width:100%;
+    }
+    td,th{
+      text-align:center;
+    }
+    th{
+      //background-color:#29af8a;
+      height:px2rem(115px);
+      line-height:px2rem(115px);
+      font-size:px2rem(40px);
+    }
+    td{
+      font-size:px2rem(36px);
+      color:#666;
+      //background-color:#fff9f3;
+      height:px2rem(98px);
+      line-height:px2rem(98px);
+      border-bottom:1px dotted #808080;
+    }
+  }
+
+  .dropload-down{
+    //margin: 0 .25rem;
+    //background-color: #fff9f3;
+    //color: #323232;
+    font-size: .3rem;
+  }
+}
+
+.help{
+  color:#fff;
+  main{
+    z-index: 2;
+    position: relative;
+  }
+
+  .from{
+    font-size:px2rem(60px);
+    text-align:center;
+    font-weight:bold;
+    i{
+      color:#fff000;
+    }
+  }
+
+  .btn-help,.btn-join{
+    display:block;
+    width: px2rem(814px);
+    height:px2rem(142px);
+    background:transparent url("../images/wx-bargain/btn-help.png") no-repeat scroll 0 0;
+    background-size:100% 100%;
+    margin:0 auto;
+    margin-top:px2rem(104px);
+  }
+  .btn-join{
+    width: px2rem(902px);
+    background-image:url("../images/wx-bargain/btn-join.png");
+  }
+
+  .its-goods{
+    padding:0 px2rem(30px);
+    padding-bottom: 1.5rem;
+    &>p{
+      font-size:px2rem(48px);
+      text-align:center;
+      border-top:1px solid #fff;
+      margin-top:px2rem(163px);
+
+      span{
+        background-color: #3f1854;
+        padding:0 6px;
+        position:relative;
+        top:px2rem(-30px);
+      }
+    }
+
+    &>div{
+      color:#323232;
+      overflow: hidden;
+      background-color:#fff;
+      border:px2rem(20px) solid #2c0041;
+      margin-top:px2rem(71px);
+    }
+  }
+
+  .goods-pic{
+    float:left;
+    img{
+      width:px2rem(390px);
+      height:px2rem(390px);
+    }
+  }
+
+  .goods-info{
+    height:px2rem(390px);
+    margin-left:px2rem(390px);
+    padding:px2rem(21px) px2rem(27px);
+    position:relative;
+  }
+
+  .goods-name{
+    font-size:px2rem(36px);
+  }
+
+  .price{
+    position:absolute;
+    bottom:px2rem(21px);
+  }
+
+  .original{
+    font-size:px2rem(36px);
+    margin-bottom:px2rem(15px);
+    i{
+      font-size:px2rem(42px);
+    }
+  }
+
+  .mini{
+    color:#ee0000;
+    border:1px solid #ee0000;
+    border-radius:px2rem(6px);
+    font-size:px2rem(30px);
+    padding:0 px2rem(6px);
+    i{
+      font-size:px2rem(42px);
+    }
+  }
+
+  .result{
+    display:table;
+    width: 100%;
+    background-color:#2c0041;
+    padding-top:px2rem(20px);
+
+    p{
+      display:table-cell;
+      color:#fff;
+      font-size:px2rem(36px);
+
+      &:last-child{
+        text-align:right;
+      }
+      i{
+        color:#fff000;
+      }
+    }
+  }
+}
+
+.f-red{
+  color:#ee0000 !important;
+}
+.f-36{
+  font-size:px2rem(36px) !important;
+}
+.pop{
+  background-color:rgba(0,0,0,0.5);
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  bottom:0;
+  z-index: 99;
+
+  .content{
+    margin:px2rem(360px) px2rem(71px)  0  px2rem(71px);
+    background-color:#fec448;
+    border:2px solid #fff;
+    border-radius:.2rem;
+    padding-top:px2rem(109px);
+    padding-bottom:px2rem(99px);
+    position:relative;
+    font-size:px2rem(42px);
+
+    img{
+      width:px2rem(485px);
+      height:px2rem(480px);
+      margin:0 auto;
+    }
+  }
+
+  .close{
+    position:absolute;
+    top:px2rem(22px);
+    right:px2rem(22px);
+    width:px2rem(80px);
+    height:px2rem(80px);
+    line-height:px2rem(80px);
+    border:.02rem solid #323232;
+    border-radius:1rem;
+    text-align:center;
+    color:#323232;
+    font-size:.5rem;
+  }
+
+  p{
+    text-align:center;
+    color:#323232;
+    font-size:px2rem(42px);
+  }
+}
+
+.QRcode{
+  .content{
+    p{
+      &:first-child{
+        margin-bottom:px2rem(69px);
+      }
+
+      &:nth-of-type(2){
+        margin-top:px2rem(20px);
+      }
+    }
+  }
+}
+
+.rule{
+  .content{
+    padding-top:px2rem(50px);
+  }
+  p{margin-top:0 !important;}
+}
+
+.goods,.help{
+  .pop{
+    p{
+      padding:0 px2rem(136px);
+      margin-top:px2rem(72px);
+    }
+  }
+
+  .btnCss{
+    background:url("../images/wx-bargain/light.png") no-repeat scroll 2% 11%;
+    background-size:px2rem(66px) px2rem(52px);
+    text-align:center;
+    font-size:px2rem(51px);
+    display:block;
+    width:px2rem(551px);
+    height:px2rem(123px);
+    line-height:px2rem(123px);
+    margin:0 auto;
+    margin-top:px2rem(123px);
+    border-radius:1rem;
+    box-shadow: 2px 2px 2px #000;
+  }
+  .btnCancel{
+    background-color:#22bd91;
+  }
+  .btnSure{
+    background-color:#920784;
+  }
+  .btnJoin{
+    background-color:#019FE8;
+  }
+  .btnToResult{
+    background-color:#E70012;
+  }
+  .share{
+    img{
+      width: 76%;
+      position: absolute;
+      right: .3rem;
+      top: .2rem;
+    }
+  }
+}

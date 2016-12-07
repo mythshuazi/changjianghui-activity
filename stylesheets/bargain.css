@@ -1,0 +1,567 @@
+@charset "UTF-8";
+/* 字体 (参数$font-size，是效果图中的尺寸) */
+/* 我们项目的视觉稿为750px */
+/*$rem-baseline: 75px !default;*/
+/* 我们项目的视觉稿为1080px*/
+/*$rem-baseline: 108*1.15px !default;*/
+/* rem */
+/* line 2, ../sass/bargain.scss */
+body {
+  font-size: 0.11111rem;
+  font-family: "microsoft yahei", 瀹嬩綋, sans-serif;
+  line-height: 1.4;
+  color: #323232;
+  background-color: #3f1854;
+}
+
+/* line 9, ../sass/bargain.scss */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 13, ../sass/bargain.scss */
+[v-cloak] {
+  display: none;
+}
+
+/* line 16, ../sass/bargain.scss */
+img {
+  display: block;
+}
+
+/* line 20, ../sass/bargain.scss */
+header {
+  position: relative;
+}
+/* line 23, ../sass/bargain.scss */
+header .btn-rule {
+  position: absolute;
+  width: 2rem;
+  height: 0.63889rem;
+  line-height: 0.63889rem;
+  top: 0.64815rem;
+  right: 0.2963rem;
+  background-color: #ffd6b5;
+  font-size: 0.37037rem;
+  border: 1px solid #4b1e1a;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+/* line 38, ../sass/bargain.scss */
+main {
+  margin-top: -3rem;
+}
+
+/* line 41, ../sass/bargain.scss */
+.default {
+  background: #d4d4d4 url("../images/public/default.jpg") no-repeat scroll 50% 50%;
+  background-size: contain;
+}
+
+/* line 46, ../sass/bargain.scss */
+.btn {
+  display: block;
+  margin: 0 auto;
+  height: 1.12963rem;
+  width: 8.35185rem;
+  position: relative;
+  top: 0.25926rem;
+}
+
+/* line 54, ../sass/bargain.scss */
+.ribbon {
+  color: #fff;
+  font-size: 0.40741rem;
+  line-height: 1rem;
+  text-align: center;
+  background: transparent url("../images/wx-bargain/ribbon.png");
+  background-size: 100% 100%;
+  position: absolute;
+  top: 7.73148rem;
+  left: 2rem;
+  width: 5.92593rem;
+  height: 1.34259rem;
+  -webkit-transform: rotate(-2deg);
+  -webkit-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+}
+
+/* line 74, ../sass/bargain.scss */
+.index .swiper-container {
+  width: 100%;
+  padding-bottom: 0.92593rem;
+}
+/* line 78, ../sass/bargain.scss */
+.index .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 7.40741rem;
+  height: 9.25926rem;
+}
+/* line 84, ../sass/bargain.scss */
+.index .swiper-slide img {
+  width: 100%;
+  height: 7.40741rem;
+  background: #d4d4d4 url("../images/public/default.jpg") no-repeat scroll 50% 50%;
+  background-size: contain;
+}
+/* line 90, ../sass/bargain.scss */
+.index .swiper-slide .intro {
+  height: 1.85185rem;
+  background-color: #fff;
+  padding: 0.09259rem 0.25rem;
+  position: relative;
+}
+/* line 97, ../sass/bargain.scss */
+.index .swiper-slide .name {
+  font-size: 0.37963rem;
+  line-height: 0.83333rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* line 105, ../sass/bargain.scss */
+.index .swiper-slide .price {
+  font-size: 0.37963rem;
+  line-height: 0.52778rem;
+  padding: 0.14815rem 0;
+  display: table;
+}
+/* line 111, ../sass/bargain.scss */
+.index .swiper-slide .price > * {
+  display: table-cell;
+}
+/* line 116, ../sass/bargain.scss */
+.index .swiper-slide .rmb {
+  font-size: 0.27778rem;
+}
+/* line 120, ../sass/bargain.scss */
+.index .swiper-slide .original {
+  padding-right: 0.16667rem;
+}
+/* line 123, ../sass/bargain.scss */
+.index .swiper-slide .mini {
+  font-size: 0.27778rem;
+  border: 1px solid #c9c9c9;
+  border-radius: .1rem;
+  padding: 0 0.08333rem;
+}
+/* line 128, ../sass/bargain.scss */
+.index .swiper-slide .mini span {
+  color: #ee0000;
+  font-size: 0.37963rem;
+}
+/* line 131, ../sass/bargain.scss */
+.index .swiper-slide .radio {
+  display: block;
+  position: absolute;
+  width: 0.53704rem;
+  height: 0.53704rem;
+  border: 1px solid #979797;
+  border-radius: 1rem;
+  top: 0.71296rem;
+  right: 0.11111rem;
+}
+/* line 141, ../sass/bargain.scss */
+.index .swiper-slide .radio.active {
+  background-color: #ee0000;
+}
+/* line 147, ../sass/bargain.scss */
+.index .swiper-slide.sellout:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7.40741rem;
+  background: rgba(0, 0, 0, 0.5) url("../images/wx-bargain/sellout.png") no-repeat scroll 50% 50%;
+  background-size: 3.24074rem;
+}
+/* line 161, ../sass/bargain.scss */
+.index .btn-wrap {
+  height: 1.57407rem;
+  background-color: #1f0c2a;
+  z-index: 1;
+}
+/* line 167, ../sass/bargain.scss */
+.index .btn-launch {
+  background: transparent url("../images/wx-bargain/btn-launch.png") no-repeat scroll 0 0;
+  background-size: 100%;
+}
+/* line 171, ../sass/bargain.scss */
+.index .btn-check {
+  background: transparent url("../images/wx-bargain/btn-check.png") no-repeat scroll 0 0;
+  background-size: 100%;
+}
+/* line 176, ../sass/bargain.scss */
+.index main {
+  padding-bottom: .45rem;
+}
+
+/* line 181, ../sass/bargain.scss */
+.goods {
+  color: #fff;
+}
+/* line 183, ../sass/bargain.scss */
+.goods main {
+  margin-top: 0;
+}
+/* line 186, ../sass/bargain.scss */
+.goods .goods-pic {
+  height: 7.5rem;
+  width: 100%;
+  background-color: transparent;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+/* line 197, ../sass/bargain.scss */
+.goods .goods-describe {
+  font-size: 0.38889rem;
+  background-color: #707070;
+  height: 1.73148rem;
+  padding: 0.30556rem 0.27778rem 0.32407rem 0.27778rem;
+}
+/* line 203, ../sass/bargain.scss */
+.goods .goods-describe p:last-child {
+  color: #fec536;
+}
+/* line 205, ../sass/bargain.scss */
+.goods .goods-describe p:last-child i {
+  color: #fc2c2c;
+  font-size: 0.47222rem;
+}
+/* line 214, ../sass/bargain.scss */
+.goods section.help-info {
+  padding: 0.47222rem 0.25rem 0px 0.25rem;
+}
+/* line 218, ../sass/bargain.scss */
+.goods .txt {
+  font-size: 0.37037rem;
+}
+/* line 220, ../sass/bargain.scss */
+.goods .txt p {
+  line-height: 1.9;
+}
+/* line 222, ../sass/bargain.scss */
+.goods .txt p i {
+  color: #fffc00;
+}
+/* line 226, ../sass/bargain.scss */
+.goods .txt p:last-child {
+  text-indent: 0.37037rem;
+}
+/* line 231, ../sass/bargain.scss */
+.goods .btns {
+  overflow: hidden;
+  padding: .9rem 0 1rem 0;
+}
+/* line 234, ../sass/bargain.scss */
+.goods .btns span {
+  height: 1.2963rem;
+}
+/* line 237, ../sass/bargain.scss */
+.goods .btns .btn-cancel {
+  float: left;
+  width: 2.7963rem;
+  background: transparent url("../images/wx-bargain/btn-cancel.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+/* line 243, ../sass/bargain.scss */
+.goods .btns .btn-invite {
+  float: right;
+  width: 6.33333rem;
+  background: transparent url("../images/wx-bargain/btn-invite.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+/* line 251, ../sass/bargain.scss */
+.goods .table {
+  padding: 0.25rem;
+  padding-top: 0;
+  border-top: 1px solid #1a1732;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #29af8a), color-stop(1.06481rem, #29af8a), color-stop(1.06481rem, #fff9f3), color-stop(100%, #fff9f3));
+  background: -webkit-linear-gradient(top, #29af8a 0%, #29af8a 1.06481rem, #fff9f3 1.06481rem, #fff9f3 100%);
+  border-radius: .1rem;
+}
+/* line 261, ../sass/bargain.scss */
+.goods .table table {
+  width: 100%;
+}
+/* line 264, ../sass/bargain.scss */
+.goods .table td, .goods .table th {
+  text-align: center;
+}
+/* line 267, ../sass/bargain.scss */
+.goods .table th {
+  height: 1.06481rem;
+  line-height: 1.06481rem;
+  font-size: 0.37037rem;
+}
+/* line 273, ../sass/bargain.scss */
+.goods .table td {
+  font-size: 0.33333rem;
+  color: #666;
+  height: 0.90741rem;
+  line-height: 0.90741rem;
+  border-bottom: 1px dotted #808080;
+}
+/* line 283, ../sass/bargain.scss */
+.goods .dropload-down {
+  font-size: .3rem;
+}
+
+/* line 291, ../sass/bargain.scss */
+.help {
+  color: #fff;
+}
+/* line 293, ../sass/bargain.scss */
+.help main {
+  z-index: 2;
+  position: relative;
+}
+/* line 298, ../sass/bargain.scss */
+.help .from {
+  font-size: 0.55556rem;
+  text-align: center;
+  font-weight: bold;
+}
+/* line 302, ../sass/bargain.scss */
+.help .from i {
+  color: #fff000;
+}
+/* line 307, ../sass/bargain.scss */
+.help .btn-help, .help .btn-join {
+  display: block;
+  width: 7.53704rem;
+  height: 1.31481rem;
+  background: transparent url("../images/wx-bargain/btn-help.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-top: 0.96296rem;
+}
+/* line 316, ../sass/bargain.scss */
+.help .btn-join {
+  width: 8.35185rem;
+  background-image: url("../images/wx-bargain/btn-join.png");
+}
+/* line 321, ../sass/bargain.scss */
+.help .its-goods {
+  padding: 0 0.27778rem;
+  padding-bottom: 1.5rem;
+}
+/* line 324, ../sass/bargain.scss */
+.help .its-goods > p {
+  font-size: 0.44444rem;
+  text-align: center;
+  border-top: 1px solid #fff;
+  margin-top: 1.50926rem;
+}
+/* line 330, ../sass/bargain.scss */
+.help .its-goods > p span {
+  background-color: #3f1854;
+  padding: 0 6px;
+  position: relative;
+  top: -0.27778rem;
+}
+/* line 338, ../sass/bargain.scss */
+.help .its-goods > div {
+  color: #323232;
+  overflow: hidden;
+  background-color: #fff;
+  border: 0.18519rem solid #2c0041;
+  margin-top: 0.65741rem;
+}
+/* line 347, ../sass/bargain.scss */
+.help .goods-pic {
+  float: left;
+}
+/* line 349, ../sass/bargain.scss */
+.help .goods-pic img {
+  width: 3.61111rem;
+  height: 3.61111rem;
+}
+/* line 355, ../sass/bargain.scss */
+.help .goods-info {
+  height: 3.61111rem;
+  margin-left: 3.61111rem;
+  padding: 0.19444rem 0.25rem;
+  position: relative;
+}
+/* line 362, ../sass/bargain.scss */
+.help .goods-name {
+  font-size: 0.33333rem;
+}
+/* line 366, ../sass/bargain.scss */
+.help .price {
+  position: absolute;
+  bottom: 0.19444rem;
+}
+/* line 371, ../sass/bargain.scss */
+.help .original {
+  font-size: 0.33333rem;
+  margin-bottom: 0.13889rem;
+}
+/* line 374, ../sass/bargain.scss */
+.help .original i {
+  font-size: 0.38889rem;
+}
+/* line 379, ../sass/bargain.scss */
+.help .mini {
+  color: #ee0000;
+  border: 1px solid #ee0000;
+  border-radius: 0.05556rem;
+  font-size: 0.27778rem;
+  padding: 0 0.05556rem;
+}
+/* line 385, ../sass/bargain.scss */
+.help .mini i {
+  font-size: 0.38889rem;
+}
+/* line 390, ../sass/bargain.scss */
+.help .result {
+  display: table;
+  width: 100%;
+  background-color: #2c0041;
+  padding-top: 0.18519rem;
+}
+/* line 396, ../sass/bargain.scss */
+.help .result p {
+  display: table-cell;
+  color: #fff;
+  font-size: 0.33333rem;
+}
+/* line 401, ../sass/bargain.scss */
+.help .result p:last-child {
+  text-align: right;
+}
+/* line 404, ../sass/bargain.scss */
+.help .result p i {
+  color: #fff000;
+}
+
+/* line 411, ../sass/bargain.scss */
+.f-red {
+  color: #ee0000 !important;
+}
+
+/* line 414, ../sass/bargain.scss */
+.f-36 {
+  font-size: 0.33333rem !important;
+}
+
+/* line 417, ../sass/bargain.scss */
+.pop {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: 99;
+}
+/* line 426, ../sass/bargain.scss */
+.pop .content {
+  margin: 3.33333rem 0.65741rem 0 0.65741rem;
+  background-color: #fec448;
+  border: 2px solid #fff;
+  border-radius: .2rem;
+  padding-top: 1.00926rem;
+  padding-bottom: 0.91667rem;
+  position: relative;
+  font-size: 0.38889rem;
+}
+/* line 436, ../sass/bargain.scss */
+.pop .content img {
+  width: 4.49074rem;
+  height: 4.44444rem;
+  margin: 0 auto;
+}
+/* line 443, ../sass/bargain.scss */
+.pop .close {
+  position: absolute;
+  top: 0.2037rem;
+  right: 0.2037rem;
+  width: 0.74074rem;
+  height: 0.74074rem;
+  line-height: 0.74074rem;
+  border: .02rem solid #323232;
+  border-radius: 1rem;
+  text-align: center;
+  color: #323232;
+  font-size: .5rem;
+}
+/* line 457, ../sass/bargain.scss */
+.pop p {
+  text-align: center;
+  color: #323232;
+  font-size: 0.38889rem;
+}
+
+/* line 467, ../sass/bargain.scss */
+.QRcode .content p:first-child {
+  margin-bottom: 0.63889rem;
+}
+/* line 471, ../sass/bargain.scss */
+.QRcode .content p:nth-of-type(2) {
+  margin-top: 0.18519rem;
+}
+
+/* line 479, ../sass/bargain.scss */
+.rule .content {
+  padding-top: 0.46296rem;
+}
+/* line 482, ../sass/bargain.scss */
+.rule p {
+  margin-top: 0 !important;
+}
+
+/* line 487, ../sass/bargain.scss */
+.goods .pop p, .help .pop p {
+  padding: 0 1.25926rem;
+  margin-top: 0.66667rem;
+}
+/* line 493, ../sass/bargain.scss */
+.goods .btnCss, .help .btnCss {
+  background: url("../images/wx-bargain/light.png") no-repeat scroll 2% 11%;
+  background-size: 0.61111rem 0.48148rem;
+  text-align: center;
+  font-size: 0.47222rem;
+  display: block;
+  width: 5.10185rem;
+  height: 1.13889rem;
+  line-height: 1.13889rem;
+  margin: 0 auto;
+  margin-top: 1.13889rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px #000;
+}
+/* line 507, ../sass/bargain.scss */
+.goods .btnCancel, .help .btnCancel {
+  background-color: #22bd91;
+}
+/* line 510, ../sass/bargain.scss */
+.goods .btnSure, .help .btnSure {
+  background-color: #920784;
+}
+/* line 513, ../sass/bargain.scss */
+.goods .btnJoin, .help .btnJoin {
+  background-color: #019FE8;
+}
+/* line 516, ../sass/bargain.scss */
+.goods .btnToResult, .help .btnToResult {
+  background-color: #E70012;
+}
+/* line 520, ../sass/bargain.scss */
+.goods .share img, .help .share img {
+  width: 76%;
+  position: absolute;
+  right: .3rem;
+  top: .2rem;
+}
+
+/*# sourceMappingURL=bargain.css.map */

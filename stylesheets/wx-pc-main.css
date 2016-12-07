@@ -87,7 +87,7 @@ body {
 .gallery li {
   float: left;
   width: 4.65rem;
-  border-radius: .2rem;
+  border-radius: 3px;
   position: relative;
   margin-top: 1.5rem;
 }
@@ -205,8 +205,6 @@ body {
   left: .3rem;
   color: #fff;
   max-width: 100%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   background-color: rgba(0, 0, 0, 0.5);
   transform: scale(0.8);
   transform-origin: left;
@@ -219,82 +217,150 @@ body {
 }
 
 /* line 210, ../sass/wx-pc-main.scss */
-.result li .content {
-  height: 5.8rem !important;
+.result #top img:nth-child(2) {
+  margin-top: .2rem;
 }
-/* line 213, ../sass/wx-pc-main.scss */
+/* line 214, ../sass/wx-pc-main.scss */
+.result li {
+  background-color: #fff;
+  margin-top: .3rem;
+}
+/* line 217, ../sass/wx-pc-main.scss */
+.result li:nth-of-type(1) {
+  background: #fff url(../images/wx-parentsChild/one.png) no-repeat scroll 0.18rem 3.2rem;
+  background-size: 23%;
+}
+/* line 221, ../sass/wx-pc-main.scss */
+.result li:nth-of-type(1) .order {
+  width: 2.2rem;
+}
+/* line 227, ../sass/wx-pc-main.scss */
+.result li:nth-of-type(2) {
+  background: #fff url(../images/wx-parentsChild/two.png) no-repeat scroll 0.18rem 3.2rem;
+  background-size: 23%;
+}
+/* line 231, ../sass/wx-pc-main.scss */
+.result li:nth-of-type(2) .order {
+  width: 2.2rem;
+}
+/* line 237, ../sass/wx-pc-main.scss */
+.result li:nth-of-type(3) {
+  background: #fff url(../images/wx-parentsChild/three.png) no-repeat scroll 0.18rem 3.2rem;
+  background-size: 23%;
+}
+/* line 241, ../sass/wx-pc-main.scss */
+.result li:nth-of-type(3) .order {
+  width: 2.2rem;
+}
+/* line 246, ../sass/wx-pc-main.scss */
 .result li .border {
   height: 4rem !important;
 }
-/* line 217, ../sass/wx-pc-main.scss */
+/* line 249, ../sass/wx-pc-main.scss */
+.result li .border .order {
+  width: 2.2rem;
+}
+/* line 255, ../sass/wx-pc-main.scss */
+.result li .content {
+  background-color: transparent;
+}
+/* line 260, ../sass/wx-pc-main.scss */
 .result ul {
-  margin-top: -0.8rem;
+  margin-top: .3rem;
+}
+/* line 264, ../sass/wx-pc-main.scss */
+.result .notice {
+  background: transparent url("../images/wx-parentsChild/bgr.jpg") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  border-radius: .1rem;
+  margin: 0 .3rem;
+  margin-top: .5rem;
+  padding: 1rem;
+  color: #323232;
+}
+/* line 274, ../sass/wx-pc-main.scss */
+.result .notice p {
+  font-size: .5rem;
+  font-weight: bold;
+  width: 4rem;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.2;
+  color: #FF515B;
+  background: transparent url("../images/wx-parentsChild/lip.png") no-repeat scroll 0 0;
+  background-size: .7rem auto;
+}
+/* line 285, ../sass/wx-pc-main.scss */
+.result .notice li {
+  font-size: .36rem;
+  margin-top: .1rem;
+  text-align: justify;
 }
 
-/* line 221, ../sass/wx-pc-main.scss */
+/* line 292, ../sass/wx-pc-main.scss */
 .order {
-  background-image: url("../images/wx-parentsChild/res-star-l.jpg"), url("../images/wx-parentsChild/res-star-r.jpg");
   background-position: 10% 50%, 90% 50%;
   background-size: 15%;
   background-repeat: no-repeat;
-  height: 1rem;
+  height: .8rem;
+  margin: 0 auto;
   position: relative;
-  top: 1.3rem;
-  color: #674B24;
+  margin-top: .4rem;
+  color: #F91E58;
   text-align: center;
-  font-size: .55rem;
-  line-height: 1rem;
+  font-size: .45rem;
 }
-/* line 233, ../sass/wx-pc-main.scss */
+/* line 304, ../sass/wx-pc-main.scss */
 .order i {
   font-size: .45rem;
 }
 
-/* line 238, ../sass/wx-pc-main.scss */
+/* line 309, ../sass/wx-pc-main.scss */
 .lucky .order {
-  background-image: url("../images/wx-parentsChild/res-star-l.jpg"), url("../images/wx-parentsChild/res-star-r.jpg");
   background-position: 5% 50%, 95% 50%;
   background-size: 10%;
   background-repeat: no-repeat;
   font-size: .43rem;
 }
 
-/* line 247, ../sass/wx-pc-main.scss */
+/* line 318, ../sass/wx-pc-main.scss */
 .win li:nth-of-type(1) .order, .win li:nth-of-type(2) .order, .win li:nth-of-type(3) .order {
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
-/* line 255, ../sass/wx-pc-main.scss */
+/* line 326, ../sass/wx-pc-main.scss */
 .win li:nth-of-type(1) .order {
-  background-image: url("../images/wx-parentsChild/res-one.jpg");
+  background-image: url("../images/wx-parentsChild/res-one.png");
 }
-/* line 262, ../sass/wx-pc-main.scss */
+/* line 333, ../sass/wx-pc-main.scss */
 .win li:nth-of-type(2) .order {
-  background-image: url("../images/wx-parentsChild/res-two.jpg");
+  background-image: url("../images/wx-parentsChild/res-two.png");
 }
-/* line 269, ../sass/wx-pc-main.scss */
+/* line 340, ../sass/wx-pc-main.scss */
 .win li:nth-of-type(3) .order {
-  background-image: url("../images/wx-parentsChild/res-three.jpg");
+  background-image: url("../images/wx-parentsChild/res-three.png");
 }
 
-/* line 276, ../sass/wx-pc-main.scss */
+/* line 347, ../sass/wx-pc-main.scss */
 .about {
-  color: #CF0600;
+  color: #323232;
   text-align: center;
   font-size: .4rem;
   line-height: .5rem;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: .7rem;
+  margin-bottom: .9rem;
+  padding: 0 1rem;
 }
 
-/* line 284, ../sass/wx-pc-main.scss */
+/* line 357, ../sass/wx-pc-main.scss */
 img.title {
   margin: 1.2rem 0 .2rem;
 }
 
-/* line 287, ../sass/wx-pc-main.scss */
+/* line 360, ../sass/wx-pc-main.scss */
 .empty {
   display: none;
   color: #0C6971;
@@ -303,11 +369,11 @@ img.title {
   margin-top: .3rem;
 }
 
-/* line 294, ../sass/wx-pc-main.scss */
+/* line 367, ../sass/wx-pc-main.scss */
 .pop {
   z-index: 999;
 }
-/* line 296, ../sass/wx-pc-main.scss */
+/* line 369, ../sass/wx-pc-main.scss */
 .pop .main {
   background-image: url("../images/wx-parentsChild/pop.png"), url("../images/wx-parentsChild/pop2.png");
   background-repeat: no-repeat,no-repeat;
@@ -344,7 +410,7 @@ img.title {
   -o-align-items: center;
   align-items: center;
 }
-/* line 334, ../sass/wx-pc-main.scss */
+/* line 407, ../sass/wx-pc-main.scss */
 .pop .textWrap {
   width: 85%;
   margin: 0 auto;
@@ -352,7 +418,7 @@ img.title {
   font-size: .5rem;
   position: relative;
 }
-/* line 343, ../sass/wx-pc-main.scss */
+/* line 416, ../sass/wx-pc-main.scss */
 .pop .exit {
   color: transparent !important;
   background: transparent url("../images/wx-parentsChild/exit.png") no-repeat scroll 0 0;
@@ -363,13 +429,13 @@ img.title {
   width: .8rem;
 }
 
-/* line 356, ../sass/wx-pc-main.scss */
+/* line 429, ../sass/wx-pc-main.scss */
 .pop .textWrap .tt {
   color: #FF515B;
   font-size: .54rem;
   font-weight: bold;
 }
-/* line 361, ../sass/wx-pc-main.scss */
+/* line 434, ../sass/wx-pc-main.scss */
 .pop .textWrap .tt:before {
   content: ".";
   color: transparent;
@@ -383,13 +449,13 @@ img.title {
   margin-right: .3rem;
 }
 
-/* line 378, ../sass/wx-pc-main.scss */
+/* line 451, ../sass/wx-pc-main.scss */
 #twoCode img {
   display: block;
   width: 76%;
   margin: 0 auto;
 }
-/* line 383, ../sass/wx-pc-main.scss */
+/* line 456, ../sass/wx-pc-main.scss */
 #twoCode .textWrap {
   font-size: .3rem;
 }

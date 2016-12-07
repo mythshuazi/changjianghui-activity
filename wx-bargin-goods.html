@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>商品页面</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+    <link rel="stylesheet" href="stylesheets/bargain.css">
+    <link rel="stylesheet" href="stylesheets/dropload.css">
+    <script src="javascripts/plugin/flexible_css.js,flexible.js"></script>
+</head>
+<body v-cloak id="main" class="main goods" style="height:100%;">
+    <div class="container" style="height: 100%;overflow:scroll;-webkit-overflow-scrolling:touch">
+        <main>
+            <section class="goods-info">
+                <div class="goods-pic" v-bind:style="{backgroundImage:'url('+init.big_pic+')'}"></div>
+                <div class="goods-describe">
+                    <p class="goods-name">{{init.bargain_name}}</p>
+                    <p>仅剩 <i>{{parseInt(init.up_limit) - parseInt(init.bargain_count)}}</i> 件，手慢则无哦~</p>
+                </div>
+            </section>
+            <section class="help-info">
+                <div class="txt">
+                    <p>亲：</p>
+                    <p>已有 <i>{{init.applycount}}</i> 位船友，帮助 <i>{{init.nickname}}</i> 砍了¥ {{init.all_price.toFixed(2)}}，当前价格为 <i>¥{{init.refer_price-init.all_price}}</i>，赶紧邀请船友来砍价吧！</p>
+                </div>
+                <div class="btns">
+                    <span class="btn-cancel" v-touch:tap="reSelect"></span><span class="btn-invite" v-touch:tap="showPopShare=true"></span>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>船友名</th><th>砍掉价格</th><th>砍后价格</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in list" track-by="$index">
+                                <td>{{item.wx_nickname}}</td><td><del>¥{{item.vote_price}}</del></td><td>¥{{item.k_money}}</td>
+                                <!--<td>{{item.id}}</td><td><del>¥{{item.title.substring(0,6)}}</del></td><td>¥{{item.link}}</td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!--抢光了弹窗-->
+    <div class="pop empty"  v-show="showPopEmpty" v-touch:tap="closePop($event,'showPopEmpty')">
+        <div class="content">
+            <img src="images/wx-bargain/pop-null.jpg">
+            <p>{{popEmptyMsg}}</p>
+            <span class="btnCss btnCancel" v-touch:tap="ajaxCancelBargain">重新选择</span>
+
+            <span class="close" v-touch:tap="closePop('showPopEmpty')">×</span>
+        </div>
+    </div>
+
+    <!--抢成功弹窗-->
+    <div class="pop success" v-show="showPopSuccess" v-touch:tap="closePop($event,'showPopSuccess')">
+        <div class="content">
+            <img src="images/wx-bargain/pop-success.jpg">
+            <p>{{popSuccessMsg}}</p>
+
+            <span class="close" v-touch:tap="closePop('showPopSuccess')">×</span>
+        </div>
+    </div>
+
+    <!--失败弹窗-->
+    <div class="pop failed" v-show="showPopFailed" v-touch:tap="closePop($event,'showPopFailed')">
+        <div class="content">
+            <img src="images/wx-bargain/pop-fail.jpg">
+            <p>{{popFailedMsg}}</p>
+
+            <span class="close" v-touch:tap="closePop('showPopFailed')">×</span>
+        </div>
+    </div>
+
+    <!--确认取消弹窗-->
+    <div class="pop cancel" v-show="showPopCancel" v-touch:tap="closePop($event,'showPopCancel')">
+        <div class="content">
+            <img src="images/wx-bargain/pop-cancel.jpg">
+            <p>{{popCancelMsg}}</p>
+            <span class="btnCss btnSure" v-touch:tap="ajaxCancelBargain">确 定</span>
+
+            <span class="close" v-touch:tap="closePop('showPopCancel')">×</span>
+        </div>
+    </div>
+
+    <!--确认取消弹窗-->
+    <div class="pop cancel" v-show="showPopCancel" v-touch:tap="closePop($event,'showPopCancel')">
+        <div class="content">
+            <img src="images/wx-bargain/pop-cancel.jpg">
+            <p>{{popCancelMsg}}</p>
+            <span class="btnCss btnSure" v-touch:tap="ajaxCancelBargain">确 定</span>
+
+            <span class="close" v-touch:tap="closePop('showPopCancel')">×</span>
+        </div>
+    </div>
+
+    <!--分享弹窗-->
+    <div class="pop share" v-show="showPopShare" v-touch:tap="closePop($event,'showPopShare')">
+        <img src="images/wx-bargain/share.png">
+    </div>
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script src="javascripts/plugin/zepto.min.js"></script>
+<script src="javascripts/plugin/dropload.min.js"></script>
+
+<script>
+    var vm,
+        data = {
+        bargain_name:'商品名称商品名称商品名称商品名称',      //商品名称
+        big_pic:'http://oss.njcjh.cn/20151224/7473bed84c36497683c0e7c413922e1c.jpg', //商品图片
+        bargain_price:12.00, //商品原价（保留字段）
+        refer_price:8.50,    //原价
+        up_limit:100.0,      //商品总量
+        bargain_count:2,     //已经砍价成功数量
+        all_price:2.08,      //已经砍了多少钱
+        applycount:1,        //有多少人帮你砍价
+        nickname:'靠脸也不行',//微信昵称
+        case_state:1,        //商品状态
+        state:0
+    };
+
+    var pageData = {
+        "code": "0000",
+        "msg": "操作成功。",
+        "data": {
+            "list": [
+                {
+                    "vote_price": 1.5,         //砍掉价格
+                    "wx_nickname": "Myth刷子", //微信昵称
+                    "k_money": 7,              //砍后价格
+                    "refer_price": 8.5
+                },
+                {
+                    "vote_price": 10,         //砍掉价格
+                    "wx_nickname": "Myth刷子1", //微信昵称
+                    "k_money": 7,              //砍后价格
+                    "refer_price": 8.5
+                },
+                {
+                    "vote_price": 6,         //砍掉价格
+                    "wx_nickname": "Myth刷子2", //微信昵称
+                    "k_money": 7,              //砍后价格
+                    "refer_price": 8.5
+                },
+                {
+                    "vote_price": 10,         //砍掉价格
+                    "wx_nickname": "Myth刷子3", //微信昵称
+                    "k_money": 7,              //砍后价格
+                    "refer_price": 8.5
+                },
+                {
+                    "vote_price": 7,         //砍掉价格
+                    "wx_nickname": "Myth刷子4", //微信昵称
+                    "k_money": 7,              //砍后价格
+                    "refer_price": 8.5
+                }
+            ]
+        }
+    };
+
+    $(function(){
+        vm = new Vue({
+            el:'#main',
+            data:{
+                init:data,
+                list:[],  //预留帮砍好友列表
+                page:0,   //分页
+                size:5,  //每页20条
+                canReSelect:true, //是否可以取消重新选择
+                showPopEmpty:  false,
+                showPopSuccess:false,
+                showPopFailed: false,
+                showPopCancel: false,
+                showPopShare:  false,
+                popEmptyMsg:'',
+                popSuccessMsg:'',
+                popFailedMsg:'',
+                popCancelMsg:'确认要提前结束该场砍价活动？'
+            },
+            ready: function(){
+                var the = this;
+                //请求当前页面砍价状态
+                this.ajaxGetGoodsState();
+
+                //请求帮砍列表
+                $('main').dropload({
+                    scrollArea : $('.container'),
+                    loadDownFn : function(me){
+                        the.page++;
+                        // 拼接HTML
+                        var result = '';
+                        $.ajax({
+                            type: 'GET',
+                            url: 'http://ons.me/tools/dropload/json.php?page='+the.page+'&size='+the.size,
+                            dataType: 'json',
+                            success: function(data){
+                                /*if(data.length > 0){
+                                    the.list = the.list.concat(data);*/
+                                if(data.data.length > 0){
+                                    the.list = the.list.concat(data.data.list);
+                                    // 如果没有数据
+                                }else{
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData();
+                                }
+
+                                // 每次数据插入，必须重置
+                                me.resetload();
+                            },
+                            error: function(xhr, type){
+                                alert('Ajax error!');
+                                // 即使加载出错，也得重置
+                                me.resetload();
+                            }
+                        });
+                    }
+                });
+            },
+            methods:{
+                ajaxGetGoodsState:function(){
+                    //生产环境使用
+                    /*$.ajax({
+                        type: 'GET',
+                        url: '/projects',
+                        data: { page: 'Zepto.js' },
+                        dataType: 'json',
+                        success: function(data){
+                            data = JSON.parse(data);
+                            switch (data.code){
+                                case "2001":
+                                    vm.showPopEmpty = true;
+                                    vm.popEmptyMsg  = data.msg;
+                                    break;
+                                case "2002":
+                                    vm.showPopSuccess = true;
+                                    vm.popSuccessMsg  = data.msg;
+                                    break;
+                                case "2004":
+                                    vm.showPopFailed = true;
+                                    vm.popFailedMsg  = data.msg;
+                                    break;
+                            }
+                        },
+                        error: function(xhr, type){
+                            alert('网络不稳定');
+                        }
+                    });*/
+
+
+
+                    //测试环境使用--------------------------------------------
+                    var data = {
+                        "code":"2001",
+                        "msg":"亲，此商品太热门啦，还没来及收入囊中就被抢光了！"
+                    };
+                    switch (data.code){
+                        case "2001":
+                            this.showPopEmpty = true;
+                            this.popEmptyMsg  = data.msg;
+                            break;
+                        case "2002":
+                            this.showPopSuccess = true;
+                            this.popSuccessMsg  = data.msg;
+                            break;
+                        case "2004":
+                            this.showPopFailed = true;
+                            this.popFailedMsg  = data.msg;
+                            break;
+                    }
+                },
+                //1.点击“确定”按钮触发，2.点击“重新选择”按钮触发
+                ajaxCancelBargain:function(){
+                    if(!this.canReSelect) return;
+                    this.canReSelect = false;
+
+                    //ajax 请求取消 当前选的的砍价商品，并在成功后返回首页
+                    $.ajax({
+                        type: 'GET',
+                        url: '/projects',
+                        data: { page: 'Zepto.js' },
+                        dataType: 'json',
+                        success: function(data){
+                            data = JSON.parse(data);
+
+                            //返回首页操作---------------------
+                            //.....some code
+                        },
+                        error: function(xhr, type){
+                            vm.canReSelect = true;
+                            alert('取消砍价失败');
+                        }
+                    });
+                },
+                //点击“取消，重新选择”按钮
+                reSelect:function(){
+                    this.showPopCancel = true;
+                },
+                closePop:function(){
+                    if(arguments.length == 1){
+                        this[propName] = false;
+                    }else{
+                        var e = arguments[0];
+                        if(e.target.className.indexOf('pop') != -1){
+                            this[arguments[1]] = false;
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+</html>

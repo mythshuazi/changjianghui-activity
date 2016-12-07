@@ -1,0 +1,154 @@
+@import "convertUnit";
+
+body{
+  color:#fff;
+  @include font-dpr(12px);
+  line-height:1.4;
+  background: transparent url("../images/act-double11/bg.jpg") repeat scroll 0 0;
+}
+header{
+  img{
+    display:block;
+  }
+}
+
+.goodsList{
+  padding:px2rem(30px);
+  padding-top:0;
+  margin-top: -0.55rem;
+
+
+  @at-root .item{
+    margin-top:.3rem;
+    h2{
+      width:px2rem(355px);
+      height:1.1rem;
+      background: transparent url("../images/act-double11/yhdd.png") no-repeat scroll 0 0;
+      background-size:100% 100%;
+      margin:0 auto;
+      color:transparent;
+      position:relative;
+      top:.55rem;
+    }
+
+    &.ndjx h2{
+      background-image: url("../images/act-double11/ndjx.png");
+    }
+
+    &.hhlx h2{
+      background-image: url("../images/act-double11/hhlx.png");
+    }
+    ul{
+      padding:px2rem(134px) 0 .1rem 0;
+      border:1px solid #fdff2f;
+      border-radius:.1rem;
+      background-color:#4402A1;
+      box-sizing: border-box;
+      overflow:hidden;
+    }
+    li{
+      float:left;
+      position:relative;
+      width:47.5%;
+      margin-bottom: .4rem;
+      &:nth-of-type(2n+1){
+        margin-right:5%;
+      }
+    }
+    img{
+      display:block;
+      width:100%;
+      height:px2rem(485/4*3px);
+
+      &.load{
+        background: transparent;
+      }
+      //&.error{
+        background: url(../images/public/default.jpg) no-repeat scroll 50% 50%;
+        background-size: contain;
+        background-color: #D4D4D4;
+      //}
+
+    }
+    .goodsName{
+      color:#f9e00f;
+      font-size:px2rem(36px);
+      margin-top:px2rem(25px);
+      margin-bottom:px2rem(42px);
+      line-height: .4rem;
+      height: .4rem;
+      overflow: hidden;
+      padding: 0 .1rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .btn{
+      width:px2rem(464px);
+      height:px2rem(100px);
+      line-height:px2rem(100px);
+      margin:0 auto;
+      background: transparent url("../images/act-double11/btn.png") no-repeat scroll 0 0;
+      background-size:100%;
+      font-size: .5rem;
+      font-family: "microsoft yahei", 宋体, sans-serif;
+      color:#fdff2f;
+      text-indent: .45rem;
+      i{
+        font-size:.3rem;
+      }
+    }
+    .discount{
+      width:px2rem(135px);
+      height:px2rem(55px);
+      line-height:px2rem(55px);
+      background: transparent url("../images/act-double11/discount.png") no-repeat scroll 0 0;
+      background-size:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      text-indent:.15rem;
+      @include font-dpr(16px);
+      i{
+        @include font-dpr(12px);
+      }
+
+      span{
+        font-weight:bold;
+      }
+    }
+  }
+}
+
+.rule{
+  padding:px2rem(30px);
+  position:relative;
+  h3{
+    width:4rem;
+    margin:0 auto;
+    position:relative;
+    top:.28rem;
+    span{
+      display:block;
+      color:#fff;
+      font-weight:bold;
+      font-size:px2rem(45px);
+      line-height:px2rem(58px);
+      text-align:center;
+      background-image: url("../images/act-double11/rule-title.png"), url("../images/act-double11/rule-title.png");
+      background-repeat: no-repeat, no-repeat;
+      background-position:.3rem 0, 3.1rem 0;
+      -webkit-background-size:auto 100%,auto 100%;
+      background-size:auto 100%,auto 100%;
+    }
+
+    background:transparent url("../images/act-double11/bg.jpg") repeat scroll 0 0;
+  }
+
+  ul{
+    border:1px solid #fdff2f;
+    border-radius:.1rem;
+    padding:px2rem(21px);
+    padding-top:px2rem(66px);
+    line-height:1.7;
+  }
+}

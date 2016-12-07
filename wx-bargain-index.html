@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>砍价首页</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+    <link rel="stylesheet" href="stylesheets/bargain.css?v=2">
+    <script src="javascripts/plugin/flexible_css.js,flexible.js"></script>
+</head>
+<body v-cloak id="main" class="main index" style="height:100%;">
+    <div id="container" class="container" style="height: 91%;overflow:scroll;-webkit-overflow-scrolling:touch">
+        <header>
+            <img src="images/wx-bargain/top.jpg" width="100%">
+            <div class="ribbon">2016.12.01-2016.12.31</div>
+            <span class="btn-rule" v-touch:tap="showPopRule=true">活动规则</span>
+        </header>
+        <main>
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"
+                         :class="{sellout:item.case_state==3}"
+                         v-for="item in list">
+                        <img :src="item.big_pic" @error="item.big_pic = ''">
+                        <div class="intro">
+                            <p class="name">{{item.bargain_name}}</p>
+                            <div class="price">
+                                <div class="original"><i class="rmb">¥</i>{{item.refer_price}}</div>
+                                <div class="mini">最低可砍至<span><i class="rmb"> ¥</i>{{item.bargain_price}}</span></div>
+                            </div>
+                            <span class="radio"
+                                  :class="{active:item.is_select}"
+                                  v-touch:tap="selectGoods($index)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="btn-wrap" style="height: 9%;">
+        <span v-if="hadGoodsBargaining" class="btn btn-check" v-touch:tap="goToGoodsDetail"></span>
+        <span v-else class="btn btn-launch" v-touch:tap="launchBargain"></span>
+    </div>
+
+    <div v-show="showPopSelect" class="pop select" v-touch:tap="closePop($event,'showPopSelect')"><!--add 2016/12/6-->
+        <div class="content">
+            <p>请勾选一款中意的商品进行砍价</p>
+            <img src="images/wx-bargain/pop-select.jpg">
+
+            <span class="close" v-touch:tap="closePop('showPopSelect')">×</span>
+        </div>
+    </div>
+
+    <div class="pop QRcode" v-show="showPopQRcode" v-touch:tap="closePop($event,'showPopQRcode')"><!--add 2016/12/6-->
+        <div class="content">
+            <p class="f-red">您还未关注长江汇服务号<br>关注后方可参与砍价活动</p>
+            <img src="images/wx-bargain/pop-qrcode.jpg">
+            <p class="f-36">长按即可识别二维码</p>
+
+            <span class="close" v-touch:tap="closePop('showPopQRcode')">×</span>
+        </div>
+    </div>
+
+    <div class="pop rule" v-show="showPopRule" v-touch:tap="closePop($event,'showPopRule')"> <!--add 2016/12/6-->
+        <div class="content">
+            <p class="f-red">活动规则</p>
+
+            <span class="close" v-touch:tap="closePop('showPopRule')">×</span>
+        </div>
+    </div>
+</body>
+<script src="javascripts/plugin/swiper-3.4.0.min.js"></script>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script src="javascripts/plugin/zepto.min.js"></script>
+<script>
+    var vm,
+        goodsList=[
+        {
+            "big_pic": "http://oss.njcjh.cn/20160320/0a4839e601ca48a6bcb397cd3d11e9bd.jpg",
+            "bargain_case_id": 1,
+            "bargain_name": "商品名称1商品名称1商品名称1",   //商品名称
+            "bargain_price": 12, //商品最低价格
+            "case_state": 3,     //商品状态 0=下线 1=上线  2=删除 3=已抢光
+            "refer_price": 8.5,  //商品原价
+            "is_select":0        //是否选中
+        },
+        {
+            "big_pic": "http://oss.njcjh.cn/20160318/c83e405350b94e229d365bcba6096a2f.jpg",
+            "bargain_case_id": 1,
+            "bargain_name": "商品名称2商品名称2商品名称2",
+            "bargain_price": 12,
+            "case_state": 0,
+            "refer_price": 8.5,
+            "is_select":0
+        }
+    ];
+
+    $(function(){
+        vm = new Vue({
+            el:'#main',
+            data:{
+                list:goodsList,
+                hadGoodsBargaining:false,  //是否有正在进行砍价的商品，有则显示“查看我发起的砍价”按钮
+                canLaunchBargain:false,    //是否可以发起砍价（防止按钮多次点击）
+                showPopRule:false,
+                showPopSelect:false,
+                showPopQRcode:false
+            },
+            created:function(){
+                //判断显示按钮类别
+                for(var i=0; i<this.list.length; i++){
+                    if(this.list[i].is_select){
+                        this.canLaunchBargain = false; //已经有砍价商品则不可以发起砍价
+                        this.hadGoodsBargaining = true;
+                    }
+                }
+
+                //没有正在进行砍价的商品
+                if(!this.hadGoodsBargaining){
+                    this.canLaunchBargain = true;
+                }
+            },
+            ready: function(){
+                //实例化 Swiper
+                Vue.nextTick(function(){
+                    new Swiper('.swiper-container', {
+                        /*pagination: '.swiper-pagination',*/
+                        //initialSlide :1,
+                        effect: 'coverflow',
+                        grabCursor: true,
+                        centeredSlides: true,
+                        slidesPerView: 'auto',
+                        coverflow: {
+                            rotate: 50,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows : true
+                        }
+                    });
+                },1000)
+            },
+            methods: {
+                //发起砍价
+                launchBargain:function(){
+                    //不能发起砍价,退出
+                    if(!this.canLaunchBargain) return ;
+                    //点击完按钮，禁止发起砍价，直到 ajax 请求返回且请求操作失败
+                    this.canLaunchBargain = false;
+
+                    var hadSelectedGoods=false, selectedGoodsId;
+                    //当前是否选中商品
+                    this.list.forEach(function(ele,index,self){
+                        if(ele.is_select){
+                            hadSelectedGoods = true;
+                            selectedGoodsId  = ele.bargain_case_id;
+                        }
+                    });
+
+                    if(hadSelectedGoods && selectedGoodsId){
+                        console.log('请求接口，发起砍价');
+                        $.ajax({
+                            type: 'GET',
+                            url: '/projects',
+                            data: { id: selectedGoodsId },
+                            dataType: 'json',
+                            success: function(data){
+                                data = JSON.parse(data);
+                                if(data.code == '0000'){
+                                    //成功选择商品进行砍价，不能再次进行砍价
+                                    vm.canLaunchBargain = false;
+                                }
+                            },
+                            error: function(xhr, type){
+                                //选择商品失败，可以继续选择商品砍价
+                                vm.canLaunchBargain = true;
+
+                                //将之前选择的商品取消选中状态
+                                vm.list.forEach(function(ele){
+                                    ele.is_select = false;
+                                });
+
+                                alert('发起砍价失败，请稍后重试'); //add 2016/12/6
+                            }
+                        })
+                    }else{
+                        this.canLaunchBargain = true; //add 2016/12/6
+                        this.showPopSelect = true;
+                    }
+                },
+                //选择商品
+                selectGoods:function(index){
+                    if(!this.canLaunchBargain) return;
+
+                    this.list.forEach(function(ele){
+                        ele.is_select = false;
+                    });
+
+                    if(this.list[index].case_state != 3){
+                        this.list[index].is_select = true;
+                    }
+                },
+                //进入商品详情
+                goToGoodsDetail:function(){
+                    console.log('进入选中的商品详情')
+                },
+                closePop:function(propName){ //add 2016/12/6
+                    if(arguments.length == 1){
+                        this[propName] = false;
+                    }else{
+                        var e = arguments[0];
+                        if(e.target.className.indexOf('pop') != -1){
+                            this[arguments[1]] = false;
+                        }
+                    }
+                }
+            }
+        });
+    });
+
+</script>
+</html>
