@@ -1,0 +1,72 @@
+@import "convertUnit";
+img{
+  display:block;
+  margin:0 auto;
+}
+
+body{
+  background-color:#401a53;
+  color:#fff;
+  line-height:1.4;
+}
+header{
+  img{
+    width:100%;
+  }
+}
+
+main{
+  padding:0 px2rem(65px);
+  font-size:font(38px);
+}
+.title{
+  width:px2rem(382px);
+  height:px2rem(110px);
+  line-height:px2rem(110px);
+  background:transparent url("../images/act-bargain/title.jpg") no-repeat scroll 0 0;
+  background-size:100% 100%;
+  text-align: center;
+  font-size:font(48px);
+  color:#2c113b;
+  margin:0 auto;
+  margin-bottom:px2rem(73px);
+}
+
+table{
+  width:100%;
+  th{
+    font-size:font(46px);
+  }
+  td,th{
+    border:1px solid #fff;
+    text-align:center;
+    padding: .4rem 0;
+  }
+}
+
+section{
+  padding-bottom:px2rem(110px) !important;
+  li{
+    margin-bottom:px2rem(70px);
+
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+
+  p{
+    text-align:justify;
+    i{
+      color:#ffef63;
+    }
+  }
+
+  img{
+    width:px2rem(605px);
+    margin-top:px2rem(65px);
+    margin-bottom:px2rem(65px);
+  }
+  table{
+    margin-bottom:px2rem(52px);
+  }
+}

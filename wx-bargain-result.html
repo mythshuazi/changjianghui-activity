@@ -21,7 +21,7 @@
     <div class="container" style="height:100%;overflow:scroll;-webkit-overflow-scrolling:touch">
     <header>
         <img src="images/wx-bargain/top.jpg" width="100%">
-        <div class="ribbon">2016.12.01-2016.12.31</div>
+        <!--<div class="ribbon">2016.12.01-2016.12.31</div>-->
         <span class="btn-rule" v-touch:tap="showPopRule=true">活动规则</span>
     </header>
     <main>
@@ -58,7 +58,26 @@
     <div class="pop rule" v-show="showPopRule" v-touch:tap="closePop($event,'showPopRule')">
         <div class="content">
             <p class="f-red">活动规则</p>
-
+            <div class="wrap">
+                <div class="detail">
+                    <h3 class="title">砍价机制：</h3>
+                    <ul>
+                        <li>1.砍价商品限时限量，砍价至0元才算砍价成功，先砍价成功者先得；</li>
+                        <li>2.每位用户对每款商品最多发起1次砍价，不能重复。</li>
+                        <li>3.不同商品不能同时发起砍价，进行中的砍价商品只能为1个。</li>
+                        <li>4.助力砍价，每人每天限砍3次，砍价者不能为同一人的同一商品重复砍价。</li>
+                        <li>5.砍价进行中，如所选商品已被其他挑战者砍价成功，该商品砍价失败，砍价参与者可挑选下一个心仪商品进行再次砍价。</li>
+                    </ul>
+                    <h3 class="title">活动细则：</h3>
+                    <ul>
+                        <li>1.活动参赛者必须内河船友，如经工作人员核查发现砍价成功者非船友，我们将取消其兑奖资格。</li>
+                        <li>2.奖品遵循1人1手机1账号1奖项规则。如工作人员核查发现，中奖船友同时用了多个微信号参与砍价并且砍价成功，一经发现以砍价成功价值最低的商品为准。</li>
+                        <li>3.活动结束后的3个工作日内，工作人员将主动与砍价成功的用户电话联系确认，确认成功后，中奖船友需在规定的日期内凭借本人中奖电话号码，本人身份证、及有效船舶证书到长江汇VIP体验店兑奖，逾期作废。</li>
+                        <li>4.本活动以诚信为本，一旦发现不正当恶意砍价，扰乱正常秩序行为，主办方有权取消其活动资格。</li>
+                        <li>5.本活动最终解释权给归长江汇所有。</li>
+                    </ul>
+                </div>
+            </div>
             <span class="close" v-touch:tap="closePop('showPopRule')">×</span>
         </div>
     </div>

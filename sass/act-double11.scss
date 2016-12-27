@@ -4,7 +4,7 @@ body{
   color:#fff;
   @include font-dpr(12px);
   line-height:1.4;
-  background: transparent url("../images/act-double11/bg.jpg") repeat scroll 0 0;
+  background: #5d0192;
 }
 header{
   img{
@@ -15,15 +15,16 @@ header{
 .goodsList{
   padding:px2rem(30px);
   padding-top:0;
-  margin-top: -0.55rem;
-
+  //margin-top: -0.55rem;
+  background:transparent url("../images/act-double11/top02.jpg") no-repeat scroll 0 0;
+  background-size:100%;
 
   @at-root .item{
-    margin-top:.3rem;
+    padding-top:.3rem;
     h2{
-      width:px2rem(355px);
+      width:px2rem(518px);
       height:1.1rem;
-      background: transparent url("../images/act-double11/yhdd.png") no-repeat scroll 0 0;
+      background: transparent url("../images/act-double11/yhdd.jpg") no-repeat scroll 0 0;
       background-size:100% 100%;
       margin:0 auto;
       color:transparent;
@@ -32,24 +33,26 @@ header{
     }
 
     &.ndjx h2{
-      background-image: url("../images/act-double11/ndjx.png");
+      background-image: url("../images/act-double11/ndjx.jpg");
     }
 
-    &.hhlx h2{
-      background-image: url("../images/act-double11/hhlx.png");
-    }
+    //&.hhlx h2{
+    //  background-image: url("../images/act-double11/hhlx.png");
+    //}
     ul{
       padding:px2rem(134px) 0 .1rem 0;
       border:1px solid #fdff2f;
       border-radius:.1rem;
-      background-color:#4402A1;
+      background-color:#5d0192;
       box-sizing: border-box;
       overflow:hidden;
     }
     li{
+      background-color:#fff;
       float:left;
       position:relative;
       width:47.5%;
+      padding-bottom:px2rem(17px);
       margin-bottom: .4rem;
       &:nth-of-type(2n+1){
         margin-right:5%;
@@ -71,7 +74,7 @@ header{
 
     }
     .goodsName{
-      color:#f9e00f;
+      color:#5d0192;
       font-size:px2rem(36px);
       margin-top:px2rem(25px);
       margin-bottom:px2rem(42px);
@@ -127,6 +130,7 @@ header{
     margin:0 auto;
     position:relative;
     top:.28rem;
+    background-color: #5d0192;
     span{
       display:block;
       color:#fff;
@@ -140,8 +144,6 @@ header{
       -webkit-background-size:auto 100%,auto 100%;
       background-size:auto 100%,auto 100%;
     }
-
-    background:transparent url("../images/act-double11/bg.jpg") repeat scroll 0 0;
   }
 
   ul{

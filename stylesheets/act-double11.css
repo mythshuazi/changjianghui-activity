@@ -10,7 +10,7 @@ body {
   color: #fff;
   font-size: 12px !important;
   line-height: 1.4;
-  background: transparent url("../images/act-double11/bg.jpg") repeat scroll 0 0;
+  background: #5d0192;
 }
 /* line 7, ../sass/_convertUnit.scss */
 [data-dpr="2"] body {
@@ -30,52 +30,51 @@ header img {
 .goodsList {
   padding: 0.27778rem;
   padding-top: 0;
-  margin-top: -0.55rem;
+  background: transparent url("../images/act-double11/top02.jpg") no-repeat scroll 0 0;
+  background-size: 100%;
 }
-/* line 21, ../sass/act-double11.scss */
+/* line 22, ../sass/act-double11.scss */
 .item {
-  margin-top: .3rem;
+  padding-top: .3rem;
 }
-/* line 23, ../sass/act-double11.scss */
+/* line 24, ../sass/act-double11.scss */
 .item h2 {
-  width: 3.28704rem;
+  width: 4.7963rem;
   height: 1.1rem;
-  background: transparent url("../images/act-double11/yhdd.png") no-repeat scroll 0 0;
+  background: transparent url("../images/act-double11/yhdd.jpg") no-repeat scroll 0 0;
   background-size: 100% 100%;
   margin: 0 auto;
   color: transparent;
   position: relative;
   top: .55rem;
 }
-/* line 34, ../sass/act-double11.scss */
+/* line 35, ../sass/act-double11.scss */
 .item.ndjx h2 {
-  background-image: url("../images/act-double11/ndjx.png");
+  background-image: url("../images/act-double11/ndjx.jpg");
 }
-/* line 38, ../sass/act-double11.scss */
-.item.hhlx h2 {
-  background-image: url("../images/act-double11/hhlx.png");
-}
-/* line 41, ../sass/act-double11.scss */
+/* line 42, ../sass/act-double11.scss */
 .item ul {
   padding: 1.24074rem 0 0.1rem 0;
   border: 1px solid #fdff2f;
   border-radius: .1rem;
-  background-color: #4402A1;
+  background-color: #5d0192;
   box-sizing: border-box;
   overflow: hidden;
 }
-/* line 49, ../sass/act-double11.scss */
+/* line 50, ../sass/act-double11.scss */
 .item li {
+  background-color: #fff;
   float: left;
   position: relative;
   width: 47.5%;
+  padding-bottom: 0.15741rem;
   margin-bottom: .4rem;
 }
-/* line 54, ../sass/act-double11.scss */
+/* line 57, ../sass/act-double11.scss */
 .item li:nth-of-type(2n+1) {
   margin-right: 5%;
 }
-/* line 58, ../sass/act-double11.scss */
+/* line 61, ../sass/act-double11.scss */
 .item img {
   display: block;
   width: 100%;
@@ -84,13 +83,13 @@ header img {
   background-size: contain;
   background-color: #D4D4D4;
 }
-/* line 63, ../sass/act-double11.scss */
+/* line 66, ../sass/act-double11.scss */
 .item img.load {
   background: transparent;
 }
-/* line 73, ../sass/act-double11.scss */
+/* line 76, ../sass/act-double11.scss */
 .item .goodsName {
-  color: #f9e00f;
+  color: #5d0192;
   font-size: 0.33333rem;
   margin-top: 0.23148rem;
   margin-bottom: 0.38889rem;
@@ -101,7 +100,7 @@ header img {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-/* line 85, ../sass/act-double11.scss */
+/* line 88, ../sass/act-double11.scss */
 .item .btn {
   width: 4.2963rem;
   height: 0.92593rem;
@@ -114,11 +113,11 @@ header img {
   color: #fdff2f;
   text-indent: .45rem;
 }
-/* line 96, ../sass/act-double11.scss */
+/* line 99, ../sass/act-double11.scss */
 .item .btn i {
   font-size: .3rem;
 }
-/* line 100, ../sass/act-double11.scss */
+/* line 103, ../sass/act-double11.scss */
 .item .discount {
   width: 1.25rem;
   height: 0.50926rem;
@@ -139,7 +138,7 @@ header img {
 [data-dpr="3"] .item .discount {
   font-size: 48px !important;
 }
-/* line 111, ../sass/act-double11.scss */
+/* line 114, ../sass/act-double11.scss */
 .item .discount i {
   font-size: 12px !important;
 }
@@ -151,25 +150,25 @@ header img {
 [data-dpr="3"] .item .discount i {
   font-size: 36px !important;
 }
-/* line 115, ../sass/act-double11.scss */
+/* line 118, ../sass/act-double11.scss */
 .item .discount span {
   font-weight: bold;
 }
 
-/* line 122, ../sass/act-double11.scss */
+/* line 125, ../sass/act-double11.scss */
 .rule {
   padding: 0.27778rem;
   position: relative;
 }
-/* line 125, ../sass/act-double11.scss */
+/* line 128, ../sass/act-double11.scss */
 .rule h3 {
   width: 4rem;
   margin: 0 auto;
   position: relative;
   top: .28rem;
-  background: transparent url("../images/act-double11/bg.jpg") repeat scroll 0 0;
+  background-color: #5d0192;
 }
-/* line 130, ../sass/act-double11.scss */
+/* line 134, ../sass/act-double11.scss */
 .rule h3 span {
   display: block;
   color: #fff;
@@ -183,7 +182,7 @@ header img {
   -webkit-background-size: auto 100%,auto 100%;
   background-size: auto 100%,auto 100%;
 }
-/* line 147, ../sass/act-double11.scss */
+/* line 149, ../sass/act-double11.scss */
 .rule ul {
   border: 1px solid #fdff2f;
   border-radius: .1rem;

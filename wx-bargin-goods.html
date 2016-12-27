@@ -44,10 +44,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="item in list" track-by="$index">
-                                <td>{{item.wx_nickname}}</td><td><del>¥{{item.vote_price}}</del></td><td>¥{{item.k_money}}</td>
-                                <!--<td>{{item.id}}</td><td><del>¥{{item.title.substring(0,6)}}</del></td><td>¥{{item.link}}</td>-->
-                            </tr>
+                            <template v-if="list.length>0">
+                                <tr v-for="item in list" track-by="$index">
+                                    <!--<td>{{item.wx_nickname}}</td><td><del>¥{{item.vote_price}}</del></td><td>¥{{item.k_money}}</td>-->
+                                    <td>{{item.id}}</td><td><del>¥{{item.title.substring(0,6)}}</del></td><td>¥{{item.link}}</td>
+                                </tr>
+                            </template>
+                            <template v-else>
+                                <tr v-else>
+                                    <td colspan="3" style="border:0; padding-top:.2rem;">暂无数据</td>
+                                </tr>
+                            </template>
                         </tbody>
                     </table>
                 </div>
@@ -210,10 +217,10 @@
                             url: 'http://ons.me/tools/dropload/json.php?page='+the.page+'&size='+the.size,
                             dataType: 'json',
                             success: function(data){
-                                /*if(data.length > 0){
-                                    the.list = the.list.concat(data);*/
-                                if(data.data.length > 0){
-                                    the.list = the.list.concat(data.data.list);
+                                if(data.length > 0){ //调试
+                                    the.list = the.list.concat(data);//调试
+//                                if(data.data.length > 0){
+//                                    the.list = the.list.concat(data.data.list);
                                     // 如果没有数据
                                 }else{
                                     // 锁定
@@ -227,6 +234,12 @@
                             },
                             error: function(xhr, type){
                                 alert('Ajax error!');
+                                /*-----------------2016.12.20-add---------------*/
+                                // 锁定
+                                me.lock();
+                                // 无数据
+                                me.noData();
+                                /*-----------------2016.12.20-add---------------*/
                                 // 即使加载出错，也得重置
                                 me.resetload();
                             }
@@ -313,7 +326,7 @@
                 reSelect:function(){
                     this.showPopCancel = true;
                 },
-                closePop:function(){
+                closePop:function(propName){
                     if(arguments.length == 1){
                         this[propName] = false;
                     }else{

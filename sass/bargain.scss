@@ -4,7 +4,7 @@ body{
   font-family: "microsoft yahei", 宋体, sans-serif;
   line-height:1.4;
   color:#323232;
-  background-color:#3f1854;
+  background-color:#592277;
 }
 *{
   -webkit-box-sizing: border-box;
@@ -36,7 +36,7 @@ header{
 }
 
 main{
-  margin-top: -3rem;
+  margin-top: -5rem;
 }
 .default{
   background:#d4d4d4 url("../images/public/default.jpg") no-repeat scroll 50% 50%;
@@ -46,14 +46,15 @@ main{
 .btn{
   display:block;
   margin:0 auto;
-  height:px2rem(122px);
+  height:66%;
   width:px2rem(902px);
   position:relative;
-  top:px2rem(28px);
+  top:18%;
 }
 .ribbon{
   color:#fff;
   font-size:px2rem(44px);
+  font-weight:bold;
   line-height: 1rem;
   text-align:center;
   background:transparent url("../images/wx-bargain/ribbon.png");
@@ -71,6 +72,7 @@ main{
 }
 
 .index{
+  background-color:#3f1854;
   .swiper-container {
     width: 100%;
     padding-bottom:px2rem(100px);
@@ -79,11 +81,11 @@ main{
     background-position: center;
     background-size: cover;
     width: px2rem(800px);
-    height: px2rem(1000px);
+    height: px2rem(800px);
 
     img{
       width:100%;
-      height: px2rem(800px);
+      height: px2rem(600px);
       background:#d4d4d4 url("../images/public/default.jpg") no-repeat scroll 50% 50%;
       background-size:contain;
     }
@@ -103,9 +105,8 @@ main{
     }
 
     .price{
-      font-size:px2rem(41px);
+      font-size:font(50px);
       line-height:px2rem(57px);
-      padding:px2rem(16px) 0;
       display:table;
 
       &>*{
@@ -125,7 +126,7 @@ main{
       border:1px solid #c9c9c9;
       border-radius:.1rem;
       padding:0 px2rem(9px);
-      span{  color:#ee0000;  font-size:px2rem(41px); }
+      span{  color:#ee0000;  font-size:font(50px); }
     }
 
     .radio{
@@ -139,7 +140,9 @@ main{
       right:px2rem(12px);
 
       &.active{
-        background-color:#ee0000;
+        background:transparent url("../images/wx-bargain/gou.png") no-repeat scroll 0 0;
+        background-size:100% 100%;
+        border:0;
       }
     }
 
@@ -152,25 +155,24 @@ main{
         left:0;
         width:100%;
         height: px2rem(800px);
-        background:rgba(0,0,0,0.5) url("../images/wx-bargain/sellout.png") no-repeat scroll 50% 50%;
+        background:rgba(0,0,0,0.5) url("../images/wx-bargain/sellout.png") no-repeat scroll 50% 37%;
         background-size:px2rem(350px);
       }
     }
   }
 
   .btn-wrap{
-    height:px2rem(170px);
     background-color:#1f0c2a;
     //margin-top:px2rem(150px);
     z-index: 1;
   }
   .btn-launch{
-    background:transparent url("../images/wx-bargain/btn-launch.png") no-repeat scroll 0 0;
-    background-size:100% ;
+    background:transparent url("../images/wx-bargain/btn-launch.png") no-repeat scroll 50% 50%;
+    background-size:contain;
   }
   .btn-check{
-    background:transparent url("../images/wx-bargain/btn-check.png") no-repeat scroll 0 0;
-    background-size:100% ;
+    background:transparent url("../images/wx-bargain/btn-check.png") no-repeat scroll 50% 50%;
+    background-size:contain;
   }
 
   main{
@@ -204,7 +206,7 @@ main{
       color: #fec536;
       i{
         color:#fc2c2c;
-        font-size:px2rem(51px);
+        font-size:font(60px);
       }
     }
   }
@@ -230,7 +232,7 @@ main{
 
   .btns{
     overflow:hidden;
-    padding: .9rem 0 1rem 0;
+    padding: .7rem 0 .8rem 0;
     span{
       height:px2rem(140px);
     }
@@ -268,7 +270,19 @@ main{
       //background-color:#29af8a;
       height:px2rem(115px);
       line-height:px2rem(115px);
-      font-size:px2rem(40px);
+      font-size:font(40px);
+
+      &:nth-child(1){
+        width:30%;
+      }
+
+      &:nth-child(2){
+        width:40%;
+      }
+
+      &:nth-child(3){
+        width:30%;
+      }
     }
     td{
       font-size:px2rem(36px);
@@ -277,6 +291,10 @@ main{
       height:px2rem(98px);
       line-height:px2rem(98px);
       border-bottom:1px dotted #808080;
+
+      &:nth-child(3){
+        color:#fc4878;
+      }
     }
   }
 
@@ -290,6 +308,11 @@ main{
 
 .help{
   color:#fff;
+  background-color:#3f1854;
+
+  .btn-rule{
+    color: #323232;
+  }
   main{
     z-index: 2;
     position: relative;
@@ -324,7 +347,7 @@ main{
     &>p{
       font-size:px2rem(48px);
       text-align:center;
-      border-top:1px solid #fff;
+      border-top:1px solid #c3c2c2;
       margin-top:px2rem(163px);
 
       span{
@@ -338,9 +361,9 @@ main{
     &>div{
       color:#323232;
       overflow: hidden;
-      background-color:#fff;
-      border:px2rem(20px) solid #2c0041;
       margin-top:px2rem(71px);
+      padding: 0.18519rem;
+      background-color: #2c0041;
     }
   }
 
@@ -353,6 +376,7 @@ main{
   }
 
   .goods-info{
+    background-color:#fff;
     height:px2rem(390px);
     margin-left:px2rem(390px);
     padding:px2rem(21px) px2rem(27px);
@@ -360,7 +384,7 @@ main{
   }
 
   .goods-name{
-    font-size:px2rem(36px);
+    font-size:font(40px);
   }
 
   .price{
@@ -369,10 +393,10 @@ main{
   }
 
   .original{
-    font-size:px2rem(36px);
-    margin-bottom:px2rem(15px);
+    font-size:font(36px);
+    //margin-bottom:px2rem(6px);
     i{
-      font-size:px2rem(42px);
+      font-size:font(50px);
     }
   }
 
@@ -380,10 +404,11 @@ main{
     color:#ee0000;
     border:1px solid #ee0000;
     border-radius:px2rem(6px);
-    font-size:px2rem(30px);
+    font-size:font(30px);
     padding:0 px2rem(6px);
     i{
-      font-size:px2rem(42px);
+      font-size:.45rem;
+      line-height: .5rem;
     }
   }
 
@@ -392,17 +417,21 @@ main{
     width: 100%;
     background-color:#2c0041;
     padding-top:px2rem(20px);
+    border:0;
+    outline:0;
 
     p{
       display:table-cell;
       color:#fff;
-      font-size:px2rem(36px);
+      font-size:font(36px);
+      line-height: .8rem;
 
       &:last-child{
         text-align:right;
       }
       i{
         color:#fff000;
+        font-size:font(45px);
       }
     }
   }
@@ -415,7 +444,7 @@ main{
   font-size:px2rem(36px) !important;
 }
 .pop{
-  background-color:rgba(0,0,0,0.5);
+  background-color:rgba(0,0,0,0.9);
   position:absolute;
   top:0;
   left:0;
@@ -424,40 +453,40 @@ main{
   z-index: 99;
 
   .content{
-    margin:px2rem(360px) px2rem(71px)  0  px2rem(71px);
+    margin:20% px2rem(71px)  0  px2rem(71px);
     background-color:#fec448;
-    border:2px solid #fff;
+    border:1.5px solid #fff;
     border-radius:.2rem;
-    padding-top:px2rem(109px);
+    padding-top:.7rem;
     padding-bottom:px2rem(99px);
     position:relative;
     font-size:px2rem(42px);
 
     img{
       width:px2rem(485px);
-      height:px2rem(480px);
+      height:4.18rem;
       margin:0 auto;
     }
   }
 
   .close{
+    color:transparent;
     position:absolute;
     top:px2rem(22px);
     right:px2rem(22px);
     width:px2rem(80px);
     height:px2rem(80px);
     line-height:px2rem(80px);
-    border:.02rem solid #323232;
     border-radius:1rem;
-    text-align:center;
-    color:#323232;
-    font-size:.5rem;
+    background:transparent url('../images/wx-bargain/close.jpg') no-repeat scroll 0 0;
+    background-size:100% 100%;
   }
 
   p{
     text-align:center;
     color:#323232;
-    font-size:px2rem(42px);
+    font-size:font(48px);
+    font-weight:normal;
   }
 }
 
@@ -478,8 +507,41 @@ main{
 .rule{
   .content{
     padding-top:px2rem(50px);
+    height: 74%;
+    margin-top:20%;
+    overflow: hidden;
+
+    .f-red{
+      padding-bottom:.2rem;
+    }
+    .wrap{
+      height:100%;
+      overflow: scroll;
+      border-bottom: .5rem solid #fec448;
+      padding-bottom:.2rem;
+    }
+    .detail{
+      padding: .2rem .3rem;
+    }
+    .title{
+      color:#323232;
+      font-weight:bold;
+      font-size:px2rem(42px);
+      line-height:1.4;
+      &:nth-of-type(2){
+        margin-top:.3rem;
+      }
+    }
+    li{
+      font-size:px2rem(36px);
+      text-align:justify;
+      margin-top:.1rem;
+      color:#323232;
+    }
   }
   p{margin-top:0 !important;}
+
+
 }
 
 .goods,.help{
@@ -487,6 +549,9 @@ main{
     p{
       padding:0 px2rem(136px);
       margin-top:px2rem(72px);
+      i{
+        color:#ee0000;
+      }
     }
   }
 
@@ -496,13 +561,13 @@ main{
     text-align:center;
     font-size:px2rem(51px);
     display:block;
-    width:px2rem(551px);
+    width:px2rem(566px);
     height:px2rem(123px);
     line-height:px2rem(123px);
     margin:0 auto;
-    margin-top:px2rem(123px);
+    margin-top:0.9rem;
     border-radius:1rem;
-    box-shadow: 2px 2px 2px #000;
+    //box-shadow: 2px 2px 2px #000;
   }
   .btnCancel{
     background-color:#22bd91;
@@ -520,7 +585,7 @@ main{
     img{
       width: 76%;
       position: absolute;
-      right: .3rem;
+      right: .8rem;
       top: .2rem;
     }
   }

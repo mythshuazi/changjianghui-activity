@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>加油手册</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+    <link rel="stylesheet" href="stylesheets/animate.min.css">
+    <!--<link rel="stylesheet" href="stylesheets/animate-tz.css">-->
+    <link rel="stylesheet" href="stylesheets/manual.css?v=6">
+    <!--<script src="javascripts/plugin/flexible_css.js,flexible.js"></script>-->
+    <script src="javascripts/plugin/swiper-3.3.1.min.js"></script>
+    <script src="javascripts/plugin/swiper.animate.min.js"></script>
+    <!--此中间代码为了方便获取位置使用，上线请删除-->
+    <script src="javascripts/plugin/zepto.min.js"></script>
+    <script src="javascripts/drag.js"></script>
+    <!--此中间代码为了方便获取位置使用，上线请删除-->
+    <script type="text/javascript">
+        function setHtmlSize(){
+            document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+        }
+        setHtmlSize();
+        window.addEventListener('resize',setHtmlSize,false);
+
+        function setAvailableArea(){
+            var windowH = document.documentElement.clientHeight,
+                    windowW = document.documentElement.clientWidth;
+            var flexW,flexH,posLeft=0,posTop=0,factor=1.575;
+            //ip4
+            if(windowW * factor > windowH){
+                //if(windowH<=480){
+                flexW = windowH/factor;
+                flexH = windowH;
+                posLeft  = (windowW-flexW)/2;
+            }else{
+                flexW = windowW;
+                flexH = windowW*factor;
+                posTop   = (windowH-flexH)/2;
+            }
+            $('<style>.page{width:'+ flexW +'px;height:'+flexH+'px;position:absolute;left:'+posLeft+'px;top:'+posTop+'px;}</style>').appendTo('head');
+        }
+        setAvailableArea();
+        window.addEventListener('resize',setAvailableArea,false);
+    </script>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper" >
+            <div class="swiper-slide one page-index swiper-no-swiping">
+                <div class="page">
+                    <img class="logo" src="images/my-manual/1/logo.png">
+                    <img class="topic" src="images/my-manual/1/topic.png">
+                    <div class="remember">
+                        <p>你还记得</p>
+                        <p>在这里度过的每一刻加油时光吗？</p>
+                    </div>
+                    <input class="timeInBack" type="image" src="images/my-manual/1/btn-timeInBack.png">
+                    <div class="noAdd">
+                        <!--<p>暂时没有在兆基加过油</p>-->
+                        <!--<p>了解 <span class="gotoIntro">兆基石油</span></p>-->
+                    </div>
+                </div>
+            </div>
+
+            <!--输入船号-->
+            <div class="swiper-slide two page-inputShipName">
+                <div class="page">
+                    <img class="token" src="images/my-manual/2/title-token.png">
+                    <input class="ship-name" type="text" placeholder="请输入您真实的船名">
+                    <input class="start" type="image" src="images/my-manual/2/btn-start.png">
+                    <img class="logo" src="images/my-manual/1/logo.png">
+                </div>
+            </div>
+
+            <!--详情1-->
+            <div class="swiper-slide three page-detail01">
+                <div class="page">
+                    <h2 class="d-ship">您的船</h2>
+                    <h3 class="d-date">2016.03.20</h3>
+                    <div class="first-add ">
+                        <div class="txt">
+                            <p>首次在</p>
+                            <p><i class="d-site">xxx站</i>加了</p>
+                        </div>
+                        <ul>
+                            <li class="d-oilNum"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--详情2-->
+            <div class="swiper-slide four page-detail02">
+                <div class="page">
+                    <div class="oil-num ">您共在兆基加了<i class="d-count">0</i>次油</div>
+                    <div class="oil-order ">
+                        <p>加油总吨数超过</p>
+                        <p><i><em class="d-percent">00.0</em>%</i> 的船友</p>
+                    </div>
+                    <div id="main" style="width: 35%;height:25%;"></div>
+                    <div class="oil-title ">
+                        <h3>获奖称号</h3>
+                        <img src="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide five page-intro">
+                <div class="page">
+                    <img class="intro ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="0s" src="images/my-manual/5/intro.png" >
+
+                    <p class="item ani" swiper-animate-effect="fadeInDown" swiper-animate-delay=".2s"><em>●</em> 南京兆基实业有限公司成立于<i>1996</i>年</p>
+                    <p class="item ani" swiper-animate-effect="fadeInDown" swiper-animate-delay=".5s"><em>●</em> 旗下拥有<i>5</i>座水上加油站</p>
+                    <p class="item ani" swiper-animate-effect="fadeInDown" swiper-animate-delay=".8s"><em>●</em> <i>2</i>个水上服务区</p>
+                    <p class="item ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="1.1s"><em>●</em> <i>15</i>座陆上“撬加油”网点</p>
+                    <p class="item ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="1.4s"><em>●</em> <i>2</i>油品运输公司</p>
+                    <p class="item ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="1.7s"><em>●</em> <i>1</i>个危险品码头</p>
+                    <p class="item ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="2s"><em>●</em> <i>1</i>个水上VIP体验店等</p>
+                    <p class="item ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="2.3s"><em>●</em> <i>2</i>个水上加油服务区可以满足万吨级重载船舶的停靠要求</p>
+
+                    <img class="quality ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="2.6s" src="images/my-manual/5/oil-quality.png">
+                    <p class="quality-intro ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="2.9s">兆基石油秉持对船友负责的态度，每年都会举办好油大挑战活动，获得船友们的鼎力支持！</p>
+
+                    <div class="images ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="3.2s">
+                        <span>点击可以查看大图</span>
+                        <div class="img-wrap">
+                            <img class="small" src="images/my-manual/5/small-01.jpg" data-big="images/my-manual/5/big-01.jpg">
+                            <img class="small" src="images/my-manual/5/small-02.jpg" data-big="images/my-manual/5/big-02.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mask">
+                    <img class="big" src="images/my-manual/5/big-01.jpg">
+                </div>
+            </div>
+
+            <div class="swiper-slide six  page-gallery">
+                <div class="page">
+                    <img class="service ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="0s" src="images/my-manual/6/service.png">
+                    <div class="detail ani" swiper-animate-effect="fadeInDown" swiper-animate-delay=".3s"><p>这里，是一年三百六十五天永不歇业的港湾~承载这个港湾的是一群江上“守望者”！他们守望着东来西往的船家，日复一日，年复一年。</p></div>
+                    <img src="images/my-manual/6/01.jpg" class="ani item" swiper-animate-effect="pic" swiper-animate-delay=".7s">
+                    <img src="images/my-manual/6/02.jpg" class="ani item" swiper-animate-effect="pic" swiper-animate-delay="2.6s">
+                    <img src="images/my-manual/6/03.jpg" class="ani item" swiper-animate-effect="pic" swiper-animate-delay="4.6s">
+                    <img src="images/my-manual/6/04.jpg" class="ani item" swiper-animate-effect="pic" swiper-animate-delay="6.6s">
+                    <img class=" ani twenty" swiper-animate-effect="zoomOut" swiper-animate-delay="8.2s" src="images/my-manual/6/20pic.png">
+                </div>
+            </div>
+
+            <div class="swiper-slide seven page-congrats">
+                <div class="page">
+                    <img class="age" src="images/my-manual/7/20.png">
+                    <div class="comment">
+                        <ul class="list">
+                        </ul>
+                    </div>
+                    <div class="btns">
+                        <input class="btn congrats" type="image" src="images/my-manual/7/btn-congrats.png">
+                        <input class="btn share" type="image" src="images/my-manual/7/btn-share.png">
+                    </div>
+                </div>
+
+                <div class="mask pop-send">
+                    <textarea>祝兆基石油20周年生日快乐！</textarea>
+                    <input class="btn-send" type="image" src="images/my-manual/7/btn-send.png">
+                </div>
+
+                <div class="mask pop-share">
+                    <img src="images/my-manual/7/pop-share.png" >
+                </div>
+            </div>
+
+            <div class="swiper-slide eight page-act">
+                <div class="page">
+                    <p class="">兆基石油携手长江汇始终将船民放在第一位，结合技术、产品以及商业模式不断变革，进行颠覆式创新；开辟了全新的长江市场；给生活在江上的船民打造便捷、前所未有的生活体验！</p>
+                    <img src="images/my-manual/8/sale.png" class="sale">
+                    <div class="wrap">
+                        <img src="images/my-manual/8/acts.png"  class="act">
+                        <input class="download" type="image" src="images/my-manual/8/btn-download.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide nine page-download">
+                <div class="page">
+                    <img src="images/my-manual/9/attention.png" class="attention ">
+                    <img src="images/my-manual/9/qrcode.png" class="qrcode ">
+                    <p class="">长按二维码识别关注</p>
+                </div>
+            </div>
+        </div>
+    <!--<div class="page swiper-pagination"></div>-->
+    </div>
+
+    <div class="pop-note mask">
+        <div class="wrap">
+            <div class="txt"></div>
+            <span>确 认</span>
+        </div>
+    </div>
+</body>
+<script src="javascripts/plugin/echarts.min.js"></script>
+<script>
+    var init = {
+        //"code": "0000",		// 返回码，0000代表成功，其他都是失败
+        "querystate": "0",		// 查询状态：0：没查询过；1：已经查询过且有数据；2：查询过没查到
+        "shipName": "华运0638",	// 船号
+        "firstNum": "9.0",		// 首次加油吨数
+        "firstTime": "2015.07.01",	// 首次加油时间
+        "firstSite": "南京兴隆洲站", // 首次加油站点
+        "oilCnt": 12,		        // 总加油次数
+        "oilPercent": "65.0",	    // 加油总吨数超过*人
+        "oilTitle": "加油新星",	    // 获取称号
+        "imgUrl": "images/my-manual/4/level.png"		        // 称号图片路径
+        //"share_content": "我在兆基石油的加油量超过了0.0%的船友，获得了“加油新星”的荣誉称号。"// 分享语,覆盖 desec
+    };
+    var shareData = {
+        title : "兆基石油20周岁啦，感恩有你，一路同行！",
+        desc : "我在兆基石油的加油量超过了0.0%的船友，获得了“加油新星”的荣誉称号。",
+        imgUrl : "http://oss.njcjh.cn/20161104/36e1d5167cf4418f9851ba779326a2f5.png",
+        link : ""
+    };
+
+    var mySwiper;   //实例
+    var cachePageInputShipName;
+    var cachePageDetail01;
+    var cachePageDetail02;
+    var hasRequestCongratsList = false; //防止多次请求列表
+    var hadSetLockNext = false;
+
+    $(function(){
+        init && renderData(init);
+        initSwiper();
+        registerEvent();
+        judgeEnterPage(init.querystate);//判断当前用户可以进入的页面
+    });
+
+
+    //数据渲染
+    function renderData(data){
+        $('.d-ship').html(data.shipName);
+        $('.d-date').html(data.firstTime);
+        $('.d-site').html(data.firstSite);
+        $('.d-count').html(data.oilCnt);
+
+        //首次加油吨数处理
+        (function(){
+            var oilNumArr = data.firstNum.split(''), oilNumHtml='';
+            oilNumArr.length == 3 && $('.d-oilNum').addClass('len3');
+            for(var i=0; i<oilNumArr.length; i++){
+                var item = oilNumArr[i];
+                if(item == '.'){
+                    oilNumHtml += '<img src="images/my-manual/3/'+ 'p' +'.png" class="point">';
+                }else{
+                    oilNumHtml += '<img src="images/my-manual/3/'+ item +'.png">';
+                }
+            }
+            $(oilNumHtml).appendTo('.d-oilNum');
+        })();
+
+        $('.d-percent').html(data.oilPercent);
+        $('.oil-title img').attr('src',data.imgUrl);
+
+    }
+
+    //实例化 Swiper
+    function initSwiper(){
+        //实例化
+        mySwiper = new Swiper('.swiper-container',{
+            pagination : '.swiper-pagination',
+            direction : 'vertical',
+            onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+                document.querySelector('body').style.opacity = 1;
+                /*document.querySelector('.swiper-pagination').style.opacity = 1;*/
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onTouchStart: function(swiper,even){
+
+            },
+            onTouchEnd:function(swiper){
+                swiperAnimate(swiper);
+            },
+            onSlideChangeStart: function(swiper){
+                swiperAnimate(swiper);
+                var slideIndex = swiper.activeIndex;
+                //在祝福页面的前一页请求祝福列表
+                if($('.swiper-slide').eq(slideIndex).hasClass('page-gallery')){
+                    !hasRequestCongratsList && ajaxGetCongratsList();
+                }
+
+                if($('.swiper-slide').eq(slideIndex).hasClass('page-detail02')){
+                    init.oilPercent && circle(init.oilPercent);
+                }
+            }
+        });
+    }
+
+
+
+
+    //重新实例化 Swiper
+    function afreshSwiper(){
+        mySwiper.destroy();
+        initSwiper();
+    }
+
+    //注册事件
+    function registerEvent(){
+        //当querystate 为 0 时，禁止输入船号页面向下滑动
+        $(document).on('touchstart','.page-inputShipName', function(){
+            !hadSetLockNext && mySwiper.lockSwipeToNext();
+            hadSetLockNext = true;
+        });
+        $(document).on('touchstart','.page-index', function(){
+            hadSetLockNext && mySwiper.unlockSwipes();
+            hadSetLockNext = false;
+        });
+
+        //首页“时光倒流开启回忆按钮” 触发后滑动到不同位置
+        $(document).on('click','.timeInBack',function(){
+            console.log('点击了时光倒流')
+            switch (init.querystate){
+                case "0"://没查询过进入 输入船号 页面
+                    mySwiper.slideTo($('.page-inputShipName').index(), 500, false);//切换到第1个slide，速度为.5秒
+                    break;
+                case "1"://查询过，切有信息，进入 详情1 页面
+                    mySwiper.slideTo($('.page-detail01').index(), 500, false);//切换到第2个slide，速度为.5秒
+                    break;
+                case "2"://查询过，没查到
+                    mySwiper.slideTo($('.page-intro').index(), 500, false);//切换到兆基简介，速度为1秒
+                    swiperAnimate(mySwiper);
+                    break;
+            }
+        });
+
+        //点击兆基简介，切换到兆基简介，速度为。5秒
+        $(document).on('click','.gotoIntro',function(){
+            mySwiper.slideTo($('.page-intro').index(), 500, false);
+            swiperAnimate(mySwiper);
+        });
+
+        // 当前状态值querystate一定是0，所以cachePageDetail01、cachePageDetail02一定有值
+        // 点击立即开启，发送船号；
+        //成功：删除输入船号页面，添加2个详情页面
+        //失败：删除输入船号页面
+        $(document).on('click','.start',function(){
+            console.log('点击了立即开启');
+
+            var userShipName = $('input.ship-name').val();
+            var re = /^[0-9]*[\u4E00-\u9FA5]+[0-9]*[\u4E00-\u9FA5]*$/g;
+            if(userShipName.length < 2 || !re.test(userShipName)) {
+                myAlert('船名输入有误！请重新输入');
+                return false;
+            }
+
+            $(this).prop('disabled',true);
+
+            /*$.ajax({
+                type: 'GET',
+                url: '/projects',
+                data: { shipName: $('.ship-name').val() }, //请求数据，自行修改
+                dataType: 'json',
+                success: function(data){
+                    init = data;
+                    //查询到了数据
+                    if(data.querystate == '1'){
+                        judgeEnterPage('1');
+                        $(cachePageDetail01).insertBefore('.page-intro');
+                        $(cachePageDetail02).insertBefore('.page-intro');
+                        renderData(data);
+                        afreshSwiper(); //重新实例化Swiper
+                        mySwiper.slideTo($('.page-detail01').index(), 500, false);//切换到 详情1，速度为.5秒
+                        data.oilPercent && circle(data.oilPercent);
+                    }
+
+                    //未查询到数据
+                    if(data.querystate == '2'){
+                        judgeEnterPage('2');
+                        afreshSwiper(); //重新实例化Swiper
+                        mySwiper.slideTo($('.page-intro').index(), 500, false);//切换到 简介，速度为.5秒
+                        swiperAnimate(mySwiper);
+                    }
+
+                },
+                error: function(xhr, type){
+                    $(this).prop('disabled',false);
+                        myAlert('发送船号失败');
+                }
+            });*/
+
+
+
+            /*------------------测试使用，换成 jsp 请删除，使用上面的 ajax---------------------*/
+            setTimeout(function(){
+                init = {
+                    //"code": "0000",		// 返回码，0000代表成功，其他都是失败
+                    "querystate": "1",		// 查询状态：0：没查询过；1：已经查询过且有数据；2：查询过没查到
+                    "shipName": "吕帅0638",	// 船号
+                    "firstNum": "8.5",		// 首次加油吨数
+                    "firstTime": "2016.07.01",	// 首次加油时间
+                    "firstSite": "南京兴隆洲站2", // 首次加油站点
+                    "oilCnt": 12,		        // 总加油次数
+                    "oilPercent": "75.0",	    // 加油总吨数超过*人
+                    "oilTitle": "加油新星",	    // 获取称号
+                    "imgUrl": "images/my-manual/4/level.png"		        // 称号图片路径
+                    //"share_content": "我在兆基石油的加油量超过了0.0%的船友，获得了“加油新星”的荣誉称号。"// 分享语,覆盖 desec
+                };
+                judgeEnterPage('1');
+                renderData(init);
+                $(cachePageDetail01).insertBefore('.page-intro');
+                $(cachePageDetail02).insertBefore('.page-intro');
+                afreshSwiper(); //重新实例化Swiper
+                mySwiper.slideTo($('.page-detail01').index(), 500, false);//切换到 详情1，速度为.5秒
+            },500);
+            /*------------------测试使用，换成 jsp 请删除，使用上面的 ajax---------------------*/
+        });
+
+        //输入船号校验
+        $(document).on('input','input.ship-name', function(){
+            //var re = /^[\u4E00-\u9FA50-9]{2,15}$/g;
+            var currentInputVal = $(this).val();
+
+            //$(this)[0].value = currentInputVal.replace(/[^\u4E00-\u9FA50-9]/g, "");
+
+            //超出15个，删除多余
+            if(currentInputVal.length>15){
+                console.log('超过15位');
+                $(this)[0].value = currentInputVal.substring(0,15);
+            }
+        });
+
+        //点击小图，展现大图
+        $(document).on('click','.small', function(){
+            var href = $(this).data('big');
+            var mask = $('.five .mask');
+            mask.show();
+            mask.find('img').attr('src',href)
+        });
+
+        //点击背景层，隐藏弹窗
+        $(document).on('click','.mask',function(e){
+            if($(e.target).hasClass('mask') || $(e.target).hasClass('big')){
+                $(this).hide();
+            }
+        });
+
+        //点击“祝兆基石油生日快乐”按钮
+        $(document).on('click','.seven .congrats',function(){
+            var mask = $('.seven .mask.pop-send');
+            mask.show();
+        });
+
+        //点击“发送祝福” 按钮
+        $(document).on('click','.btn-send', function(){
+
+            var sendTxt = $('textarea').val();
+            if(sendTxt.length > 0 ){
+                ajaxSendCongrats();
+                myAlert('祝福已发送！');
+                $('.pop-send').hide();
+            }else{
+                myAlert('请输入内容');
+            }
+        });
+
+        //点击分享按钮
+        $(document).on('click','.seven .share',function(){
+            var mask = $('.seven .mask.pop-share');
+            mask.show();
+        });
+
+        //点击 myAlert 确认，弹窗消失
+        $(document).on('click','.pop-note span', function(){
+            $('.pop-note').hide();
+        });
+    }
+
+    //判断当前用户可以进入的页面，删除相应页面
+    function judgeEnterPage(querystate){
+        if(querystate){
+            var pageInputShipName = $('.page-inputShipName');
+            var pageDetail01 = $('.page-detail01');
+            var pageDetail02 = $('.page-detail02');
+            switch (querystate){
+                case "0": //0：没查询过；1：已经查询过且有数据；2：查询过没查到
+                    cachePageDetail01 = pageDetail01.remove();
+                    cachePageDetail02 = pageDetail02.remove();
+                    mySwiper.updateSlidesSize();
+                    //mySwiper.removeSlide([2,3]);
+                    break;
+                case "1":
+                    cachePageInputShipName = pageInputShipName.remove();
+                    mySwiper.updateSlidesSize();
+                    break;
+                case "2":
+                    console.log('删除 输入船名 页面、详情1、详情2');
+                    cachePageInputShipName = pageInputShipName.remove();
+                    cachePageDetail01      = pageDetail01.remove();
+                    cachePageDetail02      = pageDetail02.remove();
+                    mySwiper.updateSlidesSize();
+                    break;
+            }
+        }
+    }
+
+    //ajax 获取祝福评论列表
+    function ajaxGetCongratsList(){
+        console.log('开始发送请求，请求祝福列表');
+
+        /*$.ajax({
+            type: 'GET',
+            url: '/projects',
+            data: { page: 'Zepto.js' }, //请求数据，自行修改
+            dataType: 'json',
+            success: function(data){
+                if(data.code == '0000' && data.data.length>0){
+                    hasRequestCongratsList = true;
+                    var list = data.data, listHtml = '';
+                    for(var i=0; i<list.length; i++){
+                        listHtml += '<li>' + list[i] + '</li>';
+                    }
+                    $(listHtml).appendTo('.page-congrats .list');
+
+                    //为了循环滚动 添加 4 条
+                    if(list.length > 4){
+                        var addNum = 4/!*-(list.length % 4)*!/;
+                        var circleItems = list.slice(0,addNum), circleHtml = '';
+                        for(var j=0; j<circleItems.length; j++){
+                            circleHtml += '<li>' + circleItems[j] + '</li>';
+                        }
+                        $(circleHtml).appendTo('.page-congrats .list');
+
+                        var ul = $('.list'),
+                                liH = ul.find('li').height(),
+                                noRepeatUlHeight = liH * list.length,
+                                addItemsUlHeight = liH * (list.length+addNum),
+                                scrollH = 0;
+                        setInterval(function(){
+                            scrollH -= liH;
+                            //console.log(Math.abs(scrollH)-noRepeatUlHeight);
+
+                            if(Math.abs(scrollH)-noRepeatUlHeight == liH){
+                                setTimeout(function(){
+                                    scrollH = 0;
+                                    ul.css({
+                                        'transform':         'translate3d(0,'+scrollH+'px'+',0)',
+                                        '-webkit-transform': 'translate3d(0,'+scrollH+'px'+',0)',
+                                        'transition':        'transform 0s',
+                                        '-webkit-transition':'-webkit-transform 0s'
+                                    });
+                                },1000);
+                            }else{
+                                ul.css({
+                                    'transform':         'translate3d(0,'+scrollH+'px'+',0)',
+                                    '-webkit-transform': 'translate3d(0,'+scrollH+'px'+',0)',
+                                    'transition':        'transform 1s',
+                                    '-webkit-transition':'-webkit-transform 1s'
+                                });
+                            }
+                        },2000);
+                    }
+                }else{
+                    $('<li style="border: 0;text-align:center;font-size:.6rem;height:100%;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;">暂无数据</li>').appendTo('.page-congrats .list');
+                }
+            },
+            error: function(xhr, type){
+                console.log('获取祝福列表失败');
+            }
+        });*/
+
+
+        /*------------------测试使用，换成 jsp 请删除，使用上面的 ajax---------------------*/
+        var data = {
+            "code": "0000",
+            "data": [
+                "<i>111：</i>祝兆基石油20周年生日快乐！祝兆基石油20周年生日快乐！祝兆基石油20周年生日快乐！祝兆基石油20周年生日快乐！",
+                "<i>222：</i>祝兆基石油20周年生日快乐！",
+                "<i>333：</i>祝兆基石油20周年生日快乐！",
+                "<i>444：</i>祝兆基石油20周年生日快乐！",
+                "<i>555：</i>祝兆基石油20周年生日快乐！",
+                "<i>666：</i>祝兆基石油20周年生日快乐！",
+                "<i>777：</i>祝兆基石油20周年生日快乐！"
+            ]
+        };
+        if(data.code == '0000' && data.data.length>0){
+            hasRequestCongratsList = true;
+            var list = data.data, listHtml = '';
+            for(var i=0; i<list.length; i++){
+                listHtml += '<li><span>' + list[i] + '</span></li>';
+            }
+            $(listHtml).appendTo('.page-congrats .list');
+
+            //为了循环滚动 添加 4 条
+            if(list.length > 4){
+                var addNum = 4/*-(list.length % 4)*/;
+                var circleItems = list.slice(0,addNum), circleHtml = '';
+                for(var j=0; j<circleItems.length; j++){
+                    circleHtml += '<li><span>' + circleItems[j] + '</span></li>';
+                }
+                $(circleHtml).appendTo('.page-congrats .list');
+
+                var ul = $('.list'),
+                        liH = ul.find('li').height(),
+                        noRepeatUlHeight = liH * list.length,
+                        addItemsUlHeight = liH * (list.length+addNum),
+                        scrollH = 0;
+                setInterval(function(){
+                    scrollH -= liH;
+                    //console.log(Math.abs(scrollH)-noRepeatUlHeight);
+
+                    if(Math.abs(scrollH)-noRepeatUlHeight == liH){
+                        setTimeout(function(){
+                            scrollH = 0;
+                            ul.css({
+                                'transform':         'translate3d(0,'+scrollH+'px'+',0)',
+                                '-webkit-transform': 'translate3d(0,'+scrollH+'px'+',0)',
+                                'transition':        'transform 0s',
+                                '-webkit-transition':'-webkit-transform 0s'
+                            });
+                        },1000);
+                    }else{
+                        ul.css({
+                            'transform':         'translate3d(0,'+scrollH+'px'+',0)',
+                            '-webkit-transform': 'translate3d(0,'+scrollH+'px'+',0)',
+                            'transition':        'transform 1s',
+                            '-webkit-transition':'-webkit-transform 1s'
+                        });
+                    }
+                },2000);
+            }
+        }else{
+            $('<li style="border: 0;text-align:center;font-size:.6rem;height:100%;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;">暂无数据</li>').appendTo('.page-congrats .list');
+        }
+        /*------------------测试使用，换成 jsp 请删除，使用上面的 ajax---------------------*/
+    }
+
+    //ajax 发送祝福
+    function ajaxSendCongrats(){
+        $('.btn-send').prop('disabled', true);
+
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8082/tac/20thann/wishSave.as',
+            data: { wishMemo: $('textarea').val() },
+            dataType: 'json',
+            success: function(data){
+                //myAlert('发送请求成功')
+                console.log('发送请求成功!')
+            },
+            error: function(xhr, type){
+                //myAlert('发送祝福失败');
+                console.log('发送祝福失败!');
+            },
+            complete: function(){
+                $('.btn-send').prop('disabled', false);
+                //myAlert('已发送完成！');
+                console.log('已发送完成！');
+            }
+        });
+    }
+
+    //环形图表
+    function circle(oilPercent){
+        oilPercent = parseInt(oilPercent);
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left'/*,
+                 data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']*/
+            },
+            series: [
+                {
+                    name:'超越船友',
+                    type:'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'center',
+                            textStyle: {
+                                fontSize: '20',
+                                fontWeight: 'bold'
+                            }
+                        }/*,
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }*/
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data:[
+                        {value:oilPercent, name:oilPercent+'%'},
+                        {value:100-oilPercent, name:''}
+                    ]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+
+    function myAlert(txt){
+        var alertPop = $('.pop-note'), txtWrap = alertPop.find('.txt');
+        alertPop.show();
+        txtWrap.html(txt);
+    }
+</script>
+</html>

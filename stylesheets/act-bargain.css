@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/* 字体 (参数$font-size，是效果图中的尺寸) */
+/* 我们项目的视觉稿为750px */
+/*$rem-baseline: 75px !default;*/
+/* 我们项目的视觉稿为1080px*/
+/*$rem-baseline: 108*1.15px !default;*/
+/* rem */
+/* line 2, ../sass/act-bargain.scss */
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 7, ../sass/act-bargain.scss */
+body {
+  background-color: #401a53;
+  color: #fff;
+  line-height: 1.4;
+}
+
+/* line 13, ../sass/act-bargain.scss */
+header img {
+  width: 100%;
+}
+
+/* line 18, ../sass/act-bargain.scss */
+main {
+  padding: 0 0.60185rem;
+  font-size: 0.37296rem;
+}
+
+/* line 22, ../sass/act-bargain.scss */
+.title {
+  width: 3.53704rem;
+  height: 1.01852rem;
+  line-height: 1.01852rem;
+  background: transparent url("../images/act-bargain/title.jpg") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  text-align: center;
+  font-size: 0.47111rem;
+  color: #2c113b;
+  margin: 0 auto;
+  margin-bottom: 0.67593rem;
+}
+
+/* line 35, ../sass/act-bargain.scss */
+table {
+  width: 100%;
+}
+/* line 37, ../sass/act-bargain.scss */
+table th {
+  font-size: 0.45148rem;
+}
+/* line 40, ../sass/act-bargain.scss */
+table td, table th {
+  border: 1px solid #fff;
+  text-align: center;
+  padding: .4rem 0;
+}
+
+/* line 47, ../sass/act-bargain.scss */
+section {
+  padding-bottom: 1.01852rem !important;
+}
+/* line 49, ../sass/act-bargain.scss */
+section li {
+  margin-bottom: 0.64815rem;
+}
+/* line 52, ../sass/act-bargain.scss */
+section li:last-child {
+  margin-bottom: 0;
+}
+/* line 57, ../sass/act-bargain.scss */
+section p {
+  text-align: justify;
+}
+/* line 59, ../sass/act-bargain.scss */
+section p i {
+  color: #ffef63;
+}
+/* line 64, ../sass/act-bargain.scss */
+section img {
+  width: 5.60185rem;
+  margin-top: 0.60185rem;
+  margin-bottom: 0.60185rem;
+}
+/* line 69, ../sass/act-bargain.scss */
+section table {
+  margin-bottom: 0.48148rem;
+}
+
+/*# sourceMappingURL=act-bargain.css.map */

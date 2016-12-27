@@ -72,6 +72,11 @@ $rem-baseline: 108px !default;
   //}
 }
 
+@function font($value){
+
+  @return rem-convert(rem, $value * 1.06);
+}
+
 @mixin px2rem($properties, $values...) {
   @if type-of($properties)=="map" {
     @each $property in map-keys($properties) {
