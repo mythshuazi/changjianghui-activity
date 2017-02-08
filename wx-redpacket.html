@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>集副卡迎红包</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/wx-redpacket.css">
+    <script src="javascripts/plugin/flexible_css.js,flexible.js"></script>
+</head>
+<body class="main" style="height:100%">
+    <div id="container" class="container" v-cloak style="height:100%">
+        <div class="flip">
+            <div class="wrap" id="box">
+                <div v-if="list.length>0" v-for="item in list" class="winning" v-bind:class="{hide:item.isHide}">
+                    <img v-bind:src="item.url" class="error">
+                    <p><span>{{item.txt}}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="picWrap">
+            <img class="logo" src="./images/wx-redpacket/logo.png">
+            <a href="http://www.baidu.com"><img class="rule" src="./images/wx-redpacket/rule.png"></a>
+        </div>
+        <div class="btnWrap">
+            <button v-touch:tap="btnCollect">{{btnControl | assignTxt}}</button>
+            <a href="">查看我的福气＞</a>
+        </div>
+
+
+        <div v-if="popSuccessShow" class="pop success" v-touch:tap="closePop('popNoteShow',$event)">
+            <div class="wrap">
+                <img v-bind:src="successImg" class="error" >
+                <p>{{blessing[Math.floor(Math.random()*10*0.5)]}}</p>
+                <i v-touch:tap="wd.location.href=wd.location.href" class="close"></i>
+            </div>
+        </div>
+
+        <div v-if="popNoteShow" v-touch:tap="closePop('popNoteShow',$event)" class="pop note">
+            <div class="wrap">
+                <div class="content">
+                    <p>{{popTxt}}</p>
+                    <button v-if="!isStart">知道了</button>
+                </div>
+                <i class="close">×</i>
+            </div>
+        </div>
+        
+        <div v-if="popShareShow" v-touch:tap="closePop('popShareShow')" class="pop share">
+            <img src="./images/wx-redpacket/pop_share.png">
+            <p>分享至朋友圈或好友群可额外获得一次集福机会~</p>
+        </div>
+    </div>
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script src="javascripts/plugin/vue-resource.min.js"></script>
+<script>
+    /*btnControl:  0-“今日机会已用完” 1-“去集福卡” 2-“分享额外获*/
+    var btnControl = 1;
+    var live = [
+        "./images/public/xiaolong.png,获得神秘大奖：9188元现金",
+        "./images/public/xiaolong.png,获得神秘大奖：8188元现金",
+        "./images/public/xiaolong.png,获得神秘大奖：7188元现金",
+        "./images/public/xiaolong.png,获得神秘大奖：6188元现金",
+        "./images/public/xiaolong.png,获得神秘大奖：5188元现金"
+    ];
+
+
+    var images ={
+        "01": {"sort":1, "active":true, "label": "长",  "img_active": "./images/wx-redpacket/small-chang.png", "img_default": "./images/wx-redpacket/small-chang-g.png",  "big_img_active": "./images/wx-redpacket/big-chang.jpg", "big_img_default": "./images/wx-redpacket/big-chang-g.jpg"},
+        "02": {"sort":2, "active":false, "label": "江",  "img_active": "./images/wx-redpacket/small-jiang.png", "img_default": "./images/wx-redpacket/small-jiang-g.png",  "big_img_active": "./images/wx-redpacket/big-jiang.jpg", "big_img_default": "./images/wx-redpacket/big-jiang-g.jpg"},
+        "03": {"sort":3, "active":false, "label": "汇",  "img_active": "./images/wx-redpacket/small-hui.png",   "img_default": "./images/wx-redpacket/small-hui-g.png",    "big_img_active": "./images/wx-redpacket/big-hui.jpg",   "big_img_default": "./images/wx-redpacket/big-hui-g.jpg"},
+        "05": {"sort":4, "active":false, "label": "全",  "img_active": "./images/wx-redpacket/small-quan.png",  "img_default": "./images/wx-redpacket/small-quan-g.png",   "big_img_active": "./images/wx-redpacket/big-quan.jpg",  "big_img_default": "./images/wx-redpacket/big-quan-g.jpg"},
+        "06": {"sort":5, "active":false, "label": "省",  "img_active": "./images/wx-redpacket/small-sheng.png", "img_default": "./images/wx-redpacket/small-sheng-g.png",  "big_img_active": "./images/wx-redpacket/big-sheng.jpg", "big_img_default": "./images/wx-redpacket/big-sheng-g.jpg"},
+        "04": {"sort":6, "active":false, "label": "好",  "img_active": "./images/wx-redpacket/small-hao.png",   "img_default": "./images/wx-redpacket/small-hao-g.png",    "big_img_active": "./images/wx-redpacket/big-hao.jpg",   "big_img_default": "./images/wx-redpacket/big-hao-g.jpg"},
+        "07": {"sort":7, "active":false, "label": "快",  "img_active": "./images/wx-redpacket/small-kuai.png",  "img_default": "./images/wx-redpacket/small-kuai-g.png",   "big_img_active": "./images/wx-redpacket/big-kuai.jpg",  "big_img_default": "./images/wx-redpacket/big-kuai-g.jpg"},
+        "11": {"sort":8, "active":false, "label": "标1", "img_active": "./images/wx-redpacket/small-cjh.png",   "img_default": "./images/wx-redpacket/small-cjh-g.png",    "big_img_active": "./images/wx-redpacket/big-cjh.jpg",   "big_img_default": "./images/wx-redpacket/big-cjh-g.jpg"},
+        "22": {"sort":9, "active":false, "label": "标2", "img_active": "./images/wx-redpacket/small-zj.png",    "img_default": "./images/wx-redpacket/small-zj-g.png",     "big_img_active": "./images/wx-redpacket/big-zj.jpg",    "big_img_default": "./images/wx-redpacket/big-zj-g.jpg"},
+        "33": {"sort":10, "active":false, "label": "标3", "img_active": "./images/wx-redpacket/small-dragon.png","img_default": "./images/wx-redpacket/small-dragon-g.png", "big_img_active": "./images/wx-redpacket/big-dragon.jpg","big_img_default": "./images/wx-redpacket/big-dragon-g.jpg"}
+    };
+
+
+
+
+    var list = [];
+    if(live.length>0){
+        live.forEach(function(item){
+            //list.push();
+            item = item.split(',');
+            list.push({
+                url:item[0],
+                txt:item[1],
+                isHide:false
+            })
+        })
+    }
+
+    var vm = new Vue({
+        el:"#container",
+        data:{
+            wd:window,
+            blessing:[
+                "祝您 睡觉睡到自然醒，老板说话不用听。",
+                "祝您 2017年财源滚滚，走上人生巅峰！",
+                "祝您 鸡年大鸡大利，鸡祥如意！",
+                "祝您 新春集福，赢取神秘大奖。",
+                "祝您 多吃不胖，赚钱多多！",
+                "祝您 五年就领退休金，领钱领到手抽筋。",
+                "祝您 吉星高照，大吉大利！"
+            ],
+            popSuccessShow:false,
+            successImg:'',
+            popNoteShow:false,  //是否显示弹窗
+            popShareShow:false, //是否显示弹窗
+            popTxt:"",    //弹窗提示内容
+            isStart:false,      //活动是否开始
+            btnControl:btnControl,
+            btnForbidden:parseInt(btnControl)==0,
+            list:list
+        },
+        created:function(){
+            /*var box = document.getElementById('box');
+            var angle = 0;
+            setInterval(function(){
+                angle -= 90;
+                box.style.transform = 'rotateX('+angle+'deg)';
+                box.style.webkitTransfrom = 'rotateX('+angle+'deg)'
+            },2000);*/
+            var the = this;
+            if(this.list.length>0){
+
+                setInterval(function(){
+                    the.list[the.list.length-1].isHide = true;
+                    setTimeout(function(){
+                        var tmp = the.list.pop();
+                        the.list.unshift(tmp);
+
+                        the.list.forEach(function(item){
+                            item.isHide = false;
+                        });
+                    },1000)
+                },3000)
+            }
+        },
+        methods:{
+            btnCollect: function(){
+                if(vm.btnForbidden) return;
+                /*switch (this.btnControl){
+                    case 0:
+                        console.log('机会已用完,禁用按钮');
+                        vm.btnForbidden = true;
+                        break;
+                    case 1:
+                        console.log('请求福卡,禁用按钮');
+                        vm.btnForbidden = true;
+                        vm.$http.get('http://text')
+                            .then(function(res){
+                                console.log('sucess，弹窗弹出。点击关闭刷新页面')
+                                this.successImg = images[res.data.data.snType]["big_img_active"];
+                                this.popSuccessShow = true;
+
+                            }, function(){
+                                console.log('failed，弹窗弹出。点击关闭刷新页面')
+                                this.popTxt = '活动异常火爆，请稍后再来吧！';
+                                this.popNoteShow = true;
+                            });
+
+                        break;
+                    case 2:
+                        //显示分享弹窗布满屏幕
+                        console.log('显示分享弹窗');
+                        this.popShareShow = true;
+                        break;
+                }*/
+                this.successImg = images['02']["big_img_active"];
+                this.popSuccessShow = true;
+            },
+            closePop:function(popName, event){
+                if(event && event.target.className.indexOf('pop')>=0){
+                    //this[popName] = false;
+                    window.location = 'http://www.baidu.com';
+                }else{
+                    this[popName] = false;
+                }
+
+            }
+        },
+        filters:{
+            assignTxt: function(state){
+                state = parseInt(state);
+                var txt;
+                switch (state){
+                    case 0:
+                        txt = "今日机会已用完";
+                        break;
+                    case 1:
+                        txt = "去集福卡";
+                        break;
+                    case 2:
+                        txt = "分享额外获得一次集福机会";
+                        break;
+                }
+                return txt;
+            }
+        }
+    });
+</script>
+</html>

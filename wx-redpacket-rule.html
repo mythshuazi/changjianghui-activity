@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>集副卡迎红包</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <script src="javascripts/plugin/flexible_css.js,flexible.js"></script>
+    <script>
+        function setHtmlSize(){
+            document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+        }
+        setHtmlSize();
+        window.addEventListener('resize',setHtmlSize,false);
+    </script>
+    <style>
+        .container{background:transparent url('./images/wx-redpacket/bg-rule.jpg') no-repeat scroll 0 0;background-size:100% 100%;}
+        .title{margin:0 auto;position:relative;top:1.5rem;width:43%;height:1rem;background:transparent url('./images/wx-redpacket/bg-title.png') no-repeat scroll 0 0;background-size:100% 100%;}
+        .content{color:#8e583c;width:84%;background-color:#f6e2c9;border:1px solid #e6ceb2;height:80%;margin:0 auto;margin-top:1rem;box-sizing: border-box;padding:.4rem;padding-top:1rem; }
+        .content p{line-height:1.4; }
+        .wrap{
+            overflow:scroll;
+        }
+    </style>
+</head>
+<body style="height:100%;">
+    <div class="container" style="height:100%;">
+        <div class="title"></div>
+        <div class="content">
+            <div class="wrap" style="height:100%;">
+                <p>活动时间：2017年1月26日-2017年2月3日</p>
+                <p>階層式樣式表 (CSS) 轉換可讓您在二維和立體空間中轉換元素。 您可以使用 CSS 轉換，變更元素在其父元素內的位置、操作元素的旋轉或縮放，以及套用扭曲。新增 perspective 屬性 (或 perspective 轉換函式) 可在轉換中加入立體感。
+                    以下我們將介紹 CSS 轉換座標系統。接著，我們會示範 CSS 所公開的轉換功能，然後透過圖解 perspective 屬性的作用來總結。
+                    CSS 轉換的座標系統
+                    CSS 轉換是沿著形成座標系統的一組座標軸定義。2D 轉換是沿著兩個座標軸定義，如下所示。請注意，y 軸會向下延伸，而非向上延伸，因為系統會轉譯大部分的二維笛卡兒座標系統。
+                    2D 座標系統的影像；x 軸向右延伸，而 y 軸向下延伸
+                    座標系統的 x 軸會沿著所要轉換之元素父節點的水平維度延伸，y 軸則沿著垂直維度延伸。此座標系統的原點 (圖表中的 "(0,0)") 原本位於所要轉換之元素的中心 (除非透過 transform-origin 屬性變更，這將在稍後討論)。
+                    3D 轉換是沿著三個座標軸定義，如下所示 (加入格線有助於視覺化 3D 影像)。
+                    3D 座標系統的影像；額外的 z 軸同時與 x 軸和 y 軸平行
+                    座標系統的 z 軸同時與 x 和 y 軸垂直。此座標系統的原點 (圖表中的 "(0,0,0)") 也位於所要轉換之元素的中心 (除非透過transform-origin 屬性變更)。
+                    套用轉換
+                    將轉換套用到元素相當簡單。首先，將 transform 屬性加入選取器，然後附加轉換函式的清單。例如，下列宣告會套用平移轉換：
+                    CSS
+                    transform: translateX(400px);
+
+                    此轉換的結果是，原始元素向右「平移」(移動) 400 個像素。如果我們將此轉換套用到藍色方形的 div 元素，會得到以下結果。為了清楚解說，除了已轉換的元素之外，還會顯示套用轉換前所出現的元素，而且原始元素會變暗。
+                    套用水平平移函式之前和之後的淺綠色方形的影像
+                    您可以檢視此範例的即時版本。請注意，為獲得瀏覽器的最大相容性，您應該在要支援的每個瀏覽器的轉換屬性之前，加上適當的瀏覽器專屬字首。例如，下列宣告可確保 Windows Internet Explorer 9 ("-ms-")、Chrome 與 Safari ("-webkit-")、Firefox ("-moz-")、Opera ("-o-")，以及不需要字首之瀏覽器 (例如 Internet Explorer 10) 中的支援。
+                    CSS
+                    -ms-transform: translateX(400px);
+                    -webkit-transform: translateX(400px);
+                    -moz-transform: translateX(400px);
+                    -o-transform: translateX(400px);
+                    transform: translateX(400px);
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

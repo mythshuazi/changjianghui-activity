@@ -1,0 +1,40 @@
+{
+  "name": "fetchival",
+  "main": "index.js",
+  "version": "0.3.2",
+  "homepage": "https://github.com/typicode/fetchival",
+  "authors": [
+    "Typicode <typicode@gmail.com>"
+  ],
+  "description": "Makes JSON requests with fetch easier",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "fetch",
+    "API",
+    "JSON",
+    "REST"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.3.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.2",
+    "commit": "1475ac10f86efcb684817924503bf35ccfe01f57"
+  },
+  "_source": "https://github.com/typicode/fetchival.git",
+  "_target": "^0.3.2",
+  "_originalSource": "fetchival",
+  "_direct": true
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>集副卡迎红包</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/swiper.3.1.2.min.css">
+    <link rel="stylesheet" href="stylesheets/wx-redpacket.css?v=1">
+    <!--<script src="javascripts/plugin/flexible_css.js,flexible.js"></script>-->
+    <script type="text/javascript">
+        function setHtmlSize(){
+            document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+        }
+        setHtmlSize();
+        window.addEventListener('resize',setHtmlSize,false);
+
+        function setAvailableArea(){
+            var windowH = document.documentElement.clientHeight,
+                    windowW = document.documentElement.clientWidth;
+            var flexW,flexH,posLeft=0,posTop=0,factor=1.575;
+            //ip4
+            if(windowW * factor > windowH){
+                //if(windowH<=480){
+                flexW = windowH/factor;
+                flexH = windowH;
+                posLeft  = (windowW-flexW)/2;
+            }else{
+                flexW = windowW;
+                flexH = windowW*factor;
+                posTop   = (windowH-flexH)/2;
+            }
+            var style = document.createElement('style');
+            var text = document.createTextNode('.page{width:'+ flexW +'px;height:'+flexH+'px;position:absolute;left:'+posLeft+'px;top:'+posTop+'px;}');
+            style.appendChild(text);
+            document.querySelector('head').appendChild(style);
+            //$('<style>.page{width:'+ flexW +'px;height:'+flexH+'px;position:absolute;left:'+posLeft+'px;top:'+posTop+'px;}</style>').appendTo('head');
+        }
+        setAvailableArea();
+        window.addEventListener('resize',setAvailableArea,false);
+    </script>
+</head>
+<body class="detail">
+    <div id="container" class="container page">
+        <img class="slogan" src="./images/wx-redpacket/detail-title.jpg">
+        <ul class="big">
+            <li>
+                <img :src="bigCardUrl">
+                <p v-if="showBlessing" class="blessing" :class="{wudi:wudiStyle}">{{blessing}}</p>
+            </li>
+        </ul>
+
+        <!-- Swiper -->
+        <div class="swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="item in images">
+                        <div v-on:click="tapCard(item)">
+                            <img src="./images/wx-redpacket/slected.png" class="mask" :class="{active:item.active}">
+                            <img v-if="item.collected" :src="item.img_active" @error="item.img_active = ''" class="card">
+                            <img v-else :src="item.img_default" @error="item.img_default = ''" class="card">
+                            <i v-if="item.collected" class="num">×<em>{{item.collected}}</em></i>
+                            <p :class="{had:item.collected,active:item.active}">福卡</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev move"></div>
+                <div class="swiper-button-next move"></div>
+            </div>
+        </div>
+        <!-- Swiper -->
+    </div>
+</body>
+<script src="javascripts/plugin/swiper.3.1.2.min.js"></script>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script>
+    var fu = '11x10' || [];
+    var card = '01x8,11x4,33x5';
+
+    var images ={
+        "01": {"sort":1, "active":false, "label": "长",  "img_active": "./images/wx-redpacket/small-chang.png", "img_default": "./images/wx-redpacket/small-chang-g.png",  "big_img_active": "./images/wx-redpacket/big-chang.jpg", "big_img_default": "./images/wx-redpacket/big-chang-g.jpg"},
+        "02": {"sort":2, "active":false, "label": "江",  "img_active": "./images/wx-redpacket/small-jiang.png", "img_default": "./images/wx-redpacket/small-jiang-g.png",  "big_img_active": "./images/wx-redpacket/big-jiang.jpg", "big_img_default": "./images/wx-redpacket/big-jiang-g.jpg"},
+        "03": {"sort":3, "active":false, "label": "汇",  "img_active": "./images/wx-redpacket/small-hui.png",   "img_default": "./images/wx-redpacket/small-hui-g.png",    "big_img_active": "./images/wx-redpacket/big-hui.jpg",   "big_img_default": "./images/wx-redpacket/big-hui-g.jpg"},
+        "05": {"sort":4, "active":false, "label": "全",  "img_active": "./images/wx-redpacket/small-quan.png",  "img_default": "./images/wx-redpacket/small-quan-g.png",   "big_img_active": "./images/wx-redpacket/big-quan.jpg",  "big_img_default": "./images/wx-redpacket/big-quan-g.jpg"},
+        "06": {"sort":5, "active":false, "label": "省",  "img_active": "./images/wx-redpacket/small-sheng.png", "img_default": "./images/wx-redpacket/small-sheng-g.png",  "big_img_active": "./images/wx-redpacket/big-sheng.jpg", "big_img_default": "./images/wx-redpacket/big-sheng-g.jpg"},
+        "04": {"sort":6, "active":false, "label": "好",  "img_active": "./images/wx-redpacket/small-hao.png",   "img_default": "./images/wx-redpacket/small-hao-g.png",    "big_img_active": "./images/wx-redpacket/big-hao.jpg",   "big_img_default": "./images/wx-redpacket/big-hao-g.jpg"},
+        "07": {"sort":7, "active":false, "label": "快",  "img_active": "./images/wx-redpacket/small-kuai.png",  "img_default": "./images/wx-redpacket/small-kuai-g.png",   "big_img_active": "./images/wx-redpacket/big-kuai.jpg",  "big_img_default": "./images/wx-redpacket/big-kuai-g.jpg"},
+        "11": {"sort":8, "active":false, "label": "标1", "img_active": "./images/wx-redpacket/small-cjh.png",   "img_default": "./images/wx-redpacket/small-cjh-g.png",    "big_img_active": "./images/wx-redpacket/big-cjh.jpg",   "big_img_default": "./images/wx-redpacket/big-cjh-g.jpg"},
+        "22": {"sort":9, "active":false, "label": "标2", "img_active": "./images/wx-redpacket/small-zj.png",    "img_default": "./images/wx-redpacket/small-zj-g.png",     "big_img_active": "./images/wx-redpacket/big-zj.jpg",    "big_img_default": "./images/wx-redpacket/big-zj-g.jpg"},
+        "33": {"sort":10, "active":false, "label": "标3", "img_active": "./images/wx-redpacket/small-dragon.png","img_default": "./images/wx-redpacket/small-dragon-g.png", "big_img_active": "./images/wx-redpacket/big-dragon.jpg","big_img_default": "./images/wx-redpacket/big-dragon-g.jpg"}
+    };
+    var blessing = [
+        "祝您 睡觉睡到自然醒，老板说话不用听。",
+        "祝您 2017年财源滚滚，走上人生巅峰！",
+        "祝您 鸡年大鸡大利，鸡祥如意！",
+        "祝您 新春集福，赢取神秘大奖。",
+        "祝您 多吃不胖，赚钱多多！",
+        "祝您 五年就领退休金，领钱领到手抽筋。",
+        "祝您 吉星高照，大吉大利！"
+    ];
+
+    var firstBigCardUrl,showBlessing,wudiStyle;
+
+    (function(){
+        if(fu.length>0){
+            var tmp_fu = [];
+            var arr_fu = fu.split(',');
+            arr_fu.forEach(function(item){
+                var one = item.split('x');
+                tmp_fu.push({key:one[0],count:one[1]});
+            });
+            fu = tmp_fu;
+        }
+
+        if(card.length>0){
+            var tmp_card = [];
+            var arr_card = card.split(',');
+            arr_card.forEach(function(item){
+                var one = item.split('x');
+                tmp_card.push({key:one[0],count:one[1]});
+            });
+            card = tmp_card;
+        }
+
+        var all;
+        if(Object.prototype.toString.call(fu) == "[object Array]" && Object.prototype.toString.call(card) == "[object Array]"){
+            all = fu.concat(card);
+        }
+        else if(Object.prototype.toString.call(fu) == "[object Array]" && Object.prototype.toString.call(card) != "[object Array]"){
+            all = fu;
+        }
+        else if(Object.prototype.toString.call(fu) != "[object Array]" && Object.prototype.toString.call(card) == "[object Array]"){
+            all = card;
+        }
+        else{
+            all = [];
+        }
+        all.forEach(function(item){
+            images[item.key].collected=item.count;
+        });
+
+
+        all.sort(function(o1,o2){
+            return o1.key-o2.key;
+        });
+        if(all.length>0){
+            images[all[0]['key']].active=true;
+            firstBigCardUrl = images[all[0]['key']].big_img_active;
+            showBlessing = true;
+            if(all[0]['key']=='11' || all[0]['key']=='22' || all[0]['key']=='33'){
+                wudiStyle = true;
+            }else{
+                wudiStyle = false;
+            }
+        }else{
+            images['01'].active = true;
+            firstBigCardUrl = images['01'].big_img_default;
+            showBlessing = false;
+            wudiStyle = false;
+        }
+
+
+
+        var tmp_images = [];
+        for(i in images){
+            tmp_images.push(images[i]);
+        }
+        tmp_images.sort(function(o1, o2){
+            return o1.sort-o2.sort;
+        });
+
+        images = tmp_images;
+    })();
+
+    var vm = new Vue({
+        el:'#container',
+        data:{
+            wudiStyle:wudiStyle,
+            bigCardUrl:firstBigCardUrl,
+            images:images,
+            showBlessing:showBlessing,
+            blessing:blessing[Math.floor(Math.random()*10*0.5)]
+        },
+        ready: function(){
+            new Swiper('.swiper-container',{
+                prevButton:'.swiper-button-prev',
+                nextButton:'.swiper-button-next',
+                //autoplay: 5000,
+                initialSlide:(function(){
+                    for(var i= 0; i<images.length; i++){
+                        if(images[i].active){
+                            return i;
+                        }
+                    }
+                })(),
+                slidesPerView:5 ,
+                slidesPerGroup : 5,
+                //spaceBetween : 12,
+                autoplayDisableOnInteraction:false,
+                lazyLoading : true,
+                lazyLoadingInPrevNext : true,
+                //pagination : pagination,
+                touchRatio : 0.5,
+                preventLinksPropagation : true,
+                onInit:function(swiper){
+                    //显示 pagination 防止出现pagination 移动
+                    //callback && callback();
+                }
+            });
+        },
+        methods:{
+            tapCard: function(item){
+                this.images.forEach(function(one){
+                    one.active = false;
+                });
+                item.active = true;
+                this.bigCardUrl = item.collected?item.big_img_active:item.big_img_default;
+                this.showBlessing = item.collected?true:false;
+                item.collected && (this.blessing = blessing[Math.floor(Math.random()*10*0.5)]);
+                if(item.sort == 8 || item.sort == 9 || item.sort==10){
+                    vm.wudiStyle = true;
+                }else{
+                    vm.wudiStyle = false;
+                }
+            }
+        }
+    })
+</script>
+</html>

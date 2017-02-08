@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>集副卡迎红包</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <link rel="stylesheet" href="stylesheets/wx-redpacket.css">
+    <!--<script src="javascripts/plugin/flexible_css.js,flexible.js"></script>-->
+    <script type="text/javascript">
+        function setHtmlSize(){
+            document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+        }
+        setHtmlSize();
+        window.addEventListener('resize',setHtmlSize,false);
+
+        function setAvailableArea(){
+            var windowH = document.documentElement.clientHeight,
+                    windowW = document.documentElement.clientWidth;
+            var flexW,flexH,posLeft=0,posTop=0,factor=1.575;
+            //ip4
+            if(windowW * factor > windowH){
+                //if(windowH<=480){
+                flexW = windowH/factor;
+                flexH = windowH;
+                posLeft  = (windowW-flexW)/2;
+            }else{
+                flexW = windowW;
+                flexH = windowW*factor;
+                posTop   = (windowH-flexH)/2;
+            }
+            var style = document.createElement('style');
+            var text = document.createTextNode('.page{width:'+ flexW +'px;height:'+flexH+'px;position:absolute;left:'+posLeft+'px;top:'+posTop+'px;}');
+            style.appendChild(text);
+            document.querySelector('head').appendChild(style);
+            //$('<style>.page{width:'+ flexW +'px;height:'+flexH+'px;position:absolute;left:'+posLeft+'px;top:'+posTop+'px;}</style>').appendTo('head');
+        }
+        setAvailableArea();
+        window.addEventListener('resize',setAvailableArea,false);
+    </script>
+</head>
+<body class="result">
+<div v-cloak id="container" class="container page">
+    <div class="info">
+        <p v-for="item in info">{{{item}}}</p>
+    </div>
+    <div class="cards">
+        <div class="item" v-for="item in images">
+            <img v-if="item.collected" :src="item.img_active" @error="item.img_active = ''" class="card">
+            <img v-else :src="item.img_default" @error="item.img_default = ''" class="card">
+            <i v-if="item.collected" class="num">×<em>{{item.collected}}</em></i>
+        </div>
+    </div>
+    <div class="other">
+        <a href="">下载长江汇客户端</a>
+        <div>
+            <p>红包将与活动结束后三个工作日内</p>
+            <p>放入 {{phone}} 账户</p>
+            <p>仅限长江汇客户端内可用</p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="javascripts/plugin/hammer.min.js"></script>
+<script src="javascripts/plugin/vue.js"></script>
+<script src="javascripts/plugin/vue-touch.min.js"></script>
+<script>
+    var resultInfo = '您已集齐 <i>5</i> 种福卡和 <i>1</i> 张无敌福卡，获得#688红包+1188现金';
+    var regPhone = '1388888888X';
+    var fu = '01x8,02x7';
+    var card = '11x4,22x5';
+
+    var images ={
+        "01": {"sort":1, "active":true, "label": "长",  "img_active": "./images/wx-redpacket/small-chang.png", "img_default": "./images/wx-redpacket/small-chang-g.png",  "big_img_active": "./images/wx-redpacket/big-chang.jpg", "big_img_default": "./images/wx-redpacket/big-chang-g.jpg"},
+        "02": {"sort":2, "active":false, "label": "江",  "img_active": "./images/wx-redpacket/small-jiang.png", "img_default": "./images/wx-redpacket/small-jiang-g.png",  "big_img_active": "./images/wx-redpacket/big-jiang.jpg", "big_img_default": "./images/wx-redpacket/big-jiang-g.jpg"},
+        "03": {"sort":3, "active":false, "label": "汇",  "img_active": "./images/wx-redpacket/small-hui.png",   "img_default": "./images/wx-redpacket/small-hui-g.png",    "big_img_active": "./images/wx-redpacket/big-hui.jpg",   "big_img_default": "./images/wx-redpacket/big-hui-g.jpg"},
+        "05": {"sort":4, "active":false, "label": "全",  "img_active": "./images/wx-redpacket/small-quan.png",  "img_default": "./images/wx-redpacket/small-quan-g.png",   "big_img_active": "./images/wx-redpacket/big-quan.jpg",  "big_img_default": "./images/wx-redpacket/big-quan-g.jpg"},
+        "06": {"sort":5, "active":false, "label": "省",  "img_active": "./images/wx-redpacket/small-sheng.png", "img_default": "./images/wx-redpacket/small-sheng-g.png",  "big_img_active": "./images/wx-redpacket/big-sheng.jpg", "big_img_default": "./images/wx-redpacket/big-sheng-g.jpg"},
+        "04": {"sort":6, "active":false, "label": "好",  "img_active": "./images/wx-redpacket/small-hao.png",   "img_default": "./images/wx-redpacket/small-hao-g.png",    "big_img_active": "./images/wx-redpacket/big-hao.jpg",   "big_img_default": "./images/wx-redpacket/big-hao-g.jpg"},
+        "07": {"sort":7, "active":false, "label": "快",  "img_active": "./images/wx-redpacket/small-kuai.png",  "img_default": "./images/wx-redpacket/small-kuai-g.png",   "big_img_active": "./images/wx-redpacket/big-kuai.jpg",  "big_img_default": "./images/wx-redpacket/big-kuai-g.jpg"},
+        "11": {"sort":8, "active":false, "label": "标1", "img_active": "./images/wx-redpacket/small-cjh.png",   "img_default": "./images/wx-redpacket/small-cjh-g.png",    "big_img_active": "./images/wx-redpacket/big-cjh.jpg",   "big_img_default": "./images/wx-redpacket/big-cjh-g.jpg"},
+        "22": {"sort":9, "active":false, "label": "标2", "img_active": "./images/wx-redpacket/small-zj.png",    "img_default": "./images/wx-redpacket/small-zj-g.png",     "big_img_active": "./images/wx-redpacket/big-zj.jpg",    "big_img_default": "./images/wx-redpacket/big-zj-g.jpg"},
+        "33": {"sort":10, "active":false, "label": "标3", "img_active": "./images/wx-redpacket/small-dragon.png","img_default": "./images/wx-redpacket/small-dragon-g.png", "big_img_active": "./images/wx-redpacket/big-dragon.jpg","big_img_default": "./images/wx-redpacket/big-dragon-g.jpg"}
+    };
+
+    (function(){
+        if(fu.length>0){
+            var tmp_fu = [];
+            var arr_fu = fu.split(',');
+            arr_fu.forEach(function(item){
+                var one = item.split('x');
+                tmp_fu.push({key:one[0],count:one[1]});
+            });
+            fu = tmp_fu;
+        }
+
+        if(card.length>0){
+            var tmp_card = [];
+            var arr_card = card.split(',');
+            arr_card.forEach(function(item){
+                var one = item.split('x');
+                tmp_card.push({key:one[0],count:one[1]});
+            });
+            card = tmp_card;
+        }
+
+        var all = fu.concat(card);
+
+        all.forEach(function(item){
+            images[item.key].collected=item.count;
+        });
+
+        var tmp_images = [];
+        for(i in images){
+            tmp_images.push(images[i]);
+        }
+        tmp_images.sort(function(o1, o2){
+            return o1.sort-o2.sort;
+        });
+
+        images = tmp_images;
+    })();
+
+    var vm = new Vue({
+        el:'#container',
+        data:{
+            info:resultInfo.split('#'),
+            images:images,
+            phone:regPhone
+        }
+    })
+</script>
+</html>

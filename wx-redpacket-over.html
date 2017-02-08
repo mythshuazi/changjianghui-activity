@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>集副卡迎红包</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="stylesheets/public.css">
+    <script>
+        function setHtmlSize(){
+            document.querySelector('html').style.fontSize = document.documentElement.clientWidth /10 +'px'
+        }
+        setHtmlSize();
+        window.addEventListener('resize',setHtmlSize,false);
+
+        function setAvailableArea(){
+            var windowH = document.documentElement.clientHeight,
+                    windowW = document.documentElement.clientWidth;
+            var flexW,flexH,posLeft=0,posTop=0,factor=1.575;
+            //ip4
+            if(windowW * factor > windowH){
+                //if(windowH<=480){
+                flexW = windowH/factor;
+                flexH = windowH;
+                posLeft  = (windowW-flexW)/2;
+            }else{
+                flexW = windowW;
+                flexH = windowW*factor;
+                posTop   = (windowH-flexH)/2;
+            }
+            var style = document.createElement('style');
+            var text = document.createTextNode('.page{width:'+ flexW +'px;height:'+flexH+'px;position:absolute;left:'+posLeft+'px;top:'+posTop+'px;}');
+            style.appendChild(text);
+            document.querySelector('head').appendChild(style);
+            //$('<style>.page{width:'+ flexW +'px;height:'+flexH+'px;position:absolute;left:'+posLeft+'px;top:'+posTop+'px;}</style>').appendTo('head');
+        }
+        setAvailableArea();
+        window.addEventListener('resize',setAvailableArea,false);
+    </script>
+    <style>
+        body{background:transparent url("./images/wx-redpacket/bg-result.jpg") no-repeat scroll 0 0;background-size:100% 100%;}
+        .container{position:relative;}
+        img{width:34%;display:block; margin:0 auto;}
+        .content{position:absolute;width:100%;bottom:11%;}
+        div.pWrap{margin-top:.2rem;text-align:center;font-size:.34rem; line-height:.6rem; color:#ffa28c;}
+    </style>
+</head>
+<body style="height:100%;">
+    <div class="container page" style="height:100%;">
+        <img src="./images/wx-redpacket/over.png" style="width: 100%; position: absolute; top: 0%;">
+        <div class="content">
+            <img src="./images/wx-redpacket/qrcode.jpg">
+            <div class="pWrap">
+                <p>长按识别二维码</p>
+                <p>关注长江汇服务号，最新活动全知道！</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

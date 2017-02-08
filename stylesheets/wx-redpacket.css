@@ -1,0 +1,534 @@
+@charset "UTF-8";
+/* 字体 (参数$font-size，是效果图中的尺寸) */
+/* 我们项目的视觉稿为750px */
+/*$rem-baseline: 75px !default;*/
+/* 我们项目的视觉稿为1080px*/
+/*$rem-baseline: 108*1.15px !default;*/
+/* rem */
+/* line 2, ../sass/wx-redpacket.scss */
+.main {
+  background: transparent url("../images/wx-redpacket/bg.jpg") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+/* line 6, ../sass/wx-redpacket.scss */
+.main .container {
+  position: relative;
+  overflow: hidden;
+}
+/* line 11, ../sass/wx-redpacket.scss */
+.main .flip {
+  width: 5.49074rem;
+  height: 0.92593rem;
+  position: absolute;
+  left: 2.25rem;
+  top: 5%;
+  perspective: 500px;
+  -webkit-perspective: 500px;
+  /*.one{
+    transform: translate3d(0, 0, px2rem(50px));
+    -webkit-transform: translate3d(0, 0, px2rem(50px));
+  }
+  .two{
+    transform: rotateX(90deg) translate3d(0, 0, px2rem(50px));
+    -webkit-transform: rotateX(90deg) translate3d(0, 0, px2rem(50px));
+  }
+  .three{
+    transform: rotateX(180deg) translate3d(0, 0, px2rem(50px));
+    -webkit-transform: rotateX(180deg) translate3d(0, 0, px2rem(50px));
+  }
+  .four{
+    transform: rotateX(270deg) translate3d(0, 0, px2rem(50px));
+    -webkit-transform: rotateX(270deg) translate3d(0, 0, px2rem(50px));
+  }*/
+}
+/* line 20, ../sass/wx-redpacket.scss */
+.main .flip .wrap {
+  width: 5.49074rem;
+  height: 0.92593rem;
+  /*transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;*/
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+/* line 46, ../sass/wx-redpacket.scss */
+.main .hide {
+  opacity: 0;
+}
+/* line 49, ../sass/wx-redpacket.scss */
+.main .winning {
+  width: 5.49074rem;
+  height: 0.92593rem;
+  background: transparent url("../images/wx-redpacket/winning.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+/* line 61, ../sass/wx-redpacket.scss */
+.main .winning img {
+  height: 0.8rem;
+  width: 0.8rem;
+  float: left;
+  border-radius: 50%;
+  position: relative;
+  top: .04rem;
+  left: .08rem;
+}
+/* line 70, ../sass/wx-redpacket.scss */
+.main .winning p {
+  box-sizing: border-box;
+  float: right;
+  width: 4.62963rem;
+  height: 0.92593rem;
+  line-height: 0.92593rem;
+  color: #fffcf1;
+  padding: 0 .2rem;
+  font-size: .32rem;
+  text-align: left;
+}
+/* line 84, ../sass/wx-redpacket.scss */
+.main .picWrap img {
+  display: block;
+}
+/* line 86, ../sass/wx-redpacket.scss */
+.main .picWrap img.logo {
+  width: 1.75926rem;
+}
+/* line 90, ../sass/wx-redpacket.scss */
+.main .picWrap img.rule {
+  width: 1.75926rem;
+  position: absolute;
+  top: 0;
+  right: -3%;
+}
+/* line 99, ../sass/wx-redpacket.scss */
+.main .btnWrap {
+  position: absolute;
+  width: 100%;
+  bottom: 1.6rem;
+  text-align: center;
+}
+/* line 104, ../sass/wx-redpacket.scss */
+.main .btnWrap button {
+  font-family: "microsoft yahei";
+  color: #323232;
+  display: block;
+  margin: 0 auto;
+  font-size: .6rem;
+  width: 79%;
+  height: 1.2rem;
+  border: 0;
+  border-radius: .2rem;
+  background-color: #facd89;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+/* line 117, ../sass/wx-redpacket.scss */
+.main .btnWrap a {
+  font-size: .4rem;
+  line-height: 1rem;
+  color: #ffdacc;
+  display: inline-block;
+}
+
+/* line 125, ../sass/wx-redpacket.scss */
+.detail {
+  height: 100%;
+  background: #1d0b2e url("../images/wx-redpacket/bg-detail.jpg") scroll 0 0;
+  background-size: 100% 100%;
+}
+/* line 131, ../sass/wx-redpacket.scss */
+.detail .container > * {
+  position: absolute;
+}
+/* line 135, ../sass/wx-redpacket.scss */
+.detail .container .slogan {
+  display: block;
+  width: 66%;
+  left: 17%;
+  top: 4%;
+}
+/* line 142, ../sass/wx-redpacket.scss */
+.detail .container .big {
+  width: 74%;
+  top: 14%;
+  left: 13%;
+  position: relative;
+}
+/* line 147, ../sass/wx-redpacket.scss */
+.detail .container .big img {
+  display: block;
+  width: 100%;
+}
+/* line 151, ../sass/wx-redpacket.scss */
+.detail .container .big p {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  color: #ffaf90;
+  text-align: center;
+  line-height: 1.2rem;
+  font-size: .35rem;
+}
+/* line 159, ../sass/wx-redpacket.scss */
+.detail .container .big p.wudi {
+  color: #58171b;
+}
+/* line 165, ../sass/wx-redpacket.scss */
+.detail .container .swiper-container {
+  padding-top: .3rem;
+  padding-left: .15rem;
+  padding-right: .15rem;
+}
+/* line 170, ../sass/wx-redpacket.scss */
+.detail .container .swiper {
+  box-sizing: border-box;
+  width: 100%;
+  bottom: 0;
+}
+/* line 175, ../sass/wx-redpacket.scss */
+.detail .container .swiper img {
+  width: 100%;
+}
+/* line 181, ../sass/wx-redpacket.scss */
+.detail .container .swiper-slide > div {
+  padding: .15rem;
+  position: relative;
+}
+/* line 185, ../sass/wx-redpacket.scss */
+.detail .container .swiper-slide img.mask {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: scale(0.84);
+  -webkit-transform: scale(0.84);
+}
+/* line 194, ../sass/wx-redpacket.scss */
+.detail .container .swiper-slide img.mask.active {
+  display: block;
+  z-index: 99;
+}
+/* line 199, ../sass/wx-redpacket.scss */
+.detail .container .swiper-slide img.card {
+  transform: scale(0.97);
+  -webkit-transform: scale(0.97);
+  transform-origin: 50% 50%;
+  display: block;
+}
+/* line 205, ../sass/wx-redpacket.scss */
+.detail .container .swiper-slide p {
+  text-align: center;
+  color: #b3b3b3;
+  line-height: 1;
+  margin-top: .2rem;
+  font-size: 12px;
+}
+/* line 212, ../sass/wx-redpacket.scss */
+.detail .container .swiper-slide p.had {
+  color: #bf3434;
+}
+/* line 215, ../sass/wx-redpacket.scss */
+.detail .container .swiper-slide p.active {
+  color: #fae28d;
+  font-size: 14px;
+}
+/* line 221, ../sass/wx-redpacket.scss */
+.num {
+  position: absolute;
+  top: -.2rem;
+  right: -.2rem;
+  width: .8rem;
+  height: .5rem;
+  background-color: #bf3434;
+  color: #fae28d;
+  border: 1px solid #fae28d;
+  border-radius: .5rem;
+  text-align: center;
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  z-index: 9999;
+}
+/* line 236, ../sass/wx-redpacket.scss */
+.num em {
+  font-size: .4rem;
+}
+/* line 241, ../sass/wx-redpacket.scss */
+.detail .container .swiper-slide .num {
+  top: -.1rem;
+  right: -.1rem;
+}
+
+/* line 251, ../sass/wx-redpacket.scss */
+.result {
+  background: transparent url("../images/wx-redpacket/bg-result.jpg") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+/* line 256, ../sass/wx-redpacket.scss */
+.result .container > * {
+  position: absolute;
+}
+/* line 260, ../sass/wx-redpacket.scss */
+.result .container .info {
+  width: 100%;
+  top: 8%;
+}
+/* line 263, ../sass/wx-redpacket.scss */
+.result .container .info p {
+  color: #ffc05c;
+  font-size: .42rem;
+  text-align: center;
+  line-height: 1.4;
+}
+/* line 269, ../sass/wx-redpacket.scss */
+.result .container .info p:last-child {
+  background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#e1d23a), color-stop(30%, #e1d23a), color-stop(0.5, #fff), color-stop(0.75, #e1d23a), to(#fff));
+  background: -webkit-linear-gradient(top, #e1d23a, #e1d23a, #fff, #e1d23a, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: .6rem;
+  font-weight: bold;
+}
+/* line 279, ../sass/wx-redpacket.scss */
+.result .container .info i {
+  color: #eae74a;
+  font-size: .6rem;
+}
+/* line 285, ../sass/wx-redpacket.scss */
+.result .container .cards {
+  width: 100%;
+  top: 26%;
+  padding: 0 .2rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 293, ../sass/wx-redpacket.scss */
+.result .container .cards .item {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 20%;
+  padding: .2rem .2rem .4rem .2rem;
+  position: relative;
+  float: left;
+}
+/* line 302, ../sass/wx-redpacket.scss */
+.result .container .cards .item img {
+  width: 100%;
+}
+/* line 306, ../sass/wx-redpacket.scss */
+.result .container .cards .item .num {
+  top: -.1rem;
+  right: -.1rem;
+}
+/* line 313, ../sass/wx-redpacket.scss */
+.result .container .other {
+  width: 100%;
+  bottom: 12%;
+  text-align: center;
+}
+/* line 318, ../sass/wx-redpacket.scss */
+.result .container .other a {
+  font-family: "microsoft yahei";
+  color: #323232;
+  display: block;
+  margin: 0 auto;
+  font-size: .6rem;
+  width: 79%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  border: 0;
+  border-radius: .2rem;
+  background-color: #ffe35f;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: .5rem;
+}
+/* line 335, ../sass/wx-redpacket.scss */
+.result .container .other p {
+  color: #ffbd7c;
+  font-size: .33rem;
+  line-height: 1.5;
+}
+
+/* line 344, ../sass/wx-redpacket.scss */
+.pop {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* line 352, ../sass/wx-redpacket.scss */
+.pop.success .wrap {
+  position: absolute;
+  width: 100%;
+  top: 11%;
+}
+/* line 357, ../sass/wx-redpacket.scss */
+.pop.success img {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 362, ../sass/wx-redpacket.scss */
+.pop.success p {
+  color: #ffaf90;
+  text-align: center;
+  font-size: .35rem;
+  line-height: 2;
+  margin-top: -1rem;
+}
+/* line 369, ../sass/wx-redpacket.scss */
+.pop.success .close {
+  display: block;
+  margin: 0 auto;
+  background: transparent url("../images/wx-redpacket/close.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  width: 1.2rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  margin-top: .8rem;
+}
+/* line 385, ../sass/wx-redpacket.scss */
+.pop.note .wrap {
+  position: absolute;
+  width: 80%;
+  height: 45%;
+  left: 10%;
+  top: 20%;
+  background: transparent url("../images/wx-redpacket/pop_bg.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+/* line 395, ../sass/wx-redpacket.scss */
+.pop.note .wrap .content {
+  width: 92%;
+  height: 80%;
+  position: absolute;
+  top: 13%;
+  left: 4%;
+  background: transparent url("../images/wx-redpacket/pop_content.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+}
+/* line 404, ../sass/wx-redpacket.scss */
+.pop.note .wrap .content p {
+  color: #9b0000;
+  font-size: .45rem;
+  margin: 0 auto;
+  margin-top: 25%;
+  text-align: center;
+  width: 87%;
+  line-height: 1.2;
+}
+/* line 414, ../sass/wx-redpacket.scss */
+.pop.note .wrap .content button {
+  color: #323232;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 15%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  background-color: #f8b551;
+  border-radius: .6rem;
+  border: 0;
+  font-size: .5rem;
+  font-family: "microsoft yahei", 瀹嬩綋, sans-serif;
+}
+/* line 430, ../sass/wx-redpacket.scss */
+.pop.note .close {
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  color: #f8b500;
+  font-size: 1rem;
+}
+/* line 441, ../sass/wx-redpacket.scss */
+.pop.share img {
+  width: 70%;
+  position: absolute;
+  right: 7%;
+  top: 7%;
+}
+/* line 447, ../sass/wx-redpacket.scss */
+.pop.share p {
+  position: absolute;
+  font-size: .34rem;
+  color: #fffaf1;
+  top: 29%;
+  right: 7%;
+  text-align: right;
+}
+
+/* line 458, ../sass/wx-redpacket.scss */
+.error {
+  background: #d4d4d4 url("../images/public/default.jpg") no-repeat scroll 50% 50%;
+}
+
+/* line 462, ../sass/wx-redpacket.scss */
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+  opacity: 1;
+  background: transparent url("../images/wx-redpacket/arrow-r.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  height: .4rem;
+  width: .8rem;
+  right: .1rem;
+  top: 1.65rem;
+}
+
+/* line 471, ../sass/wx-redpacket.scss */
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  opacity: 1;
+  background: transparent url("../images/wx-redpacket/arrow-l.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  height: .4rem;
+  width: .8rem;
+  left: .1rem;
+  top: 1.65rem;
+}
+
+/* line 480, ../sass/wx-redpacket.scss */
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+}
+
+/* line 485, ../sass/wx-redpacket.scss */
+.move {
+  animation: move   .75s       .5s     infinite    forwards;
+  -webkit-animation: move   .75s       .5s     infinite    forwards;
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(10%, 0, 0);
+    transform: translate3d(10%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+}
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(10%, 0, 0);
+    transform: translate3d(10%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+/*# sourceMappingURL=wx-redpacket.css.map */
